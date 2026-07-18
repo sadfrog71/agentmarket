@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.market.mapper.BizBusinessRecordMapper">
+
+    <resultMap id="BizBusinessRecordResult" type="BizBusinessRecord">
+        <id property="recordId" column="record_id" />
+        <result property="recordNo" column="record_no" />
+        <result property="recordType" column="record_type" />
+        <result property="sourceType" column="source_type" />
+        <result property="companyName" column="company_name" />
+        <result property="contactName" column="contact_name" />
+        <result property="contactPhone" column="contact_phone" />
+        <result property="contactEmail" column="contact_email" />
+        <result property="agentId" column="agent_id" />
+        <result property="agentName" column="agent_name" />
+        <result property="providerId" column="provider_id" />
+        <result property="ownerId" column="owner_id" />
+        <result property="ownerName" column="owner_name" />
+        <result property="recordStatus" column="record_status" />
+        <result property="requirement" column="requirement" />
+        <result property="nextFollowTime" column="next_follow_time" />
+        <result property="lastFollowTime" column="last_follow_time" />
+        <result property="resultSummary" column="result_summary" />
+        <result property="extJson" column="ext_json" />
+        <result property="delFlag" column="del_flag" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+    </resultMap>
+
+    <sql id="selectBusinessRecordVo">
+        select r.record_id, r.record_no, r.record_type, r.source_type, r.company_name,
+               r.contact_name, r.contact_phone, r.contact_email, r.agent_id, a.agent_name,
+               r.provider_id, r.owner_id, u.nick_name as owner_name, r.record_status,
+               r.requirement, r.next_follow_time, r.last_follow_time, r.result_summary,
+               r.ext_json, r.del_flag, r.create_by, r.create_time, r.update_by, r.update_time, r.remark
+        from biz_business_record r
+        left join biz_agent a on a.agent_id = r.agent_id and a.del_flag = '0'
+        left join sys_user u on u.user_id = r.owner_id and u.del_flag = '0'
+    </sql>
+
+    <select id="selectBusinessRecordById" parameterType="Long" resultMap="BizBusinessRecordResult">
+        <include refid="selectBusinessRecordVo" />
+        where r.record_id = #{recordId} and r.del_flag = '0'
+    </select>
+
+    <select id="selectBusinessRecordList" parameterType="BizBusinessRecord" resultMap="BizBusinessRecordResult">
+        <include refid="selectBusinessRecordVo" />
+        <where>
+            r.del_flag = '0'
+            <if test="recordNo != null and recordNo != ''">and r.record_no like concat('%', #{recordNo}, '%')</if>
+            <if test="recordType != null and recordType != ''">and r.record_type = #{recordType}</if>
+            <if test="companyName != null and companyName != ''">and r.company_name like concat('%', #{companyName}, '%')</if>
+            <if test="recordStatus != null and recordStatus != ''">and r.record_status = #{recordStatus}</if>
+            <if test="ownerId != null">and r.owner_id = #{ownerId}</if>
+        </where>
+        order by r.create_time desc
+    </select>
+
+    <insert id="insertBusinessRecord" parameterType="BizBusinessRecord" useGeneratedKeys="true" keyProperty="recordId">
+        insert into biz_business_record
+        (record_no, record_type, source_type, company_name, contact_name, contact_phone, contact_email,
+         agent_id, provider_id, owner_id, record_status, requirement, next_follow_time, last_follow_time,
+         result_summary, ext_json, create_by, create_time, remark)
+        values
+        (#{recordNo}, #{recordType}, #{sourceType}, #{companyName}, #{contactName}, #{contactPhone}, #{contactEmail},
+         #{agentId}, #{providerId}, #{ownerId}, #{recordStatus}, #{requirement}, #{nextFollowTime}, #{lastFollowTime},
+         #{resultSummary}, #{extJson}, #{createBy}, sysdate(), #{remark})
+    </insert>
+
+    <update id="updateBusinessRecord" parameterType="BizBusinessRecord">
+        update biz_business_record
+        <set>
+            record_type = #{recordType}, source_type = #{sourceType}, company_name = #{companyName},
+            contact_name = #{contactName}, contact_phone = #{contactPhone}, contact_email = #{contactEmail},
+            agent_id = #{agentId}, provider_id = #{providerId}, owner_id = #{ownerId},
+            record_status = #{recordStatus}, requirement = #{requirement}, next_follow_time = #{nextFollowTime},
+            last_follow_time = #{lastFollowTime}, result_summary = #{resultSummary}, ext_json = #{extJson},
+            update_by = #{updateBy}, update_time = sysdate(), remark = #{remark}
+        </set>
+        where record_id = #{recordId} and del_flag = '0'
+    </update>
+
+    <update id="softDeleteBusinessRecordByIds" parameterType="Long">
+        update biz_business_record set del_flag = '2' where record_id in
+        <foreach item="recordId" collection="array" open="(" separator="," close=")">#{recordId}</foreach>
+    </update>
+</mapper>

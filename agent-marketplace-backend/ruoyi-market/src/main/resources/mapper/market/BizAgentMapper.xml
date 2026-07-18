@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.market.mapper.BizAgentMapper">
+
+    <resultMap id="BizAgentResult" type="com.ruoyi.market.domain.BizAgent">
+        <id property="agentId" column="agent_id"/>
+        <result property="agentCode" column="agent_code"/>
+        <result property="agentName" column="agent_name"/>
+        <result property="categoryCode" column="category_code"/>
+        <result property="iconCode" column="icon_code"/>
+        <result property="coverUrl" column="cover_url"/>
+        <result property="providerId" column="provider_id"/>
+        <result property="providerName" column="provider_name"/>
+        <result property="summary" column="summary"/>
+        <result property="description" column="description"/>
+        <result property="priceText" column="price_text"/>
+        <result property="priceMin" column="price_min"/>
+        <result property="priceMax" column="price_max"/>
+        <result property="certLevel" column="cert_level"/>
+        <result property="rating" column="rating"/>
+        <result property="deployCount" column="deploy_count"/>
+        <result property="deliveryCycle" column="delivery_cycle"/>
+        <result property="serviceMode" column="service_mode"/>
+        <result property="recommendFlag" column="recommend_flag"/>
+        <result property="hotScore" column="hot_score"/>
+        <result property="sortNo" column="sort_no"/>
+        <result property="publishStatus" column="publish_status"/>
+        <result property="publishedAt" column="published_at"/>
+        <result property="slug" column="slug"/>
+        <result property="versionNo" column="version_no"/>
+        <result property="extJson" column="ext_json"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+
+    <resultMap id="DetailItemResult" type="com.ruoyi.market.domain.BizAgentDetailItem">
+        <id property="itemId" column="item_id"/>
+        <result property="agentId" column="agent_id"/>
+        <result property="itemType" column="item_type"/>
+        <result property="title" column="title"/>
+        <result property="subtitle" column="subtitle"/>
+        <result property="valueText" column="value_text"/>
+        <result property="content" column="content"/>
+        <result property="iconCode" column="icon_code"/>
+        <result property="linkUrl" column="link_url"/>
+        <result property="sortNo" column="sort_no"/>
+        <result property="status" column="status"/>
+        <result property="extJson" column="ext_json"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="agentColumns">
+        agent_id, agent_code, agent_name, category_code, icon_code, cover_url,
+        provider_id, provider_name, summary, description, price_text, price_min,
+        price_max, cert_level, rating, deploy_count, delivery_cycle, service_mode,
+        recommend_flag, hot_score, sort_no, publish_status, published_at, slug,
+        version_no, ext_json, del_flag, create_by, create_time, update_by,
+        update_time, remark
+    </sql>
+
+    <select id="selectAgentById" resultMap="BizAgentResult">
+        select <include refid="agentColumns"/> from biz_agent
+        where agent_id = #{agentId} and del_flag = '0'
+    </select>
+
+    <select id="selectPublishedAgentById" resultMap="BizAgentResult">
+        select <include refid="agentColumns"/> from biz_agent
+        where agent_id = #{agentId} and publish_status = '1' and del_flag = '0'
+    </select>
+
+    <select id="selectAgentList" parameterType="com.ruoyi.market.domain.BizAgent" resultMap="BizAgentResult">
+        select <include refid="agentColumns"/> from biz_agent
+        <where>
+            del_flag = '0'
+            <if test="agentName != null and agentName != ''">
+                and agent_name like concat('%', #{agentName}, '%')
+            </if>
+            <if test="categoryCode != null and categoryCode != ''">
+                and category_code = #{categoryCode}
+            </if>
+            <if test="publishStatus != null and publishStatus != ''">
+                and publish_status = #{publishStatus}
+            </if>
+            <if test="recommendFlag != null and recommendFlag != ''">
+                and recommend_flag = #{recommendFlag}
+            </if>
+        </where>
+        order by sort_no asc, agent_id desc
+    </select>
+
+    <select id="selectPublishedAgentList" parameterType="com.ruoyi.market.domain.BizAgent" resultMap="BizAgentResult">
+        select <include refid="agentColumns"/> from biz_agent
+        <where>
+            publish_status = '1' and del_flag = '0'
+            <if test="agentName != null and agentName != ''">
+                and (agent_name like concat('%', #{agentName}, '%') or summary like concat('%', #{agentName}, '%'))
+            </if>
+            <if test="categoryCode != null and categoryCode != ''">
+                and category_code = #{categoryCode}
+            </if>
+            <if test="recommendFlag != null and recommendFlag != ''">
+                and recommend_flag = #{recommendFlag}
+            </if>
+        </where>
+        order by recommend_flag desc, sort_no asc, hot_score desc, published_at desc
+    </select>
+
+    <select id="selectDetailItemsByAgentId" resultMap="DetailItemResult">
+        select item_id, agent_id, item_type, title, subtitle, value_text, content,
+               icon_code, link_url, sort_no, status, ext_json, create_time, update_time
+        from biz_agent_detail_item
+        where agent_id = #{agentId} and status = '0'
+        order by item_type asc, sort_no asc, item_id asc
+    </select>
+
+    <insert id="insertAgent" parameterType="com.ruoyi.market.domain.BizAgent" useGeneratedKeys="true" keyProperty="agentId">
+        insert into biz_agent (
+            agent_code, agent_name, category_code, icon_code, cover_url, provider_id,
+            provider_name, summary, description, price_text, price_min, price_max,
+            cert_level, rating, deploy_count, delivery_cycle, service_mode,
+            recommend_flag, hot_score, sort_no, publish_status, published_at, slug,
+            version_no, ext_json, del_flag, create_by, create_time, remark
+        ) values (
+            #{agentCode}, #{agentName}, #{categoryCode}, #{iconCode}, #{coverUrl}, #{providerId},
+            #{providerName}, #{summary}, #{description}, #{priceText}, #{priceMin}, #{priceMax},
+            #{certLevel}, #{rating}, #{deployCount}, #{deliveryCycle}, #{serviceMode},
+            #{recommendFlag}, #{hotScore}, #{sortNo}, #{publishStatus}, #{publishedAt}, #{slug},
+            #{versionNo}, #{extJson}, '0', #{createBy}, sysdate(), #{remark}
+        )
+    </insert>
+
+    <update id="updateAgent" parameterType="com.ruoyi.market.domain.BizAgent">
+        update biz_agent
+        <set>
+            agent_code = #{agentCode}, agent_name = #{agentName}, category_code = #{categoryCode},
+            icon_code = #{iconCode}, cover_url = #{coverUrl}, provider_id = #{providerId},
+            provider_name = #{providerName}, summary = #{summary}, description = #{description},
+            price_text = #{priceText}, price_min = #{priceMin}, price_max = #{priceMax},
+            cert_level = #{certLevel}, rating = #{rating}, deploy_count = #{deployCount},
+            delivery_cycle = #{deliveryCycle}, service_mode = #{serviceMode},
+            recommend_flag = #{recommendFlag}, hot_score = #{hotScore}, sort_no = #{sortNo},
+            publish_status = #{publishStatus}, published_at = #{publishedAt}, slug = #{slug},
+            version_no = version_no + 1, ext_json = #{extJson}, update_by = #{updateBy},
+            update_time = sysdate(), remark = #{remark}
+        </set>
+        where agent_id = #{agentId} and del_flag = '0'
+    </update>
+
+    <update id="softDeleteAgentByIds">
+        update biz_agent set del_flag = '2', update_time = sysdate()
+        where agent_id in
+        <foreach collection="array" item="agentId" open="(" separator="," close=")">
+            #{agentId}
+        </foreach>
+    </update>
+
+    <delete id="deleteDetailItemsByAgentId">
+        delete from biz_agent_detail_item where agent_id = #{agentId}
+    </delete>
+
+    <insert id="batchInsertDetailItems">
+        insert into biz_agent_detail_item
+        (agent_id, item_type, title, subtitle, value_text, content, icon_code, link_url,
+         sort_no, status, ext_json, create_time)
+        values
+        <foreach collection="items" item="item" separator=",">
+            (#{item.agentId}, #{item.itemType}, #{item.title}, #{item.subtitle}, #{item.valueText},
+             #{item.content}, #{item.iconCode}, #{item.linkUrl}, #{item.sortNo}, #{item.status},
+             #{item.extJson}, sysdate())
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,40 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+!agent-marketplace-admin/.env.development
+!agent-marketplace-admin/.env.production
+!agent-marketplace-admin/.env.staging
+*.pem
+*.key
+
+# Dependencies and build output
+**/node_modules/
+**/dist/
+**/target/
+**/coverage/
+**/.cache/
+
+# Runtime data and logs
+**/logs/
+**/*.log
+**/uploads/
+output/
+outputs/
+tmp/
+
+# Editor and operating system files
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Source materials kept outside the code repository
+/*.pdf
+/华衍水务智能体市场原型汇报*.html
+/智能体矩阵方案-PPT版.html
+/水务智能体平台-前台-优化版2 2_副本.html
+/华衍水务环境智能体市场：内部汇报方案.md
+/华衍水务环境 LOGO/
