@@ -5,8 +5,31 @@ set names utf8mb4;
 
 drop table if exists biz_business_follow;
 drop table if exists biz_business_record;
+drop table if exists biz_site_content;
 drop table if exists biz_agent_detail_item;
 drop table if exists biz_agent;
+
+create table biz_site_content (
+  content_id        bigint not null auto_increment comment '页面内容ID',
+  content_key       varchar(64) not null comment '稳定页面标识',
+  content_name      varchar(100) not null comment '后台内容名称',
+  title             varchar(200) not null comment '前台页面标题',
+  subtitle          varchar(500) default '' comment '前台页面副标题',
+  content           longtext comment '富文本或Markdown内容',
+  content_format    varchar(20) default 'RICH_TEXT' comment '内容格式（RICH_TEXT/MARKDOWN）',
+  publish_status    char(1) default '0' comment '发布状态（0草稿 1发布 2下架）',
+  sort_no           int default 0 comment '显示顺序',
+  ext_json          json default null comment '扩展属性',
+  del_flag          char(1) default '0' comment '删除标志（0正常 2删除）',
+  create_by         varchar(64) default '' comment '创建者',
+  create_time       datetime default current_timestamp comment '创建时间',
+  update_by         varchar(64) default '' comment '更新者',
+  update_time       datetime default null on update current_timestamp comment '更新时间',
+  remark            varchar(500) default null comment '备注',
+  primary key (content_id),
+  unique key uk_site_content_key (content_key),
+  key idx_site_content_status_sort (publish_status, sort_no, del_flag)
+) engine=innodb default charset=utf8mb4 collate=utf8mb4_0900_ai_ci comment='前台页面内容';
 
 create table biz_agent (
   agent_id          bigint not null auto_increment comment '智能体ID',
@@ -127,6 +150,13 @@ insert into sys_menu values
 (2009, '商务登记修改', 2006, 3, '', '', '', '', 1, 0, 'F', '0', '0', 'market:business:edit', '#', 'admin', sysdate(), '', null, ''),
 (2010, '商务登记删除', 2006, 4, '', '', '', '', 1, 0, 'F', '0', '0', 'market:business:remove', '#', 'admin', sysdate(), '', null, '');
 
+insert into sys_menu values
+(2011, '页面内容', 2000, 3, 'content', 'market/content/index', '', '', 1, 0, 'C', '0', '0', 'market:content:list', 'edit', 'admin', sysdate(), '', null, '算力中心、联系我们等前台内容维护'),
+(2012, '页面内容查询', 2011, 1, '', '', '', '', 1, 0, 'F', '0', '0', 'market:content:query', '#', 'admin', sysdate(), '', null, ''),
+(2013, '页面内容新增', 2011, 2, '', '', '', '', 1, 0, 'F', '0', '0', 'market:content:add', '#', 'admin', sysdate(), '', null, ''),
+(2014, '页面内容修改', 2011, 3, '', '', '', '', 1, 0, 'F', '0', '0', 'market:content:edit', '#', 'admin', sysdate(), '', null, ''),
+(2015, '页面内容删除', 2011, 4, '', '', '', '', 1, 0, 'F', '0', '0', 'market:content:remove', '#', 'admin', sysdate(), '', null, '');
+
 -- 字典类型
 insert into sys_dict_type (dict_id, dict_name, dict_type, status, create_by, create_time, remark) values
 (100, '智能体场景域', 'market_agent_category', '0', 'admin', sysdate(), '智能体六大场景域'),
@@ -163,6 +193,12 @@ insert into sys_dict_data
 (122, 3, '已确认', 'CONFIRMED', 'market_business_status', 'success', 'N', '0', 'admin', sysdate(), ''),
 (123, 4, '已关闭', 'CLOSED', 'market_business_status', 'info', 'N', '0', 'admin', sysdate(), '');
 
+-- 页面内容初始化：算力中心保持草稿空内容，联系我们发布 Markdown 示例
+insert into biz_site_content
+(content_key, content_name, title, subtitle, content, content_format, publish_status, sort_no, create_by, remark) values
+('COMPUTE', '算力中心', '算力中心', '用于展示模型资源、算力池、调用消耗和智能体资源占用。', '', 'MARKDOWN', '0', 1, 'admin', '未发布或内容为空时，前台展示暂无数据'),
+('CONTACT', '联系我们', '联系实施与上架', '一期采用线下沟通方式。确认需求、材料和实施范围后，由平台管理员完成登记与内容发布。', '### 业务咨询\n\n联系方式将在部署前配置。\n\n> 支持智能体实施评估、上架沟通与 FDE 服务咨询。', 'MARKDOWN', '1', 2, 'admin', '前台联系弹窗内容');
+
 -- 首条示例智能体，用于接口与页面联调
 insert into biz_agent
 (agent_id, agent_code, agent_name, category_code, icon_code, provider_name, summary,
@@ -171,18 +207,32 @@ insert into biz_agent
  published_at, slug, create_by)
 values
 (1, 'DMA_LEAKAGE', 'DMA漏损分析智能体', 'network', 'search', '华衍水务研究院',
- '基于 DMA 分区计量数据自动识别漏损异常，定位漏点区域，并给出修复优先级。',
- '结合管网拓扑、压力与流量数据，形成持续监测、异常解释、处置建议和效果报告。',
- '5万-8万', 50000, 80000, 'L2', 4.8, 18, '2-4周', '本地化部署', 'Y', 98, 1, '1',
+ '基于 DMA 分区计量数据与 AI 时序分析模型，自动识别漏损异常，精准定位漏点区域，并给出修复优先级与效益测算。',
+ '<h3>DMA 漏损智能分析与闭环治理</h3><p>基于 <strong>DMA 分区计量数据</strong>与 AI 时序分析模型，自动识别各分区漏损异常，精准定位漏点区域，并提供修复优先级排序与经济效益测算。</p><p>已在华衍旗下 3 家水司完成实测验证，平均漏损率从 <strong>13.2% 降至 8.7%</strong>，达到 L2 认证标准。</p>',
+ '5-15万', 50000, 150000, 'L2', 4.8, 18, '2-4周', '本地化部署', 'Y', 98, 1, '1',
  sysdate(), 'dma-leakage-agent', 'admin');
 
 insert into biz_agent_detail_item
 (agent_id, item_type, title, value_text, content, icon_code, sort_no) values
-(1, 'FEATURE', '实时漏损监测', '', '7×24 小时持续监测各 DMA 分区夜间最小流量，异常时即时提示。', 'chart', 1),
-(1, 'FEATURE', '漏点区域精准定位', '', '结合管网拓扑与压力数据缩小排查范围，减少无效开挖。', 'target', 2),
-(1, 'METRIC', '漏损率平均降幅', '34%', '从 13.2% 降至 8.7%。', '', 1),
-(1, 'METRIC', '已部署水司', '18家', '包含 3 家 L2 实测验证单位。', '', 2),
-(1, 'CASE', '华衍（无锡）水务有限公司', '产销差率降低 34%', '覆盖 48 个 DMA 分区，部署后 6 个月产销差率从 14.1% 降至 9.3%。', '', 1),
-(1, 'PRICE_FEATURE', '本地化部署', '', '数据不出水司。', 'check', 1),
+(1, 'FEATURE', '实时漏损监测', '', '7×24 小时持续监测各 DMA 分区夜间最小流量，自动计算漏损指数（ILI），异常时即时告警。', 'chart', 1),
+(1, 'FEATURE', '漏点区域精准定位', '', '结合管网拓扑与压力数据，将漏损范围缩小至 500 米管段级别，减少无效开挖。', 'target', 2),
+(1, 'FEATURE', '修复优先级智能排序', '', '综合漏损量、管龄、修复成本和影响用户数，自动生成修复工单优先级清单。', 'sort', 3),
+(1, 'FEATURE', '效益测算与报告生成', '', '自动计算漏损治理经济效益，一键生成可提交监管部门的漏损管控报告。', 'report', 4),
+(1, 'METRIC', '漏损率平均降幅', '34%', '13.2% → 8.7%', '', 1),
+(1, 'METRIC', '预警时间提前量', '2h', '相比人工巡检', '', 2),
+(1, 'METRIC', '已部署水司数量', '18家', '含 3 家 L2 验证单位', '', 3),
+(1, 'CASE', '华衍（无锡）水务有限公司', '产销差率降低 34% · 年节水 120 万吨', '2024 年 10 月完成部署，覆盖全市 48 个 DMA 分区，接入 SCADA 系统实时数据流。部署后 6 个月内，产销差率从 14.1% 下降至 9.3%，年节约水量约 120 万吨，直接经济效益约 360 万元。', '', 1),
+(1, 'CASE', '华衍（张家港）水务有限公司', '漏损率降 5.2% · 修复成本降低 60%', '2025 年 3 月完成部署，重点针对老城区高漏损管网。智能体识别出 3 处长期未被发现的隐性漏点，修复后当月漏损率下降 5.2 个百分点，修复成本较传统方式降低 60%。', '', 2),
+(1, 'PRICE_FEATURE', '计费方式', '', '智能体授权 + 一次性实施费', 'check', 1),
+(1, 'PRICE_FEATURE', '本地化部署', '', '数据不出水司', 'check', 2),
+(1, 'PRICE_FEATURE', '标准实施周期', '', '30 天', 'check', 3),
+(1, 'PRICE_FEATURE', '效果目标', '', '漏损率从 13% 降至 9% 以下', 'check', 4),
+(1, 'PRICE_FEATURE', '接入规模', '', '最多 50 个 DMA 分区接入', 'check', 5),
+(1, 'PRICE_FEATURE', '运营服务', '', '月度效果报告与优化建议', 'check', 6),
+(1, 'PRICE_FEATURE', '保障方式', '', '效果不达标可按约定退款', 'check', 7),
 (1, 'COMPATIBILITY', '数据接口', 'SCADA / OPC-UA', '', '', 1),
-(1, 'COMPATIBILITY', '操作系统', 'Windows / Linux', '', '', 2);
+(1, 'COMPATIBILITY', '部署方式', '本地化 / 私有化', '', '', 2),
+(1, 'COMPATIBILITY', '操作系统', 'Windows / Linux', '', '', 3),
+(1, 'COMPATIBILITY', '数据安全', '等保三级认证', '', '', 4),
+(1, 'COMPATIBILITY', '最小数据量', '≥ 6 个月历史数据', '', '', 5),
+(1, 'COMPATIBILITY', '上线周期', '2-4 周', '', '', 6);

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.market.mapper.BizSiteContentMapper">
+
+    <resultMap id="BizSiteContentResult" type="BizSiteContent">
+        <id property="contentId" column="content_id" />
+        <result property="contentKey" column="content_key" />
+        <result property="contentName" column="content_name" />
+        <result property="title" column="title" />
+        <result property="subtitle" column="subtitle" />
+        <result property="content" column="content" />
+        <result property="contentFormat" column="content_format" />
+        <result property="publishStatus" column="publish_status" />
+        <result property="sortNo" column="sort_no" />
+        <result property="extJson" column="ext_json" />
+        <result property="delFlag" column="del_flag" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+    </resultMap>
+
+    <sql id="selectSiteContentVo">
+        select content_id, content_key, content_name, title, subtitle, content, content_format,
+               publish_status, sort_no, ext_json, del_flag, create_by, create_time,
+               update_by, update_time, remark
+        from biz_site_content
+    </sql>
+
+    <select id="selectSiteContentById" parameterType="Long" resultMap="BizSiteContentResult">
+        <include refid="selectSiteContentVo" />
+        where content_id = #{contentId} and del_flag = '0'
+    </select>
+
+    <select id="selectPublishedSiteContentByKey" resultMap="BizSiteContentResult">
+        <include refid="selectSiteContentVo" />
+        where content_key = #{contentKey} and publish_status = '1' and del_flag = '0'
+        limit 1
+    </select>
+
+    <select id="selectSiteContentList" parameterType="BizSiteContent" resultMap="BizSiteContentResult">
+        <include refid="selectSiteContentVo" />
+        <where>
+            del_flag = '0'
+            <if test="contentKey != null and contentKey != ''">and content_key like concat('%', #{contentKey}, '%')</if>
+            <if test="contentName != null and contentName != ''">and content_name like concat('%', #{contentName}, '%')</if>
+            <if test="publishStatus != null and publishStatus != ''">and publish_status = #{publishStatus}</if>
+        </where>
+        order by sort_no, content_id
+    </select>
+
+    <insert id="insertSiteContent" parameterType="BizSiteContent" useGeneratedKeys="true" keyProperty="contentId">
+        insert into biz_site_content
+        (content_key, content_name, title, subtitle, content, content_format, publish_status,
+         sort_no, ext_json, create_by, create_time, remark)
+        values
+        (#{contentKey}, #{contentName}, #{title}, #{subtitle}, #{content}, #{contentFormat}, #{publishStatus},
+         #{sortNo}, #{extJson}, #{createBy}, sysdate(), #{remark})
+    </insert>
+
+    <update id="updateSiteContent" parameterType="BizSiteContent">
+        update biz_site_content
+        <set>
+            content_key = #{contentKey}, content_name = #{contentName}, title = #{title},
+            subtitle = #{subtitle}, content = #{content}, content_format = #{contentFormat},
+            publish_status = #{publishStatus}, sort_no = #{sortNo}, ext_json = #{extJson},
+            update_by = #{updateBy}, update_time = sysdate(), remark = #{remark}
+        </set>
+        where content_id = #{contentId} and del_flag = '0'
+    </update>
+
+    <update id="softDeleteSiteContentByIds" parameterType="Long">
+        update biz_site_content set del_flag = '2' where content_id in
+        <foreach item="contentId" collection="array" open="(" separator="," close=")">#{contentId}</foreach>
+    </update>
+</mapper>

@@ -96,7 +96,23 @@
           <el-col :span="8"><el-form-item label="交付周期"><el-input v-model="form.deliveryCycle" /></el-form-item></el-col>
           <el-col :span="12"><el-form-item label="服务方式"><el-input v-model="form.serviceMode" /></el-form-item></el-col>
           <el-col :span="24"><el-form-item label="卡片摘要" prop="summary"><el-input v-model="form.summary" type="textarea" :rows="3" maxlength="500" show-word-limit /></el-form-item></el-col>
-          <el-col :span="24"><el-form-item label="详细说明"><el-input v-model="form.description" type="textarea" :rows="4" /></el-form-item></el-col>
+          <el-col :span="24">
+            <el-form-item label="详细说明" class="description-editor-item">
+              <div class="editor-mode-bar">
+                <el-radio-group v-model="descriptionMode" size="small">
+                  <el-radio-button value="rich">富文本</el-radio-button>
+                  <el-radio-button value="markdown">Markdown</el-radio-button>
+                </el-radio-group>
+                <span>{{ descriptionMode === 'markdown' ? '左侧编辑 Markdown，右侧实时预览' : '使用工具栏编辑排版内容' }}</span>
+              </div>
+              <Editor v-if="descriptionMode === 'rich'" v-model="form.description" :min-height="220" />
+              <div v-else class="markdown-workbench">
+                <el-input v-model="form.description" type="textarea" :rows="16" resize="vertical" placeholder="# 标题\n\n使用 **加粗**、列表、引用、代码块和表格编写详情。" />
+                <div class="markdown-preview rich-preview" v-html="markdownPreview"></div>
+              </div>
+              <span class="field-tip">两种模式共用详情字段，切换模式不会自动转换已有内容；Markdown 中的原始 HTML 不会执行。</span>
+            </el-form-item>
+          </el-col>
         </el-row>
 
         <el-divider content-position="left">详情页结构项</el-divider>
@@ -124,6 +140,7 @@
 
 <script setup name="MarketAgent">
 import { listAgent, getAgent, addAgent, updateAgent, delAgent } from '@/api/market/agent'
+import { isHtmlContent, renderMarkdown } from '@/utils/markdown'
 
 const { proxy } = getCurrentInstance()
 const { market_agent_category, market_cert_level, market_publish_status, market_detail_item_type } = useDict(
@@ -139,6 +156,7 @@ const single = ref(true)
 const multiple = ref(true)
 const total = ref(0)
 const title = ref('')
+const descriptionMode = ref('rich')
 
 const emptyForm = () => ({
   agentId: undefined, agentCode: '', agentName: '', categoryCode: 'production', iconCode: 'robot',
@@ -157,12 +175,13 @@ const data = reactive({
   }
 })
 const { form, queryParams, rules } = toRefs(data)
+const markdownPreview = computed(() => renderMarkdown(form.value.description))
 
 function getList() {
   loading.value = true
   listAgent(queryParams.value).then(res => { agentList.value = res.rows; total.value = res.total }).finally(() => { loading.value = false })
 }
-function reset() { form.value = emptyForm(); proxy.resetForm('agentRef') }
+function reset() { form.value = emptyForm(); descriptionMode.value = 'rich'; proxy.resetForm('agentRef') }
 function handleQuery() { queryParams.value.pageNum = 1; getList() }
 function resetQuery() { proxy.resetForm('queryRef'); handleQuery() }
 function handleSelectionChange(selection) { ids.value = selection.map(item => item.agentId); single.value = selection.length !== 1; multiple.value = !selection.length }
@@ -170,7 +189,12 @@ function handleAdd() { reset(); title.value = '新增智能体'; open.value = tr
 function handleUpdate(row) {
   reset()
   const id = row.agentId || ids.value[0]
-  getAgent(id).then(res => { form.value = { ...emptyForm(), ...res.data, detailItems: res.data.detailItems || [] }; title.value = '编辑智能体'; open.value = true })
+  getAgent(id).then(res => {
+    form.value = { ...emptyForm(), ...res.data, detailItems: res.data.detailItems || [] }
+    descriptionMode.value = form.value.description && !isHtmlContent(form.value.description) ? 'markdown' : 'rich'
+    title.value = '编辑智能体'
+    open.value = true
+  })
 }
 function addDetailItem() { form.value.detailItems.push({ itemType: 'FEATURE', title: '', valueText: '', content: '', sortNo: form.value.detailItems.length, status: '0' }) }
 function removeDetailItem(index) { form.value.detailItems.splice(index, 1) }
@@ -202,4 +226,21 @@ getList()
 .agent-cell small { display:block; margin-top:3px; color:#8ca0b8; font-size:11px; }
 .agent-mark { display:grid; place-items:center; width:38px; height:38px; border-radius:11px; color:#1266e3; font-size:12px; font-weight:900; background:#e8f2ff; border:1px solid #d4e7ff; }
 .detail-toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; color:#657991; font-size:13px; }
+.description-editor-item :deep(.el-form-item__content) { display:block; }
+.description-editor-item :deep(.editor) { width:100%; }
+.editor-mode-bar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px; }
+.editor-mode-bar>span { color:#71849a; font-size:12px; }
+.markdown-workbench { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%; }
+.markdown-workbench :deep(.el-textarea__inner) { min-height:338px!important; font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace; font-size:13px; line-height:1.65; }
+.markdown-preview { min-height:338px; max-height:520px; overflow:auto; padding:18px 20px; border:1px solid #d8e5f3; border-radius:8px; color:#30465f; background:#f8fbff; line-height:1.7; }
+.rich-preview :deep(> *:first-child) { margin-top:0; }
+.rich-preview :deep(h1),.rich-preview :deep(h2),.rich-preview :deep(h3) { color:#173d68; line-height:1.35; }
+.rich-preview :deep(blockquote) { margin:12px 0; padding:8px 14px; border-left:3px solid #3187dc; background:#eaf4ff; }
+.rich-preview :deep(pre) { overflow:auto; padding:12px; border-radius:7px; color:#dcecff; background:#102c4d; }
+.rich-preview :deep(code) { font-family:"SFMono-Regular",Consolas,monospace; }
+.rich-preview :deep(table) { width:100%; border-collapse:collapse; }
+.rich-preview :deep(th),.rich-preview :deep(td) { padding:8px 10px; border:1px solid #d7e4f2; text-align:left; }
+.rich-preview :deep(th) { background:#e9f3fe; }
+.field-tip { display:block; margin-top:8px; color:#8a9bb0; font-size:12px; line-height:1.5; }
+@media (max-width:900px) { .markdown-workbench { grid-template-columns:1fr; } }
 </style>

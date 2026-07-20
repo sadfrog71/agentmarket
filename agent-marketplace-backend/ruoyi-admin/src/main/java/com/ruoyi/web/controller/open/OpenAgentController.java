@@ -1,6 +1,8 @@
 package com.ruoyi.web.controller.open;
 
 import java.util.List;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import com.ruoyi.market.domain.BizAgent;
 import com.ruoyi.market.service.IBizAgentService;
 
 @Anonymous
+@Tag(name = "前台公开接口-智能体")
 @RestController
 @RequestMapping("/open/agents")
 public class OpenAgentController extends BaseController
@@ -21,6 +24,7 @@ public class OpenAgentController extends BaseController
     @Autowired
     private IBizAgentService agentService;
 
+    @Operation(summary = "查询已发布智能体列表")
     @GetMapping
     public TableDataInfo list(BizAgent agent)
     {
@@ -29,6 +33,7 @@ public class OpenAgentController extends BaseController
         return getDataTable(list);
     }
 
+    @Operation(summary = "查询已发布智能体详情")
     @GetMapping("/{agentId}")
     public AjaxResult detail(@PathVariable Long agentId)
     {

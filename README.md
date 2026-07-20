@@ -4,8 +4,8 @@
 
 ## 一期功能
 
-- 前台：智能体首页、智能体广场、详情页、多智能体场景、FDE 服务、算力中心空数据页。
-- 后台：智能体内容管理、详情结构块管理、发布状态管理、商务登记与跟进。
+- 前台：智能体首页、智能体广场、详情页、多智能体场景、FDE 服务、算力中心和联系我们。
+- 后台：智能体内容管理、富文本与 Markdown 编辑、结构块管理、页面内容管理、发布状态管理、商务登记与跟进。
 - 商务登记：支持客户咨询、智能体上架、实施服务三类记录，以及待处理、跟进中、已确认、已关闭四种状态。
 - 数据：MySQL 保存业务数据，Redis 保存登录与缓存数据，上传目录使用独立 Docker 数据卷。
 
@@ -37,12 +37,15 @@ docker compose up -d --build
 
 RuoYi 初始管理员账号为 `admin`，初始密码为 `admin123`。正式上线前必须修改默认密码。新数据库首次启动时会自动导入系统表、智能体业务表、菜单、字典和示例智能体。
 
+完整的服务器部署、升级、备份和故障排查说明见 [`DEPLOYMENT.md`](DEPLOYMENT.md)。
+
 ## 数据库脚本
 
 - `agent-marketplace-backend/sql/ry_20260417.sql`：RuoYi 基础表与初始数据。
 - `agent-marketplace-backend/sql/marketplace.sql`：智能体市场业务表、菜单、字典与示例数据。
 - `agent-marketplace-backend/sql/marketplace-upgrade-001-business.sql`：已有环境增加商务登记菜单与字典。
 - `agent-marketplace-backend/sql/marketplace-upgrade-002-charset.sql`：修复早期初始化产生的系统中文乱码。
+- `agent-marketplace-backend/sql/marketplace-upgrade-003-site-content.sql`：增加算力中心、联系我们等页面内容管理。
 
 升级脚本按编号顺序执行。全新环境只需使用 Docker Compose 自动初始化，无需重复执行升级脚本。
 
@@ -61,6 +64,11 @@ RuoYi 初始管理员账号为 `admin`，初始密码为 `admin123`。正式上�
 - 前台与后台生产构建通过。
 - Docker 容器可正常启动，前台、后台、后端、MySQL 和 Redis 可互通。
 - 智能体公开列表与详情接口通过。
+- DMA 漏损分析智能体已按原型补齐 22 条详情数据；富文本保存、后台回显、发布状态和数据库落库通过。
+- Swagger 已扫描全部控制器，智能体、商务登记和页面内容接口均可查看。
+- 后台重新登录后，智能体管理与商务登记菜单打开及数据加载通过。
+- 后台页面内容管理、Markdown 实时预览和前台安全渲染通过。
+- 登录状态过期后刷新页面，可自动返回登录页并保留原访问地址。
 - 商务登记新增、修改、查询通过。
 - 后台真实登录、菜单加载和列表显示通过。
 - 多智能体场景、FDE 服务和后台页面已完成桌面端视觉检查。

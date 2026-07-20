@@ -62,7 +62,7 @@
 
       <section v-else-if="page === 'detail' && selectedAgent" class="section-wrap page-section">
         <button class="back-link" @click="go('agents')">← 返回智能体广场</button>
-        <div class="detail-hero"><div class="detail-symbol">AI</div><div><span>{{ categoryName(selectedAgent.categoryCode) }}</span><h1>{{ selectedAgent.agentName }}</h1><p>{{ selectedAgent.description || selectedAgent.summary || '暂无智能体简介' }}</p><div class="detail-badges"><b>{{ selectedAgent.certLevel }} 认证级</b><span>{{ selectedAgent.providerName }}</span><span>评分 {{ selectedAgent.rating || '-' }}</span></div></div><aside><small>实施参考</small><strong>{{ selectedAgent.priceText || '面议' }}</strong><span>{{ [selectedAgent.deliveryCycle, selectedAgent.serviceMode].filter(Boolean).join(' · ') || '实施信息待确认' }}</span><button @click="contactOpen = true">联系实施评估</button></aside></div>
+        <div class="detail-hero"><div class="detail-symbol">AI</div><div><span>{{ categoryName(selectedAgent.categoryCode) }}</span><h1>{{ selectedAgent.agentName }}</h1><div class="rich-description" v-html="safeDescription"></div><div class="detail-badges"><b>{{ selectedAgent.certLevel }} 认证级</b><span>{{ selectedAgent.providerName }}</span><span>评分 {{ selectedAgent.rating || '-' }}</span></div></div><aside><small>实施参考</small><strong>{{ selectedAgent.priceText || '面议' }}</strong><span>{{ [selectedAgent.deliveryCycle, selectedAgent.serviceMode].filter(Boolean).join(' · ') || '实施信息待确认' }}</span><button @click="contactOpen = true">联系实施评估</button></aside></div>
         <div class="detail-layout"><div><template v-if="selectedAgent.detailItems?.length"><DetailGroup title="核心功能" type="FEATURE" :items="selectedAgent.detailItems" /><DetailGroup title="实测效果" type="METRIC" :items="selectedAgent.detailItems" cards /><DetailGroup title="部署案例" type="CASE" :items="selectedAgent.detailItems" /></template><div v-else class="empty-state detail-empty"><strong>暂无详情数据</strong><span>管理员补充核心功能、效果指标和部署案例后将在这里展示。</span></div></div><aside class="compat-panel"><h3>兼容性信息</h3><template v-if="itemsOf('COMPATIBILITY').length"><div v-for="item in itemsOf('COMPATIBILITY')" :key="item.title"><span>{{ item.title }}</span><strong>{{ item.valueText }}</strong></div></template><p v-else class="aside-empty">暂无兼容性数据</p><h3>实施服务</h3><template v-if="itemsOf('PRICE_FEATURE').length"><p v-for="item in itemsOf('PRICE_FEATURE')" :key="item.title"><b>✓</b> {{ item.title }}：{{ item.content }}</p></template><p v-else class="aside-empty">暂无实施服务数据</p></aside></div>
       </section>
 
@@ -144,8 +144,9 @@
       </section>
 
       <section v-else-if="page === 'compute'" class="section-wrap page-section compute-page">
-        <div class="page-header"><span>COMPUTING CENTER</span><h1>算力中心</h1><p>用于展示模型资源、算力池、调用消耗和智能体资源占用。</p></div>
-        <div class="compute-empty">
+        <div class="page-header"><span>COMPUTING CENTER</span><h1>{{ computeContent?.title || '算力中心' }}</h1><p>{{ computeContent?.subtitle || '用于展示模型资源、算力池、调用消耗和智能体资源占用。' }}</p></div>
+        <div v-if="computeContentHtml" class="managed-content rich-description" v-html="computeContentHtml"></div>
+        <div v-else class="compute-empty">
           <div class="compute-empty-symbol" aria-hidden="true"><span></span><span></span><span></span></div>
           <strong>暂无算力数据</strong>
           <p>当前尚未接入模型资源、算力池和调用消耗数据。后台完成数据配置并发布后，本页将展示资源状态与使用情况。</p>
@@ -160,13 +161,15 @@
 
     <footer><img src="/assets/huayan-logo.png" alt="" /><span>华衍水务环境智能体市场</span><small>展示内容以实施范围和线下确认结果为准。</small></footer>
 
-    <div v-if="contactOpen" class="modal-mask" @click.self="contactOpen = false"><div class="contact-modal"><button class="close" @click="contactOpen = false">×</button><span>OFFLINE SERVICE</span><h2>联系实施与上架</h2><p>一期采用线下沟通方式。确认需求、材料和实施范围后，由平台管理员完成登记与内容发布。</p><div><strong>业务咨询</strong><span>联系方式将在部署前配置</span></div><button @click="contactOpen = false">知道了</button></div></div>
+    <div v-if="contactOpen" class="modal-mask" @click.self="contactOpen = false"><div class="contact-modal"><button class="close" @click="contactOpen = false">×</button><span>OFFLINE SERVICE</span><h2>{{ contactContent?.title || '联系实施与上架' }}</h2><p>{{ contactContent?.subtitle || '一期采用线下沟通方式。确认需求、材料和实施范围后，由平台管理员完成登记与内容发布。' }}</p><div v-if="contactContentHtml" class="contact-managed rich-description" v-html="contactContentHtml"></div><div v-else><strong>业务咨询</strong><span>联系方式将在部署前配置</span></div><button @click="contactOpen = false">知道了</button></div></div>
   </div>
 </template>
 
 <script setup>
 import { computed, defineComponent, h, onBeforeUnmount, onMounted, ref } from 'vue'
 import { fetchAgentDetail, fetchAgents } from './api/agents'
+import { fetchSiteContent } from './api/content'
+import { isHtmlContent, renderMarkdown } from './utils/markdown'
 
 const navItems = [
   { key: 'home', label: '首页' }, { key: 'agents', label: '智能体广场' },
@@ -269,6 +272,8 @@ const keyword = ref('')
 const category = ref('')
 const loading = ref(false)
 const contactOpen = ref(false)
+const computeContent = ref(null)
+const contactContent = ref(null)
 const menuOpen = ref(false)
 const activeScenario = ref(0)
 
@@ -280,6 +285,70 @@ const filteredAgents = computed(() => agents.value.filter(item => {
   const text = `${item.agentName}${item.summary || ''}`
   return matchCategory && (!keyword.value || text.toLowerCase().includes(keyword.value.toLowerCase()))
 }))
+const safeDescription = computed(() => {
+  const source = selectedAgent.value?.description || selectedAgent.value?.summary || '暂无智能体简介'
+  return renderManagedContent(source)
+})
+const computeContentHtml = computed(() => renderManagedContent(computeContent.value?.content))
+const contactContentHtml = computed(() => renderManagedContent(contactContent.value?.content))
+
+function renderManagedContent(source) {
+  if (!source) return ''
+  return sanitizeRichText(isHtmlContent(source) ? source : renderMarkdown(source))
+}
+
+function sanitizeRichText(html) {
+  const blockedTags = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'INPUT', 'BUTTON', 'META', 'LINK'])
+  const allowedTags = new Set(['P', 'BR', 'STRONG', 'B', 'EM', 'I', 'U', 'S', 'BLOCKQUOTE', 'PRE', 'CODE', 'OL', 'UL', 'LI', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'A', 'SPAN', 'IMG', 'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD', 'HR'])
+  const parser = new DOMParser()
+  const documentNode = parser.parseFromString(String(html || ''), 'text/html')
+
+  Array.from(documentNode.body.querySelectorAll('*')).forEach(node => {
+    if (blockedTags.has(node.tagName)) {
+      node.remove()
+      return
+    }
+    if (!allowedTags.has(node.tagName)) {
+      node.replaceWith(...node.childNodes)
+      return
+    }
+
+    Array.from(node.attributes).forEach(attribute => {
+      const name = attribute.name.toLowerCase()
+      const value = attribute.value.trim()
+      const isClass = name === 'class' && /^ql-[a-z0-9-]+(?:\s+ql-[a-z0-9-]+)*$/i.test(value)
+      const isStyle = name === 'style' && sanitizeInlineStyle(value)
+      const isLink = node.tagName === 'A' && name === 'href' && isSafeUrl(value)
+      const isImage = node.tagName === 'IMG' && name === 'src' && isSafeImageUrl(value)
+      const isTextAttribute = (node.tagName === 'A' && ['title', 'target'].includes(name)) || (node.tagName === 'IMG' && ['alt', 'title', 'width', 'height'].includes(name))
+      if (!isClass && !isStyle && !isLink && !isImage && !isTextAttribute) node.removeAttribute(attribute.name)
+      if (name === 'style' && isStyle) node.setAttribute('style', sanitizeInlineStyle(value))
+    })
+    if (node.tagName === 'A') node.setAttribute('rel', 'noopener noreferrer')
+  })
+
+  return documentNode.body.innerHTML
+}
+
+function sanitizeInlineStyle(styleText) {
+  const allowed = new Set(['color', 'background-color', 'text-align', 'font-size'])
+  return styleText.split(';').map(item => item.trim()).filter(Boolean).map(item => {
+    const splitAt = item.indexOf(':')
+    if (splitAt < 1) return ''
+    const property = item.slice(0, splitAt).trim().toLowerCase()
+    const value = item.slice(splitAt + 1).trim()
+    if (!allowed.has(property) || /url\s*\(|expression\s*\(|javascript:/i.test(value)) return ''
+    return `${property}: ${value}`
+  }).filter(Boolean).join('; ')
+}
+
+function isSafeUrl(value) {
+  return /^(https?:|mailto:|tel:|#|\/)/i.test(value)
+}
+
+function isSafeImageUrl(value) {
+  return /^(https?:|\/|data:image\/(png|jpe?g|gif|webp);base64,)/i.test(value)
+}
 
 function categoryName(code) { return categories.find(item => item.code === code)?.name || '水务智能体' }
 function go(target) { page.value = target; menuOpen.value = false; if (target !== 'detail') window.location.hash = target; window.scrollTo({ top: 0, behavior: 'smooth' }) }
@@ -287,6 +356,11 @@ function syncHash() { const target = window.location.hash.slice(1); if (navItems
 function searchAgents() { category.value = ''; go('agents') }
 function openCategory(code) { category.value = code; go('agents') }
 async function loadAgents() { loading.value = true; try { agents.value = await fetchAgents() } catch { agents.value = [] } finally { loading.value = false } }
+async function loadSiteContent() {
+  const [compute, contact] = await Promise.all([fetchSiteContent('COMPUTE'), fetchSiteContent('CONTACT')])
+  computeContent.value = compute
+  contactContent.value = contact
+}
 async function openAgent(agent) { selectedAgent.value = await fetchAgentDetail(agent.agentId); go('detail') }
 function itemsOf(type) { return selectedAgent.value?.detailItems?.filter(item => item.itemType === type) || [] }
 
@@ -308,6 +382,6 @@ const DetailGroup = defineComponent({
   }}
 })
 
-onMounted(() => { syncHash(); window.addEventListener('hashchange', syncHash); loadAgents() })
+onMounted(() => { syncHash(); window.addEventListener('hashchange', syncHash); loadAgents(); loadSiteContent() })
 onBeforeUnmount(() => window.removeEventListener('hashchange', syncHash))
 </script>

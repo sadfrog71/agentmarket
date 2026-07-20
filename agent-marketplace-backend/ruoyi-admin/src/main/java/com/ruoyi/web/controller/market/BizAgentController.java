@@ -2,6 +2,8 @@ package com.ruoyi.web.controller.market;
 
 import java.util.List;
 import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +22,7 @@ import com.ruoyi.common.enums.BusinessType;
 import com.ruoyi.market.domain.BizAgent;
 import com.ruoyi.market.service.IBizAgentService;
 
+@Tag(name = "后台管理-智能体")
 @RestController
 @RequestMapping("/market/agent")
 public class BizAgentController extends BaseController
@@ -27,6 +30,7 @@ public class BizAgentController extends BaseController
     @Autowired
     private IBizAgentService agentService;
 
+    @Operation(summary = "查询智能体管理列表")
     @PreAuthorize("@ss.hasPermi('market:agent:list')")
     @GetMapping("/list")
     public TableDataInfo list(BizAgent agent)
@@ -36,6 +40,7 @@ public class BizAgentController extends BaseController
         return getDataTable(list);
     }
 
+    @Operation(summary = "查询智能体完整详情")
     @PreAuthorize("@ss.hasPermi('market:agent:query')")
     @GetMapping("/{agentId}")
     public AjaxResult getInfo(@PathVariable Long agentId)
@@ -43,6 +48,7 @@ public class BizAgentController extends BaseController
         return success(agentService.selectAgentById(agentId));
     }
 
+    @Operation(summary = "新增智能体")
     @PreAuthorize("@ss.hasPermi('market:agent:add')")
     @Log(title = "智能体管理", businessType = BusinessType.INSERT)
     @PostMapping
@@ -52,6 +58,7 @@ public class BizAgentController extends BaseController
         return toAjax(agentService.insertAgent(agent));
     }
 
+    @Operation(summary = "更新并发布智能体")
     @PreAuthorize("@ss.hasPermi('market:agent:edit')")
     @Log(title = "智能体管理", businessType = BusinessType.UPDATE)
     @PutMapping
@@ -61,6 +68,7 @@ public class BizAgentController extends BaseController
         return toAjax(agentService.updateAgent(agent));
     }
 
+    @Operation(summary = "删除智能体")
     @PreAuthorize("@ss.hasPermi('market:agent:remove')")
     @Log(title = "智能体管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{agentIds}")

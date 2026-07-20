@@ -54,9 +54,10 @@ router.beforeEach(async (to, from) => {
         // 重新导航到目标路由，确保动态路由已注册
         return { ...to, replace: true }
       } catch (err) {
-        await useUserStore().logOut()
-        ElMessage.error(err)
-        return { path: '/' }
+        await useUserStore().resetToken()
+        isRelogin.show = false
+        ElMessage.error('登录状态已过期，请重新登录')
+        return { path: '/login', query: { redirect: to.fullPath }, replace: true }
       }
     }
     return true

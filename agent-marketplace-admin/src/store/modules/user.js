@@ -88,6 +88,14 @@ const useUserStore = defineStore(
             reject(error)
           })
         })
+      },
+      // 清理本地登录状态，不再调用可能已经失效的退出接口
+      resetToken() {
+        this.token = ''
+        this.roles = []
+        this.permissions = []
+        removeToken()
+        return Promise.resolve()
       }
     }
   })
