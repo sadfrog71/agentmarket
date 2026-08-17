@@ -1,13 +1,13 @@
 <template>
   <div class="login">
-    <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
+    <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="off">
       <div class="login-brand"><span>HUAYAN WATER · AI AGENT MARKET</span><h3 class="title">{{ title }}</h3><p>内容发布 · 商务登记 · 运营维护</p></div>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
           type="text"
           size="large"
-          auto-complete="off"
+          autocomplete="off"
           placeholder="账号"
         >
           <template #prefix><svg-icon icon-class="user" class="el-input__icon input-icon" /></template>
@@ -18,7 +18,7 @@
           v-model="loginForm.password"
           type="password"
           size="large"
-          auto-complete="off"
+          autocomplete="off"
           placeholder="密码"
           @keyup.enter="handleLogin"
         >
@@ -29,7 +29,7 @@
         <el-input
           v-model="loginForm.code"
           size="large"
-          auto-complete="off"
+          autocomplete="off"
           placeholder="验证码"
           style="width: 63%"
           @keyup.enter="handleLogin"
@@ -40,7 +40,7 @@
           <img :src="codeUrl" @click="getCode" class="login-code-img"/>
         </div>
       </el-form-item>
-      <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
+      <el-checkbox v-model="loginForm.rememberMe" style="margin:0 0 25px;">记住密码</el-checkbox>
       <el-form-item style="width:100%;">
         <el-button
           :loading="loading"
@@ -79,8 +79,8 @@ const router = useRouter()
 const { proxy } = getCurrentInstance()
 
 const loginForm = ref({
-  username: "admin",
-  password: "admin123",
+  username: "",
+  password: "",
   rememberMe: false,
   code: "",
   uuid: ""
@@ -108,16 +108,12 @@ function handleLogin() {
   proxy.$refs.loginRef.validate(valid => {
     if (valid) {
       loading.value = true
-      // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
       if (loginForm.value.rememberMe) {
         Cookies.set("username", loginForm.value.username, { expires: 30 })
         Cookies.set("password", encrypt(loginForm.value.password), { expires: 30 })
-        Cookies.set("rememberMe", loginForm.value.rememberMe, { expires: 30 })
+        Cookies.set("rememberMe", "true", { expires: 30 })
       } else {
-        // 否则移除
-        Cookies.remove("username")
-        Cookies.remove("password")
-        Cookies.remove("rememberMe")
+        clearRememberedLogin()
       }
       // 调用action的登录方法
       userStore.login(loginForm.value).then(() => {
@@ -150,19 +146,30 @@ function getCode() {
   })
 }
 
-function getCookie() {
+function clearRememberedLogin() {
+  Cookies.remove("username")
+  Cookies.remove("password")
+  Cookies.remove("rememberMe")
+}
+
+function getRememberedLogin() {
+  if (Cookies.get("rememberMe") !== "true") {
+    clearRememberedLogin()
+    return
+  }
   const username = Cookies.get("username")
   const password = Cookies.get("password")
-  const rememberMe = Cookies.get("rememberMe")
-  loginForm.value = {
-    username: username === undefined ? loginForm.value.username : username,
-    password: password === undefined ? loginForm.value.password : decrypt(password),
-    rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
+  if (!username || !password) {
+    clearRememberedLogin()
+    return
   }
+  loginForm.value.username = username
+  loginForm.value.password = decrypt(password)
+  loginForm.value.rememberMe = true
 }
 
 getCode()
-getCookie()
+getRememberedLogin()
 </script>
 
 <style lang='scss' scoped>
@@ -250,6 +257,10 @@ getCookie()
     vertical-align: middle;
   }
 }
+.login-code-img {
+  height: 40px;
+  padding-left: 12px;
+}
 .el-login-footer {
   height: 40px;
   line-height: 40px;
@@ -261,10 +272,6 @@ getCookie()
   font-family: Arial;
   font-size: 12px;
   letter-spacing: 1px;
-}
-.login-code-img {
-  height: 40px;
-  padding-left: 12px;
 }
 
 html.dark .login {

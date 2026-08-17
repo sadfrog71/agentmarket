@@ -14,13 +14,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import jakarta.servlet.http.HttpServletResponse;
 import com.ruoyi.common.annotation.Log;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.core.page.TableDataInfo;
 import com.ruoyi.common.enums.BusinessType;
 import com.ruoyi.market.domain.BizAgent;
+import com.ruoyi.market.domain.BizAgentCaseImportRow;
 import com.ruoyi.market.service.IBizAgentService;
+import com.ruoyi.common.utils.poi.ExcelUtil;
 
 @Tag(name = "后台管理-智能体")
 @RestController
@@ -66,6 +70,26 @@ public class BizAgentController extends BaseController
     {
         agent.setUpdateBy(getUsername());
         return toAjax(agentService.updateAgent(agent));
+    }
+
+    @Operation(summary = "导入智能体部署案例")
+    @PreAuthorize("@ss.hasPermi('market:agent:edit')")
+    @Log(title = "智能体案例", businessType = BusinessType.IMPORT)
+    @PostMapping("/{agentId}/case-import")
+    public AjaxResult importCases(@PathVariable Long agentId, MultipartFile file, boolean updateSupport) throws Exception
+    {
+        ExcelUtil<BizAgentCaseImportRow> util = new ExcelUtil<>(BizAgentCaseImportRow.class);
+        List<BizAgentCaseImportRow> rows = util.importExcel(file.getInputStream());
+        return success(agentService.importCases(agentId, rows, updateSupport));
+    }
+
+    @Operation(summary = "下载智能体案例导入模板")
+    @PreAuthorize("@ss.hasPermi('market:agent:edit')")
+    @PostMapping("/case-import-template")
+    public void importCaseTemplate(HttpServletResponse response)
+    {
+        ExcelUtil<BizAgentCaseImportRow> util = new ExcelUtil<>(BizAgentCaseImportRow.class);
+        util.importTemplateExcel(response, "智能体部署案例");
     }
 
     @Operation(summary = "删除智能体")

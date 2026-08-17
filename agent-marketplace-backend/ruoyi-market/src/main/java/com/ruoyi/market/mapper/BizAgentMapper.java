@@ -26,4 +26,6 @@ public interface BizAgentMapper
     int deleteDetailItemsByAgentId(Long agentId);
 
     int batchInsertDetailItems(@Param("items") List<BizAgentDetailItem> items);
+
+    int updateDetailItem(BizAgentDetailItem item);
 }

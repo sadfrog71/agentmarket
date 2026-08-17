@@ -174,4 +174,11 @@
              #{item.extJson}, sysdate())
         </foreach>
     </insert>
+
+    <update id="updateDetailItem" parameterType="com.ruoyi.market.domain.BizAgentDetailItem">
+        update biz_agent_detail_item
+        set title = #{title}, value_text = #{valueText}, content = #{content},
+            sort_no = #{sortNo}, status = #{status}, update_time = sysdate()
+        where item_id = #{itemId} and agent_id = #{agentId} and item_type = 'CASE'
+    </update>
 </mapper>

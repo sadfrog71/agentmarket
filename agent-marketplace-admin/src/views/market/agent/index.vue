@@ -80,12 +80,12 @@
       <el-form ref="agentRef" :model="form" :rules="rules" label-width="100px">
         <el-divider content-position="left">卡片与发布信息</el-divider>
         <el-row :gutter="18">
-          <el-col :span="12"><el-form-item label="智能体名称" prop="agentName"><el-input v-model="form.agentName" /></el-form-item></el-col>
-          <el-col :span="12"><el-form-item label="业务编码" prop="agentCode"><el-input v-model="form.agentCode" placeholder="如 DMA_LEAKAGE" /></el-form-item></el-col>
-          <el-col :span="8"><el-form-item label="场景域" prop="categoryCode"><el-select v-model="form.categoryCode" style="width:100%"><el-option v-for="dict in market_agent_category" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
-          <el-col :span="8"><el-form-item label="认证等级"><el-select v-model="form.certLevel" style="width:100%"><el-option v-for="dict in market_cert_level" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
-          <el-col :span="8"><el-form-item label="发布状态"><el-select v-model="form.publishStatus" style="width:100%"><el-option v-for="dict in market_publish_status" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
-          <el-col :span="12"><el-form-item label="服务商"><el-input v-model="form.providerName" /></el-form-item></el-col>
+          <el-col :span="12"><el-form-item label="智能体名称" prop="agentName" required><el-input v-model="form.agentName" /></el-form-item></el-col>
+          <el-col :span="12"><el-form-item label="业务编码" prop="agentCode" required><el-input v-model="form.agentCode" placeholder="如 DMA_LEAKAGE" /></el-form-item></el-col>
+          <el-col :span="8"><el-form-item label="场景域" prop="categoryCode" required><el-select v-model="form.categoryCode" style="width:100%"><el-option v-for="dict in market_agent_category" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
+          <el-col :span="8"><el-form-item label="认证等级" prop="certLevel" required><el-select v-model="form.certLevel" style="width:100%"><el-option v-for="dict in market_cert_level" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
+          <el-col :span="8"><el-form-item label="发布状态" prop="publishStatus" required><el-select v-model="form.publishStatus" style="width:100%"><el-option v-for="dict in market_publish_status" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
+          <el-col :span="12"><el-form-item label="服务商" prop="providerName" required><el-input v-model="form.providerName" /></el-form-item></el-col>
           <el-col :span="6"><el-form-item label="参考价格"><el-input v-model="form.priceText" placeholder="面议" /></el-form-item></el-col>
           <el-col :span="6"><el-form-item label="详情标识"><el-input v-model="form.slug" placeholder="英文短名称" /></el-form-item></el-col>
           <el-col :span="8"><el-form-item label="评分"><el-input-number v-model="form.rating" :min="0" :max="5" :step="0.1" /></el-form-item></el-col>
@@ -95,9 +95,9 @@
           <el-col :span="8"><el-form-item label="显示顺序"><el-input-number v-model="form.sortNo" :min="0" /></el-form-item></el-col>
           <el-col :span="8"><el-form-item label="交付周期"><el-input v-model="form.deliveryCycle" /></el-form-item></el-col>
           <el-col :span="12"><el-form-item label="服务方式"><el-input v-model="form.serviceMode" /></el-form-item></el-col>
-          <el-col :span="24"><el-form-item label="卡片摘要" prop="summary"><el-input v-model="form.summary" type="textarea" :rows="3" maxlength="500" show-word-limit /></el-form-item></el-col>
+          <el-col :span="24"><el-form-item label="卡片摘要" prop="summary" required><el-input v-model="form.summary" type="textarea" :rows="3" maxlength="500" show-word-limit /></el-form-item></el-col>
           <el-col :span="24">
-            <el-form-item label="详细说明" class="description-editor-item">
+            <el-form-item label="详细说明" prop="description" required class="description-editor-item">
               <div class="editor-mode-bar">
                 <el-radio-group v-model="descriptionMode" size="small">
                   <el-radio-button value="rich">富文本</el-radio-button>
@@ -117,16 +117,20 @@
 
         <el-divider content-position="left">详情页结构项</el-divider>
         <div class="detail-toolbar">
-          <span>功能、指标、案例、实施服务和兼容性信息按行维护。</span>
-          <el-button type="primary" plain icon="Plus" @click="addDetailItem">新增一项</el-button>
+          <span>带 <b class="required-mark">*</b> 的字段必填；功能／案例／实施服务需填写内容，指标／兼容性需填写指标值。</span>
+          <div class="detail-actions">
+            <el-button type="success" plain icon="Upload" :disabled="!form.agentId" @click="handleCaseImport">导入案例</el-button>
+            <el-button type="primary" plain icon="Plus" @click="addDetailItem">新增一项</el-button>
+          </div>
         </div>
         <el-table :data="form.detailItems" border max-height="360">
           <el-table-column label="类型" width="150">
+            <template #header><span class="required-mark">* </span>类型</template>
             <template #default="scope"><el-select v-model="scope.row.itemType"><el-option v-for="dict in market_detail_item_type" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></template>
           </el-table-column>
-          <el-table-column label="标题" min-width="170"><template #default="scope"><el-input v-model="scope.row.title" /></template></el-table-column>
-          <el-table-column label="指标值／字段值" min-width="145"><template #default="scope"><el-input v-model="scope.row.valueText" /></template></el-table-column>
-          <el-table-column label="内容说明" min-width="260"><template #default="scope"><el-input v-model="scope.row.content" type="textarea" :rows="2" /></template></el-table-column>
+          <el-table-column label="标题" min-width="170"><template #header><span class="required-mark">* </span>标题</template><template #default="scope"><el-input v-model="scope.row.title" /></template></el-table-column>
+          <el-table-column label="指标值／字段值" min-width="145"><template #header>指标值／字段值</template><template #default="scope"><el-input v-model="scope.row.valueText" /></template></el-table-column>
+          <el-table-column label="内容说明" min-width="260"><template #header>内容说明</template><template #default="scope"><el-input v-model="scope.row.content" type="textarea" :rows="2" /></template></el-table-column>
           <el-table-column label="排序" width="90"><template #default="scope"><el-input-number v-model="scope.row.sortNo" :min="0" controls-position="right" style="width:70px" /></template></el-table-column>
           <el-table-column label="操作" width="70" align="center"><template #default="scope"><el-button link type="danger" icon="Delete" @click="removeDetailItem(scope.$index)" /></template></el-table-column>
         </el-table>
@@ -135,12 +139,24 @@
         <div class="dialog-footer"><el-button type="primary" @click="submitForm">保存内容</el-button><el-button @click="cancel">取消</el-button></div>
       </template>
     </el-dialog>
+
+    <excel-import-dialog
+      ref="caseImportRef"
+      title="导入部署案例"
+      width="560px"
+      :action="caseImportAction"
+      template-action="/market/agent/case-import-template"
+      template-file-name="agent_case_template"
+      update-support-label="标题相同的案例是否覆盖现有内容"
+      @success="handleCaseImportSuccess"
+    />
   </div>
 </template>
 
 <script setup name="MarketAgent">
 import { listAgent, getAgent, addAgent, updateAgent, delAgent } from '@/api/market/agent'
 import { isHtmlContent, renderMarkdown } from '@/utils/markdown'
+import ExcelImportDialog from '@/components/ExcelImportDialog'
 
 const { proxy } = getCurrentInstance()
 const { market_agent_category, market_cert_level, market_publish_status, market_detail_item_type } = useDict(
@@ -171,11 +187,18 @@ const data = reactive({
   rules: {
     agentName: [{ required: true, message: '智能体名称不能为空', trigger: 'blur' }],
     agentCode: [{ required: true, message: '业务编码不能为空', trigger: 'blur' }],
-    categoryCode: [{ required: true, message: '请选择场景域', trigger: 'change' }]
+    categoryCode: [{ required: true, message: '请选择场景域', trigger: 'change' }],
+    certLevel: [{ required: true, message: '请选择认证等级', trigger: 'change' }],
+    publishStatus: [{ required: true, message: '请选择发布状态', trigger: 'change' }],
+    providerName: [{ required: true, message: '服务商不能为空', trigger: 'blur' }],
+    summary: [{ required: true, message: '卡片摘要不能为空', trigger: 'blur' }],
+    description: [{ required: true, message: '详细说明不能为空', trigger: 'blur' }]
   }
 })
 const { form, queryParams, rules } = toRefs(data)
 const markdownPreview = computed(() => renderMarkdown(form.value.description))
+const caseImportRef = ref(null)
+const caseImportAction = computed(() => form.value.agentId ? `/market/agent/${form.value.agentId}/case-import` : '')
 
 function getList() {
   loading.value = true
@@ -199,7 +222,32 @@ function handleUpdate(row) {
 function addDetailItem() { form.value.detailItems.push({ itemType: 'FEATURE', title: '', valueText: '', content: '', sortNo: form.value.detailItems.length, status: '0' }) }
 function removeDetailItem(index) { form.value.detailItems.splice(index, 1) }
 function cancel() { open.value = false; reset() }
+function validateDetailItems() {
+  for (let index = 0; index < form.value.detailItems.length; index++) {
+    const item = form.value.detailItems[index]
+    const row = index + 1
+    if (!item.itemType) return proxy.$modal.msgError(`第${row}条详情项请选择类型`)
+    if (!item.title?.trim()) return proxy.$modal.msgError(`第${row}条详情项标题不能为空`)
+    if (['FEATURE', 'CASE', 'PRICE_FEATURE'].includes(item.itemType) && !item.content?.trim()) {
+      return proxy.$modal.msgError(`第${row}条详情项内容不能为空`)
+    }
+    if (['METRIC', 'COMPATIBILITY'].includes(item.itemType) && !item.valueText?.trim()) {
+      return proxy.$modal.msgError(`第${row}条详情项的指标值／字段值不能为空`)
+    }
+  }
+  return true
+}
+function handleCaseImport() {
+  if (!form.value.agentId) return proxy.$modal.msgWarning('请先保存智能体，再导入案例')
+  caseImportRef.value?.open()
+}
+function handleCaseImportSuccess() {
+  getAgent(form.value.agentId).then(res => {
+    form.value = { ...form.value, ...res.data, detailItems: res.data.detailItems || [] }
+  })
+}
 function submitForm() {
+  if (!validateDetailItems()) return
   proxy.$refs.agentRef.validate(valid => {
     if (!valid) return
     const request = form.value.agentId ? updateAgent(form.value) : addAgent(form.value)
@@ -225,7 +273,7 @@ getList()
 .agent-cell { display:flex; align-items:center; gap:11px; }
 .agent-cell small { display:block; margin-top:3px; color:#8ca0b8; font-size:11px; }
 .agent-mark { display:grid; place-items:center; width:38px; height:38px; border-radius:11px; color:#1266e3; font-size:12px; font-weight:900; background:#e8f2ff; border:1px solid #d4e7ff; }
-.detail-toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; color:#657991; font-size:13px; }
+.detail-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:12px; color:#657991; font-size:13px; }.detail-actions { display:flex; gap:8px; flex-shrink:0; }.required-mark { color:#f56c6c; font-weight:700; }
 .description-editor-item :deep(.el-form-item__content) { display:block; }
 .description-editor-item :deep(.editor) { width:100%; }
 .editor-mode-bar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px; }

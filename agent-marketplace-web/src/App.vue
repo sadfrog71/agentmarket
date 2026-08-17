@@ -33,6 +33,19 @@
           </div>
           <div class="network-visual" aria-label="水务智能体任务网络">
             <div class="network-grid"></div>
+            <svg class="network-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="network-flow-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#82cfff" />
+                  <stop offset="0.55" stop-color="#1688e7" />
+                  <stop offset="1" stop-color="#0754bd" />
+                </linearGradient>
+              </defs>
+              <g v-for="link in networkLinks" :key="link.path">
+                <path class="network-link-base" :d="link.path" />
+                <path class="network-link-flow" :d="link.path" />
+              </g>
+            </svg>
             <div class="network-core"><span>统一编排</span><strong>任务调度中枢</strong></div>
             <span v-for="node in networkNodes" :key="node.label" class="network-node" :style="node.style">{{ node.label }}</span>
           </div>
@@ -56,6 +69,7 @@
       <section v-else-if="page === 'agents'" class="section-wrap page-section">
         <div class="page-header"><span>AGENT DIRECTORY</span><h1>智能体广场</h1><p>按业务场景搜索和查看当前已发布的水务智能体。</p></div>
         <div class="filter-bar"><input v-model="keyword" placeholder="搜索智能体名称或能力" /><select v-model="category"><option value="">全部场景域</option><option v-for="item in categories" :key="item.code" :value="item.code">{{ item.name }}</option></select><button @click="loadAgents">筛选</button></div>
+        <div v-if="agentLoadError" class="empty-state error-state"><strong>智能体内容暂时不可用</strong><span>{{ agentLoadError }}</span></div>
         <div class="agent-grid"><AgentCard v-for="agent in filteredAgents" :key="agent.agentId" :agent="agent" @open="openAgent" /></div>
         <div v-if="!filteredAgents.length && !loading" class="empty-state"><strong>没有匹配的智能体</strong><span>调整关键词或场景域后重新筛选。</span></div>
       </section>
@@ -159,9 +173,7 @@
       </section>
     </main>
 
-    <footer><img src="/assets/huayan-logo.png" alt="" /><span>华衍水务环境智能体市场</span><small>展示内容以实施范围和线下确认结果为准。</small></footer>
-
-    <div v-if="contactOpen" class="modal-mask" @click.self="contactOpen = false"><div class="contact-modal"><button class="close" @click="contactOpen = false">×</button><span>OFFLINE SERVICE</span><h2>{{ contactContent?.title || '联系实施与上架' }}</h2><p>{{ contactContent?.subtitle || '一期采用线下沟通方式。确认需求、材料和实施范围后，由平台管理员完成登记与内容发布。' }}</p><div v-if="contactContentHtml" class="contact-managed rich-description" v-html="contactContentHtml"></div><div v-else><strong>业务咨询</strong><span>联系方式将在部署前配置</span></div><button @click="contactOpen = false">知道了</button></div></div>
+    <div v-if="contactOpen" class="modal-mask" @click.self="contactOpen = false"><div class="contact-modal"><button class="close" @click="contactOpen = false">×</button><span>OFFLINE SERVICE</span><h2>{{ contactContent?.title || '联系我们' }}</h2><p v-if="contactContent?.subtitle">{{ contactContent.subtitle }}</p><div v-if="contactContentHtml" class="contact-managed rich-description" v-html="contactContentHtml"></div><div v-else><strong>暂无联系信息</strong><span>管理员发布内容后将在此处展示。</span></div><button @click="contactOpen = false">知道了</button></div></div>
   </div>
 </template>
 
@@ -187,6 +199,13 @@ const networkNodes = [
   { label: '生产调度', style: 'left:8%;top:17%' }, { label: '水质安全', style: 'right:8%;top:18%' },
   { label: '管网运行', style: 'left:3%;bottom:22%' }, { label: '客户服务', style: 'right:4%;bottom:21%' },
   { label: '应急处置', style: 'left:38%;bottom:5%' }
+]
+const networkLinks = [
+  { path: 'M 40 35 C 35 31, 30 26, 24 23' },
+  { path: 'M 60 35 C 65 31, 70 27, 76 24' },
+  { path: 'M 38 53 C 32 58, 28 64, 23 70' },
+  { path: 'M 62 53 C 68 58, 72 64, 77 70' },
+  { path: 'M 50 62 C 50 68, 49 73, 49 80' }
 ]
 const scenarioCases = [
   {
@@ -271,6 +290,7 @@ const selectedAgent = ref(null)
 const keyword = ref('')
 const category = ref('')
 const loading = ref(false)
+const agentLoadError = ref('')
 const contactOpen = ref(false)
 const computeContent = ref(null)
 const contactContent = ref(null)
@@ -351,11 +371,33 @@ function isSafeImageUrl(value) {
 }
 
 function categoryName(code) { return categories.find(item => item.code === code)?.name || '水务智能体' }
-function go(target) { page.value = target; menuOpen.value = false; if (target !== 'detail') window.location.hash = target; window.scrollTo({ top: 0, behavior: 'smooth' }) }
+function refreshPageData(target) {
+  if (target === 'home' || target === 'agents') void loadAgents()
+  if (target === 'home' || target === 'compute') void loadSiteContent()
+}
+function go(target) {
+  page.value = target
+  menuOpen.value = false
+  if (target !== 'detail') window.location.hash = target
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+  refreshPageData(target)
+}
 function syncHash() { const target = window.location.hash.slice(1); if (navItems.some(item => item.key === target)) page.value = target }
 function searchAgents() { category.value = ''; go('agents') }
 function openCategory(code) { category.value = code; go('agents') }
-async function loadAgents() { loading.value = true; try { agents.value = await fetchAgents() } catch { agents.value = [] } finally { loading.value = false } }
+async function loadAgents() {
+  loading.value = true
+  agentLoadError.value = ''
+  try {
+    agents.value = await fetchAgents()
+  } catch (error) {
+    agents.value = []
+    agentLoadError.value = '请检查后台服务和前台 API 配置后重试。'
+    if (import.meta.env.DEV) console.error('Failed to load agent content', error)
+  } finally {
+    loading.value = false
+  }
+}
 async function loadSiteContent() {
   const [compute, contact] = await Promise.all([fetchSiteContent('COMPUTE'), fetchSiteContent('CONTACT')])
   computeContent.value = compute
