@@ -1,5 +1,6 @@
 package com.ruoyi.market.service.impl;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -13,9 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.market.domain.BizAgent;
+import com.ruoyi.market.domain.BizAgentCategory;
 import com.ruoyi.market.domain.BizAgentCaseImportRow;
 import com.ruoyi.market.domain.BizAgentDetailItem;
 import com.ruoyi.market.mapper.BizAgentMapper;
+import com.ruoyi.market.mapper.BizAgentCategoryMapper;
 import com.ruoyi.market.service.IBizAgentService;
 
 @Service
@@ -23,6 +26,9 @@ public class BizAgentServiceImpl implements IBizAgentService
 {
     @Autowired
     private BizAgentMapper agentMapper;
+
+    @Autowired
+    private BizAgentCategoryMapper categoryMapper;
 
     @Override
     public BizAgent selectAgentById(Long agentId)
@@ -192,6 +198,8 @@ public class BizAgentServiceImpl implements IBizAgentService
     private void normalizeDefaults(BizAgent agent, boolean creating)
     {
         if (agent.getRecommendFlag() == null) agent.setRecommendFlag("N");
+        if (StringUtils.isEmpty(agent.getPrimaryCategoryCode())) agent.setPrimaryCategoryCode("water");
+        agent.setDemoUrl(trim(agent.getDemoUrl()));
         if (agent.getPublishStatus() == null) agent.setPublishStatus("0");
         if (agent.getSortNo() == null) agent.setSortNo(0);
         if (agent.getHotScore() == null) agent.setHotScore(0);
@@ -207,12 +215,23 @@ public class BizAgentServiceImpl implements IBizAgentService
     {
         require(agent.getAgentCode(), "智能体编码不能为空");
         require(agent.getAgentName(), "智能体名称不能为空");
+        require(agent.getPrimaryCategoryCode(), "一级分类不能为空");
         require(agent.getCategoryCode(), "场景域不能为空");
         require(agent.getProviderName(), "服务商不能为空");
         require(agent.getSummary(), "卡片摘要不能为空");
         require(agent.getDescription(), "详细说明不能为空");
         require(agent.getCertLevel(), "认证等级不能为空");
         require(agent.getPublishStatus(), "发布状态不能为空");
+        validateDemoUrl(agent.getDemoUrl());
+        BizAgentCategory category = categoryMapper.selectCategoryByCode(agent.getPrimaryCategoryCode());
+        if (category == null)
+        {
+            throw new IllegalArgumentException("一级分类不存在或已删除");
+        }
+        if (!"0".equals(category.getStatus()))
+        {
+            throw new IllegalArgumentException("一级分类已停用，不能关联智能体");
+        }
         if (agent.getDetailItems() == null)
         {
             return;
@@ -237,6 +256,31 @@ public class BizAgentServiceImpl implements IBizAgentService
         if (StringUtils.isEmpty(value))
         {
             throw new IllegalArgumentException(message);
+        }
+    }
+
+    private void validateDemoUrl(String demoUrl)
+    {
+        if (StringUtils.isEmpty(demoUrl))
+        {
+            return;
+        }
+        try
+        {
+            URI uri = URI.create(demoUrl);
+            String scheme = uri.getScheme();
+            if (uri.getHost() == null || !("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)))
+            {
+                throw new IllegalArgumentException("演示环境地址必须是有效的 http/https 地址");
+            }
+        }
+        catch (IllegalArgumentException e)
+        {
+            if ("演示环境地址必须是有效的 http/https 地址".equals(e.getMessage()))
+            {
+                throw e;
+            }
+            throw new IllegalArgumentException("演示环境地址必须是有效的 http/https 地址");
         }
     }
 

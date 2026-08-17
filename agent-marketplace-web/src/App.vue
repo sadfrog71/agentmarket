@@ -52,6 +52,15 @@
         </section>
 
         <section class="section-wrap block-section">
+          <div class="section-head"><div><span>PRIMARY BUSINESS DOMAINS</span><h2>三大水务一级分类</h2></div><button @click="go('agents')">查看全部智能体</button></div>
+          <div class="primary-category-grid">
+            <button v-for="(item, index) in primaryCategories" :key="item.categoryCode" @click="openPrimaryCategory(item.categoryCode)">
+              <b>{{ String(index + 1).padStart(2, '0') }}</b><h3>{{ item.categoryName }}</h3><p>{{ item.description || '按一级业务领域组织智能体能力。' }}</p><strong>{{ primaryCategoryCount(item.categoryCode) }} 个已发布智能体</strong>
+            </button>
+          </div>
+        </section>
+
+        <section class="section-wrap block-section">
           <div class="section-head"><div><span>SCENARIO DOMAINS</span><h2>六大水务业务场景域</h2></div><button @click="go('agents')">查看全部</button></div>
           <div class="category-grid">
             <button v-for="item in categories" :key="item.code" @click="openCategory(item.code)"><b>{{ item.index }}</b><h3>{{ item.name }}</h3><p>{{ item.description }}</p><strong>{{ item.metric }}</strong></button>
@@ -68,7 +77,7 @@
 
       <section v-else-if="page === 'agents'" class="section-wrap page-section">
         <div class="page-header"><span>AGENT DIRECTORY</span><h1>智能体广场</h1><p>按业务场景搜索和查看当前已发布的水务智能体。</p></div>
-        <div class="filter-bar"><input v-model="keyword" placeholder="搜索智能体名称或能力" /><select v-model="category"><option value="">全部场景域</option><option v-for="item in categories" :key="item.code" :value="item.code">{{ item.name }}</option></select><button @click="loadAgents">筛选</button></div>
+        <div class="filter-bar"><input v-model="keyword" placeholder="搜索智能体名称或能力" /><select v-model="primaryCategory"><option value="">全部一级分类</option><option v-for="item in primaryCategories" :key="item.categoryCode" :value="item.categoryCode">{{ item.categoryName }}</option></select><select v-model="category"><option value="">全部场景域</option><option v-for="item in categories" :key="item.code" :value="item.code">{{ item.name }}</option></select><button @click="loadAgents">筛选</button></div>
         <div v-if="agentLoadError" class="empty-state error-state"><strong>智能体内容暂时不可用</strong><span>{{ agentLoadError }}</span></div>
         <div class="agent-grid"><AgentCard v-for="agent in filteredAgents" :key="agent.agentId" :agent="agent" @open="openAgent" /></div>
         <div v-if="!filteredAgents.length && !loading" class="empty-state"><strong>没有匹配的智能体</strong><span>调整关键词或场景域后重新筛选。</span></div>
@@ -76,7 +85,7 @@
 
       <section v-else-if="page === 'detail' && selectedAgent" class="section-wrap page-section">
         <button class="back-link" @click="go('agents')">← 返回智能体广场</button>
-        <div class="detail-hero"><div class="detail-symbol">AI</div><div><span>{{ categoryName(selectedAgent.categoryCode) }}</span><h1>{{ selectedAgent.agentName }}</h1><div class="rich-description" v-html="safeDescription"></div><div class="detail-badges"><b>{{ selectedAgent.certLevel }} 认证级</b><span>{{ selectedAgent.providerName }}</span><span>评分 {{ selectedAgent.rating || '-' }}</span></div></div><aside><small>实施参考</small><strong>{{ selectedAgent.priceText || '面议' }}</strong><span>{{ [selectedAgent.deliveryCycle, selectedAgent.serviceMode].filter(Boolean).join(' · ') || '实施信息待确认' }}</span><button @click="contactOpen = true">联系实施评估</button></aside></div>
+        <div class="detail-hero"><div class="detail-symbol">AI</div><div><span>{{ primaryCategoryName(selectedAgent.primaryCategoryCode) }} · {{ categoryName(selectedAgent.categoryCode) }}</span><h1>{{ selectedAgent.agentName }}</h1><div class="rich-description" v-html="safeDescription"></div><div class="detail-badges"><b>{{ selectedAgent.certLevel }} 认证级</b><span>{{ selectedAgent.providerName }}</span><span>评分 {{ selectedAgent.rating || '-' }}</span></div></div><div class="detail-hero-aside"><aside><small>实施参考</small><strong>{{ selectedAgent.priceText || '面议' }}</strong><span>{{ [selectedAgent.deliveryCycle, selectedAgent.serviceMode].filter(Boolean).join(' · ') || '实施信息待确认' }}</span><button @click="contactOpen = true">联系实施评估</button></aside><a v-if="safeDemoUrl" class="demo-link-button" :href="safeDemoUrl" target="_blank" rel="noopener noreferrer" aria-label="前往演示地址（新窗口打开）"><span>前往演示地址</span><b aria-hidden="true">↗</b></a></div></div>
         <div class="detail-layout"><div><template v-if="selectedAgent.detailItems?.length"><DetailGroup title="核心功能" type="FEATURE" :items="selectedAgent.detailItems" /><DetailGroup title="实测效果" type="METRIC" :items="selectedAgent.detailItems" cards /><DetailGroup title="部署案例" type="CASE" :items="selectedAgent.detailItems" /></template><div v-else class="empty-state detail-empty"><strong>暂无详情数据</strong><span>管理员补充核心功能、效果指标和部署案例后将在这里展示。</span></div></div><aside class="compat-panel"><h3>兼容性信息</h3><template v-if="itemsOf('COMPATIBILITY').length"><div v-for="item in itemsOf('COMPATIBILITY')" :key="item.title"><span>{{ item.title }}</span><strong>{{ item.valueText }}</strong></div></template><p v-else class="aside-empty">暂无兼容性数据</p><h3>实施服务</h3><template v-if="itemsOf('PRICE_FEATURE').length"><p v-for="item in itemsOf('PRICE_FEATURE')" :key="item.title"><b>✓</b> {{ item.title }}：{{ item.content }}</p></template><p v-else class="aside-empty">暂无实施服务数据</p></aside></div>
       </section>
 
@@ -180,6 +189,7 @@
 <script setup>
 import { computed, defineComponent, h, onBeforeUnmount, onMounted, ref } from 'vue'
 import { fetchAgentDetail, fetchAgents } from './api/agents'
+import { fetchCategories } from './api/categories'
 import { fetchSiteContent } from './api/content'
 import { isHtmlContent, renderMarkdown } from './utils/markdown'
 
@@ -194,6 +204,11 @@ const categories = [
   { index: '04', code: 'customer', name: '客户服务与营销', description: '智能客服、抄表催收、用户服务', metric: '投诉率降低 35%' },
   { index: '05', code: 'engineering', name: '工程建设与资产', description: '工程进度、资产台账、预测维护', metric: '风险提前识别' },
   { index: '06', code: 'management', name: '管理与决策', description: '运营日报、指标分析、应急指挥', metric: '快速形成报告' }
+]
+const fallbackPrimaryCategories = [
+  { categoryCode: 'water', categoryName: '供水', description: '供水生产、管网运行、客户服务和水质安全等业务。' },
+  { categoryCode: 'drainage', categoryName: '排水', description: '排水管网、污水处理、泵站运行和防汛排涝等业务。' },
+  { categoryCode: 'gas', categoryName: '燃气', description: '燃气输配、巡检、客服和安全管理等业务。' }
 ]
 const networkNodes = [
   { label: '生产调度', style: 'left:8%;top:17%' }, { label: '水质安全', style: 'right:8%;top:18%' },
@@ -289,6 +304,8 @@ const agents = ref([])
 const selectedAgent = ref(null)
 const keyword = ref('')
 const category = ref('')
+const primaryCategory = ref('')
+const primaryCategories = ref(fallbackPrimaryCategories)
 const loading = ref(false)
 const agentLoadError = ref('')
 const contactOpen = ref(false)
@@ -301,13 +318,24 @@ const currentLabel = computed(() => navItems.find(item => item.key === page.valu
 const activeScenarioData = computed(() => scenarioCases[activeScenario.value])
 const featuredAgents = computed(() => agents.value.filter(item => item.recommendFlag === 'Y').slice(0, 4))
 const filteredAgents = computed(() => agents.value.filter(item => {
+  const matchPrimaryCategory = !primaryCategory.value || item.primaryCategoryCode === primaryCategory.value
   const matchCategory = !category.value || item.categoryCode === category.value
   const text = `${item.agentName}${item.summary || ''}`
-  return matchCategory && (!keyword.value || text.toLowerCase().includes(keyword.value.toLowerCase()))
+  return matchPrimaryCategory && matchCategory && (!keyword.value || text.toLowerCase().includes(keyword.value.toLowerCase()))
 }))
 const safeDescription = computed(() => {
   const source = selectedAgent.value?.description || selectedAgent.value?.summary || '暂无智能体简介'
   return renderManagedContent(source)
+})
+const safeDemoUrl = computed(() => {
+  const value = String(selectedAgent.value?.demoUrl || '').trim()
+  if (!/^https?:\/\//i.test(value)) return ''
+  try {
+    const url = new URL(value)
+    return url.hostname ? value : ''
+  } catch {
+    return ''
+  }
 })
 const computeContentHtml = computed(() => renderManagedContent(computeContent.value?.content))
 const contactContentHtml = computed(() => renderManagedContent(contactContent.value?.content))
@@ -371,8 +399,11 @@ function isSafeImageUrl(value) {
 }
 
 function categoryName(code) { return categories.find(item => item.code === code)?.name || '水务智能体' }
+function primaryCategoryName(code) { return primaryCategories.value.find(item => item.categoryCode === code)?.categoryName || '供水' }
+function primaryCategoryCount(code) { return agents.value.filter(item => item.primaryCategoryCode === code).length }
 function refreshPageData(target) {
   if (target === 'home' || target === 'agents') void loadAgents()
+  if (target === 'home' || target === 'agents') void loadCategories()
   if (target === 'home' || target === 'compute') void loadSiteContent()
 }
 function go(target) {
@@ -383,8 +414,9 @@ function go(target) {
   refreshPageData(target)
 }
 function syncHash() { const target = window.location.hash.slice(1); if (navItems.some(item => item.key === target)) page.value = target }
-function searchAgents() { category.value = ''; go('agents') }
+function searchAgents() { primaryCategory.value = ''; category.value = ''; go('agents') }
 function openCategory(code) { category.value = code; go('agents') }
+function openPrimaryCategory(code) { primaryCategory.value = code; category.value = ''; go('agents') }
 async function loadAgents() {
   loading.value = true
   agentLoadError.value = ''
@@ -398,6 +430,15 @@ async function loadAgents() {
     loading.value = false
   }
 }
+async function loadCategories() {
+  try {
+    const result = await fetchCategories()
+    if (result.length) primaryCategories.value = result
+  } catch (error) {
+    primaryCategories.value = fallbackPrimaryCategories
+    if (import.meta.env.DEV) console.error('Failed to load agent categories', error)
+  }
+}
 async function loadSiteContent() {
   const [compute, contact] = await Promise.all([fetchSiteContent('COMPUTE'), fetchSiteContent('CONTACT')])
   computeContent.value = compute
@@ -409,7 +450,7 @@ function itemsOf(type) { return selectedAgent.value?.detailItems?.filter(item =>
 const AgentCard = defineComponent({
   props: { agent: { type: Object, required: true } }, emits: ['open'],
   setup(props, { emit }) { return () => h('button', { class: 'agent-card', onClick: () => emit('open', props.agent) }, [
-    h('div', { class: 'agent-card-top' }, [h('span', { class: 'agent-icon' }, 'AI'), h('div', [h('small', categoryName(props.agent.categoryCode)), h('h3', props.agent.agentName)])]),
+    h('div', { class: 'agent-card-top' }, [h('span', { class: 'agent-icon' }, 'AI'), h('div', [h('small', { class: 'primary-category-label' }, primaryCategoryName(props.agent.primaryCategoryCode)), h('small', { class: 'scenario-category-label' }, categoryName(props.agent.categoryCode)), h('h3', props.agent.agentName)])]),
     h('p', props.agent.summary), h('div', { class: 'agent-tags' }, [h('b', `${props.agent.certLevel} 认证`), props.agent.recommendFlag === 'Y' ? h('span', '精选') : null]),
     h('div', { class: 'agent-card-foot' }, [h('span', props.agent.providerName), h('strong', props.agent.priceText || '面议')])
   ]) }
@@ -424,6 +465,6 @@ const DetailGroup = defineComponent({
   }}
 })
 
-onMounted(() => { syncHash(); window.addEventListener('hashchange', syncHash); loadAgents(); loadSiteContent() })
+onMounted(() => { syncHash(); window.addEventListener('hashchange', syncHash); loadAgents(); loadCategories(); loadSiteContent() })
 onBeforeUnmount(() => window.removeEventListener('hashchange', syncHash))
 </script>

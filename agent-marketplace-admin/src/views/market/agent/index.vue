@@ -13,6 +13,11 @@
       <el-form-item label="智能体名称" prop="agentName">
         <el-input v-model="queryParams.agentName" placeholder="输入名称" clearable @keyup.enter="handleQuery" />
       </el-form-item>
+      <el-form-item label="一级分类" prop="primaryCategoryCode">
+        <el-select v-model="queryParams.primaryCategoryCode" placeholder="全部一级分类" clearable style="width: 150px">
+          <el-option v-for="item in categoryOptions" :key="item.categoryCode" :label="item.categoryName" :value="item.categoryCode" />
+        </el-select>
+      </el-form-item>
       <el-form-item label="场景域" prop="categoryCode">
         <el-select v-model="queryParams.categoryCode" placeholder="全部场景域" clearable style="width: 190px">
           <el-option v-for="dict in market_agent_category" :key="dict.value" :label="dict.label" :value="dict.value" />
@@ -49,6 +54,7 @@
           </div>
         </template>
       </el-table-column>
+      <el-table-column label="一级分类" prop="primaryCategoryCode" width="105"><template #default="scope"><span>{{ categoryName(scope.row.primaryCategoryCode) }}</span></template></el-table-column>
       <el-table-column label="场景域" prop="categoryCode" min-width="150">
         <template #default="scope"><dict-tag :options="market_agent_category" :value="scope.row.categoryCode" /></template>
       </el-table-column>
@@ -82,6 +88,7 @@
         <el-row :gutter="18">
           <el-col :span="12"><el-form-item label="智能体名称" prop="agentName" required><el-input v-model="form.agentName" /></el-form-item></el-col>
           <el-col :span="12"><el-form-item label="业务编码" prop="agentCode" required><el-input v-model="form.agentCode" placeholder="如 DMA_LEAKAGE" /></el-form-item></el-col>
+          <el-col :span="8"><el-form-item label="一级分类" prop="primaryCategoryCode" required><el-select v-model="form.primaryCategoryCode" style="width:100%"><el-option v-for="item in categoryOptions" :key="item.categoryCode" :label="item.categoryName" :value="item.categoryCode" /></el-select></el-form-item></el-col>
           <el-col :span="8"><el-form-item label="场景域" prop="categoryCode" required><el-select v-model="form.categoryCode" style="width:100%"><el-option v-for="dict in market_agent_category" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
           <el-col :span="8"><el-form-item label="认证等级" prop="certLevel" required><el-select v-model="form.certLevel" style="width:100%"><el-option v-for="dict in market_cert_level" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
           <el-col :span="8"><el-form-item label="发布状态" prop="publishStatus" required><el-select v-model="form.publishStatus" style="width:100%"><el-option v-for="dict in market_publish_status" :key="dict.value" :label="dict.label" :value="dict.value" /></el-select></el-form-item></el-col>
@@ -95,6 +102,7 @@
           <el-col :span="8"><el-form-item label="显示顺序"><el-input-number v-model="form.sortNo" :min="0" /></el-form-item></el-col>
           <el-col :span="8"><el-form-item label="交付周期"><el-input v-model="form.deliveryCycle" /></el-form-item></el-col>
           <el-col :span="12"><el-form-item label="服务方式"><el-input v-model="form.serviceMode" /></el-form-item></el-col>
+          <el-col :span="12"><el-form-item label="演示环境地址" prop="demoUrl"><el-input v-model="form.demoUrl" maxlength="500" show-word-limit placeholder="https://demo.example.com"><template #prepend>选填</template></el-input><span class="field-tip">填写后，前台详情页右侧会显示“前往演示地址”入口；仅支持 http/https。</span></el-form-item></el-col>
           <el-col :span="24"><el-form-item label="卡片摘要" prop="summary" required><el-input v-model="form.summary" type="textarea" :rows="3" maxlength="500" show-word-limit /></el-form-item></el-col>
           <el-col :span="24">
             <el-form-item label="详细说明" prop="description" required class="description-editor-item">
@@ -155,6 +163,7 @@
 
 <script setup name="MarketAgent">
 import { listAgent, getAgent, addAgent, updateAgent, delAgent } from '@/api/market/agent'
+import { listCategoryOptions } from '@/api/market/category'
 import { isHtmlContent, renderMarkdown } from '@/utils/markdown'
 import ExcelImportDialog from '@/components/ExcelImportDialog'
 
@@ -162,6 +171,7 @@ const { proxy } = getCurrentInstance()
 const { market_agent_category, market_cert_level, market_publish_status, market_detail_item_type } = useDict(
   'market_agent_category', 'market_cert_level', 'market_publish_status', 'market_detail_item_type'
 )
+const categoryOptions = ref([])
 
 const agentList = ref([])
 const loading = ref(false)
@@ -175,7 +185,7 @@ const title = ref('')
 const descriptionMode = ref('rich')
 
 const emptyForm = () => ({
-  agentId: undefined, agentCode: '', agentName: '', categoryCode: 'production', iconCode: 'robot',
+  agentId: undefined, agentCode: '', agentName: '', primaryCategoryCode: 'water', categoryCode: 'production', iconCode: 'robot', demoUrl: '',
   providerName: '', summary: '', description: '', priceText: '面议', certLevel: 'L1', rating: 0,
   deployCount: 0, deliveryCycle: '', serviceMode: '', recommendFlag: 'N', hotScore: 0, sortNo: 0,
   publishStatus: '0', slug: '', detailItems: []
@@ -183,22 +193,32 @@ const emptyForm = () => ({
 
 const data = reactive({
   form: emptyForm(),
-  queryParams: { pageNum: 1, pageSize: 10, agentName: undefined, categoryCode: undefined, publishStatus: undefined },
+  queryParams: { pageNum: 1, pageSize: 10, agentName: undefined, primaryCategoryCode: undefined, categoryCode: undefined, publishStatus: undefined },
   rules: {
     agentName: [{ required: true, message: '智能体名称不能为空', trigger: 'blur' }],
     agentCode: [{ required: true, message: '业务编码不能为空', trigger: 'blur' }],
+    primaryCategoryCode: [{ required: true, message: '请选择一级分类', trigger: 'change' }],
     categoryCode: [{ required: true, message: '请选择场景域', trigger: 'change' }],
     certLevel: [{ required: true, message: '请选择认证等级', trigger: 'change' }],
     publishStatus: [{ required: true, message: '请选择发布状态', trigger: 'change' }],
     providerName: [{ required: true, message: '服务商不能为空', trigger: 'blur' }],
     summary: [{ required: true, message: '卡片摘要不能为空', trigger: 'blur' }],
-    description: [{ required: true, message: '详细说明不能为空', trigger: 'blur' }]
+    description: [{ required: true, message: '详细说明不能为空', trigger: 'blur' }],
+    demoUrl: [{ validator: validateDemoUrl, trigger: 'blur' }]
   }
 })
 const { form, queryParams, rules } = toRefs(data)
 const markdownPreview = computed(() => renderMarkdown(form.value.description))
 const caseImportRef = ref(null)
 const caseImportAction = computed(() => form.value.agentId ? `/market/agent/${form.value.agentId}/case-import` : '')
+
+function categoryName(code) { return categoryOptions.value.find(item => item.categoryCode === code)?.categoryName || code || '-' }
+function loadCategoryOptions() { listCategoryOptions().then(res => { categoryOptions.value = res.data || [] }) }
+function validateDemoUrl(rule, value, callback) {
+  const demoUrl = String(value || '').trim()
+  if (!demoUrl || /^https?:\/\/\S+$/i.test(demoUrl)) return callback()
+  callback(new Error('请输入有效的 http/https 演示地址'))
+}
 
 function getList() {
   loading.value = true
@@ -260,6 +280,7 @@ function handleDelete(row) {
 }
 
 getList()
+loadCategoryOptions()
 </script>
 
 <style scoped lang="scss">

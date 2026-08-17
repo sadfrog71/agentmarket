@@ -8,6 +8,33 @@ drop table if exists biz_business_record;
 drop table if exists biz_site_content;
 drop table if exists biz_agent_detail_item;
 drop table if exists biz_agent;
+drop table if exists biz_agent_category;
+
+create table biz_agent_category (
+  category_id       bigint not null auto_increment comment '一级分类ID',
+  category_code     varchar(64) not null comment '一级分类编码',
+  category_name     varchar(100) not null comment '一级分类名称',
+  description       varchar(500) default '' comment '分类说明',
+  icon_code         varchar(64) default 'water' comment '前端图标编码',
+  sort_no           int default 0 comment '显示顺序',
+  status            char(1) default '0' comment '状态（0正常 1停用）',
+  del_flag          char(1) default '0' comment '删除标志（0正常 2删除）',
+  create_by         varchar(64) default '' comment '创建者',
+  create_time       datetime default current_timestamp comment '创建时间',
+  update_by         varchar(64) default '' comment '更新者',
+  update_time       datetime default null on update current_timestamp comment '更新时间',
+  remark            varchar(500) default null comment '备注',
+  primary key (category_id),
+  unique key uk_agent_category_code (category_code),
+  key idx_agent_category_status_sort (status, sort_no, del_flag)
+) engine=innodb default charset=utf8mb4 collate=utf8mb4_0900_ai_ci comment='智能体市场一级分类';
+
+insert into biz_agent_category
+(category_id, category_code, category_name, description, icon_code, sort_no, status, create_by, remark)
+values
+(1, 'water', '供水', '供水生产、管网运行、客户服务和水质安全等业务。', 'water', 1, '0', 'admin', '默认一级分类'),
+(2, 'drainage', '排水', '排水管网、污水处理、泵站运行和防汛排涝等业务。', 'drainage', 2, '0', 'admin', '默认一级分类'),
+(3, 'gas', '燃气', '燃气输配、巡检、客服和安全管理等业务。', 'gas', 3, '0', 'admin', '默认一级分类');
 
 create table biz_site_content (
   content_id        bigint not null auto_increment comment '页面内容ID',
@@ -35,9 +62,11 @@ create table biz_agent (
   agent_id          bigint not null auto_increment comment '智能体ID',
   agent_code        varchar(64) not null comment '稳定业务编码',
   agent_name        varchar(100) not null comment '智能体名称',
+  primary_category_code varchar(64) not null default 'water' comment '一级分类编码',
   category_code     varchar(64) default '' comment '场景域编码',
   icon_code         varchar(64) default 'robot' comment '前端图标编码',
   cover_url         varchar(500) default null comment '封面地址',
+  demo_url          varchar(500) default null comment '演示环境地址',
   provider_id       bigint default null comment '预留供应商ID',
   provider_name     varchar(150) default '' comment '供应商名称快照',
   summary           varchar(1000) default '' comment '卡片摘要',
@@ -67,6 +96,7 @@ create table biz_agent (
   primary key (agent_id),
   unique key uk_biz_agent_code (agent_code),
   unique key uk_biz_agent_slug (slug),
+  key idx_biz_agent_primary_category_status (primary_category_code, publish_status, del_flag),
   key idx_biz_agent_category_status (category_code, publish_status, del_flag),
   key idx_biz_agent_recommend_sort (recommend_flag, sort_no, hot_score),
   key idx_biz_agent_publish_time (publish_status, published_at)
@@ -157,6 +187,13 @@ insert into sys_menu values
 (2014, '页面内容修改', 2011, 3, '', '', '', '', 1, 0, 'F', '0', '0', 'market:content:edit', '#', 'admin', sysdate(), '', null, ''),
 (2015, '页面内容删除', 2011, 4, '', '', '', '', 1, 0, 'F', '0', '0', 'market:content:remove', '#', 'admin', sysdate(), '', null, '');
 
+insert into sys_menu values
+(2016, '一级分类', 2000, 4, 'category', 'market/category/index', '', '', 1, 0, 'C', '0', '0', 'market:category:list', 'list', 'admin', sysdate(), '', null, '智能体市场一级分类维护'),
+(2017, '一级分类查询', 2016, 1, '', '', '', '', 1, 0, 'F', '0', '0', 'market:category:query', '#', 'admin', sysdate(), '', null, ''),
+(2018, '一级分类新增', 2016, 2, '', '', '', '', 1, 0, 'F', '0', '0', 'market:category:add', '#', 'admin', sysdate(), '', null, ''),
+(2019, '一级分类修改', 2016, 3, '', '', '', '', 1, 0, 'F', '0', '0', 'market:category:edit', '#', 'admin', sysdate(), '', null, ''),
+(2020, '一级分类删除', 2016, 4, '', '', '', '', 1, 0, 'F', '0', '0', 'market:category:remove', '#', 'admin', sysdate(), '', null, '');
+
 -- 字典类型
 insert into sys_dict_type (dict_id, dict_name, dict_type, status, create_by, create_time, remark) values
 (100, '智能体场景域', 'market_agent_category', '0', 'admin', sysdate(), '智能体六大场景域'),
@@ -201,12 +238,12 @@ insert into biz_site_content
 
 -- 首条示例智能体，用于接口与页面联调
 insert into biz_agent
-(agent_id, agent_code, agent_name, category_code, icon_code, provider_name, summary,
+(agent_id, agent_code, agent_name, primary_category_code, category_code, icon_code, provider_name, summary,
  description, price_text, price_min, price_max, cert_level, rating, deploy_count,
  delivery_cycle, service_mode, recommend_flag, hot_score, sort_no, publish_status,
  published_at, slug, create_by)
 values
-(1, 'DMA_LEAKAGE', 'DMA漏损分析智能体', 'network', 'search', '华衍水务研究院',
+(1, 'DMA_LEAKAGE', 'DMA漏损分析智能体', 'water', 'network', 'search', '华衍水务研究院',
  '基于 DMA 分区计量数据与 AI 时序分析模型，自动识别漏损异常，精准定位漏点区域，并给出修复优先级与效益测算。',
  '<h3>DMA 漏损智能分析与闭环治理</h3><p>基于 <strong>DMA 分区计量数据</strong>与 AI 时序分析模型，自动识别各分区漏损异常，精准定位漏点区域，并提供修复优先级排序与经济效益测算。</p><p>已在华衍旗下 3 家水司完成实测验证，平均漏损率从 <strong>13.2% 降至 8.7%</strong>，达到 L2 认证标准。</p>',
  '5-15万', 50000, 150000, 'L2', 4.8, 18, '2-4周', '本地化部署', 'Y', 98, 1, '1',

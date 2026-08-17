@@ -18,9 +18,11 @@ public class BizAgent extends BaseEntity
     private Long agentId;
     private String agentCode;
     private String agentName;
+    private String primaryCategoryCode;
     private String categoryCode;
     private String iconCode;
     private String coverUrl;
+    private String demoUrl;
     private Long providerId;
     private String providerName;
     private String summary;
@@ -55,12 +57,18 @@ public class BizAgent extends BaseEntity
     @Size(max = 100, message = "智能体名称不能超过100个字符")
     public String getAgentName() { return agentName; }
     public void setAgentName(String agentName) { this.agentName = agentName; }
+    @NotBlank(message = "一级分类不能为空")
+    public String getPrimaryCategoryCode() { return primaryCategoryCode; }
+    public void setPrimaryCategoryCode(String primaryCategoryCode) { this.primaryCategoryCode = primaryCategoryCode; }
     public String getCategoryCode() { return categoryCode; }
     public void setCategoryCode(String categoryCode) { this.categoryCode = categoryCode; }
     public String getIconCode() { return iconCode; }
     public void setIconCode(String iconCode) { this.iconCode = iconCode; }
     public String getCoverUrl() { return coverUrl; }
     public void setCoverUrl(String coverUrl) { this.coverUrl = coverUrl; }
+    @Size(max = 500, message = "演示环境地址不能超过500个字符")
+    public String getDemoUrl() { return demoUrl; }
+    public void setDemoUrl(String demoUrl) { this.demoUrl = demoUrl; }
     public Long getProviderId() { return providerId; }
     public void setProviderId(Long providerId) { this.providerId = providerId; }
     public String getProviderName() { return providerName; }

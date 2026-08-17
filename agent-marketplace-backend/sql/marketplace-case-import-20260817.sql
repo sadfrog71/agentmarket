@@ -267,13 +267,13 @@ VALUES
 START TRANSACTION;
 
 INSERT INTO biz_agent
-(agent_code, agent_name, category_code, icon_code, cover_url, provider_id,
+(agent_code, agent_name, primary_category_code, category_code, icon_code, cover_url, provider_id,
  provider_name, summary, description, price_text, price_min, price_max,
  cert_level, rating, deploy_count, delivery_cycle, service_mode,
  recommend_flag, hot_score, sort_no, publish_status, published_at, slug,
  version_no, ext_json, del_flag, create_by, remark)
 SELECT
- t.agent_code, t.agent_name, t.category_code, t.icon_code, NULL, NULL,
+ t.agent_code, t.agent_name, 'water', t.category_code, t.icon_code, NULL, NULL,
  t.provider_name, t.summary, t.description, t.price_text, NULL, NULL,
  t.cert_level, 0, 0, t.delivery_cycle, t.service_mode,
  'N', 0, t.sort_no, '0', NULL, t.slug,

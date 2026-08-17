@@ -6,9 +6,11 @@
         <id property="agentId" column="agent_id"/>
         <result property="agentCode" column="agent_code"/>
         <result property="agentName" column="agent_name"/>
+        <result property="primaryCategoryCode" column="primary_category_code"/>
         <result property="categoryCode" column="category_code"/>
         <result property="iconCode" column="icon_code"/>
         <result property="coverUrl" column="cover_url"/>
+        <result property="demoUrl" column="demo_url"/>
         <result property="providerId" column="provider_id"/>
         <result property="providerName" column="provider_name"/>
         <result property="summary" column="summary"/>
@@ -55,7 +57,7 @@
     </resultMap>
 
     <sql id="agentColumns">
-        agent_id, agent_code, agent_name, category_code, icon_code, cover_url,
+        agent_id, agent_code, agent_name, primary_category_code, category_code, icon_code, cover_url, demo_url,
         provider_id, provider_name, summary, description, price_text, price_min,
         price_max, cert_level, rating, deploy_count, delivery_cycle, service_mode,
         recommend_flag, hot_score, sort_no, publish_status, published_at, slug,
@@ -83,6 +85,9 @@
             <if test="categoryCode != null and categoryCode != ''">
                 and category_code = #{categoryCode}
             </if>
+            <if test="primaryCategoryCode != null and primaryCategoryCode != ''">
+                and primary_category_code = #{primaryCategoryCode}
+            </if>
             <if test="publishStatus != null and publishStatus != ''">
                 and publish_status = #{publishStatus}
             </if>
@@ -103,6 +108,9 @@
             <if test="categoryCode != null and categoryCode != ''">
                 and category_code = #{categoryCode}
             </if>
+            <if test="primaryCategoryCode != null and primaryCategoryCode != ''">
+                and primary_category_code = #{primaryCategoryCode}
+            </if>
             <if test="recommendFlag != null and recommendFlag != ''">
                 and recommend_flag = #{recommendFlag}
             </if>
@@ -120,13 +128,13 @@
 
     <insert id="insertAgent" parameterType="com.ruoyi.market.domain.BizAgent" useGeneratedKeys="true" keyProperty="agentId">
         insert into biz_agent (
-            agent_code, agent_name, category_code, icon_code, cover_url, provider_id,
+            agent_code, agent_name, primary_category_code, category_code, icon_code, cover_url, demo_url, provider_id,
             provider_name, summary, description, price_text, price_min, price_max,
             cert_level, rating, deploy_count, delivery_cycle, service_mode,
             recommend_flag, hot_score, sort_no, publish_status, published_at, slug,
             version_no, ext_json, del_flag, create_by, create_time, remark
         ) values (
-            #{agentCode}, #{agentName}, #{categoryCode}, #{iconCode}, #{coverUrl}, #{providerId},
+            #{agentCode}, #{agentName}, #{primaryCategoryCode}, #{categoryCode}, #{iconCode}, #{coverUrl}, #{demoUrl}, #{providerId},
             #{providerName}, #{summary}, #{description}, #{priceText}, #{priceMin}, #{priceMax},
             #{certLevel}, #{rating}, #{deployCount}, #{deliveryCycle}, #{serviceMode},
             #{recommendFlag}, #{hotScore}, #{sortNo}, #{publishStatus}, #{publishedAt}, #{slug},
@@ -137,8 +145,8 @@
     <update id="updateAgent" parameterType="com.ruoyi.market.domain.BizAgent">
         update biz_agent
         <set>
-            agent_code = #{agentCode}, agent_name = #{agentName}, category_code = #{categoryCode},
-            icon_code = #{iconCode}, cover_url = #{coverUrl}, provider_id = #{providerId},
+            agent_code = #{agentCode}, agent_name = #{agentName}, primary_category_code = #{primaryCategoryCode}, category_code = #{categoryCode},
+            icon_code = #{iconCode}, cover_url = #{coverUrl}, demo_url = #{demoUrl}, provider_id = #{providerId},
             provider_name = #{providerName}, summary = #{summary}, description = #{description},
             price_text = #{priceText}, price_min = #{priceMin}, price_max = #{priceMax},
             cert_level = #{certLevel}, rating = #{rating}, deploy_count = #{deployCount},
