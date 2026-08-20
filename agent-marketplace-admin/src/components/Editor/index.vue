@@ -157,8 +157,8 @@ function handleUploadSuccess(res, file) {
     let quill = toRaw(quillEditorRef.value).getQuill()
     // 获取光标位置
     let length = quill.selection.savedRange.index
-    // 插入图片，res.url为服务器返回的图片链接地址
-    quill.insertEmbed(length, "image", import.meta.env.VITE_APP_BASE_API + res.fileName)
+    // 只保存跨站可用的资源路径，不将管理端 API 前缀写入富文本
+    quill.insertEmbed(length, "image", res.fileName)
     // 调整光标到最后
     quill.setSelection(length + 1)
   } else {

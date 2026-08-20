@@ -191,6 +191,7 @@ import { computed, defineComponent, h, onBeforeUnmount, onMounted, ref } from 'v
 import { fetchAgentDetail, fetchAgents } from './api/agents'
 import { fetchCategories } from './api/categories'
 import { fetchSiteContent } from './api/content'
+import { normalizeManagedAssetUrl } from './utils/assetUrl'
 import { isHtmlContent, renderMarkdown } from './utils/markdown'
 
 const navItems = [
@@ -367,10 +368,12 @@ function sanitizeRichText(html) {
       const isClass = name === 'class' && /^ql-[a-z0-9-]+(?:\s+ql-[a-z0-9-]+)*$/i.test(value)
       const isStyle = name === 'style' && sanitizeInlineStyle(value)
       const isLink = node.tagName === 'A' && name === 'href' && isSafeUrl(value)
-      const isImage = node.tagName === 'IMG' && name === 'src' && isSafeImageUrl(value)
+      const imageUrl = node.tagName === 'IMG' && name === 'src' ? normalizeManagedAssetUrl(value) : value
+      const isImage = node.tagName === 'IMG' && name === 'src' && isSafeImageUrl(imageUrl)
       const isTextAttribute = (node.tagName === 'A' && ['title', 'target'].includes(name)) || (node.tagName === 'IMG' && ['alt', 'title', 'width', 'height'].includes(name))
       if (!isClass && !isStyle && !isLink && !isImage && !isTextAttribute) node.removeAttribute(attribute.name)
       if (name === 'style' && isStyle) node.setAttribute('style', sanitizeInlineStyle(value))
+      if (name === 'src' && isImage) node.setAttribute('src', imageUrl)
     })
     if (node.tagName === 'A') node.setAttribute('rel', 'noopener noreferrer')
   })
