@@ -5,10 +5,10 @@
       <div class="site-loading-mark" aria-hidden="true">
         <i></i><i></i><b>平行数字</b>
       </div>
-      <p aria-hidden="true">avatar-tech</p>
+      <p aria-hidden="true">正在加载</p>
     </main>
   </Transition>
-  <main v-if="!loading && error" class="site-error"><p class="eyebrow">PARALLEL DIGITAL</p><h1>{{ error }}</h1><a class="button" href="/index.html">返回首页 <span>↗</span></a></main>
+  <main v-if="!loading && error" class="site-error"><p class="eyebrow">平行数字官网</p><h1>{{ error }}</h1><a class="button" href="/index.html">返回首页 <span>↗</span></a></main>
   <div v-else-if="!loading && page" id="top" class="site-render-root" v-html="page.bodyHtml"></div>
 </template>
 

@@ -1,0 +1,20 @@
+/*
+ * Brand-refresh layering corrections.
+ * Keep the cinematic homepage image visible above the base hero surface while
+ * retaining its contrast overlays and navigation/content priority.
+ */
+.refresh-home-hero > img {
+  z-index: 0;
+}
+
+.refresh-home-hero::before {
+  z-index: 1;
+}
+
+.refresh-home-hero::after {
+  z-index: 2;
+}
+
+.refresh-home-hero__inner {
+  z-index: 3;
+}

@@ -8,10 +8,39 @@ function register(controller, target, event, handler) {
   target?.addEventListener(event, handler, { signal: controller.signal })
 }
 
+function removeBrandEnglishMarkers() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+  const removable = []
+  let node = walker.nextNode()
+  while (node) {
+    if (/PARALLEL\s+DIGITAL/i.test(node.nodeValue || '')) {
+      node.nodeValue = node.nodeValue.replace(/PARALLEL\s+DIGITAL/gi, '').replace(/[ \t]{2,}/g, ' ')
+      if (!node.nodeValue.trim()) removable.push(node.parentElement)
+    }
+    node = walker.nextNode()
+  }
+  removable.forEach(element => {
+    if (element?.classList.contains('eyebrow') && !element.textContent.trim()) element.remove()
+  })
+  document.querySelectorAll('.footer-bottom > span').forEach(element => {
+    if (!element.textContent.trim()) element.remove()
+  })
+}
+
+function hydrateRefreshHeader() {
+  const image = document.querySelector('.refresh-home-header .brand img')
+  if (!image) return
+  image.src = '/visuals/parallel-logo-reverse.png'
+  image.alt = '平行数字'
+}
+
 export function initialiseLegacyInteractions({ articles = [], certificates = [], newsCategory = '' } = {}) {
   cleanup()
   const controller = new AbortController()
   cleanup = () => controller.abort()
+
+  removeBrandEnglishMarkers()
+  hydrateRefreshHeader()
 
   const menuButton = document.querySelector('.menu-toggle')
   const mainNav = document.querySelector('#main-nav')
