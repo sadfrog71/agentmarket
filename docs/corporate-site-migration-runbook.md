@@ -17,7 +17,7 @@
 
 1. 内容负责人确认一份官网导出包作为本次迁移源，并记录其取得时间、提供方和授权范围。源目录在迁移窗口内保持只读；不得继续在其中修订页面、图片、证书或新闻。
 2. 在受控工作副本中，使用 `build_manifest.py` 对该导出包生成 JSON manifest 和 Markdown 清单。工具只读取源目录，输出中的 `legacy_path` 均相对来源根目录，不包含本机绝对路径。
-3. 核对 manifest 的 `snapshot_sha256`、文件总数和分类结果。当前获授权基线为 29 个固定页面、53 篇新闻文章、71 份资质 / 专利 PDF，且所有文件必须属于 `IMPORT`、`ARCHIVE` 或 `APPROVED_EXCLUSION` 之一。
+3. 核对 manifest 的 `snapshot_sha256`、文件总数和分类结果。当前获授权基线为 30 个固定页面、53 篇新闻文章、71 份资质 / 专利 PDF，且所有文件必须属于 `IMPORT`、`ARCHIVE` 或 `APPROVED_EXCLUSION` 之一。
 4. 将 manifest、内容清单、官网导出包校验记录和来源授权信息一起归档。`ARCHIVE` 和 `APPROVED_EXCLUSION` 只在获得明确批准后保持该状态；不得静默忽略文件。
 5. 源封存后发现静态内容变化时，不覆盖既有 manifest。重新取得导出包并生成新的 delta manifest，说明新增、删除和哈希变化后再进入下一次演练。
 

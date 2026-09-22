@@ -1,23 +1,23 @@
 {
   "schema_version": "corporate-site-source-manifest/v1",
-  "snapshot_sha256": "f86a379e478e8b0f6f4977f4df5e0782350430ffd2a7c660e8a00373b6ec1e7a",
+  "snapshot_sha256": "4dd78cb42482144be83dee61896ab96369cdd9a841aa13ae1f468b7aa341c0ef",
   "classification_policy": {
     "IMPORT": "legacy website pages, certificate PDFs, media, and required static support files",
     "ARCHIVE": "local QA evidence, authoring references, and unmapped support files retained for review",
     "APPROVED_EXCLUSION": "macOS Finder metadata that is not website content"
   },
   "summary": {
-    "file_count": 447,
-    "fixed_page_count": 29,
+    "file_count": 451,
+    "fixed_page_count": 30,
     "news_article_count": 53,
     "credential_pdf_count": 71,
-    "media_file_count": 263,
+    "media_file_count": 266,
     "support_file_count": 4,
     "archive_file_count": 24,
     "approved_exclusion_count": 3,
     "unclassified_file_count": 0,
     "disposition_counts": {
-      "IMPORT": 420,
+      "IMPORT": 424,
       "ARCHIVE": 24,
       "APPROVED_EXCLUSION": 3
     },
@@ -25,8 +25,8 @@
       "authoring_reference": 2,
       "credential_pdf": 71,
       "finder_metadata": 3,
-      "fixed_page": 29,
-      "media_asset": 263,
+      "fixed_page": 30,
+      "media_asset": 266,
       "news_article": 53,
       "quality_assurance_evidence": 21,
       "site_support": 4,
@@ -52,7 +52,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 21822,
       "sha256": "be6249e6c7f4df3f7c296b6460e78c0988be38e320f63621256a2fb42a2e68e1",
-      "reference_count": 34
+      "reference_count": 35
     },
     {
       "legacy_path": "/ai-agents.html",
@@ -62,7 +62,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 9919,
       "sha256": "97dff235a69b6e92a665679a4aa1466907b4542867466d5c71164cfab302f735",
-      "reference_count": 31
+      "reference_count": 32
     },
     {
       "legacy_path": "/ai-consulting.html",
@@ -72,7 +72,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 9899,
       "sha256": "307eff934f9ae1b95a8e88b30c3eb568b9e404520877f01b01fe53b806441e27",
-      "reference_count": 36
+      "reference_count": 37
     },
     {
       "legacy_path": "/ai-os.html",
@@ -82,7 +82,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 15745,
       "sha256": "c62538aa6135019389c469d58086b9122727aa41976f8de3c407c91a18f40db2",
-      "reference_count": 98
+      "reference_count": 100
     },
     {
       "legacy_path": "/ai-platform.html",
@@ -92,7 +92,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 10011,
       "sha256": "da1b42eee2b2b259d708216686e71454cfb46c9759f46f71713d5ebf43ce9090",
-      "reference_count": 31
+      "reference_count": 32
     },
     {
       "legacy_path": "/ai-scenarios.html",
@@ -102,7 +102,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 10929,
       "sha256": "b0a019b5cc3a29491405d0dddd31dca850b34b5cce55df786d751f13ca8a83d6",
-      "reference_count": 31
+      "reference_count": 32
     },
     {
       "legacy_path": "/assets/article.css",
@@ -242,7 +242,7 @@
       "content_type": "image/svg+xml",
       "size_bytes": 337804,
       "sha256": "b6f7b1588e781dce50ae5af72743167362087eab30bbd25e704f7e786c5526f4",
-      "reference_count": 58
+      "reference_count": 60
     },
     {
       "legacy_path": "/assets/parallel-brand/logo.png",
@@ -263,6 +263,36 @@
       "size_bytes": 61342,
       "sha256": "9a6fbbd33b6e8ab581799b0b147eb8e1ecd4d4e59145cf2515b15b63ac4b5346",
       "reference_count": 0
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/smart-drainage-chain.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 233292,
+      "sha256": "3caf25f2f00552eadcd277877fc2708c668013ff4dbf5227ab93829b6f66f5e5",
+      "reference_count": 1
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/smart-drainage-monitoring.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 273614,
+      "sha256": "ee659d153a19d4450d0b4c0cb78607c32f9e985b38f8c60adb5b6e81c39d6b0b",
+      "reference_count": 1
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/smart-drainage-topology.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 245326,
+      "sha256": "1549e6676f23f80e2e32d5a199af4b959f43645e084bbe78aeb5a6e3b42a38ff",
+      "reference_count": 1
     },
     {
       "legacy_path": "/assets/parallel-brand/station-interface.png",
@@ -350,9 +380,9 @@
       "disposition": "IMPORT",
       "disposition_reason": "static resource required by legacy pages",
       "content_type": "text/css; charset=utf-8",
-      "size_bytes": 36855,
-      "sha256": "ca04d1ea9feb5b65f4c6f9eefd93232370004a7a234d6dcc80f987b7ded076e9",
-      "reference_count": 29
+      "size_bytes": 38240,
+      "sha256": "546b8b643820c75ee8b88bb104172da13d3fa68b493cb1724f323587676cd5f3",
+      "reference_count": 30
     },
     {
       "legacy_path": "/assets/site.js",
@@ -362,7 +392,7 @@
       "content_type": "text/javascript; charset=utf-8",
       "size_bytes": 7714,
       "sha256": "a147760329b852444e9483ba8e7cd84fbfefd2d3c07d499b3d49fdce0426ca3d",
-      "reference_count": 29
+      "reference_count": 30
     },
     {
       "legacy_path": "/brand-spec.md",
@@ -382,7 +412,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8597,
       "sha256": "2cb916efd00177dbfa79aa7590b839bda510d985103fc0404607f5474101a452",
-      "reference_count": 34
+      "reference_count": 35
     },
     {
       "legacy_path": "/case-integration.html",
@@ -392,7 +422,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8653,
       "sha256": "f660c0c828d219780efd27d33eb32a3e68f5f1db6053c3da610173ea75fa05df",
-      "reference_count": 32
+      "reference_count": 33
     },
     {
       "legacy_path": "/case-water-digital.html",
@@ -402,7 +432,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8626,
       "sha256": "065383cf3792188455f0681ed4e8754b20a3aeaed77dc133f3b04efa3add9930",
-      "reference_count": 31
+      "reference_count": 32
     },
     {
       "legacy_path": "/cases.html",
@@ -412,7 +442,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8881,
       "sha256": "13b46b3e617139a3fc36a8423724c00d0418befffa791dacbf50c7891bb8b430",
-      "reference_count": 41
+      "reference_count": 42
     },
     {
       "legacy_path": "/company.html",
@@ -422,7 +452,17 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8406,
       "sha256": "c039b0690a63b56746b29fe30f64b64296b9b5e4ae832259abb9a5ff6758676e",
-      "reference_count": 30
+      "reference_count": 31
+    },
+    {
+      "legacy_path": "/drainage.html",
+      "source_type": "fixed_page",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy fixed page content",
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 14294,
+      "sha256": "96570c618b7f4e771461a0a294844e674b5ca5f0ee5380f23dd1dba7a0f3d166",
+      "reference_count": 1
     },
     {
       "legacy_path": "/engineering.html",
@@ -432,7 +472,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 10755,
       "sha256": "3eb3eb089b1a759efb5bfa3815542dd947fa9cbce651d9579eeddd1b22f7d4e3",
-      "reference_count": 75
+      "reference_count": 77
     },
     {
       "legacy_path": "/gas-solutions.html",
@@ -442,7 +482,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 7945,
       "sha256": "313a2141acd12af0d3c2a999b9c5eb90373e21de8930ff2db3ffc87a68e1c1e2",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/gas.html",
@@ -452,7 +492,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8657,
       "sha256": "5cfaba0fb5f4598a131912f1b96a6cf7bebec0f13c6073fb4a58ae7a6b35a815",
-      "reference_count": 61
+      "reference_count": 63
     },
     {
       "legacy_path": "/index.html",
@@ -462,7 +502,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 13190,
       "sha256": "bc325930c42d1fa8d2e3cbab5da380778f6f1d684b35fa96331158266a3f9e38",
-      "reference_count": 79
+      "reference_count": 82
     },
     {
       "legacy_path": "/industry-contribution.html",
@@ -472,7 +512,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8420,
       "sha256": "dfe412193b17acffb938e33ded0c1d3dccd16b5092e0545332202b7ec154edbb",
-      "reference_count": 32
+      "reference_count": 33
     },
     {
       "legacy_path": "/news-articles/a01.html",
@@ -3352,7 +3392,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 6568,
       "sha256": "e72305fca56ddbb773fc985e51a0e149c6d0bc66ccfb7df7a2fa2599a8233f45",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/news-ind.html",
@@ -3362,7 +3402,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 6567,
       "sha256": "afa199b8f02fc128de8866efc2ba4a2fffb147923b40ac163a338bcdf0e1b7d1",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/news-tech.html",
@@ -3372,7 +3412,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 6568,
       "sha256": "a8542550dc7c83dc6d8038194c9a9e015df4ddc1037b51a5aa3bc562ccef6924",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/news.html",
@@ -3382,7 +3422,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 7490,
       "sha256": "635459b1f01bf01c77912cb5ee709187829a1d2bd21e56d928d28f03906b3376",
-      "reference_count": 34
+      "reference_count": 35
     },
     {
       "legacy_path": "/px-award-1.jpg",
@@ -3452,7 +3492,7 @@
       "content_type": "image/jpeg",
       "size_bytes": 28233,
       "sha256": "9830aa336cfe7b6eda9822b8dbefae98e5c7194c4e3c0284907e737edb9fd31f",
-      "reference_count": 29
+      "reference_count": 30
     },
     {
       "legacy_path": "/px-wechat-video-qr.png",
@@ -3462,7 +3502,7 @@
       "content_type": "image/png",
       "size_bytes": 18058,
       "sha256": "43a80e64a27277e716434cf93ceb758cf8625519abb060ea5e3b479279964b14",
-      "reference_count": 29
+      "reference_count": 30
     },
     {
       "legacy_path": "/qa/ai-os-1440.png",
@@ -3682,7 +3722,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8233,
       "sha256": "b001cecf86991202be8e49ae5c71ff3c14ea66cb6c4fe6ce221a84054ca70c85",
-      "reference_count": 31
+      "reference_count": 32
     },
     {
       "legacy_path": "/service-hardware.html",
@@ -3692,7 +3732,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8717,
       "sha256": "3e1bd5616bec531b3d45a3a530b98c2a99e98018bc122de6f1b7e6f6dbabbfe7",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/service-integration.html",
@@ -3702,7 +3742,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8701,
       "sha256": "1eae7698d320f95c31501a31f1c99951c89a2385772ee045c1cd91e2001e7e9c",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/service-maintenance.html",
@@ -3712,7 +3752,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8658,
       "sha256": "cdec66573b5cd3f1cf50488cc3913b719502824dd2a035a9d0680591c7f491ec",
-      "reference_count": 30
+      "reference_count": 31
     },
     {
       "legacy_path": "/service-security.html",
@@ -3722,7 +3762,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8663,
       "sha256": "18ca068d197582eb9165bc0a9cbd8c82b2b87204d0b23e8fc19e0df79dc83fae",
-      "reference_count": 61
+      "reference_count": 63
     },
     {
       "legacy_path": "/service-station.html",
@@ -3732,7 +3772,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 9514,
       "sha256": "25327529743d35a46f73b10cd719db65a5439e9f179bff8299ba640bb5a33d20",
-      "reference_count": 61
+      "reference_count": 63
     },
     {
       "legacy_path": "/water.html",
@@ -3742,7 +3782,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 14507,
       "sha256": "458444b7d80ef04caea36416297bbf5c006cae3e2587ee0129941040f37452d3",
-      "reference_count": 64
+      "reference_count": 68
     },
     {
       "legacy_path": "/yanshu.html",
@@ -3752,7 +3792,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 8933,
       "sha256": "d32685506b2a73b9c95736d0d7e11a4f2833e4f9008f48384b3cb62058ee9e40",
-      "reference_count": 33
+      "reference_count": 35
     },
     {
       "legacy_path": "/yanyun.html",
@@ -3762,7 +3802,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 10236,
       "sha256": "6defefe6df893577b4f6510728f7b0a55805505043b620c2dc3efab1b2b16e58",
-      "reference_count": 32
+      "reference_count": 34
     },
     {
       "legacy_path": "/专利/.DS_Store",

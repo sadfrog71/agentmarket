@@ -114,6 +114,30 @@
       "mime_type": "image/webp"
     },
     {
+      "source_relative_path": "assets/parallel-brand/smart-drainage-chain.webp",
+      "target_storage_key": "available/1474009d-2c59-5f36-8746-6dfa63b8e7a1.webp",
+      "public_id": "1474009d-2c59-5f36-8746-6dfa63b8e7a1",
+      "sha256": "3caf25f2f00552eadcd277877fc2708c668013ff4dbf5227ab93829b6f66f5e5",
+      "size_bytes": 233292,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/smart-drainage-monitoring.webp",
+      "target_storage_key": "available/fbe6d77f-a85c-5bca-ab6b-69c92262449e.webp",
+      "public_id": "fbe6d77f-a85c-5bca-ab6b-69c92262449e",
+      "sha256": "ee659d153a19d4450d0b4c0cb78607c32f9e985b38f8c60adb5b6e81c39d6b0b",
+      "size_bytes": 273614,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/smart-drainage-topology.webp",
+      "target_storage_key": "available/f605289e-d5d9-5729-80a3-b07a70608287.webp",
+      "public_id": "f605289e-d5d9-5729-80a3-b07a70608287",
+      "sha256": "1549e6676f23f80e2e32d5a199af4b959f43645e084bbe78aeb5a6e3b42a38ff",
+      "size_bytes": 245326,
+      "mime_type": "image/webp"
+    },
+    {
       "source_relative_path": "assets/parallel-brand/station-interface.png",
       "target_storage_key": "available/dd6c0168-9b2f-54b3-81bd-29de3c38a5e8.png",
       "public_id": "dd6c0168-9b2f-54b3-81bd-29de3c38a5e8",

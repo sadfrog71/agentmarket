@@ -171,25 +171,51 @@ class CorporateSiteSeedToolTests(unittest.TestCase):
         self.assertEqual("''", generate_seed_sql.sql_utf8(""))
         self.assertNotIn("0x using", generate_seed_sql.sql_utf8(""))
 
-    def test_approved_water_content_override_removes_only_the_water_ai_entry(self) -> None:
+    def test_approved_water_content_override_adds_smart_drainage_after_yanyun(self) -> None:
         body = (
-            '<div class="submenu" id="sub-water"><a href="ai-os.html">衍智云 · 水务 AI OS<span>↗</span></a></div>'
+            '<div class="submenu" id="sub-water"><a href="ai-os.html">衍智云 · 水务 AI OS<span>↗</span></a>'
+            '<a href="yanyun.html">衍云 · 一体化水务平台<span>↗</span></a>'
+            '<a href="yanshu.html">衍数 · 数据咨询与治理<span>↗</span></a></div>'
             '<p>以衍智云、衍云、衍数三条产品线，连接智能应用、业务运行与数据基础。</p>'
             '<div class="brand-nav"><a href="ai-os.html"><span>01</span><h2>衍智云</h2><p>水务 AI OS</p><b>↓</b></a>'
-            '<a href="yanyun.html"><span>02</span></a><a href="yanshu.html"><span>03</span></a></div>'
+            '<a href="yanyun.html"><span>02</span><h2>衍云</h2><p>一体化水务平台</p><b>↓</b></a>'
+            '<a href="yanshu.html"><span>03</span><h2>衍数</h2><p>数据咨询与治理</p><b>↓</b></a></div>'
             '<section class="section wrap" id="yanzhiyun"><p>remove me</p></section>'
+            '<section class="section mist" id="yanyun"><p>keep me</p></section>'
+            '<section class="section wrap" id="yanshu"><p>keep me too</p></section>'
             '<span>02 / 衍云</span><span>03 / 衍数</span>'
             '<a class="text-link" href="ai-os.html">衍智云 · 水务 AI OS<span aria-hidden="true">↗</span></a>'
+            '<a class="text-link" href="yanyun.html">衍云 · 一体化水务平台<span aria-hidden="true">↗</span></a>'
+            '<a class="text-link" href="yanshu.html">衍数 · 数据咨询与治理<span aria-hidden="true">↗</span></a>'
         )
         title, _description, rewritten = content_overrides.apply_content_overrides(
             "/water.html", "智慧水务 · 衍智云 / 衍云 / 衍数 — 平行数字", "", body
         )
 
         self.assertNotIn("衍智云", title + rewritten)
-        self.assertIn("智慧水务 · 衍云 / 衍数", title)
-        self.assertIn("以衍云、衍数两条产品线", rewritten)
+        self.assertIn("智慧水务 · 衍云 / 智慧排水 / 衍数", title)
+        self.assertIn("以衍云、智慧排水、衍数三条产品线", rewritten)
         self.assertIn('<a href="yanyun.html"><span>01</span>', rewritten)
+        self.assertIn('<a href="drainage.html"><span>02</span>', rewritten)
+        self.assertIn('<a href="yanshu.html"><span>03</span>', rewritten)
         self.assertIn('<span>01 / 衍云</span>', rewritten)
+        self.assertIn('id="drainage"', rewritten)
+        self.assertLess(rewritten.index('href="yanyun.html"'), rewritten.index('href="drainage.html"'))
+        self.assertLess(rewritten.index('href="drainage.html"'), rewritten.index('href="yanshu.html"'))
+
+    def test_smart_drainage_menu_is_added_once_to_other_pages(self) -> None:
+        body = (
+            '<div class="submenu" id="sub-water">'
+            '<a href="yanyun.html">衍云 · 一体化水务平台<span>↗</span></a>'
+            '<a href="yanshu.html">衍数 · 数据咨询与治理<span>↗</span></a></div>'
+        )
+
+        _title, _description, rewritten = content_overrides.apply_content_overrides("/about.html", "关于平行", "", body)
+        _title, _description, rewritten = content_overrides.apply_content_overrides("/about.html", "关于平行", "", rewritten)
+
+        self.assertEqual(1, rewritten.count('href="drainage.html"'))
+        self.assertLess(rewritten.index('href="yanyun.html"'), rewritten.index('href="drainage.html"'))
+        self.assertLess(rewritten.index('href="drainage.html"'), rewritten.index('href="yanshu.html"'))
 
     def test_framework_override_targets_the_new_media_asset(self) -> None:
         _title, _description, rewritten = content_overrides.apply_content_overrides(
