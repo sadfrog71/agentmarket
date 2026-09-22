@@ -217,6 +217,34 @@ class CorporateSiteSeedToolTests(unittest.TestCase):
         self.assertLess(rewritten.index('href="yanyun.html"'), rewritten.index('href="drainage.html"'))
         self.assertLess(rewritten.index('href="drainage.html"'), rewritten.index('href="yanshu.html"'))
 
+    def test_water_override_accepts_an_already_migrated_static_source(self) -> None:
+        body = (
+            '<div class="submenu" id="sub-water">'
+            '<a href="yanyun.html">衍云 · 一体化水务平台<span>↗</span></a>'
+            '<a href="drainage.html">智慧排水 · 厂站网河调度<span>↗</span></a>'
+            '<a href="yanshu.html">衍数 · 数据咨询与治理<span>↗</span></a></div>'
+            '<p>以衍云、智慧排水、衍数三条产品线，连接业务运行、排水调度与数据基础。</p>'
+            '<div class="brand-nav">'
+            '<a href="yanyun.html"><span>01</span><h2>衍云</h2><p>一体化水务平台</p><b>↓</b></a>'
+            '<a href="drainage.html"><span>02</span><h2>智慧排水</h2><p>厂站网河一体化调度</p><b>↓</b></a>'
+            '<a href="yanshu.html"><span>03</span><h2>衍数</h2><p>数据咨询与治理</p><b>↓</b></a></div>'
+            '<section class="section mist" id="yanyun"><span>01 / 衍云</span></section>'
+            + content_overrides._DRAINAGE_SECTION
+            + '<section class="section wrap" id="yanshu"><span>03 / 衍数</span></section>'
+            '<a class="text-link" href="yanyun.html">衍云 · 一体化水务平台<span aria-hidden="true">↗</span></a>'
+            '<a class="text-link" href="drainage.html">智慧排水 · 厂站网河调度<span aria-hidden="true">↗</span></a>'
+            '<a class="text-link" href="yanshu.html">衍数 · 数据咨询与治理<span aria-hidden="true">↗</span></a>'
+        )
+
+        title, _description, rewritten = content_overrides.apply_content_overrides(
+            "/water.html", "智慧水务 · 衍云 / 智慧排水 / 衍数 — 平行数字", "", body
+        )
+
+        self.assertEqual("智慧水务 · 衍云 / 智慧排水 / 衍数 — 平行数字", title)
+        self.assertEqual(1, rewritten.count('<a href="drainage.html"><span>02</span>'))
+        self.assertEqual(1, rewritten.count('id="drainage"'))
+        self.assertEqual(1, rewritten.count('智慧排水 · 厂站网河调度<span aria-hidden="true">↗</span>'))
+
     def test_qualification_gallery_uses_managed_media_and_is_added_once(self) -> None:
         body = (
             '<main><section id="part-1" class="detail-section"><div class="detail-items">'

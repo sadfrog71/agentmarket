@@ -7,7 +7,7 @@
 | 项目 | 数值 |
 | --- | --- |
 | Manifest 架构 | `corporate-site-source-manifest/v1` |
-| 源快照 SHA-256 | `1bc5bfab446eb18616c36baf87ff5b96b88bc9dca3f04b4c1547f655d7ed071e` |
+| 源快照 SHA-256 | `3261bab4ccfe174e2bc7b7c71d4eeed11060741b0b871948b7aee1774dd2bf03` |
 | 源文件总数 | 454 |
 | 固定页面 | 30 |
 | 新闻文章 | 53 |
@@ -29,12 +29,12 @@
 | 旧站路径 | 类型 | 处理 | MIME | 字节 | SHA-256 | 引用数 |
 | --- | --- | --- | --- | ---: | --- | ---: |
 | `/.DS_Store` | finder_metadata | APPROVED_EXCLUSION | `application/octet-stream` | 6148 | `a0f039771abd05896fd895ae1f76dcf8e7b562858a956297a965d81646fc6d84` | 0 |
-| `/about.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 21822 | `be6249e6c7f4df3f7c296b6460e78c0988be38e320f63621256a2fb42a2e68e1` | 35 |
-| `/ai-agents.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9919 | `97dff235a69b6e92a665679a4aa1466907b4542867466d5c71164cfab302f735` | 32 |
-| `/ai-consulting.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9899 | `307eff934f9ae1b95a8e88b30c3eb568b9e404520877f01b01fe53b806441e27` | 37 |
-| `/ai-os.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 15745 | `c62538aa6135019389c469d58086b9122727aa41976f8de3c407c91a18f40db2` | 100 |
-| `/ai-platform.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10011 | `da1b42eee2b2b259d708216686e71454cfb46c9759f46f71713d5ebf43ce9090` | 32 |
-| `/ai-scenarios.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10929 | `b0a019b5cc3a29491405d0dddd31dca850b34b5cce55df786d751f13ca8a83d6` | 32 |
+| `/about.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 21834 | `ef38bda6a2a3ab943ba1daf9640f54bf5d7c81f2a2218ae66abf07fef7961af1` | 35 |
+| `/ai-agents.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9931 | `7e530cc6ff191efb58f48eec938c401ad6e942d50269825070910b8de9801095` | 32 |
+| `/ai-consulting.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9911 | `fccc18bb45512117d6cd963a91e045d2ca9ad9a2a858c293ec5759006d5b7f67` | 37 |
+| `/ai-os.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 15757 | `74ee97b1b8eadbeafdb1f1668d29c47576882306d84d8446f7c4fd78ce0d208a` | 68 |
+| `/ai-platform.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10023 | `394c1c153f38583a0c49d57701479d2900c71259c19fe276e0e074d9e0cc0cec` | 32 |
+| `/ai-scenarios.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10941 | `c826a379199011f4b77440b23601bfcd3318fa8d6cdbdde1d06d2819a2d171de` | 32 |
 | `/assets/article.css` | site_support | IMPORT | `text/css; charset=utf-8` | 1549 | `88837e7c2fa2db482b8f8bbf702d89d90d9be1dbee1cd30dad89c18da3c440db` | 0 |
 | `/assets/news-data.js` | site_support | IMPORT | `text/javascript; charset=utf-8` | 12945 | `e682cf45dbcf949dd978eb1c4acfe75f93f23a78e9d6e3a2ce650b0bba3badca` | 5 |
 | `/assets/parallel-brand/agent-market.webp` | media_asset | IMPORT | `image/webp` | 98074 | `67513c13e2d886da97fe34b9d22a7b41614d3ae517ce39b7f7b71428996e68e4` | 1 |
@@ -42,9 +42,9 @@
 | `/assets/parallel-brand/ai-architecture.png` | media_asset | IMPORT | `image/png` | 2339685 | `d04847b6982dd6286d5774939a5fae8e48cc91aa62a4b43dfaaf67d97036739a` | 3 |
 | `/assets/parallel-brand/ai-cocreation.png` | media_asset | IMPORT | `image/png` | 3161448 | `f5a9fec55ee3da53f9086ad8f858c2c45f49d9a3cc789bb96c7329dff8e73776` | 2 |
 | `/assets/parallel-brand/ai-collaboration.png` | media_asset | IMPORT | `image/png` | 1370192 | `66f166f535c015f3d232ba5f885f52c21f3f1359cb596e1cd2e4f7987a9a167e` | 2 |
-| `/assets/parallel-brand/ai-platform.webp` | media_asset | IMPORT | `image/webp` | 115988 | `036eb5de8e496b53513fa84dda63c1caa5ae627b40fcaa8a731d016db48d68b6` | 4 |
+| `/assets/parallel-brand/ai-platform.webp` | media_asset | IMPORT | `image/webp` | 115988 | `036eb5de8e496b53513fa84dda63c1caa5ae627b40fcaa8a731d016db48d68b6` | 3 |
 | `/assets/parallel-brand/company.webp` | media_asset | IMPORT | `image/webp` | 314540 | `068e321c70a555bfd98fd5711ef5bb86721c03036ba46d0afbda0467721a65e0` | 2 |
-| `/assets/parallel-brand/control-room.webp` | media_asset | IMPORT | `image/webp` | 296088 | `e87775adabdf23d6a0bed6cb3590033b31045f3029a220bc317315353cddd038` | 6 |
+| `/assets/parallel-brand/control-room.webp` | media_asset | IMPORT | `image/webp` | 269298 | `caa34250a7be9252b5e8ad46e111cc8acdd06ceec59f96f3df1a4f0f110bd06c` | 6 |
 | `/assets/parallel-brand/datacenter.webp` | media_asset | IMPORT | `image/webp` | 217266 | `6e0cc40e2dc2c0a2ead0ff0e8da45b10b11980fb26763bf52488882f7e91a86e` | 1 |
 | `/assets/parallel-brand/engineer.webp` | media_asset | IMPORT | `image/webp` | 58998 | `c125d612b8bf4fb11ff7cb1f59af7de779553eda26d87c53787630ac9d0a804a` | 5 |
 | `/assets/parallel-brand/logo-transparent-original.png` | media_asset | IMPORT | `image/png` | 253226 | `4fc4622c1e4eafbd992a9501cd5c1b75ea6349e3ddfebd945ed5512bd12a4b1d` | 0 |
@@ -56,7 +56,7 @@
 | `/assets/parallel-brand/scada.webp` | media_asset | IMPORT | `image/webp` | 61342 | `9a6fbbd33b6e8ab581799b0b147eb8e1ecd4d4e59145cf2515b15b63ac4b5346` | 0 |
 | `/assets/parallel-brand/smart-drainage-chain.webp` | media_asset | IMPORT | `image/webp` | 233292 | `3caf25f2f00552eadcd277877fc2708c668013ff4dbf5227ab93829b6f66f5e5` | 1 |
 | `/assets/parallel-brand/smart-drainage-monitoring.webp` | media_asset | IMPORT | `image/webp` | 273614 | `ee659d153a19d4450d0b4c0cb78607c32f9e985b38f8c60adb5b6e81c39d6b0b` | 1 |
-| `/assets/parallel-brand/smart-drainage-topology.webp` | media_asset | IMPORT | `image/webp` | 245326 | `1549e6676f23f80e2e32d5a199af4b959f43645e084bbe78aeb5a6e3b42a38ff` | 1 |
+| `/assets/parallel-brand/smart-drainage-topology.webp` | media_asset | IMPORT | `image/webp` | 245326 | `1549e6676f23f80e2e32d5a199af4b959f43645e084bbe78aeb5a6e3b42a38ff` | 2 |
 | `/assets/parallel-brand/station-interface.png` | media_asset | IMPORT | `image/png` | 345376 | `e12eddfc927a0a5ef5fd09aa3d6c972986e787508e72499413e50001e0a86cdc` | 2 |
 | `/assets/parallel-brand/station-process.jpg` | media_asset | IMPORT | `image/jpeg` | 1281306 | `0f919ddd40307e302e48c04464b352dbf588dfd959b4d2e10dbdc38543a9748e` | 1 |
 | `/assets/parallel-brand/team.webp` | media_asset | IMPORT | `image/webp` | 141498 | `ceba42c297eaace04a120c1bb275921a24af8d737277801504a8bcb46de5a23c` | 2 |
@@ -68,17 +68,17 @@
 | `/assets/site.css` | site_support | IMPORT | `text/css; charset=utf-8` | 38240 | `546b8b643820c75ee8b88bb104172da13d3fa68b493cb1724f323587676cd5f3` | 30 |
 | `/assets/site.js` | site_support | IMPORT | `text/javascript; charset=utf-8` | 7714 | `a147760329b852444e9483ba8e7cd84fbfefd2d3c07d499b3d49fdce0426ca3d` | 30 |
 | `/brand-spec.md` | authoring_reference | ARCHIVE | `text/markdown; charset=utf-8` | 4664 | `3ebda3cf5d411a6407726e945c6d36cb60ffd06a1fde35488cbc7f317e20504e` | 0 |
-| `/case-industrial.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8597 | `2cb916efd00177dbfa79aa7590b839bda510d985103fc0404607f5474101a452` | 35 |
-| `/case-integration.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8653 | `f660c0c828d219780efd27d33eb32a3e68f5f1db6053c3da610173ea75fa05df` | 33 |
-| `/case-water-digital.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8626 | `065383cf3792188455f0681ed4e8754b20a3aeaed77dc133f3b04efa3add9930` | 32 |
-| `/cases.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8881 | `13b46b3e617139a3fc36a8423724c00d0418befffa791dacbf50c7891bb8b430` | 42 |
-| `/company.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8406 | `c039b0690a63b56746b29fe30f64b64296b9b5e4ae832259abb9a5ff6758676e` | 31 |
-| `/drainage.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 14294 | `96570c618b7f4e771461a0a294844e674b5ca5f0ee5380f23dd1dba7a0f3d166` | 1 |
-| `/engineering.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10755 | `3eb3eb089b1a759efb5bfa3815542dd947fa9cbce651d9579eeddd1b22f7d4e3` | 77 |
-| `/gas-solutions.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 7945 | `313a2141acd12af0d3c2a999b9c5eb90373e21de8930ff2db3ffc87a68e1c1e2` | 31 |
-| `/gas.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8657 | `5cfaba0fb5f4598a131912f1b96a6cf7bebec0f13c6073fb4a58ae7a6b35a815` | 63 |
-| `/index.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 13190 | `bc325930c42d1fa8d2e3cbab5da380778f6f1d684b35fa96331158266a3f9e38` | 82 |
-| `/industry-contribution.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8420 | `dfe412193b17acffb938e33ded0c1d3dccd16b5092e0545332202b7ec154edbb` | 33 |
+| `/case-industrial.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8609 | `5dbd240869bfbc2721dd9df6c52a531677fa563a982e59e2445872d07bb8f582` | 35 |
+| `/case-integration.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8665 | `94a6af4b54496367e6835e3153627308e9daae9015592fb2463ac9f7340fd715` | 33 |
+| `/case-water-digital.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8638 | `1827be932e29fb0ce787f67d601bb50e1b367f0144bfb1bda27765971b49a22a` | 32 |
+| `/cases.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8893 | `74de10f360921c99cb61c3d90ad6b93f11b9b51f596be646fb08c2620258f93a` | 42 |
+| `/company.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8418 | `4d6ddb5afa94449872656ab50624d6d5176e67dcd6a70c8156d98937b4283dcc` | 31 |
+| `/drainage.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 14294 | `96570c618b7f4e771461a0a294844e674b5ca5f0ee5380f23dd1dba7a0f3d166` | 33 |
+| `/engineering.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10767 | `3b5c40473e01af6502d66ebd9fe5349777fb8d63bd3b84f2f1faf97a8dc41a6d` | 77 |
+| `/gas-solutions.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 7957 | `965bfef72bd38cb215fb4f5ee41ab46ae91f5e160b6e64138dbfcfada1e22992` | 31 |
+| `/gas.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8669 | `26312c4b4a9a7a823c824bcd6e77a6f67a28213964d968ddb26630f463bf6824` | 63 |
+| `/index.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 13202 | `2b6fb8c50eae112d5f1fb88cbcdd6af539c0f7b7cbc74594fabc2024b0713106` | 82 |
+| `/industry-contribution.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8432 | `f2ee1635d645a03a4322b263deb89e71da37eceff2f6804f1aabb2d61f5cef5f` | 33 |
 | `/news-articles/a01.html` | news_article | IMPORT | `text/html; charset=utf-8` | 4502 | `78a0c0726ffe56977072fe125877522a2159675331964fe8a1fa7da57f026090` | 0 |
 | `/news-articles/a02.html` | news_article | IMPORT | `text/html; charset=utf-8` | 4708 | `936febcb7139748e2db5692b930ecdc0107523406ff2493d405facb9585845bb` | 0 |
 | `/news-articles/a03.html` | news_article | IMPORT | `text/html; charset=utf-8` | 7394 | `40ca50fcc66922f01dea650a78d5cce9a2eeeb89cd7b72b8371a537baf881f72` | 0 |
@@ -366,10 +366,10 @@
 | `/news-articles/assets/a53_4.png` | media_asset | IMPORT | `image/png` | 79553 | `ee9740f6f255a96d42ad9bed5473b79d4f36f7b13ad8c0f69cba97b37d40b00a` | 1 |
 | `/news-articles/assets/a53_5.png` | media_asset | IMPORT | `image/png` | 542862 | `c2ebbea7b84d2e3c09c843d412c6fc70888472b0657e2173228536af46fd8e72` | 1 |
 | `/news-articles/assets/a53_6.png` | media_asset | IMPORT | `image/png` | 187355 | `bd93e898e18711da2ee7cd6d7c0ef9b2295481b1cddf1bd2fd036a26dbd66af9` | 1 |
-| `/news-corp.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 6568 | `e72305fca56ddbb773fc985e51a0e149c6d0bc66ccfb7df7a2fa2599a8233f45` | 31 |
-| `/news-ind.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 6567 | `afa199b8f02fc128de8866efc2ba4a2fffb147923b40ac163a338bcdf0e1b7d1` | 31 |
-| `/news-tech.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 6568 | `a8542550dc7c83dc6d8038194c9a9e015df4ddc1037b51a5aa3bc562ccef6924` | 31 |
-| `/news.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 7490 | `635459b1f01bf01c77912cb5ee709187829a1d2bd21e56d928d28f03906b3376` | 35 |
+| `/news-corp.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 6580 | `cb36c48b78dc809f739e8d9d6de96f7d7f78a8facee8c9e466444f48f2110b8d` | 31 |
+| `/news-ind.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 6579 | `8f28d81fc1f1543590054c341b5667ef24e925b7a7045c83eb06322009c384cb` | 31 |
+| `/news-tech.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 6580 | `abaec5dce34fb13f6e793425b939a247d05ae912cfad470b01f8822429507f91` | 31 |
+| `/news.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 7502 | `f6ea4dd17c5fa42863a8ddfb9a97def7b86bd4fbec453ea7cae74dc05eaa9de4` | 35 |
 | `/px-award-1.jpg` | media_asset | IMPORT | `image/jpeg` | 928026 | `0796512ab81a24ff8a3eb9d8d45bd03f5338f8a946cba0618742bc2c09043e43` | 1 |
 | `/px-award-2.png` | media_asset | IMPORT | `image/png` | 605189 | `72402d6f8c3c5aa9bb7ff18480f99ef04592e942b6c0bed6407e267c912daa65` | 1 |
 | `/px-award-3.jpg` | media_asset | IMPORT | `image/jpeg` | 284351 | `9766f05e694f91202ff16d2b9d2e8bf864caa8a651d88aad803110ccd0bf687e` | 1 |
@@ -399,15 +399,15 @@
 | `/qa/water-390.png` | quality_assurance_evidence | ARCHIVE | `image/png` | 334475 | `5e4102a0a501bad3581e57cdab9548e0a423b17cd1b7f25afe8978488de8f1cc` | 0 |
 | `/qa/yanyun-1440.png` | quality_assurance_evidence | ARCHIVE | `image/png` | 1064146 | `b390a1febe247426662a45e151f85070bcd9713def283ad13efa3bb079374a1d` | 0 |
 | `/qa/yanyun-390.png` | quality_assurance_evidence | ARCHIVE | `image/png` | 293334 | `4356f2fbbc939746d0272f8eb85b6e09eae87f2297037b8b779d7294655c9773` | 0 |
-| `/qualifications.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8233 | `b001cecf86991202be8e49ae5c71ff3c14ea66cb6c4fe6ce221a84054ca70c85` | 32 |
-| `/service-hardware.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8717 | `3e1bd5616bec531b3d45a3a530b98c2a99e98018bc122de6f1b7e6f6dbabbfe7` | 31 |
-| `/service-integration.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8701 | `1eae7698d320f95c31501a31f1c99951c89a2385772ee045c1cd91e2001e7e9c` | 31 |
-| `/service-maintenance.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8658 | `cdec66573b5cd3f1cf50488cc3913b719502824dd2a035a9d0680591c7f491ec` | 31 |
-| `/service-security.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8663 | `18ca068d197582eb9165bc0a9cbd8c82b2b87204d0b23e8fc19e0df79dc83fae` | 63 |
-| `/service-station.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9514 | `25327529743d35a46f73b10cd719db65a5439e9f179bff8299ba640bb5a33d20` | 63 |
-| `/water.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 14507 | `458444b7d80ef04caea36416297bbf5c006cae3e2587ee0129941040f37452d3` | 68 |
-| `/yanshu.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8933 | `d32685506b2a73b9c95736d0d7e11a4f2833e4f9008f48384b3cb62058ee9e40` | 35 |
-| `/yanyun.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10236 | `6defefe6df893577b4f6510728f7b0a55805505043b620c2dc3efab1b2b16e58` | 34 |
+| `/qualifications.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8245 | `045edaf453c57bf2bcb7ab09b8b877e7fa4fc779e3127f3b050f9395f3afe553` | 32 |
+| `/service-hardware.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8729 | `3dc52fef09c7caa11d8adb09474f69405a1b3c69ad10b18812860d6f3cc23eab` | 31 |
+| `/service-integration.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8713 | `dac56817196c9ebf88fb1c703b8ae7a3c9fcc90d65f90b7cd783e581db1f9b38` | 31 |
+| `/service-maintenance.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8670 | `db56b3ca885a49d8bcb1d9ae3aefd0fa9bfac9a6ef83b2083da2019edfb076b1` | 31 |
+| `/service-security.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8675 | `26e9ffa48845a78680377a9201671d40084aa2d79babe0665ad49d8e195028e8` | 63 |
+| `/service-station.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9526 | `0c65e424ddfce08e0ce427d92f4291cff331634b75d2ef5999d1a5ebea0aaa17` | 63 |
+| `/water.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 14971 | `1b1408c8f8fc5d0f3f4ebf07c6e0d98096af2ea045afe65458ce5f1046faaa37` | 68 |
+| `/yanshu.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8945 | `83b6db926c57e933009382dd77ed0bc94fc7f0e256a054dd2f48c121119e59d7` | 35 |
+| `/yanyun.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 10248 | `aec60f8c1ffc72f198975218a33fc00cb526d1eb57fd7c4ae7170cfbac930e82` | 34 |
 | `/专利/.DS_Store` | finder_metadata | APPROVED_EXCLUSION | `application/octet-stream` | 6148 | `dfbb0afa9c5f00aff428e31f5ba240e5186757ecf43154f32830b39821d772d5` | 0 |
 | `/专利/202121798292X一种超声波水表.pdf` | credential_pdf | IMPORT | `application/pdf` | 1356015 | `c92a7cff34aceaf61e228725bdabcaf27bebcf1744f5d42de4a06db0cb711dba` | 0 |
 | `/专利/2021220182008一种带防回流装置的水表实用新型专利证书(签章).pdf` | credential_pdf | IMPORT | `application/pdf` | 1330858 | `53c7e451e6ab5196fb1d3dba7b43e52c1d4484242fb10c11e34dc3486307f261` | 0 |

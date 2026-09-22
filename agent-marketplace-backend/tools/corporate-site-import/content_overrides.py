@@ -68,7 +68,7 @@ _QUALIFICATION_IMAGE_DIALOG = (
 def apply_content_overrides(legacy_path: str, title: str, description: str, body_html: str) -> Tuple[str, str, str]:
     """Return publishable content after applying the approved site-only changes."""
     body_html = body_html.replace(_WATER_AI_MENU_ITEM, "")
-    if 'href="drainage.html"' not in body_html:
+    if _DRAINAGE_MENU_ITEM not in body_html:
         body_html = body_html.replace(_YANYUN_MENU_ITEM, _YANYUN_MENU_ITEM + _DRAINAGE_MENU_ITEM)
 
     if legacy_path == "/water.html":
@@ -78,15 +78,19 @@ def apply_content_overrides(legacy_path: str, title: str, description: str, body
             "以衍云、智慧排水、衍数三条产品线，连接业务运行、排水调度与数据基础。",
         )
         body_html = body_html.replace(_WATER_AI_BRAND_CARD, "")
-        body_html, removed = _WATER_AI_SECTION.subn("", body_html, count=1)
-        if removed != 1:
-            raise ValueError("expected one 衍智云 section in /water.html")
+        body_html = _WATER_AI_SECTION.sub("", body_html, count=1)
         body_html = body_html.replace('<a href="yanyun.html"><span>02</span>', '<a href="yanyun.html"><span>01</span>')
         body_html = body_html.replace('<span>02 / 衍云</span>', '<span>01 / 衍云</span>')
-        body_html = body_html.replace(_YANYUN_BRAND_CARD, _YANYUN_BRAND_CARD + _DRAINAGE_BRAND_CARD)
-        body_html = body_html.replace('<section class="section wrap" id="yanshu">', _DRAINAGE_SECTION + '<section class="section wrap" id="yanshu">')
+        if _DRAINAGE_BRAND_CARD not in body_html:
+            body_html = body_html.replace(_YANYUN_BRAND_CARD, _YANYUN_BRAND_CARD + _DRAINAGE_BRAND_CARD)
+        if 'id="drainage"' not in body_html:
+            body_html = body_html.replace(
+                '<section class="section wrap" id="yanshu">',
+                _DRAINAGE_SECTION + '<section class="section wrap" id="yanshu">',
+            )
         body_html = body_html.replace(_WATER_AI_INDEX_ITEM, "")
-        body_html = body_html.replace(_YANYUN_INDEX_ITEM, _YANYUN_INDEX_ITEM + _DRAINAGE_INDEX_ITEM)
+        if _DRAINAGE_INDEX_ITEM not in body_html:
+            body_html = body_html.replace(_YANYUN_INDEX_ITEM, _YANYUN_INDEX_ITEM + _DRAINAGE_INDEX_ITEM)
 
     if legacy_path == "/yanyun.html":
         body_html = body_html.replace(SUPERSEDED_FRAMEWORK_ASSET, REPLACEMENT_FRAMEWORK_ASSET)

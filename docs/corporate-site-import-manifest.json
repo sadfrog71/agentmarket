@@ -1,6 +1,6 @@
 {
   "schema_version": "corporate-site-source-manifest/v1",
-  "snapshot_sha256": "1bc5bfab446eb18616c36baf87ff5b96b88bc9dca3f04b4c1547f655d7ed071e",
+  "snapshot_sha256": "3261bab4ccfe174e2bc7b7c71d4eeed11060741b0b871948b7aee1774dd2bf03",
   "classification_policy": {
     "IMPORT": "legacy website pages, certificate PDFs, media, and required static support files",
     "ARCHIVE": "local QA evidence, authoring references, and unmapped support files retained for review",
@@ -50,8 +50,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 21822,
-      "sha256": "be6249e6c7f4df3f7c296b6460e78c0988be38e320f63621256a2fb42a2e68e1",
+      "size_bytes": 21834,
+      "sha256": "ef38bda6a2a3ab943ba1daf9640f54bf5d7c81f2a2218ae66abf07fef7961af1",
       "reference_count": 35
     },
     {
@@ -60,8 +60,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9919,
-      "sha256": "97dff235a69b6e92a665679a4aa1466907b4542867466d5c71164cfab302f735",
+      "size_bytes": 9931,
+      "sha256": "7e530cc6ff191efb58f48eec938c401ad6e942d50269825070910b8de9801095",
       "reference_count": 32
     },
     {
@@ -70,8 +70,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9899,
-      "sha256": "307eff934f9ae1b95a8e88b30c3eb568b9e404520877f01b01fe53b806441e27",
+      "size_bytes": 9911,
+      "sha256": "fccc18bb45512117d6cd963a91e045d2ca9ad9a2a858c293ec5759006d5b7f67",
       "reference_count": 37
     },
     {
@@ -80,9 +80,9 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 15745,
-      "sha256": "c62538aa6135019389c469d58086b9122727aa41976f8de3c407c91a18f40db2",
-      "reference_count": 100
+      "size_bytes": 15757,
+      "sha256": "74ee97b1b8eadbeafdb1f1668d29c47576882306d84d8446f7c4fd78ce0d208a",
+      "reference_count": 68
     },
     {
       "legacy_path": "/ai-platform.html",
@@ -90,8 +90,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10011,
-      "sha256": "da1b42eee2b2b259d708216686e71454cfb46c9759f46f71713d5ebf43ce9090",
+      "size_bytes": 10023,
+      "sha256": "394c1c153f38583a0c49d57701479d2900c71259c19fe276e0e074d9e0cc0cec",
       "reference_count": 32
     },
     {
@@ -100,8 +100,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10929,
-      "sha256": "b0a019b5cc3a29491405d0dddd31dca850b34b5cce55df786d751f13ca8a83d6",
+      "size_bytes": 10941,
+      "sha256": "c826a379199011f4b77440b23601bfcd3318fa8d6cdbdde1d06d2819a2d171de",
       "reference_count": 32
     },
     {
@@ -182,7 +182,7 @@
       "content_type": "image/webp",
       "size_bytes": 115988,
       "sha256": "036eb5de8e496b53513fa84dda63c1caa5ae627b40fcaa8a731d016db48d68b6",
-      "reference_count": 4
+      "reference_count": 3
     },
     {
       "legacy_path": "/assets/parallel-brand/company.webp",
@@ -200,8 +200,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy website media",
       "content_type": "image/webp",
-      "size_bytes": 296088,
-      "sha256": "e87775adabdf23d6a0bed6cb3590033b31045f3029a220bc317315353cddd038",
+      "size_bytes": 269298,
+      "sha256": "caa34250a7be9252b5e8ad46e111cc8acdd06ceec59f96f3df1a4f0f110bd06c",
       "reference_count": 6
     },
     {
@@ -322,7 +322,7 @@
       "content_type": "image/webp",
       "size_bytes": 245326,
       "sha256": "1549e6676f23f80e2e32d5a199af4b959f43645e084bbe78aeb5a6e3b42a38ff",
-      "reference_count": 1
+      "reference_count": 2
     },
     {
       "legacy_path": "/assets/parallel-brand/station-interface.png",
@@ -440,8 +440,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8597,
-      "sha256": "2cb916efd00177dbfa79aa7590b839bda510d985103fc0404607f5474101a452",
+      "size_bytes": 8609,
+      "sha256": "5dbd240869bfbc2721dd9df6c52a531677fa563a982e59e2445872d07bb8f582",
       "reference_count": 35
     },
     {
@@ -450,8 +450,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8653,
-      "sha256": "f660c0c828d219780efd27d33eb32a3e68f5f1db6053c3da610173ea75fa05df",
+      "size_bytes": 8665,
+      "sha256": "94a6af4b54496367e6835e3153627308e9daae9015592fb2463ac9f7340fd715",
       "reference_count": 33
     },
     {
@@ -460,8 +460,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8626,
-      "sha256": "065383cf3792188455f0681ed4e8754b20a3aeaed77dc133f3b04efa3add9930",
+      "size_bytes": 8638,
+      "sha256": "1827be932e29fb0ce787f67d601bb50e1b367f0144bfb1bda27765971b49a22a",
       "reference_count": 32
     },
     {
@@ -470,8 +470,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8881,
-      "sha256": "13b46b3e617139a3fc36a8423724c00d0418befffa791dacbf50c7891bb8b430",
+      "size_bytes": 8893,
+      "sha256": "74de10f360921c99cb61c3d90ad6b93f11b9b51f596be646fb08c2620258f93a",
       "reference_count": 42
     },
     {
@@ -480,8 +480,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8406,
-      "sha256": "c039b0690a63b56746b29fe30f64b64296b9b5e4ae832259abb9a5ff6758676e",
+      "size_bytes": 8418,
+      "sha256": "4d6ddb5afa94449872656ab50624d6d5176e67dcd6a70c8156d98937b4283dcc",
       "reference_count": 31
     },
     {
@@ -492,7 +492,7 @@
       "content_type": "text/html; charset=utf-8",
       "size_bytes": 14294,
       "sha256": "96570c618b7f4e771461a0a294844e674b5ca5f0ee5380f23dd1dba7a0f3d166",
-      "reference_count": 1
+      "reference_count": 33
     },
     {
       "legacy_path": "/engineering.html",
@@ -500,8 +500,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10755,
-      "sha256": "3eb3eb089b1a759efb5bfa3815542dd947fa9cbce651d9579eeddd1b22f7d4e3",
+      "size_bytes": 10767,
+      "sha256": "3b5c40473e01af6502d66ebd9fe5349777fb8d63bd3b84f2f1faf97a8dc41a6d",
       "reference_count": 77
     },
     {
@@ -510,8 +510,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 7945,
-      "sha256": "313a2141acd12af0d3c2a999b9c5eb90373e21de8930ff2db3ffc87a68e1c1e2",
+      "size_bytes": 7957,
+      "sha256": "965bfef72bd38cb215fb4f5ee41ab46ae91f5e160b6e64138dbfcfada1e22992",
       "reference_count": 31
     },
     {
@@ -520,8 +520,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8657,
-      "sha256": "5cfaba0fb5f4598a131912f1b96a6cf7bebec0f13c6073fb4a58ae7a6b35a815",
+      "size_bytes": 8669,
+      "sha256": "26312c4b4a9a7a823c824bcd6e77a6f67a28213964d968ddb26630f463bf6824",
       "reference_count": 63
     },
     {
@@ -530,8 +530,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 13190,
-      "sha256": "bc325930c42d1fa8d2e3cbab5da380778f6f1d684b35fa96331158266a3f9e38",
+      "size_bytes": 13202,
+      "sha256": "2b6fb8c50eae112d5f1fb88cbcdd6af539c0f7b7cbc74594fabc2024b0713106",
       "reference_count": 82
     },
     {
@@ -540,8 +540,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8420,
-      "sha256": "dfe412193b17acffb938e33ded0c1d3dccd16b5092e0545332202b7ec154edbb",
+      "size_bytes": 8432,
+      "sha256": "f2ee1635d645a03a4322b263deb89e71da37eceff2f6804f1aabb2d61f5cef5f",
       "reference_count": 33
     },
     {
@@ -3420,8 +3420,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 6568,
-      "sha256": "e72305fca56ddbb773fc985e51a0e149c6d0bc66ccfb7df7a2fa2599a8233f45",
+      "size_bytes": 6580,
+      "sha256": "cb36c48b78dc809f739e8d9d6de96f7d7f78a8facee8c9e466444f48f2110b8d",
       "reference_count": 31
     },
     {
@@ -3430,8 +3430,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 6567,
-      "sha256": "afa199b8f02fc128de8866efc2ba4a2fffb147923b40ac163a338bcdf0e1b7d1",
+      "size_bytes": 6579,
+      "sha256": "8f28d81fc1f1543590054c341b5667ef24e925b7a7045c83eb06322009c384cb",
       "reference_count": 31
     },
     {
@@ -3440,8 +3440,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 6568,
-      "sha256": "a8542550dc7c83dc6d8038194c9a9e015df4ddc1037b51a5aa3bc562ccef6924",
+      "size_bytes": 6580,
+      "sha256": "abaec5dce34fb13f6e793425b939a247d05ae912cfad470b01f8822429507f91",
       "reference_count": 31
     },
     {
@@ -3450,8 +3450,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 7490,
-      "sha256": "635459b1f01bf01c77912cb5ee709187829a1d2bd21e56d928d28f03906b3376",
+      "size_bytes": 7502,
+      "sha256": "f6ea4dd17c5fa42863a8ddfb9a97def7b86bd4fbec453ea7cae74dc05eaa9de4",
       "reference_count": 35
     },
     {
@@ -3750,8 +3750,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8233,
-      "sha256": "b001cecf86991202be8e49ae5c71ff3c14ea66cb6c4fe6ce221a84054ca70c85",
+      "size_bytes": 8245,
+      "sha256": "045edaf453c57bf2bcb7ab09b8b877e7fa4fc779e3127f3b050f9395f3afe553",
       "reference_count": 32
     },
     {
@@ -3760,8 +3760,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8717,
-      "sha256": "3e1bd5616bec531b3d45a3a530b98c2a99e98018bc122de6f1b7e6f6dbabbfe7",
+      "size_bytes": 8729,
+      "sha256": "3dc52fef09c7caa11d8adb09474f69405a1b3c69ad10b18812860d6f3cc23eab",
       "reference_count": 31
     },
     {
@@ -3770,8 +3770,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8701,
-      "sha256": "1eae7698d320f95c31501a31f1c99951c89a2385772ee045c1cd91e2001e7e9c",
+      "size_bytes": 8713,
+      "sha256": "dac56817196c9ebf88fb1c703b8ae7a3c9fcc90d65f90b7cd783e581db1f9b38",
       "reference_count": 31
     },
     {
@@ -3780,8 +3780,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8658,
-      "sha256": "cdec66573b5cd3f1cf50488cc3913b719502824dd2a035a9d0680591c7f491ec",
+      "size_bytes": 8670,
+      "sha256": "db56b3ca885a49d8bcb1d9ae3aefd0fa9bfac9a6ef83b2083da2019edfb076b1",
       "reference_count": 31
     },
     {
@@ -3790,8 +3790,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8663,
-      "sha256": "18ca068d197582eb9165bc0a9cbd8c82b2b87204d0b23e8fc19e0df79dc83fae",
+      "size_bytes": 8675,
+      "sha256": "26e9ffa48845a78680377a9201671d40084aa2d79babe0665ad49d8e195028e8",
       "reference_count": 63
     },
     {
@@ -3800,8 +3800,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9514,
-      "sha256": "25327529743d35a46f73b10cd719db65a5439e9f179bff8299ba640bb5a33d20",
+      "size_bytes": 9526,
+      "sha256": "0c65e424ddfce08e0ce427d92f4291cff331634b75d2ef5999d1a5ebea0aaa17",
       "reference_count": 63
     },
     {
@@ -3810,8 +3810,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 14507,
-      "sha256": "458444b7d80ef04caea36416297bbf5c006cae3e2587ee0129941040f37452d3",
+      "size_bytes": 14971,
+      "sha256": "1b1408c8f8fc5d0f3f4ebf07c6e0d98096af2ea045afe65458ce5f1046faaa37",
       "reference_count": 68
     },
     {
@@ -3820,8 +3820,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8933,
-      "sha256": "d32685506b2a73b9c95736d0d7e11a4f2833e4f9008f48384b3cb62058ee9e40",
+      "size_bytes": 8945,
+      "sha256": "83b6db926c57e933009382dd77ed0bc94fc7f0e256a054dd2f48c121119e59d7",
       "reference_count": 35
     },
     {
@@ -3830,8 +3830,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10236,
-      "sha256": "6defefe6df893577b4f6510728f7b0a55805505043b620c2dc3efab1b2b16e58",
+      "size_bytes": 10248,
+      "sha256": "aec60f8c1ffc72f198975218a33fc00cb526d1eb57fd7c4ae7170cfbac930e82",
       "reference_count": 34
     },
     {
