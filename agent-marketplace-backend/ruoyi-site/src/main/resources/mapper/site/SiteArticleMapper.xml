@@ -8,12 +8,13 @@
         <result property="categoryName" column="category_name" />
         <result property="title" column="title" />
         <result property="summary" column="summary" />
+        <result property="topFlag" column="top_flag" />
         <result property="publishedAt" column="published_at" />
     </resultMap>
 
     <select id="selectPublishedArticleList" resultMap="SitePublicArticleResult">
         select a.article_code, a.legacy_path, c.category_code, c.category_name,
-               r.title, r.summary, r.published_at
+               r.title, r.summary, r.top_flag, r.published_at
         from site_article a
         inner join site_article_revision r on r.revision_id = a.published_revision_id
         left join site_article_category c on c.category_id = a.category_id
@@ -21,7 +22,7 @@
         <if test="categoryCode != null and categoryCode != ''">
             and c.category_code = #{categoryCode}
         </if>
-        order by r.published_at desc, a.article_id desc
+        order by r.top_flag desc, r.published_at desc, a.article_id desc
         limit #{limit}
     </select>
 </mapper>

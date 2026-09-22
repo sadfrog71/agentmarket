@@ -13,6 +13,7 @@ public class SitePublicArticle
     private String categoryName;
     private String title;
     private String summary;
+    private String topFlag;
     private Date publishedAt;
 
     public String getArticleCode() { return articleCode; }
@@ -27,6 +28,8 @@ public class SitePublicArticle
     public void setTitle(String title) { this.title = title; }
     public String getSummary() { return summary; }
     public void setSummary(String summary) { this.summary = summary; }
+    public String getTopFlag() { return topFlag; }
+    public void setTopFlag(String topFlag) { this.topFlag = topFlag; }
     public Date getPublishedAt() { return publishedAt; }
     public void setPublishedAt(Date publishedAt) { this.publishedAt = publishedAt; }
 }

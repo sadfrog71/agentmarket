@@ -35,6 +35,7 @@ import { getToken } from "@/utils/auth"
 const { proxy } = getCurrentInstance()
 
 const quillEditorRef = ref()
+let quillInstance
 const uploadUrl = ref(import.meta.env.VITE_APP_BASE_API + "/common/upload") // 上传的图片服务器地址
 const headers = ref({
   Authorization: "Bearer " + getToken()
@@ -69,6 +70,11 @@ const props = defineProps({
   type: {
     type: String,
     default: "url",
+  },
+  /* 启用公众号、秀米等富文本粘贴清理 */
+  wechatPaste: {
+    type: Boolean,
+    default: false,
   }
 })
 
@@ -113,20 +119,24 @@ watch(() => props.modelValue, (v) => {
   }
 }, { immediate: true })
 
-// 如果设置了上传地址则自定义图片上传事件
+// 如果设置了上传地址则自定义图片上传事件；所有编辑器均监听粘贴事件，供新闻编辑器清理公众号富文本。
 onMounted(() => {
+  quillInstance = quillEditorRef.value.getQuill()
   if (props.type == 'url') {
-    let quill = quillEditorRef.value.getQuill()
-    let toolbar = quill.getModule("toolbar")
+    let toolbar = quillInstance.getModule("toolbar")
     toolbar.addHandler("image", (value) => {
       if (value) {
         proxy.$refs.uploadRef.click()
       } else {
-        quill.format("image", false)
+        quillInstance.format("image", false)
       }
     })
-    quill.root.addEventListener('paste', handlePasteCapture, true)
   }
+  quillInstance.root.addEventListener('paste', handlePasteCapture, true)
+})
+
+onBeforeUnmount(() => {
+  quillInstance?.root?.removeEventListener('paste', handlePasteCapture, true)
 })
 
 // 上传前校检格式和大小
@@ -174,6 +184,15 @@ function handleUploadError() {
 // 复制粘贴图片处理
 function handlePasteCapture(e) {
   const clipboard = e.clipboardData || window.clipboardData
+  const html = props.wechatPaste && clipboard?.getData('text/html')
+  if (html) {
+    e.preventDefault()
+    insertWechatHtml(html)
+    return
+  }
+  if (props.type !== 'url') {
+    return
+  }
   if (clipboard && clipboard.items) {
     for (let i = 0; i < clipboard.items.length; i++) {
       const item = clipboard.items[i]
@@ -184,6 +203,76 @@ function handlePasteCapture(e) {
       }
     }
   }
+}
+
+function insertWechatHtml(html) {
+  const safeHtml = sanitizeWechatHtml(html)
+  if (!safeHtml || !quillInstance) {
+    return
+  }
+  const range = quillInstance.getSelection(true) || { index: quillInstance.getLength(), length: 0 }
+  quillInstance.deleteText(range.index, range.length, 'user')
+  quillInstance.clipboard.dangerouslyPasteHTML(range.index, safeHtml, 'user')
+}
+
+function sanitizeWechatHtml(source) {
+  const doc = new DOMParser().parseFromString(source, 'text/html')
+  doc.body.querySelectorAll('script, style, iframe, object, embed, link, base, form, input, button').forEach((node) => node.remove())
+  const allowedAttributes = new Set(['class', 'style', 'href', 'src', 'alt', 'title', 'width', 'height', 'colspan', 'rowspan', 'target'])
+  const allowedStyleProperties = new Set([
+    'color', 'background-color', 'font-size', 'font-weight', 'font-style', 'font-family',
+    'text-align', 'line-height', 'letter-spacing', 'text-decoration', 'text-indent',
+    'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+    'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+    'border', 'border-top', 'border-right', 'border-bottom', 'border-left',
+    'border-radius', 'display', 'vertical-align', 'max-width', 'width', 'height'
+  ])
+
+  Array.from(doc.body.querySelectorAll('*')).forEach((node) => {
+    if (node.tagName === 'IMG' && !node.getAttribute('src')) {
+      node.setAttribute('src', node.getAttribute('data-src') || '')
+    }
+    Array.from(node.attributes).forEach((attribute) => {
+      const name = attribute.name.toLowerCase()
+      const value = attribute.value.trim()
+      if (!allowedAttributes.has(name) || name.startsWith('on')) {
+        node.removeAttribute(attribute.name)
+      } else if (name === 'class') {
+        const safeClasses = value.split(/\s+/).filter((item) => /^(ql-(align|indent|size|font|direction)-[a-z0-9-]+)$/i.test(item))
+        if (safeClasses.length) {
+          node.setAttribute('class', safeClasses.join(' '))
+        } else {
+          node.removeAttribute('class')
+        }
+      } else if ((name === 'href' || name === 'src') && !isSafeUrl(value)) {
+        node.removeAttribute(attribute.name)
+      }
+    })
+    if (node.tagName === 'IMG' && !node.getAttribute('src')) {
+      node.remove()
+      return
+    }
+    if (node.hasAttribute('style')) {
+      Array.from(node.style).forEach((property) => {
+        const value = node.style.getPropertyValue(property).toLowerCase()
+        if (!allowedStyleProperties.has(property) || /url\s*\(|expression\s*\(|@import|javascript:|data:/.test(value)) {
+          node.style.removeProperty(property)
+        }
+      })
+      if (!node.getAttribute('style')?.trim()) {
+        node.removeAttribute('style')
+      }
+    }
+    if (node.tagName === 'A' && node.getAttribute('href')) {
+      node.setAttribute('target', '_blank')
+      node.setAttribute('rel', 'noopener noreferrer')
+    }
+  })
+  return doc.body.innerHTML
+}
+
+function isSafeUrl(value) {
+  return /^(https?:|mailto:|tel:|\/|#)/i.test(value) && !/^\/\//.test(value)
 }
 
 function insertImage(file) {

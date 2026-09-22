@@ -13,6 +13,10 @@ public class SiteArticle extends BaseEntity
     private Long categoryId;
     private String categoryCode;
     private String categoryName;
+    /** 当前草稿优先、否则当前已发布修订的中文标题，仅供后台列表展示。 */
+    private String title;
+    /** 当前草稿优先、否则当前已发布修订的置顶标记。 */
+    private String topFlag;
     private Long draftRevisionId;
     private Long publishedRevisionId;
     private Long previousPublishedRevisionId;
@@ -29,6 +33,10 @@ public class SiteArticle extends BaseEntity
     public void setCategoryCode(String categoryCode) { this.categoryCode = categoryCode; }
     public String getCategoryName() { return categoryName; }
     public void setCategoryName(String categoryName) { this.categoryName = categoryName; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+    public String getTopFlag() { return topFlag; }
+    public void setTopFlag(String topFlag) { this.topFlag = topFlag; }
     public Long getDraftRevisionId() { return draftRevisionId; }
     public void setDraftRevisionId(Long draftRevisionId) { this.draftRevisionId = draftRevisionId; }
     public Long getPublishedRevisionId() { return publishedRevisionId; }

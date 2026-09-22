@@ -8,6 +8,8 @@
         <result property="categoryId" column="category_id" />
         <result property="categoryCode" column="category_code" />
         <result property="categoryName" column="category_name" />
+        <result property="title" column="title" />
+        <result property="topFlag" column="top_flag" />
         <result property="draftRevisionId" column="draft_revision_id" />
         <result property="publishedRevisionId" column="published_revision_id" />
         <result property="previousPublishedRevisionId" column="previous_published_revision_id" />
@@ -26,6 +28,7 @@
         <result property="summary" column="summary" />
         <result property="bodyHtml" column="body_html" />
         <result property="seoJson" column="seo_json" />
+        <result property="topFlag" column="top_flag" />
         <result property="contentHash" column="content_hash" />
         <result property="publishedAt" column="published_at" />
         <result property="publishedBy" column="published_by" />
@@ -35,10 +38,10 @@
         <result property="updateTime" column="update_time" />
         <result property="remark" column="remark" />
     </resultMap>
-    <sql id="selectArticleColumns">select a.article_id, a.article_code, a.legacy_path, a.category_id, a.draft_revision_id, a.published_revision_id, a.previous_published_revision_id, a.create_by, a.create_time, a.update_by, a.update_time, a.remark, c.category_code, c.category_name from site_article a left join site_article_category c on c.category_id = a.category_id</sql>
-    <sql id="selectArticleRevisionColumns">select revision_id, article_id, revision_no, revision_state, title, summary, body_html, seo_json, content_hash, published_at, published_by, create_by, create_time, update_by, update_time, remark from site_article_revision</sql>
+    <sql id="selectArticleColumns">select a.article_id, a.article_code, a.legacy_path, a.category_id, a.draft_revision_id, a.published_revision_id, a.previous_published_revision_id, a.create_by, a.create_time, a.update_by, a.update_time, a.remark, c.category_code, c.category_name, coalesce(d.title, p.title) as title, coalesce(d.top_flag, p.top_flag, '0') as top_flag from site_article a left join site_article_category c on c.category_id = a.category_id left join site_article_revision d on d.revision_id = a.draft_revision_id left join site_article_revision p on p.revision_id = a.published_revision_id</sql>
+    <sql id="selectArticleRevisionColumns">select revision_id, article_id, revision_no, revision_state, title, summary, body_html, seo_json, top_flag, content_hash, published_at, published_by, create_by, create_time, update_by, update_time, remark from site_article_revision</sql>
 
-    <select id="selectSiteArticleList" parameterType="SiteArticle" resultMap="SiteArticleResult"><include refid="selectArticleColumns" /><where>a.del_flag = '0'<if test="articleCode != null and articleCode != ''"> and a.article_code like concat('%', #{articleCode}, '%')</if><if test="categoryCode != null and categoryCode != ''"> and c.category_code = #{categoryCode}</if></where> order by a.article_id desc</select>
+    <select id="selectSiteArticleList" parameterType="SiteArticle" resultMap="SiteArticleResult"><include refid="selectArticleColumns" /><where>a.del_flag = '0'<if test="title != null and title != ''"> and coalesce(d.title, p.title) like concat('%', #{title}, '%')</if><if test="categoryCode != null and categoryCode != ''"> and c.category_code = #{categoryCode}</if></where> order by coalesce(d.top_flag, p.top_flag, '0') desc, coalesce(d.published_at, p.published_at) desc, a.article_id desc</select>
     <select id="selectSiteArticleById" parameterType="Long" resultMap="SiteArticleResult"><include refid="selectArticleColumns" /> where a.article_id = #{articleId} and a.del_flag = '0'</select>
     <select id="selectSiteArticleForUpdate" parameterType="Long" resultMap="SiteArticleResult"><include refid="selectArticleColumns" /> where a.article_id = #{articleId} and a.del_flag = '0' for update</select>
     <select id="selectCategoryIdByCode" resultType="long">select category_id from site_article_category where category_code = #{categoryCode} and enabled_flag = '1'</select>
@@ -48,8 +51,8 @@
     <select id="selectRevisionById" parameterType="Long" resultMap="SiteArticleRevisionResult"><include refid="selectArticleRevisionColumns" /> where revision_id=#{revisionId}</select>
     <select id="selectCurrentDraftByArticleId" parameterType="Long" resultMap="SiteArticleRevisionResult"><include refid="selectArticleRevisionColumns" /> where article_id=#{articleId} and revision_state='DRAFT' order by revision_no desc limit 1</select>
     <select id="selectNextRevisionNo" parameterType="Long" resultType="int">select coalesce(max(revision_no), 0) + 1 from site_article_revision where article_id=#{articleId}</select>
-    <insert id="insertArticleRevision" parameterType="SiteArticleRevision" useGeneratedKeys="true" keyProperty="revisionId">insert into site_article_revision (article_id, revision_no, revision_state, title, summary, body_html, seo_json, content_hash, published_at, create_by, create_time, remark) values (#{articleId}, #{revisionNo}, #{revisionState}, #{title}, #{summary}, #{bodyHtml}, #{seoJson}, #{contentHash}, #{publishedAt}, #{createBy}, sysdate(), #{remark})</insert>
-    <update id="updateDraftArticleRevision" parameterType="SiteArticleRevision">update site_article_revision set title=#{title}, summary=#{summary}, body_html=#{bodyHtml}, seo_json=#{seoJson}, content_hash=#{contentHash}, published_at=#{publishedAt}, update_by=#{updateBy}, update_time=sysdate(), remark=#{remark} where revision_id=#{revisionId} and revision_state='DRAFT'</update>
+    <insert id="insertArticleRevision" parameterType="SiteArticleRevision" useGeneratedKeys="true" keyProperty="revisionId">insert into site_article_revision (article_id, revision_no, revision_state, title, summary, body_html, seo_json, top_flag, content_hash, published_at, create_by, create_time, remark) values (#{articleId}, #{revisionNo}, #{revisionState}, #{title}, #{summary}, #{bodyHtml}, #{seoJson}, #{topFlag}, #{contentHash}, #{publishedAt}, #{createBy}, sysdate(), #{remark})</insert>
+    <update id="updateDraftArticleRevision" parameterType="SiteArticleRevision">update site_article_revision set title=#{title}, summary=#{summary}, body_html=#{bodyHtml}, seo_json=#{seoJson}, top_flag=#{topFlag}, content_hash=#{contentHash}, published_at=#{publishedAt}, update_by=#{updateBy}, update_time=sysdate(), remark=#{remark} where revision_id=#{revisionId} and revision_state='DRAFT'</update>
     <update id="updateRevisionState">update site_article_revision set revision_state=#{revisionState}, published_at=case when #{revisionState}='PUBLISHED' then coalesce(published_at, sysdate()) else published_at end, published_by=case when #{revisionState}='PUBLISHED' then #{publishedBy} else published_by end where revision_id=#{revisionId}</update>
     <insert id="insertPublishAudit">insert into site_publish_audit (aggregate_type, aggregate_id, action_type, from_revision_id, to_revision_id, operator, reason) values ('ARTICLE', #{aggregateId}, #{actionType}, #{fromRevisionId}, #{toRevisionId}, #{operator}, #{reason})</insert>
 </mapper>

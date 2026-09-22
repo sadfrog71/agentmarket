@@ -10,6 +10,8 @@ public class SiteCredential extends BaseEntity
     private Long credentialId;
     private String credentialCode;
     private String credentialType;
+    /** 当前草稿优先、否则当前已发布修订的中文证书名称，仅供后台列表展示。 */
+    private String title;
     private Long draftRevisionId;
     private Long publishedRevisionId;
     private Long previousPublishedRevisionId;
@@ -20,6 +22,8 @@ public class SiteCredential extends BaseEntity
     public void setCredentialCode(String credentialCode) { this.credentialCode = credentialCode; }
     public String getCredentialType() { return credentialType; }
     public void setCredentialType(String credentialType) { this.credentialType = credentialType; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
     public Long getDraftRevisionId() { return draftRevisionId; }
     public void setDraftRevisionId(Long draftRevisionId) { this.draftRevisionId = draftRevisionId; }
     public Long getPublishedRevisionId() { return publishedRevisionId; }

@@ -7,6 +7,7 @@
         <result property="pageCode" column="page_code" />
         <result property="routePath" column="route_path" />
         <result property="templateCode" column="template_code" />
+        <result property="title" column="title" />
         <result property="draftRevisionId" column="draft_revision_id" />
         <result property="publishedRevisionId" column="published_revision_id" />
         <result property="previousPublishedRevisionId" column="previous_published_revision_id" />
@@ -52,10 +53,13 @@
     </resultMap>
 
     <sql id="selectSitePageVo">
-        select page_id, page_code, route_path, template_code, draft_revision_id,
-               published_revision_id, previous_published_revision_id, del_flag,
-               create_by, create_time, update_by, update_time, remark
-        from site_page
+        select p.page_id, p.page_code, p.route_path, p.template_code, p.draft_revision_id,
+               p.published_revision_id, p.previous_published_revision_id, p.del_flag,
+               p.create_by, p.create_time, p.update_by, p.update_time, p.remark,
+               coalesce(d.title, r.title) as title
+        from site_page p
+        left join site_page_revision d on d.revision_id = p.draft_revision_id
+        left join site_page_revision r on r.revision_id = p.published_revision_id
     </sql>
 
     <sql id="selectSitePageRevisionVo">
@@ -68,21 +72,21 @@
     <select id="selectSitePageList" parameterType="SitePage" resultMap="SitePageResult">
         <include refid="selectSitePageVo" />
         <where>
-            del_flag = '0'
-            <if test="pageCode != null and pageCode != ''">and page_code like concat('%', #{pageCode}, '%')</if>
-            <if test="routePath != null and routePath != ''">and route_path like concat('%', #{routePath}, '%')</if>
+            p.del_flag = '0'
+            <if test="title != null and title != ''">and coalesce(d.title, r.title) like concat('%', #{title}, '%')</if>
+            <if test="routePath != null and routePath != ''">and p.route_path like concat('%', #{routePath}, '%')</if>
         </where>
-        order by page_id
+        order by p.page_id
     </select>
 
     <select id="selectSitePageById" parameterType="Long" resultMap="SitePageResult">
         <include refid="selectSitePageVo" />
-        where page_id = #{pageId} and del_flag = '0'
+        where p.page_id = #{pageId} and p.del_flag = '0'
     </select>
 
     <select id="selectSitePageForUpdate" parameterType="Long" resultMap="SitePageResult">
         <include refid="selectSitePageVo" />
-        where page_id = #{pageId} and del_flag = '0'
+        where p.page_id = #{pageId} and p.del_flag = '0'
         for update
     </select>
 

@@ -13,6 +13,8 @@ public class SitePage extends BaseEntity
     private String pageCode;
     private String routePath;
     private String templateCode;
+    /** 当前草稿优先、否则当前已发布修订的中文页面标题，仅供后台列表展示。 */
+    private String title;
     private Long draftRevisionId;
     private Long publishedRevisionId;
     private Long previousPublishedRevisionId;
@@ -26,6 +28,8 @@ public class SitePage extends BaseEntity
     public void setRoutePath(String routePath) { this.routePath = routePath; }
     public String getTemplateCode() { return templateCode; }
     public void setTemplateCode(String templateCode) { this.templateCode = templateCode; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
     public Long getDraftRevisionId() { return draftRevisionId; }
     public void setDraftRevisionId(Long draftRevisionId) { this.draftRevisionId = draftRevisionId; }
     public Long getPublishedRevisionId() { return publishedRevisionId; }

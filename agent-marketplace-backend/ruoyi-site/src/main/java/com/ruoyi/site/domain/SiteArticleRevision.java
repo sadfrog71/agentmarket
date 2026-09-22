@@ -16,6 +16,7 @@ public class SiteArticleRevision extends BaseEntity
     private String summary;
     private String bodyHtml;
     private String seoJson;
+    private String topFlag;
     private String contentHash;
     private Date publishedAt;
     private String publishedBy;
@@ -36,6 +37,8 @@ public class SiteArticleRevision extends BaseEntity
     public void setBodyHtml(String bodyHtml) { this.bodyHtml = bodyHtml; }
     public String getSeoJson() { return seoJson; }
     public void setSeoJson(String seoJson) { this.seoJson = seoJson; }
+    public String getTopFlag() { return topFlag; }
+    public void setTopFlag(String topFlag) { this.topFlag = topFlag; }
     public String getContentHash() { return contentHash; }
     public void setContentHash(String contentHash) { this.contentHash = contentHash; }
     public Date getPublishedAt() { return publishedAt; }

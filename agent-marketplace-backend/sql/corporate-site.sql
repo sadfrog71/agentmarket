@@ -189,6 +189,7 @@ create table site_article_revision (
   body_text            longtext default null comment '检索和核验纯文本',
   cover_media_id       bigint default null comment '封面媒体ID',
   seo_json             json default null comment 'SEO配置',
+  top_flag             char(1) not null default '0' comment '是否置顶（0否 1是）',
   content_hash         char(64) default null comment '发布内容聚合哈希',
   source_import_run_id char(36) default null comment '来源导入批次',
   published_at         datetime default null comment '发布时间',
@@ -202,6 +203,7 @@ create table site_article_revision (
   unique key uk_site_article_revision_no (article_id, revision_no),
   key idx_site_article_revision_state (article_id, revision_state),
   key idx_site_article_revision_publish_time (revision_state, published_at),
+  key idx_site_article_revision_top_publish (revision_state, top_flag, published_at),
   key idx_site_article_revision_cover (cover_media_id)
 ) engine=innodb default charset=utf8mb4 collate=utf8mb4_0900_ai_ci comment='企业官网新闻修订';
 
@@ -386,7 +388,7 @@ create table site_publish_audit (
 -- 后台菜单。对应页面在后台功能单元完成前不应切换至生产环境。
 insert into sys_menu values
 (2100, '企业官网', 0, 2, 'site', null, '', '', 1, 0, 'M', '0', '0', '', 'guide', 'admin', sysdate(), '', null, '企业官网内容、媒体与发布管理目录'),
-(2101, '页面与区块', 2100, 1, 'page', 'site/page/index', '', '', 1, 0, 'C', '0', '0', 'site:page:list', 'edit', 'admin', sysdate(), '', null, '官网页面、区块与修订维护'),
+(2101, '菜单管理', 2100, 1, 'page', 'site/page/index', '', '', 1, 0, 'C', '0', '0', 'site:page:list', 'edit', 'admin', sysdate(), '', null, '官网菜单、页面与修订维护'),
 (2102, '页面查询', 2101, 1, '', '', '', '', 1, 0, 'F', '0', '0', 'site:page:query', '#', 'admin', sysdate(), '', null, ''),
 (2103, '页面新增', 2101, 2, '', '', '', '', 1, 0, 'F', '0', '0', 'site:page:add', '#', 'admin', sysdate(), '', null, ''),
 (2104, '页面修改', 2101, 3, '', '', '', '', 1, 0, 'F', '0', '0', 'site:page:edit', '#', 'admin', sysdate(), '', null, ''),

@@ -3,8 +3,11 @@ package com.ruoyi.site.service.impl;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +27,8 @@ public class SiteArticleAdminServiceImpl implements ISiteArticleAdminService
     private static final Pattern DANGEROUS_TAG = Pattern.compile("(?is)<\\s*(script|style|iframe|object|embed|link|base)\\b");
     private static final Pattern EVENT_HANDLER = Pattern.compile("(?is)\\son[a-z0-9_-]+\\s*=");
     private static final Pattern JAVASCRIPT_URL = Pattern.compile("(?is)javascript\\s*:");
+    private static final Pattern DANGEROUS_STYLE = Pattern.compile("(?is)(expression\\s*\\(|url\\s*\\(\\s*['\"]?\\s*(?:javascript|data)\\s*:)");
+    private static final DateTimeFormatter ARTICLE_CODE_TIMESTAMP = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
 
     @Autowired
     private SiteArticleAdminMapper articleMapper;
@@ -57,6 +62,7 @@ public class SiteArticleAdminServiceImpl implements ISiteArticleAdminService
     @Transactional
     public SiteArticleDraft saveDraft(SiteArticleDraft draft)
     {
+        prepareNewArticleIdentity(draft);
         validateDraft(draft);
         Long categoryId = articleMapper.selectCategoryIdByCode(trim(draft.getCategoryCode()));
         if (categoryId == null)
@@ -181,9 +187,10 @@ public class SiteArticleAdminServiceImpl implements ISiteArticleAdminService
         revision.setSummary(trim(draft.getSummary()));
         revision.setBodyHtml(sanitizeHtml(draft.getBodyHtml()));
         revision.setSeoJson(trim(draft.getSeoJson()));
+        revision.setTopFlag(normalizeTopFlag(draft.getTopFlag()));
         revision.setPublishedAt(draft.getPublishedAt());
         revision.setContentHash(sha256(revision.getTitle() + "\n" + revision.getSummary() + "\n" + revision.getBodyHtml()
-                + "\n" + revision.getSeoJson() + "\n" + revision.getPublishedAt()));
+                + "\n" + revision.getSeoJson() + "\n" + revision.getTopFlag() + "\n" + revision.getPublishedAt()));
         revision.setRemark(draft.getRemark());
     }
 
@@ -205,6 +212,7 @@ public class SiteArticleAdminServiceImpl implements ISiteArticleAdminService
             result.setSummary(revision.getSummary());
             result.setBodyHtml(revision.getBodyHtml());
             result.setSeoJson(revision.getSeoJson());
+            result.setTopFlag(revision.getTopFlag());
             result.setContentHash(revision.getContentHash());
             result.setPublishedAt(revision.getPublishedAt());
             result.setPublishedBy(revision.getPublishedBy());
@@ -247,9 +255,10 @@ public class SiteArticleAdminServiceImpl implements ISiteArticleAdminService
         {
             return "";
         }
-        if (DANGEROUS_TAG.matcher(html).find() || EVENT_HANDLER.matcher(html).find() || JAVASCRIPT_URL.matcher(html).find())
+        if (DANGEROUS_TAG.matcher(html).find() || EVENT_HANDLER.matcher(html).find() || JAVASCRIPT_URL.matcher(html).find()
+                || DANGEROUS_STYLE.matcher(html).find())
         {
-            throw new ServiceException("新闻正文不能包含脚本、样式、嵌入对象、事件处理器或 javascript 链接");
+            throw new ServiceException("新闻正文不能包含脚本、危险样式、嵌入对象、事件处理器或 javascript 链接");
         }
         return html;
     }
@@ -283,5 +292,36 @@ public class SiteArticleAdminServiceImpl implements ISiteArticleAdminService
     private String trim(String value)
     {
         return value == null ? null : value.trim();
+    }
+
+    private void prepareNewArticleIdentity(SiteArticleDraft draft)
+    {
+        if (draft.getArticleId() != null)
+        {
+            return;
+        }
+        if (StringUtils.isEmpty(trim(draft.getArticleCode())))
+        {
+            draft.setArticleCode("NEWS_" + ARTICLE_CODE_TIMESTAMP.format(LocalDateTime.now()) + "_"
+                    + UUID.randomUUID().toString().replace("-", "").substring(0, 8).toUpperCase(Locale.ROOT));
+        }
+        if (StringUtils.isEmpty(trim(draft.getLegacyPath())))
+        {
+            draft.setLegacyPath("/news-articles/" + draft.getArticleCode().toLowerCase(Locale.ROOT) + ".html");
+        }
+    }
+
+    private String normalizeTopFlag(String value)
+    {
+        String flag = trim(value);
+        if (StringUtils.isEmpty(flag))
+        {
+            return "0";
+        }
+        if (!"0".equals(flag) && !"1".equals(flag))
+        {
+            throw new ServiceException("新闻置顶标记只支持 0 或 1");
+        }
+        return flag;
     }
 }
