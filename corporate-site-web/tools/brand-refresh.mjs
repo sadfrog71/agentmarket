@@ -140,7 +140,7 @@ function publishBlock(code, mainHtml, strategy) {
   const anchors = strategy === 'home'
     ? `set @hero_start = locate('<section class="home-hero wrap" id="home">', @old_body);
 set @hero_tail = locate('<section class="section wrap" id="ai">', @old_body);`
-    : `set @header_end = locate('</header>', @old_body) + length('</header>');
+    : `set @header_end = locate('</header>', @old_body) + length('</header>') - 1;
 set @footer_start = locate('<footer', @old_body);`
   return `
 -- ${code}: ${meta.reason}
