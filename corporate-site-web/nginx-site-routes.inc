@@ -1,0 +1,20 @@
+root /usr/share/nginx/html;
+index index.html;
+
+# The corporate site uses only the public site API. Keep generic backend
+# routes (including the management API) off the public website origin.
+location ^~ /api/open/site/v1/ {
+    proxy_pass http://backend:8080/open/site/v1/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+location ^~ /api/ {
+    return 404;
+}
+
+location / {
+    try_files $uri $uri/ /index.html;
+}
