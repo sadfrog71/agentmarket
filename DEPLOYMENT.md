@@ -24,7 +24,7 @@
 - Docker Engine 24 或更高版本
 - Docker Compose v2
 - 建议 4 核 CPU、8 GB 内存、20 GB 可用磁盘
-- 默认需要使用 `8080`、`8081`、`8082` 和 `8083` 端口
+- 本地默认使用 `8080`、`8081`、`8082`、`8083` 和 `8443` 端口；生产环境只需将官网网关暴露到 `80/443`，管理端与后端端口保持在本机或 Docker 网络内。
 
 确认运行环境：
 
@@ -56,6 +56,8 @@ RUOYI_JAVA_OPTS=-Xms128m -Xmx384m -XX:MaxMetaspaceSize=192m -XX:MaxDirectMemoryS
 BACKEND_PORT=8080
 WEB_PORT=8081
 CORPORATE_WEB_PORT=8083
+CORPORATE_WEB_HTTPS_PORT=8443
+ADMIN_BIND_HOST=127.0.0.1
 ADMIN_PORT=8082
 ```
 
@@ -74,9 +76,11 @@ docker compose ps
 | --- | --- |
 | 展示前台 | `http://服务器IP:8081` |
 | 企业官网 | `http://服务器IP:8083` |
-| 管理后台 | `http://服务器IP:8082` |
+| 管理后台（本地诊断） | `http://127.0.0.1:8082` |
 | 后端 API | `http://服务器IP:8080` |
 | Swagger | `http://服务器IP:8080/swagger-ui/index.html` |
+
+生产域名部署时，建议由 HTTPS 网关提供 `https://www.example.com`（官网）、`https://admin.example.com`（管理后台）和 `https://api.example.com`（接口）；不要将管理端或后端容器端口直接暴露到公网。
 
 初始管理员账号为 `admin`，初始密码为 `admin123`。首次登录后必须修改密码。
 

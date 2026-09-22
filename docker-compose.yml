@@ -72,11 +72,12 @@ services:
       - ${CORPORATE_TLS_KEY_PATH:-./corporate-site-web/tls/avatar-tech.com.key}:/etc/nginx/tls/avatar-tech.com.key:ro
     depends_on:
       - backend
+      - admin
 
   admin:
     build: ./agent-marketplace-admin
     ports:
-      - "${ADMIN_PORT:-8082}:80"
+      - "${ADMIN_BIND_HOST:-127.0.0.1}:${ADMIN_PORT:-8082}:80"
     depends_on:
       - backend
 
