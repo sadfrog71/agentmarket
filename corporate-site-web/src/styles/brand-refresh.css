@@ -18,3 +18,101 @@
 .refresh-home-hero__inner {
   z-index: 3;
 }
+
+/* Homepage gas entry: reuse the live gas-station visual with legible card copy. */
+.refresh-home-gas-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 560px;
+  color: #fff;
+  background: #0d2a5a;
+}
+
+.refresh-home-gas-card__visual {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  object-fit: cover;
+  object-position: 65% center;
+  transform: none !important;
+}
+
+.refresh-home-gas-card::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: '';
+  background:
+    linear-gradient(90deg, rgba(4, 20, 50, 0.94) 0%, rgba(6, 33, 76, 0.82) 42%, rgba(8, 35, 77, 0.18) 76%),
+    linear-gradient(0deg, rgba(3, 18, 46, 0.58), transparent 55%);
+}
+
+.refresh-home-gas-card > :not(.refresh-home-gas-card__visual) {
+  position: relative;
+  z-index: 2;
+}
+
+.refresh-home-gas-card .mini-label,
+.refresh-home-gas-card p,
+.refresh-home-gas-card .industry-foot,
+.refresh-home-gas-card .industry-foot span {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.refresh-home-gas-card h3,
+.refresh-home-gas-card .gas-word {
+  color: #fff;
+}
+
+.refresh-home-gas-card .gas-word {
+  margin: auto 0 32px;
+  font-size: clamp(42px, 4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.07em;
+  text-shadow: 0 5px 24px rgba(3, 17, 43, 0.34);
+}
+
+.refresh-home-gas-card .industry-foot {
+  border-top-color: rgba(255, 255, 255, 0.34);
+}
+
+.refresh-home-gas-card .industry-foot span:last-child {
+  color: #fff;
+}
+
+/* Enterprise bus: generated connection artwork stays behind live HTML labels. */
+.refresh-bus-graphic {
+  background:
+    linear-gradient(180deg, rgba(238, 245, 255, 0.32), rgba(231, 240, 255, 0.57)),
+    url('/visuals/enterprise-bus-network.png') center / cover no-repeat;
+}
+
+.refresh-bus-graphic::before {
+  opacity: 0.45;
+}
+
+.refresh-bus-rail,
+.refresh-bus-node {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.refresh-bus-core {
+  background: linear-gradient(145deg, rgba(42, 88, 234, 0.96), rgba(24, 65, 190, 0.95));
+  box-shadow: 12px 12px 0 rgba(36, 86, 232, 0.13), 0 20px 44px rgba(34, 89, 220, 0.25);
+}
+
+@media (max-width: 640px) {
+  .refresh-home-gas-card {
+    min-height: 470px;
+  }
+
+  .refresh-home-gas-card__visual {
+    object-position: 63% center;
+  }
+}

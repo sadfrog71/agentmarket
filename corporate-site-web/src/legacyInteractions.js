@@ -34,6 +34,30 @@ function hydrateRefreshHeader() {
   image.alt = '平行数字'
 }
 
+function hydrateHomeGasCard() {
+  const card = document.querySelector('#solutions .gas-card')
+  if (!card) return
+
+  card.classList.add('refresh-home-gas-card')
+  if (!card.querySelector('.refresh-home-gas-card__visual')) {
+    const visual = document.createElement('img')
+    visual.className = 'refresh-home-gas-card__visual'
+    visual.src = '/visuals/smart-gas-station.png'
+    visual.alt = ''
+    visual.setAttribute('aria-hidden', 'true')
+    card.prepend(visual)
+  }
+
+  const label = card.querySelector('.mini-label')
+  const description = card.querySelector('p')
+  const statement = card.querySelector('.gas-word')
+  const footer = card.querySelector('.industry-foot')
+  if (label) label.textContent = '智慧燃气 / 厂站与管网'
+  if (description) description.textContent = '围绕厂站、调压计量与城市配气网络，构建可感知、可协同的运行能力。'
+  if (statement) statement.innerHTML = '连接<br>安全与效率'
+  if (footer) footer.innerHTML = '<span>厂站 · 调压计量 · 城市配气</span><span>了解智慧燃气 ↗</span>'
+}
+
 export function initialiseLegacyInteractions({ articles = [], certificates = [], newsCategory = '' } = {}) {
   cleanup()
   const controller = new AbortController()
@@ -41,6 +65,7 @@ export function initialiseLegacyInteractions({ articles = [], certificates = [],
 
   removeBrandEnglishMarkers()
   hydrateRefreshHeader()
+  hydrateHomeGasCard()
 
   const menuButton = document.querySelector('.menu-toggle')
   const mainNav = document.querySelector('#main-nav')
