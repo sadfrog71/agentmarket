@@ -136,12 +136,11 @@ function publishBlock(code, mainHtml, strategy) {
   const comment = utf8(`品牌视觉升级：${meta.reason}`)
   const bodyExpression = strategy === 'home'
     ? `concat(replace(substring(@old_body, 1, @hero_start - 1), '<header class="site-header">', '<header class="site-header refresh-home-header">'), ${main}, substring(@old_body, @hero_tail))`
-    : `concat(substring(@old_body, 1, @main_start - 1), ${main}, substring(@old_body, @footer_start))`
+    : `concat(substring(@old_body, 1, @header_end), ${main}, substring(@old_body, @footer_start))`
   const anchors = strategy === 'home'
     ? `set @hero_start = locate('<section class="home-hero wrap" id="home">', @old_body);
 set @hero_tail = locate('<section class="section wrap" id="ai">', @old_body);`
-    : `set @main_start = locate('<main id="main">', @old_body);
-set @main_end = locate('</main>', @main_start);
+    : `set @header_end = locate('</header>', @old_body) + length('</header>');
 set @footer_start = locate('<footer', @old_body);`
   return `
 -- ${code}: ${meta.reason}
