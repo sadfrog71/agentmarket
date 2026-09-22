@@ -38,6 +38,31 @@ _DRAINAGE_SECTION = (
     '<p class="source-note">图示用于说明产品思路；实际接入对象、数据范围、控制权限与交付阶段按项目现状确定。</p>'
     '</div></section>'
 )
+_QUALIFICATION_SECTION_MARKER = '</div></section><section id="part-2" class="detail-section">'
+_QUALIFICATION_GALLERY = (
+    '<div class="qualification-gallery" aria-label="代表性资质与知识产权">'
+    '<figure class="qualification-card"><button class="image-expand" type="button" '
+    'aria-label="放大查看：电子与智能化工程专业承包二级资质" data-image-title="工程与服务资质">'
+    '<img src="assets/parallel-brand/qualification-engineering.webp" alt="电子与智能化工程专业承包二级资质证书" loading="lazy">'
+    '<span class="expand-hint">查看大图 ↗</span></button><figcaption><span>工程与服务</span>'
+    '<strong>电子与智能化工程专业承包二级</strong></figcaption></figure>'
+    '<figure class="qualification-card"><button class="image-expand" type="button" '
+    'aria-label="放大查看：智慧水务平台软件著作权" data-image-title="代表性软件著作权">'
+    '<img src="assets/parallel-brand/qualification-smart-water-copyright.webp" alt="平行数字智慧水务平台软件著作权证明" loading="lazy">'
+    '<span class="expand-hint">查看大图 ↗</span></button><figcaption><span>软件成果</span>'
+    '<strong>智慧水务平台软件著作权</strong></figcaption></figure>'
+    '<figure class="qualification-card"><button class="image-expand" type="button" '
+    'aria-label="放大查看：污水处理运行控制系统发明专利" data-image-title="代表性发明专利">'
+    '<img src="assets/parallel-brand/qualification-wastewater-patent.webp" alt="一种污水处理运行控制系统发明专利证书" loading="lazy">'
+    '<span class="expand-hint">查看大图 ↗</span></button><figcaption><span>技术成果</span>'
+    '<strong>污水处理运行控制系统发明专利</strong></figcaption></figure>'
+    '</div><p class="source-note">以下为当前归档中的代表性资料。证书有效状态、权属信息与完整内容以原件及主管部门查询结果为准。</p>'
+)
+_QUALIFICATION_IMAGE_DIALOG = (
+    '<dialog id="image-viewer" class="image-viewer"><button class="dialog-close" aria-label="关闭大图">×</button>'
+    '<h2 id="image-viewer-title"></h2><img id="image-viewer-img" alt=""><p id="image-viewer-caption"></p>'
+    '<a id="image-original" class="text-link" target="_blank" rel="noopener noreferrer">打开原图查看细节 ↗</a></dialog>'
+)
 
 
 def apply_content_overrides(legacy_path: str, title: str, description: str, body_html: str) -> Tuple[str, str, str]:
@@ -71,5 +96,19 @@ def apply_content_overrides(legacy_path: str, title: str, description: str, body
             '<a class="text-link" href="ai-os.html">衍智云 · 水务 AI OS<span aria-hidden="true">↗</span></a>',
             "",
         )
+
+    if legacy_path == "/qualifications.html" and 'class="qualification-gallery"' not in body_html:
+        if _QUALIFICATION_SECTION_MARKER not in body_html:
+            raise ValueError("expected qualification section marker in /qualifications.html")
+        body_html = body_html.replace(
+            "国家高新技术企业、双软企业、CMMI 三级。",
+            "国家高新技术企业、双软企业；CMMI 三级为历史认证记录。",
+        )
+        body_html = body_html.replace(
+            _QUALIFICATION_SECTION_MARKER,
+            '</div>' + _QUALIFICATION_GALLERY + '</section><section id="part-2" class="detail-section">',
+            1,
+        )
+        body_html = body_html.replace("</main>", _QUALIFICATION_IMAGE_DIALOG + "</main>", 1)
 
     return title, description, body_html

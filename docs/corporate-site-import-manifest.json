@@ -1,23 +1,23 @@
 {
   "schema_version": "corporate-site-source-manifest/v1",
-  "snapshot_sha256": "4dd78cb42482144be83dee61896ab96369cdd9a841aa13ae1f468b7aa341c0ef",
+  "snapshot_sha256": "1bc5bfab446eb18616c36baf87ff5b96b88bc9dca3f04b4c1547f655d7ed071e",
   "classification_policy": {
     "IMPORT": "legacy website pages, certificate PDFs, media, and required static support files",
     "ARCHIVE": "local QA evidence, authoring references, and unmapped support files retained for review",
     "APPROVED_EXCLUSION": "macOS Finder metadata that is not website content"
   },
   "summary": {
-    "file_count": 451,
+    "file_count": 454,
     "fixed_page_count": 30,
     "news_article_count": 53,
     "credential_pdf_count": 71,
-    "media_file_count": 266,
+    "media_file_count": 269,
     "support_file_count": 4,
     "archive_file_count": 24,
     "approved_exclusion_count": 3,
     "unclassified_file_count": 0,
     "disposition_counts": {
-      "IMPORT": 424,
+      "IMPORT": 427,
       "ARCHIVE": 24,
       "APPROVED_EXCLUSION": 3
     },
@@ -26,7 +26,7 @@
       "credential_pdf": 71,
       "finder_metadata": 3,
       "fixed_page": 30,
-      "media_asset": 266,
+      "media_asset": 269,
       "news_article": 53,
       "quality_assurance_evidence": 21,
       "site_support": 4,
@@ -252,6 +252,36 @@
       "content_type": "image/png",
       "size_bytes": 36121,
       "sha256": "d6f87ea89e4bc5e8019d2b5a86909c1026458dd350b4e4571eaba85768a4e9a3",
+      "reference_count": 0
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/qualification-engineering.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 87478,
+      "sha256": "0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826",
+      "reference_count": 0
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/qualification-smart-water-copyright.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 413400,
+      "sha256": "8e9698ac668bbb05ba0ed1be5e3cbb9bf01d7626d7d37b5eadd782e993977101",
+      "reference_count": 0
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/qualification-wastewater-patent.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 194820,
+      "sha256": "e3ea15e63efc6da996a8e7267093370e592952a136b235a48dc4272dfea262db",
       "reference_count": 0
     },
     {

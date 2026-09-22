@@ -7,12 +7,12 @@
 | 项目 | 数值 |
 | --- | --- |
 | Manifest 架构 | `corporate-site-source-manifest/v1` |
-| 源快照 SHA-256 | `4dd78cb42482144be83dee61896ab96369cdd9a841aa13ae1f468b7aa341c0ef` |
-| 源文件总数 | 451 |
+| 源快照 SHA-256 | `1bc5bfab446eb18616c36baf87ff5b96b88bc9dca3f04b4c1547f655d7ed071e` |
+| 源文件总数 | 454 |
 | 固定页面 | 30 |
 | 新闻文章 | 53 |
 | 资质 / 专利 PDF | 71 |
-| 网站媒体 | 266 |
+| 网站媒体 | 269 |
 | 支持文件 | 4 |
 | 归档文件 | 24 |
 | 批准排除 | 3 |
@@ -50,6 +50,9 @@
 | `/assets/parallel-brand/logo-transparent-original.png` | media_asset | IMPORT | `image/png` | 253226 | `4fc4622c1e4eafbd992a9501cd5c1b75ea6349e3ddfebd945ed5512bd12a4b1d` | 0 |
 | `/assets/parallel-brand/logo-transparent.svg` | media_asset | IMPORT | `image/svg+xml` | 337804 | `b6f7b1588e781dce50ae5af72743167362087eab30bbd25e704f7e786c5526f4` | 60 |
 | `/assets/parallel-brand/logo.png` | media_asset | IMPORT | `image/png` | 36121 | `d6f87ea89e4bc5e8019d2b5a86909c1026458dd350b4e4571eaba85768a4e9a3` | 0 |
+| `/assets/parallel-brand/qualification-engineering.webp` | media_asset | IMPORT | `image/webp` | 87478 | `0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826` | 0 |
+| `/assets/parallel-brand/qualification-smart-water-copyright.webp` | media_asset | IMPORT | `image/webp` | 413400 | `8e9698ac668bbb05ba0ed1be5e3cbb9bf01d7626d7d37b5eadd782e993977101` | 0 |
+| `/assets/parallel-brand/qualification-wastewater-patent.webp` | media_asset | IMPORT | `image/webp` | 194820 | `e3ea15e63efc6da996a8e7267093370e592952a136b235a48dc4272dfea262db` | 0 |
 | `/assets/parallel-brand/scada.webp` | media_asset | IMPORT | `image/webp` | 61342 | `9a6fbbd33b6e8ab581799b0b147eb8e1ecd4d4e59145cf2515b15b63ac4b5346` | 0 |
 | `/assets/parallel-brand/smart-drainage-chain.webp` | media_asset | IMPORT | `image/webp` | 233292 | `3caf25f2f00552eadcd277877fc2708c668013ff4dbf5227ab93829b6f66f5e5` | 1 |
 | `/assets/parallel-brand/smart-drainage-monitoring.webp` | media_asset | IMPORT | `image/webp` | 273614 | `ee659d153a19d4450d0b4c0cb78607c32f9e985b38f8c60adb5b6e81c39d6b0b` | 1 |

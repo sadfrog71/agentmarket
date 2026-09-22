@@ -217,6 +217,27 @@ class CorporateSiteSeedToolTests(unittest.TestCase):
         self.assertLess(rewritten.index('href="yanyun.html"'), rewritten.index('href="drainage.html"'))
         self.assertLess(rewritten.index('href="drainage.html"'), rewritten.index('href="yanshu.html"'))
 
+    def test_qualification_gallery_uses_managed_media_and_is_added_once(self) -> None:
+        body = (
+            '<main><section id="part-1" class="detail-section"><div class="detail-items">'
+            '<div><h3>研发与管理</h3><p>国家高新技术企业、双软企业、CMMI 三级。</p></div></div></section>'
+            '<section id="part-2" class="detail-section"><h2>知识产权</h2></section></main>'
+        )
+
+        _title, _description, rewritten = content_overrides.apply_content_overrides(
+            "/qualifications.html", "企业资质", "", body
+        )
+        _title, _description, rewritten = content_overrides.apply_content_overrides(
+            "/qualifications.html", "企业资质", "", rewritten
+        )
+
+        self.assertEqual(1, rewritten.count('class="qualification-gallery"'))
+        self.assertEqual(1, rewritten.count('id="image-viewer"'))
+        self.assertIn("qualification-engineering.webp", rewritten)
+        self.assertIn("qualification-smart-water-copyright.webp", rewritten)
+        self.assertIn("qualification-wastewater-patent.webp", rewritten)
+        self.assertIn("CMMI 三级为历史认证记录", rewritten)
+
     def test_framework_override_targets_the_new_media_asset(self) -> None:
         _title, _description, rewritten = content_overrides.apply_content_overrides(
             "/yanyun.html", "衍云", "", 'src="assets/parallel-brand/water-business-framework.png"'

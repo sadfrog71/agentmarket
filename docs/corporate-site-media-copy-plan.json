@@ -106,6 +106,30 @@
       "mime_type": "image/png"
     },
     {
+      "source_relative_path": "assets/parallel-brand/qualification-engineering.webp",
+      "target_storage_key": "available/40a4744c-1905-580c-aefd-18316a2ffe65.webp",
+      "public_id": "40a4744c-1905-580c-aefd-18316a2ffe65",
+      "sha256": "0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826",
+      "size_bytes": 87478,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/qualification-smart-water-copyright.webp",
+      "target_storage_key": "available/f50982ad-43fa-5d61-af67-80c95ddcf391.webp",
+      "public_id": "f50982ad-43fa-5d61-af67-80c95ddcf391",
+      "sha256": "8e9698ac668bbb05ba0ed1be5e3cbb9bf01d7626d7d37b5eadd782e993977101",
+      "size_bytes": 413400,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/qualification-wastewater-patent.webp",
+      "target_storage_key": "available/e62d1447-f6f5-57b5-b0de-06eb24038f81.webp",
+      "public_id": "e62d1447-f6f5-57b5-b0de-06eb24038f81",
+      "sha256": "e3ea15e63efc6da996a8e7267093370e592952a136b235a48dc4272dfea262db",
+      "size_bytes": 194820,
+      "mime_type": "image/webp"
+    },
+    {
       "source_relative_path": "assets/parallel-brand/scada.webp",
       "target_storage_key": "available/2ad469cf-a99e-593a-b448-14406ea854f7.webp",
       "public_id": "2ad469cf-a99e-593a-b448-14406ea854f7",
