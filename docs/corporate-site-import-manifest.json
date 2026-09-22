@@ -1,23 +1,23 @@
 {
   "schema_version": "corporate-site-source-manifest/v1",
-  "snapshot_sha256": "3261bab4ccfe174e2bc7b7c71d4eeed11060741b0b871948b7aee1774dd2bf03",
+  "snapshot_sha256": "aeaccb57658bbcdb1d4508706c703e733b93b31d7391387b7dfdeed25cee0fab",
   "classification_policy": {
     "IMPORT": "legacy website pages, certificate PDFs, media, and required static support files",
     "ARCHIVE": "local QA evidence, authoring references, and unmapped support files retained for review",
     "APPROVED_EXCLUSION": "macOS Finder metadata that is not website content"
   },
   "summary": {
-    "file_count": 454,
+    "file_count": 457,
     "fixed_page_count": 30,
     "news_article_count": 53,
     "credential_pdf_count": 71,
-    "media_file_count": 269,
+    "media_file_count": 272,
     "support_file_count": 4,
     "archive_file_count": 24,
     "approved_exclusion_count": 3,
     "unclassified_file_count": 0,
     "disposition_counts": {
-      "IMPORT": 427,
+      "IMPORT": 430,
       "ARCHIVE": 24,
       "APPROVED_EXCLUSION": 3
     },
@@ -26,7 +26,7 @@
       "credential_pdf": 71,
       "finder_metadata": 3,
       "fixed_page": 30,
-      "media_asset": 269,
+      "media_asset": 272,
       "news_article": 53,
       "quality_assurance_evidence": 21,
       "site_support": 4,
@@ -255,6 +255,16 @@
       "reference_count": 0
     },
     {
+      "legacy_path": "/assets/parallel-brand/qualification-ai-agent-copyright.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 516998,
+      "sha256": "b806847a3ba1bb10db77fede5219bba4f144e4ef2e3e1e11184e446a24355b39",
+      "reference_count": 1
+    },
+    {
       "legacy_path": "/assets/parallel-brand/qualification-engineering.webp",
       "source_type": "media_asset",
       "disposition": "IMPORT",
@@ -262,7 +272,27 @@
       "content_type": "image/webp",
       "size_bytes": 87478,
       "sha256": "0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826",
-      "reference_count": 0
+      "reference_count": 1
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/qualification-fire-hydrant-patent.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 216236,
+      "sha256": "546fecf9a7d4462112ca1d43edc93aaab88e64a53c617fa88610e89274e80f8b",
+      "reference_count": 1
+    },
+    {
+      "legacy_path": "/assets/parallel-brand/qualification-nbiot-meter-patent.webp",
+      "source_type": "media_asset",
+      "disposition": "IMPORT",
+      "disposition_reason": "legacy website media",
+      "content_type": "image/webp",
+      "size_bytes": 218190,
+      "sha256": "17af20150cf89044a956ecf651c852e973730e310f806261c46f3e424c95c19c",
+      "reference_count": 1
     },
     {
       "legacy_path": "/assets/parallel-brand/qualification-smart-water-copyright.webp",
@@ -272,7 +302,7 @@
       "content_type": "image/webp",
       "size_bytes": 413400,
       "sha256": "8e9698ac668bbb05ba0ed1be5e3cbb9bf01d7626d7d37b5eadd782e993977101",
-      "reference_count": 0
+      "reference_count": 1
     },
     {
       "legacy_path": "/assets/parallel-brand/qualification-wastewater-patent.webp",
@@ -282,7 +312,7 @@
       "content_type": "image/webp",
       "size_bytes": 194820,
       "sha256": "e3ea15e63efc6da996a8e7267093370e592952a136b235a48dc4272dfea262db",
-      "reference_count": 0
+      "reference_count": 1
     },
     {
       "legacy_path": "/assets/parallel-brand/scada.webp",
@@ -410,8 +440,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "static resource required by legacy pages",
       "content_type": "text/css; charset=utf-8",
-      "size_bytes": 38240,
-      "sha256": "546b8b643820c75ee8b88bb104172da13d3fa68b493cb1724f323587676cd5f3",
+      "size_bytes": 39263,
+      "sha256": "9199c4c294a1cd4b989fa033a01194fb97c84cbc46fad5cb03d2c2f95310137d",
       "reference_count": 30
     },
     {
@@ -420,8 +450,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "static resource required by legacy pages",
       "content_type": "text/javascript; charset=utf-8",
-      "size_bytes": 7714,
-      "sha256": "a147760329b852444e9483ba8e7cd84fbfefd2d3c07d499b3d49fdce0426ca3d",
+      "size_bytes": 7742,
+      "sha256": "ab1d5741e5fc87ba4d3836f1d98b94e373dfd2e7a819c312e1ddb380fff1ad15",
       "reference_count": 30
     },
     {
@@ -3750,8 +3780,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8245,
-      "sha256": "045edaf453c57bf2bcb7ab09b8b877e7fa4fc779e3127f3b050f9395f3afe553",
+      "size_bytes": 9967,
+      "sha256": "dc37c36502a950237a035ee75d54fd0b3f1f6dc1c7c755b2958626b639e98696",
       "reference_count": 32
     },
     {

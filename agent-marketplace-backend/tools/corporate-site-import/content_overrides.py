@@ -18,7 +18,8 @@ _WATER_AI_MENU_ITEM = '<a href="ai-os.html">衍智云 · 水务 AI OS<span>↗</
 _WATER_AI_INDEX_ITEM = '<a class="text-link" href="ai-os.html">衍智云 · 水务 AI OS<span aria-hidden="true">↗</span></a>'
 _WATER_AI_BRAND_CARD = '<a href="ai-os.html"><span>01</span><h2>衍智云</h2><p>水务 AI OS</p><b>↓</b></a>'
 _WATER_AI_SECTION = re.compile(r'<section class="section wrap" id="yanzhiyun">.*?</section>', re.DOTALL)
-_YANYUN_MENU_ITEM = '<a href="yanyun.html">衍云 · 一体化水务平台<span>↗</span></a>'
+_WATER_SUBMENU = re.compile(r'(<div class="submenu" id="sub-water">)(.*?)(</div>)', re.DOTALL)
+_YANYUN_MENU_LINK = re.compile(r'(<a\b[^>]*href="yanyun\.html"[^>]*>.*?</a>)', re.DOTALL)
 _DRAINAGE_MENU_ITEM = '<a href="drainage.html">智慧排水 · 厂站网河调度<span>↗</span></a>'
 _YANYUN_BRAND_CARD = '<a href="yanyun.html"><span>01</span><h2>衍云</h2><p>一体化水务平台</p><b>↓</b></a>'
 _DRAINAGE_BRAND_CARD = '<a href="drainage.html"><span>02</span><h2>智慧排水</h2><p>厂站网河一体化调度</p><b>↓</b></a>'
@@ -38,25 +39,38 @@ _DRAINAGE_SECTION = (
     '<p class="source-note">图示用于说明产品思路；实际接入对象、数据范围、控制权限与交付阶段按项目现状确定。</p>'
     '</div></section>'
 )
-_QUALIFICATION_SECTION_MARKER = '</div></section><section id="part-2" class="detail-section">'
+_QUALIFICATION_CONTENT = re.compile(
+    r'<section class="section wrap secondary-content"><aside>.*?</aside><div>'
+    r'<section id="part-1" class="detail-section">.*?</section>'
+    r'<section id="part-2" class="detail-section">.*?</section></div></section>',
+    re.DOTALL,
+)
+_QUALIFICATION_MEDIA_PATHS = (
+    "qualification-engineering.webp",
+    "qualification-smart-water-copyright.webp",
+    "qualification-ai-agent-copyright.webp",
+    "qualification-wastewater-patent.webp",
+    "qualification-fire-hydrant-patent.webp",
+    "qualification-nbiot-meter-patent.webp",
+)
+_QUALIFICATION_CARD_TEMPLATE = (
+    '<figure class="qualification-card"><button class="image-expand" type="button" '
+    'aria-label="查看资质资料" data-image-title="资质资料">'
+    '<img src="assets/parallel-brand/{media_path}" alt="资质资料预览" loading="lazy">'
+    '<span class="expand-hint">查看资料 ↗</span></button></figure>'
+)
 _QUALIFICATION_GALLERY = (
-    '<div class="qualification-gallery" aria-label="代表性资质与知识产权">'
-    '<figure class="qualification-card"><button class="image-expand" type="button" '
-    'aria-label="放大查看：电子与智能化工程专业承包二级资质" data-image-title="工程与服务资质">'
-    '<img src="assets/parallel-brand/qualification-engineering.webp" alt="电子与智能化工程专业承包二级资质证书" loading="lazy">'
-    '<span class="expand-hint">查看大图 ↗</span></button><figcaption><span>工程与服务</span>'
-    '<strong>电子与智能化工程专业承包二级</strong></figcaption></figure>'
-    '<figure class="qualification-card"><button class="image-expand" type="button" '
-    'aria-label="放大查看：智慧水务平台软件著作权" data-image-title="代表性软件著作权">'
-    '<img src="assets/parallel-brand/qualification-smart-water-copyright.webp" alt="平行数字智慧水务平台软件著作权证明" loading="lazy">'
-    '<span class="expand-hint">查看大图 ↗</span></button><figcaption><span>软件成果</span>'
-    '<strong>智慧水务平台软件著作权</strong></figcaption></figure>'
-    '<figure class="qualification-card"><button class="image-expand" type="button" '
-    'aria-label="放大查看：污水处理运行控制系统发明专利" data-image-title="代表性发明专利">'
-    '<img src="assets/parallel-brand/qualification-wastewater-patent.webp" alt="一种污水处理运行控制系统发明专利证书" loading="lazy">'
-    '<span class="expand-hint">查看大图 ↗</span></button><figcaption><span>技术成果</span>'
-    '<strong>污水处理运行控制系统发明专利</strong></figcaption></figure>'
-    '</div><p class="source-note">以下为当前归档中的代表性资料。证书有效状态、权属信息与完整内容以原件及主管部门查询结果为准。</p>'
+    '<div class="qualification-gallery" aria-label="资质资料展示">'
+    + "".join(_QUALIFICATION_CARD_TEMPLATE.format(media_path=path) for path in _QUALIFICATION_MEDIA_PATHS)
+    + '</div><p class="source-note">以下为部分资料展示。证书有效状态、权属信息与完整内容以原件及主管部门查询结果为准。</p>'
+)
+_QUALIFICATION_PRIVATE_CONTENT = (
+    '<section class="section wrap secondary-content qualification-privacy"><aside>'
+    '<span class="mini-label">本页内容</span><a href="#part-1">资料展示</a></aside><div>'
+    '<section id="part-1" class="detail-section"><span class="mini-label">01 / QUALIFICATIONS</span>'
+    '<h2>资质资料</h2><p class="detail-lead">仅展示部分归档资料，不对外提供分类汇总。</p>'
+    + _QUALIFICATION_GALLERY
+    + '</section></div></section>'
 )
 _QUALIFICATION_IMAGE_DIALOG = (
     '<dialog id="image-viewer" class="image-viewer"><button class="dialog-close" aria-label="关闭大图">×</button>'
@@ -65,11 +79,21 @@ _QUALIFICATION_IMAGE_DIALOG = (
 )
 
 
+def _ensure_drainage_menu_item(body_html: str) -> str:
+    def ensure_item(match: re.Match[str]) -> str:
+        menu_items = match.group(2)
+        if re.search(r'<a\b[^>]*href="drainage\.html"', menu_items):
+            return match.group(0)
+        menu_items = _YANYUN_MENU_LINK.sub(lambda yanyun: yanyun.group(1) + _DRAINAGE_MENU_ITEM, menu_items, count=1)
+        return match.group(1) + menu_items + match.group(3)
+
+    return _WATER_SUBMENU.sub(ensure_item, body_html, count=1)
+
+
 def apply_content_overrides(legacy_path: str, title: str, description: str, body_html: str) -> Tuple[str, str, str]:
     """Return publishable content after applying the approved site-only changes."""
     body_html = body_html.replace(_WATER_AI_MENU_ITEM, "")
-    if _DRAINAGE_MENU_ITEM not in body_html:
-        body_html = body_html.replace(_YANYUN_MENU_ITEM, _YANYUN_MENU_ITEM + _DRAINAGE_MENU_ITEM)
+    body_html = _ensure_drainage_menu_item(body_html)
 
     if legacy_path == "/water.html":
         title = title.replace("智慧水务 · 衍智云 / 衍云 / 衍数", "智慧水务 · 衍云 / 智慧排水 / 衍数")
@@ -101,18 +125,14 @@ def apply_content_overrides(legacy_path: str, title: str, description: str, body
             "",
         )
 
-    if legacy_path == "/qualifications.html" and 'class="qualification-gallery"' not in body_html:
-        if _QUALIFICATION_SECTION_MARKER not in body_html:
-            raise ValueError("expected qualification section marker in /qualifications.html")
-        body_html = body_html.replace(
-            "国家高新技术企业、双软企业、CMMI 三级。",
-            "国家高新技术企业、双软企业；CMMI 三级为历史认证记录。",
-        )
-        body_html = body_html.replace(
-            _QUALIFICATION_SECTION_MARKER,
-            '</div>' + _QUALIFICATION_GALLERY + '</section><section id="part-2" class="detail-section">',
-            1,
-        )
-        body_html = body_html.replace("</main>", _QUALIFICATION_IMAGE_DIALOG + "</main>", 1)
+    if legacy_path == "/qualifications.html":
+        if "qualification-privacy" not in body_html:
+            body_html, replacement_count = _QUALIFICATION_CONTENT.subn(
+                _QUALIFICATION_PRIVATE_CONTENT, body_html, count=1
+            )
+            if replacement_count != 1:
+                raise ValueError("expected qualification content in /qualifications.html")
+        if 'id="image-viewer"' not in body_html:
+            body_html = body_html.replace("</main>", _QUALIFICATION_IMAGE_DIALOG + "</main>", 1)
 
     return title, description, body_html

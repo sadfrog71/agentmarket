@@ -217,6 +217,36 @@ class CorporateSiteSeedToolTests(unittest.TestCase):
         self.assertLess(rewritten.index('href="yanyun.html"'), rewritten.index('href="drainage.html"'))
         self.assertLess(rewritten.index('href="drainage.html"'), rewritten.index('href="yanshu.html"'))
 
+    def test_current_smart_drainage_menu_item_is_not_duplicated(self) -> None:
+        body = (
+            '<div class="submenu" id="sub-water">'
+            '<a href="yanyun.html">衍云 · 一体化水务平台<span>↗</span></a>'
+            '<a href="drainage.html" aria-current="page">智慧排水 · 厂站网河调度<span>↗</span></a>'
+            '<a href="yanshu.html">衍数 · 数据咨询与治理<span>↗</span></a></div>'
+        )
+
+        _title, _description, rewritten = content_overrides.apply_content_overrides(
+            "/drainage.html", "智慧排水", "", body
+        )
+
+        self.assertEqual(1, rewritten.count('href="drainage.html"'))
+        self.assertIn('href="drainage.html" aria-current="page"', rewritten)
+
+    def test_smart_drainage_menu_is_added_after_current_yanyun_item(self) -> None:
+        body = (
+            '<div class="submenu" id="sub-water">'
+            '<a href="yanyun.html" aria-current="page">衍云 · 一体化水务平台<span>↗</span></a>'
+            '<a href="yanshu.html">衍数 · 数据咨询与治理<span>↗</span></a></div>'
+        )
+
+        _title, _description, rewritten = content_overrides.apply_content_overrides(
+            "/yanyun.html", "衍云", "", body
+        )
+
+        self.assertEqual(1, rewritten.count('href="drainage.html"'))
+        self.assertLess(rewritten.index('href="yanyun.html"'), rewritten.index('href="drainage.html"'))
+        self.assertLess(rewritten.index('href="drainage.html"'), rewritten.index('href="yanshu.html"'))
+
     def test_water_override_accepts_an_already_migrated_static_source(self) -> None:
         body = (
             '<div class="submenu" id="sub-water">'
@@ -247,24 +277,45 @@ class CorporateSiteSeedToolTests(unittest.TestCase):
 
     def test_qualification_gallery_uses_managed_media_and_is_added_once(self) -> None:
         body = (
-            '<main><section id="part-1" class="detail-section"><div class="detail-items">'
-            '<div><h3>研发与管理</h3><p>国家高新技术企业、双软企业、CMMI 三级。</p></div></div></section>'
-            '<section id="part-2" class="detail-section"><h2>知识产权</h2></section></main>'
+            '<main><section class="section wrap secondary-content"><aside><span class="mini-label">本页内容</span>'
+            '<a href="#part-1">企业资质</a><a href="#part-2">知识产权</a></aside><div>'
+            '<section id="part-1" class="detail-section"><span class="mini-label">01 / QUALIFICATIONS</span>'
+            '<h2>企业资质</h2><p class="detail-lead">依据公司介绍整理，具体有效状态以证书为准。</p>'
+            '<div class="detail-items"><div><h3>研发与管理</h3>'
+            '<p>国家高新技术企业、双软企业、CMMI 三级。</p></div>'
+            '<div><h3>质量与信息安全</h3><p>ISO 9001、ISO 27001。</p></div>'
+            '<div><h3>工程与服务</h3><p>电子与智能化工程专业承包二级、ITSS 三级。</p></div></div></section>'
+            '<section id="part-2" class="detail-section"><span class="mini-label">02 / QUALIFICATIONS</span>'
+            '<h2>知识产权</h2><div class="detail-items"><div><h3>软件著作权</h3></div>'
+            '<div><h3>专利资料</h3></div></div></section></div></section></main>'
         )
 
-        _title, _description, rewritten = content_overrides.apply_content_overrides(
+        _title, _description, first_rewritten = content_overrides.apply_content_overrides(
             "/qualifications.html", "企业资质", "", body
         )
         _title, _description, rewritten = content_overrides.apply_content_overrides(
-            "/qualifications.html", "企业资质", "", rewritten
+            "/qualifications.html", "企业资质", "", first_rewritten
         )
 
+        self.assertEqual(first_rewritten, rewritten)
         self.assertEqual(1, rewritten.count('class="qualification-gallery"'))
         self.assertEqual(1, rewritten.count('id="image-viewer"'))
+        self.assertEqual(6, rewritten.count('class="qualification-card"'))
         self.assertIn("qualification-engineering.webp", rewritten)
         self.assertIn("qualification-smart-water-copyright.webp", rewritten)
+        self.assertIn("qualification-ai-agent-copyright.webp", rewritten)
         self.assertIn("qualification-wastewater-patent.webp", rewritten)
-        self.assertIn("CMMI 三级为历史认证记录", rewritten)
+        self.assertIn("qualification-fire-hydrant-patent.webp", rewritten)
+        self.assertIn("qualification-nbiot-meter-patent.webp", rewritten)
+        self.assertNotIn("研发与管理", rewritten)
+        self.assertNotIn("质量与信息安全", rewritten)
+        self.assertNotIn("工程与服务", rewritten)
+        self.assertNotIn("软件著作权", rewritten)
+        self.assertNotIn("专利资料", rewritten)
+        self.assertNotIn("CMMI", rewritten)
+        self.assertNotIn('id="part-2"', rewritten)
+        self.assertNotIn("<figcaption>", rewritten)
+        self.assertIn("以下为部分资料展示", rewritten)
 
     def test_framework_override_targets_the_new_media_asset(self) -> None:
         _title, _description, rewritten = content_overrides.apply_content_overrides(

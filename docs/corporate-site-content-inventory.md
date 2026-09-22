@@ -7,12 +7,12 @@
 | 项目 | 数值 |
 | --- | --- |
 | Manifest 架构 | `corporate-site-source-manifest/v1` |
-| 源快照 SHA-256 | `3261bab4ccfe174e2bc7b7c71d4eeed11060741b0b871948b7aee1774dd2bf03` |
-| 源文件总数 | 454 |
+| 源快照 SHA-256 | `aeaccb57658bbcdb1d4508706c703e733b93b31d7391387b7dfdeed25cee0fab` |
+| 源文件总数 | 457 |
 | 固定页面 | 30 |
 | 新闻文章 | 53 |
 | 资质 / 专利 PDF | 71 |
-| 网站媒体 | 269 |
+| 网站媒体 | 272 |
 | 支持文件 | 4 |
 | 归档文件 | 24 |
 | 批准排除 | 3 |
@@ -50,9 +50,12 @@
 | `/assets/parallel-brand/logo-transparent-original.png` | media_asset | IMPORT | `image/png` | 253226 | `4fc4622c1e4eafbd992a9501cd5c1b75ea6349e3ddfebd945ed5512bd12a4b1d` | 0 |
 | `/assets/parallel-brand/logo-transparent.svg` | media_asset | IMPORT | `image/svg+xml` | 337804 | `b6f7b1588e781dce50ae5af72743167362087eab30bbd25e704f7e786c5526f4` | 60 |
 | `/assets/parallel-brand/logo.png` | media_asset | IMPORT | `image/png` | 36121 | `d6f87ea89e4bc5e8019d2b5a86909c1026458dd350b4e4571eaba85768a4e9a3` | 0 |
-| `/assets/parallel-brand/qualification-engineering.webp` | media_asset | IMPORT | `image/webp` | 87478 | `0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826` | 0 |
-| `/assets/parallel-brand/qualification-smart-water-copyright.webp` | media_asset | IMPORT | `image/webp` | 413400 | `8e9698ac668bbb05ba0ed1be5e3cbb9bf01d7626d7d37b5eadd782e993977101` | 0 |
-| `/assets/parallel-brand/qualification-wastewater-patent.webp` | media_asset | IMPORT | `image/webp` | 194820 | `e3ea15e63efc6da996a8e7267093370e592952a136b235a48dc4272dfea262db` | 0 |
+| `/assets/parallel-brand/qualification-ai-agent-copyright.webp` | media_asset | IMPORT | `image/webp` | 516998 | `b806847a3ba1bb10db77fede5219bba4f144e4ef2e3e1e11184e446a24355b39` | 1 |
+| `/assets/parallel-brand/qualification-engineering.webp` | media_asset | IMPORT | `image/webp` | 87478 | `0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826` | 1 |
+| `/assets/parallel-brand/qualification-fire-hydrant-patent.webp` | media_asset | IMPORT | `image/webp` | 216236 | `546fecf9a7d4462112ca1d43edc93aaab88e64a53c617fa88610e89274e80f8b` | 1 |
+| `/assets/parallel-brand/qualification-nbiot-meter-patent.webp` | media_asset | IMPORT | `image/webp` | 218190 | `17af20150cf89044a956ecf651c852e973730e310f806261c46f3e424c95c19c` | 1 |
+| `/assets/parallel-brand/qualification-smart-water-copyright.webp` | media_asset | IMPORT | `image/webp` | 413400 | `8e9698ac668bbb05ba0ed1be5e3cbb9bf01d7626d7d37b5eadd782e993977101` | 1 |
+| `/assets/parallel-brand/qualification-wastewater-patent.webp` | media_asset | IMPORT | `image/webp` | 194820 | `e3ea15e63efc6da996a8e7267093370e592952a136b235a48dc4272dfea262db` | 1 |
 | `/assets/parallel-brand/scada.webp` | media_asset | IMPORT | `image/webp` | 61342 | `9a6fbbd33b6e8ab581799b0b147eb8e1ecd4d4e59145cf2515b15b63ac4b5346` | 0 |
 | `/assets/parallel-brand/smart-drainage-chain.webp` | media_asset | IMPORT | `image/webp` | 233292 | `3caf25f2f00552eadcd277877fc2708c668013ff4dbf5227ab93829b6f66f5e5` | 1 |
 | `/assets/parallel-brand/smart-drainage-monitoring.webp` | media_asset | IMPORT | `image/webp` | 273614 | `ee659d153a19d4450d0b4c0cb78607c32f9e985b38f8c60adb5b6e81c39d6b0b` | 1 |
@@ -65,8 +68,8 @@
 | `/assets/parallel-brand/water-network.png` | media_asset | IMPORT | `image/png` | 896641 | `4c681a2afca07d26a0b21d2d07492e7dd5b75d89a4ee6b668f1fff9e7da18b5c` | 0 |
 | `/assets/parallel-brand/water-platform-neutral.png` | media_asset | IMPORT | `image/png` | 2335989 | `b0ac5830426f74c089d3f4130f9bc77221116effb26b06f2ab3c56e688c5451c` | 4 |
 | `/assets/parallel-brand/water-platform.webp` | media_asset | IMPORT | `image/webp` | 135208 | `02a3e431183625833f4362e79f60cd846220227ea2acf545ca24df8c44317c06` | 0 |
-| `/assets/site.css` | site_support | IMPORT | `text/css; charset=utf-8` | 38240 | `546b8b643820c75ee8b88bb104172da13d3fa68b493cb1724f323587676cd5f3` | 30 |
-| `/assets/site.js` | site_support | IMPORT | `text/javascript; charset=utf-8` | 7714 | `a147760329b852444e9483ba8e7cd84fbfefd2d3c07d499b3d49fdce0426ca3d` | 30 |
+| `/assets/site.css` | site_support | IMPORT | `text/css; charset=utf-8` | 39263 | `9199c4c294a1cd4b989fa033a01194fb97c84cbc46fad5cb03d2c2f95310137d` | 30 |
+| `/assets/site.js` | site_support | IMPORT | `text/javascript; charset=utf-8` | 7742 | `ab1d5741e5fc87ba4d3836f1d98b94e373dfd2e7a819c312e1ddb380fff1ad15` | 30 |
 | `/brand-spec.md` | authoring_reference | ARCHIVE | `text/markdown; charset=utf-8` | 4664 | `3ebda3cf5d411a6407726e945c6d36cb60ffd06a1fde35488cbc7f317e20504e` | 0 |
 | `/case-industrial.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8609 | `5dbd240869bfbc2721dd9df6c52a531677fa563a982e59e2445872d07bb8f582` | 35 |
 | `/case-integration.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8665 | `94a6af4b54496367e6835e3153627308e9daae9015592fb2463ac9f7340fd715` | 33 |
@@ -399,7 +402,7 @@
 | `/qa/water-390.png` | quality_assurance_evidence | ARCHIVE | `image/png` | 334475 | `5e4102a0a501bad3581e57cdab9548e0a423b17cd1b7f25afe8978488de8f1cc` | 0 |
 | `/qa/yanyun-1440.png` | quality_assurance_evidence | ARCHIVE | `image/png` | 1064146 | `b390a1febe247426662a45e151f85070bcd9713def283ad13efa3bb079374a1d` | 0 |
 | `/qa/yanyun-390.png` | quality_assurance_evidence | ARCHIVE | `image/png` | 293334 | `4356f2fbbc939746d0272f8eb85b6e09eae87f2297037b8b779d7294655c9773` | 0 |
-| `/qualifications.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8245 | `045edaf453c57bf2bcb7ab09b8b877e7fa4fc779e3127f3b050f9395f3afe553` | 32 |
+| `/qualifications.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 9967 | `dc37c36502a950237a035ee75d54fd0b3f1f6dc1c7c755b2958626b639e98696` | 32 |
 | `/service-hardware.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8729 | `3dc52fef09c7caa11d8adb09474f69405a1b3c69ad10b18812860d6f3cc23eab` | 31 |
 | `/service-integration.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8713 | `dac56817196c9ebf88fb1c703b8ae7a3c9fcc90d65f90b7cd783e581db1f9b38` | 31 |
 | `/service-maintenance.html` | fixed_page | IMPORT | `text/html; charset=utf-8` | 8670 | `db56b3ca885a49d8bcb1d9ae3aefd0fa9bfac9a6ef83b2083da2019edfb076b1` | 31 |

@@ -106,11 +106,35 @@
       "mime_type": "image/png"
     },
     {
+      "source_relative_path": "assets/parallel-brand/qualification-ai-agent-copyright.webp",
+      "target_storage_key": "available/f406dc5c-90cf-5f00-9162-a39c6ed8e796.webp",
+      "public_id": "f406dc5c-90cf-5f00-9162-a39c6ed8e796",
+      "sha256": "b806847a3ba1bb10db77fede5219bba4f144e4ef2e3e1e11184e446a24355b39",
+      "size_bytes": 516998,
+      "mime_type": "image/webp"
+    },
+    {
       "source_relative_path": "assets/parallel-brand/qualification-engineering.webp",
       "target_storage_key": "available/40a4744c-1905-580c-aefd-18316a2ffe65.webp",
       "public_id": "40a4744c-1905-580c-aefd-18316a2ffe65",
       "sha256": "0c56f85e42db14e6899d864df95a3f80caee024608a27b09a29a17ad365f1826",
       "size_bytes": 87478,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/qualification-fire-hydrant-patent.webp",
+      "target_storage_key": "available/035ea870-e779-5a8e-bc53-d6f9852a7df4.webp",
+      "public_id": "035ea870-e779-5a8e-bc53-d6f9852a7df4",
+      "sha256": "546fecf9a7d4462112ca1d43edc93aaab88e64a53c617fa88610e89274e80f8b",
+      "size_bytes": 216236,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/qualification-nbiot-meter-patent.webp",
+      "target_storage_key": "available/0d31e1f9-d9ca-5634-9a1c-d6ea23d83973.webp",
+      "public_id": "0d31e1f9-d9ca-5634-9a1c-d6ea23d83973",
+      "sha256": "17af20150cf89044a956ecf651c852e973730e310f806261c46f3e424c95c19c",
+      "size_bytes": 218190,
       "mime_type": "image/webp"
     },
     {
