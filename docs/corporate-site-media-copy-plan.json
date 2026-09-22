@@ -1,0 +1,2677 @@
+{
+  "schema_version": "corporate-site-media-copy-plan/v1",
+  "items": [
+    {
+      "source_relative_path": "assets/parallel-brand/agent-market.webp",
+      "target_storage_key": "available/2af7b645-3a9c-5cc8-8edf-bfbb38e2d593.webp",
+      "public_id": "2af7b645-3a9c-5cc8-8edf-bfbb38e2d593",
+      "sha256": "67513c13e2d886da97fe34b9d22a7b41614d3ae517ce39b7f7b71428996e68e4",
+      "size_bytes": 98074,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/agent-matrix.png",
+      "target_storage_key": "available/17c56fca-c47f-56fd-bd78-cf084c18ae9f.png",
+      "public_id": "17c56fca-c47f-56fd-bd78-cf084c18ae9f",
+      "sha256": "42c4529592062f3d69af3de0b1258a6a2dd83dd482e9825702c53499e333c726",
+      "size_bytes": 1308855,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/ai-architecture.png",
+      "target_storage_key": "available/6dd0d3a0-f20b-5f13-9cc4-cb6fd60c9bf6.png",
+      "public_id": "6dd0d3a0-f20b-5f13-9cc4-cb6fd60c9bf6",
+      "sha256": "d04847b6982dd6286d5774939a5fae8e48cc91aa62a4b43dfaaf67d97036739a",
+      "size_bytes": 2339685,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/ai-cocreation.png",
+      "target_storage_key": "available/1e7651b4-6352-5d71-8a70-e9f692f0824e.png",
+      "public_id": "1e7651b4-6352-5d71-8a70-e9f692f0824e",
+      "sha256": "f5a9fec55ee3da53f9086ad8f858c2c45f49d9a3cc789bb96c7329dff8e73776",
+      "size_bytes": 3161448,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/ai-collaboration.png",
+      "target_storage_key": "available/71dc0028-1ad6-51b2-8b36-404915ebe3aa.png",
+      "public_id": "71dc0028-1ad6-51b2-8b36-404915ebe3aa",
+      "sha256": "66f166f535c015f3d232ba5f885f52c21f3f1359cb596e1cd2e4f7987a9a167e",
+      "size_bytes": 1370192,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/ai-platform.webp",
+      "target_storage_key": "available/6d54ace2-f625-5f76-b0c2-cbaa85ea7d82.webp",
+      "public_id": "6d54ace2-f625-5f76-b0c2-cbaa85ea7d82",
+      "sha256": "036eb5de8e496b53513fa84dda63c1caa5ae627b40fcaa8a731d016db48d68b6",
+      "size_bytes": 115988,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/company.webp",
+      "target_storage_key": "available/ea51bf1a-a3da-59a3-9813-6b4d940f2f2b.webp",
+      "public_id": "ea51bf1a-a3da-59a3-9813-6b4d940f2f2b",
+      "sha256": "068e321c70a555bfd98fd5711ef5bb86721c03036ba46d0afbda0467721a65e0",
+      "size_bytes": 314540,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/control-room.webp",
+      "target_storage_key": "available/68f5484a-5951-5867-889b-91cc3b89c8e2.webp",
+      "public_id": "68f5484a-5951-5867-889b-91cc3b89c8e2",
+      "sha256": "e87775adabdf23d6a0bed6cb3590033b31045f3029a220bc317315353cddd038",
+      "size_bytes": 296088,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/datacenter.webp",
+      "target_storage_key": "available/9c44e13e-9b6b-52ff-be0f-2e306f4caeab.webp",
+      "public_id": "9c44e13e-9b6b-52ff-be0f-2e306f4caeab",
+      "sha256": "6e0cc40e2dc2c0a2ead0ff0e8da45b10b11980fb26763bf52488882f7e91a86e",
+      "size_bytes": 217266,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/engineer.webp",
+      "target_storage_key": "available/33ee1af1-0352-59a0-8be6-46cf5b07e032.webp",
+      "public_id": "33ee1af1-0352-59a0-8be6-46cf5b07e032",
+      "sha256": "c125d612b8bf4fb11ff7cb1f59af7de779553eda26d87c53787630ac9d0a804a",
+      "size_bytes": 58998,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/logo-transparent-original.png",
+      "target_storage_key": "available/3d9be6cb-51d6-56be-968d-a9186b8cc434.png",
+      "public_id": "3d9be6cb-51d6-56be-968d-a9186b8cc434",
+      "sha256": "4fc4622c1e4eafbd992a9501cd5c1b75ea6349e3ddfebd945ed5512bd12a4b1d",
+      "size_bytes": 253226,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/logo-transparent.svg",
+      "target_storage_key": "available/a298ff3a-4167-5e1d-970f-5c84197d7b32.svg",
+      "public_id": "a298ff3a-4167-5e1d-970f-5c84197d7b32",
+      "sha256": "b6f7b1588e781dce50ae5af72743167362087eab30bbd25e704f7e786c5526f4",
+      "size_bytes": 337804,
+      "mime_type": "image/svg+xml"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/logo.png",
+      "target_storage_key": "available/c0f06926-7c75-554b-b8ed-8cf5c835f930.png",
+      "public_id": "c0f06926-7c75-554b-b8ed-8cf5c835f930",
+      "sha256": "d6f87ea89e4bc5e8019d2b5a86909c1026458dd350b4e4571eaba85768a4e9a3",
+      "size_bytes": 36121,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/scada.webp",
+      "target_storage_key": "available/2ad469cf-a99e-593a-b448-14406ea854f7.webp",
+      "public_id": "2ad469cf-a99e-593a-b448-14406ea854f7",
+      "sha256": "9a6fbbd33b6e8ab581799b0b147eb8e1ecd4d4e59145cf2515b15b63ac4b5346",
+      "size_bytes": 61342,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/station-interface.png",
+      "target_storage_key": "available/dd6c0168-9b2f-54b3-81bd-29de3c38a5e8.png",
+      "public_id": "dd6c0168-9b2f-54b3-81bd-29de3c38a5e8",
+      "sha256": "e12eddfc927a0a5ef5fd09aa3d6c972986e787508e72499413e50001e0a86cdc",
+      "size_bytes": 345376,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/station-process.jpg",
+      "target_storage_key": "available/46f704a8-ea22-55fd-9dea-da01b7d4edf8.jpg",
+      "public_id": "46f704a8-ea22-55fd-9dea-da01b7d4edf8",
+      "sha256": "0f919ddd40307e302e48c04464b352dbf588dfd959b4d2e10dbdc38543a9748e",
+      "size_bytes": 1281306,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/team.webp",
+      "target_storage_key": "available/5de5674d-5bea-5cd7-8960-3605915dc8b8.webp",
+      "public_id": "5de5674d-5bea-5cd7-8960-3605915dc8b8",
+      "sha256": "ceba42c297eaace04a120c1bb275921a24af8d737277801504a8bcb46de5a23c",
+      "size_bytes": 141498,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/water-business-framework-v2.png",
+      "target_storage_key": "available/0f16f14b-305e-5c3f-80eb-2cbe5e94c247.png",
+      "public_id": "0f16f14b-305e-5c3f-80eb-2cbe5e94c247",
+      "sha256": "d84651e8d89b494b77e9603b4d312e147a11f7d7dffb3c2e27dde3827881c3d3",
+      "size_bytes": 1459643,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/water-network.png",
+      "target_storage_key": "available/73f0379c-1570-5b22-8586-ac4aa9e9be91.png",
+      "public_id": "73f0379c-1570-5b22-8586-ac4aa9e9be91",
+      "sha256": "4c681a2afca07d26a0b21d2d07492e7dd5b75d89a4ee6b668f1fff9e7da18b5c",
+      "size_bytes": 896641,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/water-platform-neutral.png",
+      "target_storage_key": "available/972f0589-7882-55f3-b692-fa79c57912f2.png",
+      "public_id": "972f0589-7882-55f3-b692-fa79c57912f2",
+      "sha256": "b0ac5830426f74c089d3f4130f9bc77221116effb26b06f2ab3c56e688c5451c",
+      "size_bytes": 2335989,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "assets/parallel-brand/water-platform.webp",
+      "target_storage_key": "available/065b99dd-de6b-535e-b531-d62c0357cb7e.webp",
+      "public_id": "065b99dd-de6b-535e-b531-d62c0357cb7e",
+      "sha256": "02a3e431183625833f4362e79f60cd846220227ea2acf545ca24df8c44317c06",
+      "size_bytes": 135208,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a01_1.webp",
+      "target_storage_key": "available/db9d4423-b1d1-5984-bc52-e586365d93f1.webp",
+      "public_id": "db9d4423-b1d1-5984-bc52-e586365d93f1",
+      "sha256": "01709b375165c8152bfb8faeb959443f183d4025e744dfaa69e4c7ce4add0b7d",
+      "size_bytes": 72706,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a01_2.webp",
+      "target_storage_key": "available/0dd90de9-4c60-5c85-87d5-b1a0f046df24.webp",
+      "public_id": "0dd90de9-4c60-5c85-87d5-b1a0f046df24",
+      "sha256": "ca454c6f152a3e997e53d815c60735d5701d092dd841797341222681e1d0d505",
+      "size_bytes": 44716,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a01_3.webp",
+      "target_storage_key": "available/9d210adb-fc63-5d6b-82b0-3133dc96cf30.webp",
+      "public_id": "9d210adb-fc63-5d6b-82b0-3133dc96cf30",
+      "sha256": "981a39fd4e564ca2fab40c167cea4d73a26abacb34a46957135ea990b38cce2b",
+      "size_bytes": 38726,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a01_4.webp",
+      "target_storage_key": "available/82bd26bb-58b3-5b99-9da6-51fd1fc1f797.webp",
+      "public_id": "82bd26bb-58b3-5b99-9da6-51fd1fc1f797",
+      "sha256": "85d7abbe4ed58b630e7c3037cc47a430b224943d05753a43e783a2572b9f1d6a",
+      "size_bytes": 31920,
+      "mime_type": "image/webp"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a02_1.png",
+      "target_storage_key": "available/71af6864-1657-5463-b5e5-b431b7c0d36a.png",
+      "public_id": "71af6864-1657-5463-b5e5-b431b7c0d36a",
+      "sha256": "b24e838a2d418909fe3c93608a0aeed44a353b516ddc157225c86a53030ab629",
+      "size_bytes": 1192912,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a02_2.png",
+      "target_storage_key": "available/c6ab6703-a4fc-5c7e-8471-b2c5449aa412.png",
+      "public_id": "c6ab6703-a4fc-5c7e-8471-b2c5449aa412",
+      "sha256": "d654cc3e319bd4a4bb6761be8718fbd52a57373b3101b2bcc708267b4d97a06a",
+      "size_bytes": 988180,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a02_3.png",
+      "target_storage_key": "available/4d2cce67-6247-5e58-93f2-33c27a385c80.png",
+      "public_id": "4d2cce67-6247-5e58-93f2-33c27a385c80",
+      "sha256": "18a2be6719bf7f77dd77955b3e8eb634841a2702159642a0ef14c8b863b4d34a",
+      "size_bytes": 907033,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a03_1.jpeg",
+      "target_storage_key": "available/c192d711-8e05-5837-ba26-0e9fae8f45da.jpeg",
+      "public_id": "c192d711-8e05-5837-ba26-0e9fae8f45da",
+      "sha256": "e1cf481096f38b40b0274e6d2a23a0a771b9d28bad71b288967753ec5b667605",
+      "size_bytes": 103553,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a03_2.jpeg",
+      "target_storage_key": "available/e297ef8b-5527-54f8-9191-eb97e38aaa1b.jpeg",
+      "public_id": "e297ef8b-5527-54f8-9191-eb97e38aaa1b",
+      "sha256": "e0ea7ed2cc1ed3a8a529417d520ff771130d0061c546205087f7e8576ea41fa1",
+      "size_bytes": 72162,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a03_3.jpeg",
+      "target_storage_key": "available/091ab792-428f-5190-b5b0-d74735de40a2.jpeg",
+      "public_id": "091ab792-428f-5190-b5b0-d74735de40a2",
+      "sha256": "2ecbfbf20df6f12085f9c71055525f50f1b3b724edffbdb112db224aa37448e8",
+      "size_bytes": 107308,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a03_4.jpeg",
+      "target_storage_key": "available/05211ac7-ae3b-5cfa-8bcf-d05c4af2f13a.jpeg",
+      "public_id": "05211ac7-ae3b-5cfa-8bcf-d05c4af2f13a",
+      "sha256": "ec273d1435b8a7a25e1708c058143ff99d1d5cc2400ecb536f5e6885e3001819",
+      "size_bytes": 157679,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a04_1.png",
+      "target_storage_key": "available/534e48d9-ce42-5689-a4f4-a27eb91fda22.png",
+      "public_id": "534e48d9-ce42-5689-a4f4-a27eb91fda22",
+      "sha256": "233b49bd0b354f53eac07910dde798f24462bde8ca78ecf85ce8ab8e7bd5bd62",
+      "size_bytes": 427775,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a04_2.png",
+      "target_storage_key": "available/ba3c815d-d367-5113-b003-bbe3087aa41e.png",
+      "public_id": "ba3c815d-d367-5113-b003-bbe3087aa41e",
+      "sha256": "0d21322804baa0a2baa43d4249739a9fb9df6462f3afa4ecad1aa60cf1dd69bf",
+      "size_bytes": 218854,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a05_1.jpeg",
+      "target_storage_key": "available/4e11e70b-537d-5439-b2d6-0842a56be144.jpeg",
+      "public_id": "4e11e70b-537d-5439-b2d6-0842a56be144",
+      "sha256": "3fbbbecc141438da2cfd48be80a2d8c3354fe2ab7a446dc1abf796a3625e8832",
+      "size_bytes": 107066,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a05_2.jpeg",
+      "target_storage_key": "available/5306e2e0-f68b-5e2a-8140-e8a606a0175b.jpeg",
+      "public_id": "5306e2e0-f68b-5e2a-8140-e8a606a0175b",
+      "sha256": "f5527d4afd88a67c1fc73a74e9e081320fedf65a71abe596b311ca7bbcc4b7cc",
+      "size_bytes": 168616,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a05_3.jpeg",
+      "target_storage_key": "available/a0789732-c45e-558e-809e-500ca1a44404.jpeg",
+      "public_id": "a0789732-c45e-558e-809e-500ca1a44404",
+      "sha256": "9c8d2c0f94e8de3b555ce7f9f0dae8becfa600a9e0d5664ceb7d1b46f80ae6da",
+      "size_bytes": 164471,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a06_1.jpeg",
+      "target_storage_key": "available/da564cc8-55fa-5002-b09f-d125f8d5134b.jpeg",
+      "public_id": "da564cc8-55fa-5002-b09f-d125f8d5134b",
+      "sha256": "6a2208521ca0bddd7ffb58c069bbf30a2878df34a2ac429b962fc6abd2a1f597",
+      "size_bytes": 88257,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a07_1.png",
+      "target_storage_key": "available/198947f5-cc9d-5faa-9715-27c4a7120400.png",
+      "public_id": "198947f5-cc9d-5faa-9715-27c4a7120400",
+      "sha256": "b74d7bdd3b9f10bb5eb1f8bc8fe6f967a855b306753ad1d5dd47d4e5236cb5d0",
+      "size_bytes": 188607,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a08_1.png",
+      "target_storage_key": "available/fe952650-d246-54a9-b96d-02c147761598.png",
+      "public_id": "fe952650-d246-54a9-b96d-02c147761598",
+      "sha256": "e7fb80069c14a83e647f5637676c333bd6b865cfc3d455ec61fb620597e5412e",
+      "size_bytes": 11313,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a08_2.jpeg",
+      "target_storage_key": "available/3f8c88e5-88d5-5e62-b82a-b609c21eecad.jpeg",
+      "public_id": "3f8c88e5-88d5-5e62-b82a-b609c21eecad",
+      "sha256": "b797d0788822869b6887d7c881d8600b42497a877c54b3e18d513786f5074f5c",
+      "size_bytes": 113758,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a08_3.png",
+      "target_storage_key": "available/55da7d71-5735-52b0-bcc1-0c236a5bada6.png",
+      "public_id": "55da7d71-5735-52b0-bcc1-0c236a5bada6",
+      "sha256": "87e6e6b10b894603e1d7603e2627fc64eab39186e0583072300bc2893cbb386a",
+      "size_bytes": 49108,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a09_1.jpeg",
+      "target_storage_key": "available/e0be380e-a035-5f3b-a541-dfa3155e96a9.jpeg",
+      "public_id": "e0be380e-a035-5f3b-a541-dfa3155e96a9",
+      "sha256": "459a180b64f27cd6d2b9d7a4fbe450903724630a6e6575f73934fd4b8ac6a9e4",
+      "size_bytes": 28335,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a09_2.jpeg",
+      "target_storage_key": "available/19d39312-a617-50a8-8ee6-20466f389ad6.jpeg",
+      "public_id": "19d39312-a617-50a8-8ee6-20466f389ad6",
+      "sha256": "03eafe9f445a5cdae0138a7b43a734feb1dbe9a486b3053627adfea6c2803bb0",
+      "size_bytes": 126557,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a09_3.png",
+      "target_storage_key": "available/c41357b2-4090-586f-80ef-db6a333c39c1.png",
+      "public_id": "c41357b2-4090-586f-80ef-db6a333c39c1",
+      "sha256": "ab152f6716cd20cd6bc6bf63e5c1a612e8d5934ba3ca7240633643d531cf5c89",
+      "size_bytes": 761297,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a09_4.jpeg",
+      "target_storage_key": "available/49f0c5fb-cf6c-54fb-be47-ca913004980a.jpeg",
+      "public_id": "49f0c5fb-cf6c-54fb-be47-ca913004980a",
+      "sha256": "f74d263fd4c68e6c1954be32c8e9add0f242ae9153816ed9b0326e92bd6d599d",
+      "size_bytes": 122623,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a10_1.jpeg",
+      "target_storage_key": "available/39b9b674-fac2-57e3-a9b3-8e5e63a4668d.jpeg",
+      "public_id": "39b9b674-fac2-57e3-a9b3-8e5e63a4668d",
+      "sha256": "91a7275fbecccc786154cecaf7871af7acbdeef889ba3ec19255745d176fc4d5",
+      "size_bytes": 42347,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a10_2.jpeg",
+      "target_storage_key": "available/5aa762f4-80d4-5c74-bd95-52a2c5350a96.jpeg",
+      "public_id": "5aa762f4-80d4-5c74-bd95-52a2c5350a96",
+      "sha256": "041f5c8f649271ec4b6b454465970567f175d49f36c4aa283b3270f0d3483753",
+      "size_bytes": 156768,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a11_1.jpeg",
+      "target_storage_key": "available/60e1818b-1155-50d1-89fa-5bf507b4dbaa.jpeg",
+      "public_id": "60e1818b-1155-50d1-89fa-5bf507b4dbaa",
+      "sha256": "5ce9f2ac38ed11031de3e61e88d09a02bf96278a808b1bc4e0e803a5d0b30f84",
+      "size_bytes": 39057,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a11_2.png",
+      "target_storage_key": "available/e057d64c-95ba-5a33-a4cf-f4fa52963896.png",
+      "public_id": "e057d64c-95ba-5a33-a4cf-f4fa52963896",
+      "sha256": "0c9525d22e582ca8d2f4172992942ea00ed831feace20ccc46ee256732e98ff6",
+      "size_bytes": 165827,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a11_3.png",
+      "target_storage_key": "available/19a19710-6c37-5dab-9dc5-c1f3b102aa88.png",
+      "public_id": "19a19710-6c37-5dab-9dc5-c1f3b102aa88",
+      "sha256": "c174ff7eeb727c7185665e7636e4ac1a8a19e0c6bfef8fb60ce4ab2faabb8e67",
+      "size_bytes": 981300,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a12_1.jpeg",
+      "target_storage_key": "available/273915f1-f05a-57a7-8922-7a199ec9ee7f.jpeg",
+      "public_id": "273915f1-f05a-57a7-8922-7a199ec9ee7f",
+      "sha256": "03aedcfb01d23e114d85c4bc7d8e8b2a9a6a86f3058bbf955ebc6eab9eb21e75",
+      "size_bytes": 36331,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a12_2.jpeg",
+      "target_storage_key": "available/e8eef1d1-6075-5c5c-8da0-c07377b2b2f3.jpeg",
+      "public_id": "e8eef1d1-6075-5c5c-8da0-c07377b2b2f3",
+      "sha256": "63e187b7e9d3bddece315b5a72c4cb9e6329ea5540abbcb91d1721f139f893c6",
+      "size_bytes": 78564,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a13_1.png",
+      "target_storage_key": "available/3b3c8619-ca43-57c4-9b55-c9771c1fc3bd.png",
+      "public_id": "3b3c8619-ca43-57c4-9b55-c9771c1fc3bd",
+      "sha256": "e63e60d1c9aebd63bf1fff4d37165a55926131cb5e57b9f58a52cceff3390540",
+      "size_bytes": 172980,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a13_2.png",
+      "target_storage_key": "available/bc4174e3-91f3-5018-9e51-037fedd2645a.png",
+      "public_id": "bc4174e3-91f3-5018-9e51-037fedd2645a",
+      "sha256": "dd1115932e5b775758fe6cc67cc80c4d8a077459ddc0c94e9e4e232e2af769b2",
+      "size_bytes": 310761,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a14_1.png",
+      "target_storage_key": "available/6b7053f9-4180-5e22-baec-572e1a9c314f.png",
+      "public_id": "6b7053f9-4180-5e22-baec-572e1a9c314f",
+      "sha256": "24bf71f60d268bb6bcc2dd4355f23584c4f7d2ca53303d023425dd3f2b1d37a8",
+      "size_bytes": 547162,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a14_2.jpeg",
+      "target_storage_key": "available/7e429086-cdb4-5b2e-8370-dde8845038f9.jpeg",
+      "public_id": "7e429086-cdb4-5b2e-8370-dde8845038f9",
+      "sha256": "045af4f5102a0bb9fb9534f303401632ab50e3d66d7620c6d28a857283f236e3",
+      "size_bytes": 36285,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a15_1.jpeg",
+      "target_storage_key": "available/f432beea-cc2f-5670-bc6f-b188db99c0e0.jpeg",
+      "public_id": "f432beea-cc2f-5670-bc6f-b188db99c0e0",
+      "sha256": "32b14165056a69dafe7d7f3e3fc37b2b00fc22c743dc2ef7c5f2c5c3da9b67e9",
+      "size_bytes": 95221,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a15_2.png",
+      "target_storage_key": "available/d2354324-51a8-5e9f-bc85-0444720aaca8.png",
+      "public_id": "d2354324-51a8-5e9f-bc85-0444720aaca8",
+      "sha256": "e914000881525830fcd5ee1df29716a39f0a0616c6a43e1e8919f23c6c6e53fe",
+      "size_bytes": 874662,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a15_3.png",
+      "target_storage_key": "available/8afac5b8-b189-52c1-a1e9-446f04d71790.png",
+      "public_id": "8afac5b8-b189-52c1-a1e9-446f04d71790",
+      "sha256": "8dc2f587cdd78554b2d3060c9e647a13b06fe259aace3f007a4762a9c8946971",
+      "size_bytes": 548902,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a16_1.png",
+      "target_storage_key": "available/4faddb6f-83bd-5c94-b9ff-471a5281ae86.png",
+      "public_id": "4faddb6f-83bd-5c94-b9ff-471a5281ae86",
+      "sha256": "e760f69b6247c5977a5c9339d395945504af057d714c28ccfd8566edae575d5b",
+      "size_bytes": 456496,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a16_2.png",
+      "target_storage_key": "available/fa96aded-b2b2-5000-841e-3ca6f7d3c27b.png",
+      "public_id": "fa96aded-b2b2-5000-841e-3ca6f7d3c27b",
+      "sha256": "a3ac9d138abe6da7ac6f6f8fc8417e97208e8c5af86b93fd13feaddfc43ff4ea",
+      "size_bytes": 838449,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a17_1.jpeg",
+      "target_storage_key": "available/74b72c77-fce3-5f7e-86c9-ea82f816447b.jpeg",
+      "public_id": "74b72c77-fce3-5f7e-86c9-ea82f816447b",
+      "sha256": "f69f3ce21cd84ec9d7c6eaa291107fec9a5ba9e708a609a5deb03f63fdc9ef50",
+      "size_bytes": 124156,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a18_1.png",
+      "target_storage_key": "available/5e96e4bb-d5eb-5e80-bc99-f3b5e9830399.png",
+      "public_id": "5e96e4bb-d5eb-5e80-bc99-f3b5e9830399",
+      "sha256": "b8884e3f9071b8b3793df9d18cd196da2b2c5be568ccb8bfe270fa1f1c4f05bd",
+      "size_bytes": 382100,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a18_2.png",
+      "target_storage_key": "available/0325d319-0c79-5119-a9ab-77e35e948a2a.png",
+      "public_id": "0325d319-0c79-5119-a9ab-77e35e948a2a",
+      "sha256": "0e26098f5a1dc263551b2708328d9a364134bb421878029eb06c81447a691c6f",
+      "size_bytes": 423247,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a19_1.png",
+      "target_storage_key": "available/33e8faa5-5f06-59a5-81a3-95b223254177.png",
+      "public_id": "33e8faa5-5f06-59a5-81a3-95b223254177",
+      "sha256": "32ac80e239058b3b1c5bcbf90c86115b28ec6a1a76253c290a040b3a1612c4a2",
+      "size_bytes": 845206,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a19_2.png",
+      "target_storage_key": "available/8afe834e-874f-5432-8592-6794dae61f16.png",
+      "public_id": "8afe834e-874f-5432-8592-6794dae61f16",
+      "sha256": "c83b951b78c34d85085aca00900340cba12112a3471c61acf01dba5ca7509ca9",
+      "size_bytes": 737714,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a19_3.png",
+      "target_storage_key": "available/b25479bb-0bc1-5828-b072-9d073a32cf53.png",
+      "public_id": "b25479bb-0bc1-5828-b072-9d073a32cf53",
+      "sha256": "7c06273d5d4ce1a993a4ab4dad6eeeacbf0b5e4229bb66ccd58b588790829f01",
+      "size_bytes": 121122,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a19_4.png",
+      "target_storage_key": "available/39c86811-988f-5070-b4d7-161731cd598f.png",
+      "public_id": "39c86811-988f-5070-b4d7-161731cd598f",
+      "sha256": "671d77272807e5a2e7aceb4acc3982ce0b60aec26fff0837bbe19465a35d1acc",
+      "size_bytes": 1322165,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a19_5.png",
+      "target_storage_key": "available/d39b29b7-9a19-56f1-ac8f-20233dcbc409.png",
+      "public_id": "d39b29b7-9a19-56f1-ac8f-20233dcbc409",
+      "sha256": "1e10a95ca13f58648451a525b55d78d6a27d20ad391921cc9237e5e670c5fcab",
+      "size_bytes": 71264,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a20_1.png",
+      "target_storage_key": "available/0a1c627c-5bae-5eb2-a134-468a652e5835.png",
+      "public_id": "0a1c627c-5bae-5eb2-a134-468a652e5835",
+      "sha256": "ab2c826f7350b13496d3d316ebab2fdeddadd1f57df813bb352ff900401abe1f",
+      "size_bytes": 192979,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a20_2.png",
+      "target_storage_key": "available/230b0ae8-4369-528c-a210-5f840356d231.png",
+      "public_id": "230b0ae8-4369-528c-a210-5f840356d231",
+      "sha256": "6971725be7767004b840c36d294616f71dce3113e901f52f270815016df3f86e",
+      "size_bytes": 612169,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a20_3.png",
+      "target_storage_key": "available/ce2ed61f-1ddb-5db2-942c-f1c1df1b4b75.png",
+      "public_id": "ce2ed61f-1ddb-5db2-942c-f1c1df1b4b75",
+      "sha256": "167163fb5457f54acd63582a88352e0b87e33af6d608a1d92d42a554af2513a1",
+      "size_bytes": 796118,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a21_1.jpeg",
+      "target_storage_key": "available/324a9011-69e0-5c32-af46-5d17b6f3421b.jpeg",
+      "public_id": "324a9011-69e0-5c32-af46-5d17b6f3421b",
+      "sha256": "8e5396be46c4b3170458f147e91f12f3e9d6b9ad78296186d1a6e7970079284d",
+      "size_bytes": 36938,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a21_2.jpeg",
+      "target_storage_key": "available/423f33a9-85e8-5212-9aa8-12d84e0ed6c6.jpeg",
+      "public_id": "423f33a9-85e8-5212-9aa8-12d84e0ed6c6",
+      "sha256": "aee4dc0c386c56c16b6f01e04da51c9901c5121b512840c76d41098e98e512dd",
+      "size_bytes": 43733,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a21_3.jpeg",
+      "target_storage_key": "available/f9c80d96-b0e6-5826-a4a1-f0a859682995.jpeg",
+      "public_id": "f9c80d96-b0e6-5826-a4a1-f0a859682995",
+      "sha256": "9a3bbb98a9e3a5bfff3a77941c8c9e0d4273fea9bd5c9099e83d018eb38a140a",
+      "size_bytes": 86247,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a21_4.jpeg",
+      "target_storage_key": "available/1ea4bb7f-058c-57e2-a00c-0d3bf1b935b6.jpeg",
+      "public_id": "1ea4bb7f-058c-57e2-a00c-0d3bf1b935b6",
+      "sha256": "8a3a2f6a4d115b8a71bdfa54c3920ccd028c80aba04381b446bf9d4a35bcaf40",
+      "size_bytes": 72137,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a21_5.jpeg",
+      "target_storage_key": "available/02357f02-893b-5579-ae76-20dcbdd01c83.jpeg",
+      "public_id": "02357f02-893b-5579-ae76-20dcbdd01c83",
+      "sha256": "4b51446e1e5ee614e091aa7b1331378522762970d4e8190296ada5d16c4f68f5",
+      "size_bytes": 103869,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a21_6.png",
+      "target_storage_key": "available/1dda29ce-f064-5afb-af90-c7bca9a8b83a.png",
+      "public_id": "1dda29ce-f064-5afb-af90-c7bca9a8b83a",
+      "sha256": "1c8bf2c65b37ee1adc582a8f750b0d6467ee4f8994227fb1e8ace7c8b1917e2f",
+      "size_bytes": 12515,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a22_1.png",
+      "target_storage_key": "available/7992cdc9-a9b2-507d-9206-2f3093b8824a.png",
+      "public_id": "7992cdc9-a9b2-507d-9206-2f3093b8824a",
+      "sha256": "24ee6206ed3be768373c2d53cd8843458513bdd6683c792d7a9d1ae42735066c",
+      "size_bytes": 1506419,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a22_2.png",
+      "target_storage_key": "available/7a6dbb9a-3d2d-5bbc-a4c2-9e4936035e0f.png",
+      "public_id": "7a6dbb9a-3d2d-5bbc-a4c2-9e4936035e0f",
+      "sha256": "404fd3e9583eb54284d2ad8e393da33a53467da60263c1934689982c816c2e8a",
+      "size_bytes": 272196,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a22_3.png",
+      "target_storage_key": "available/18531a1e-a6f3-56e1-894f-ca277f61ec14.png",
+      "public_id": "18531a1e-a6f3-56e1-894f-ca277f61ec14",
+      "sha256": "5ffa0c164fb1a5fb43fa72da645621f4bade22ec133712c9b57b1f0946f6c3e0",
+      "size_bytes": 49668,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a22_4.jpeg",
+      "target_storage_key": "available/7bfd93fd-b26d-5868-b6c5-08a846822256.jpeg",
+      "public_id": "7bfd93fd-b26d-5868-b6c5-08a846822256",
+      "sha256": "7ade14730955c998f4cbbf8d454f6b675d3283fba048812a416b15892b637a97",
+      "size_bytes": 56758,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a23_1.png",
+      "target_storage_key": "available/40d57c99-429e-5a94-a8e1-c9c137e458b8.png",
+      "public_id": "40d57c99-429e-5a94-a8e1-c9c137e458b8",
+      "sha256": "ce8fb7cff8a74e8eb3d3d04b4d53d8994860cd6b6c575fb74f0b314162345199",
+      "size_bytes": 390220,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a24_1.jpeg",
+      "target_storage_key": "available/e397573b-fe71-5dae-b45a-0633d336e431.jpeg",
+      "public_id": "e397573b-fe71-5dae-b45a-0633d336e431",
+      "sha256": "0624146797418f5446dbe2a7ad59d39ff64709c6f1544df39dc862c563b50953",
+      "size_bytes": 90583,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a24_2.png",
+      "target_storage_key": "available/f077eabc-da4f-55df-96b4-c5fd1996f639.png",
+      "public_id": "f077eabc-da4f-55df-96b4-c5fd1996f639",
+      "sha256": "408481b5c25420218c1658532b5d6a29df21d60e7d5162e5c6ecf5cceda31c39",
+      "size_bytes": 106642,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a24_3.jpeg",
+      "target_storage_key": "available/1ea6b259-8fb4-5695-80fa-9ba6c68c40bc.jpeg",
+      "public_id": "1ea6b259-8fb4-5695-80fa-9ba6c68c40bc",
+      "sha256": "ead4e17d7aa8dd461de891e44f3445f1839d4797d393ab5e4acde78c86b1a40a",
+      "size_bytes": 94691,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a24_4.jpeg",
+      "target_storage_key": "available/5deac87e-31f6-5a5a-b780-4676fc0fcb7b.jpeg",
+      "public_id": "5deac87e-31f6-5a5a-b780-4676fc0fcb7b",
+      "sha256": "d7e34773fb6b6b76aa06d2e7a80fbf0e292d51997697b9ea38f556281b79c271",
+      "size_bytes": 224314,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a24_5.jpeg",
+      "target_storage_key": "available/34867b70-1dc4-53cf-8cf7-7af3da8c2884.jpeg",
+      "public_id": "34867b70-1dc4-53cf-8cf7-7af3da8c2884",
+      "sha256": "567dd5b5e5d4aa2a404378fa51cc0e76587bb30f8f540c9aad49deb232261848",
+      "size_bytes": 57617,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a24_6.jpeg",
+      "target_storage_key": "available/17b83de4-7583-53dd-858b-97c125237d3b.jpeg",
+      "public_id": "17b83de4-7583-53dd-858b-97c125237d3b",
+      "sha256": "0624146797418f5446dbe2a7ad59d39ff64709c6f1544df39dc862c563b50953",
+      "size_bytes": 90583,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a25_1.png",
+      "target_storage_key": "available/722e6052-e1e7-5779-bfa9-b663ee065b10.png",
+      "public_id": "722e6052-e1e7-5779-bfa9-b663ee065b10",
+      "sha256": "bdfc45daf656235768128988eb22f5ab5ebf0a803e9b960ea0bea3287332b43f",
+      "size_bytes": 136018,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a25_2.png",
+      "target_storage_key": "available/2cc1fa90-3444-580b-9ee3-88fb9f089da3.png",
+      "public_id": "2cc1fa90-3444-580b-9ee3-88fb9f089da3",
+      "sha256": "1f6e413eaa6fcbe2f9ca4bf33a73451e058273a6647a3fc0af62e8ef30e0de00",
+      "size_bytes": 53221,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a26_1.png",
+      "target_storage_key": "available/e8caeac3-e673-5846-b505-f719578f725c.png",
+      "public_id": "e8caeac3-e673-5846-b505-f719578f725c",
+      "sha256": "b073efb1946040059acfa5d1e60fffcd4ef2d9bf5727c31e0731ea4676fb46f8",
+      "size_bytes": 116847,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a26_2.png",
+      "target_storage_key": "available/b7ad06c2-d94f-5798-a021-50feb20f5de2.png",
+      "public_id": "b7ad06c2-d94f-5798-a021-50feb20f5de2",
+      "sha256": "c45d74a58a6ab17dad75665b89adcef4fa0e39a49209fb6bd04e19e00320d14f",
+      "size_bytes": 87738,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a26_3.png",
+      "target_storage_key": "available/6fa7b1cf-f738-5aa8-aa32-5d3ab8c54860.png",
+      "public_id": "6fa7b1cf-f738-5aa8-aa32-5d3ab8c54860",
+      "sha256": "4c67c4421d921e44c3b48c10d2b89853ec7d1b7aedf7ae4d8fcb4a2c64352369",
+      "size_bytes": 64561,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a26_4.png",
+      "target_storage_key": "available/d59413e2-8887-560f-b3af-f9a7378d3556.png",
+      "public_id": "d59413e2-8887-560f-b3af-f9a7378d3556",
+      "sha256": "679742f5895ce08e8976f327a6deeed713ee4bea50387291c3307150a8c4ca51",
+      "size_bytes": 246152,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a26_5.png",
+      "target_storage_key": "available/a3d5aee0-7263-5883-afb9-3d7535c3d225.png",
+      "public_id": "a3d5aee0-7263-5883-afb9-3d7535c3d225",
+      "sha256": "ad35ebc65789bccacbf913d3dc94fff058f349cedf51cc2238a5135e16ae3263",
+      "size_bytes": 401419,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a26_6.png",
+      "target_storage_key": "available/cd1c75ff-5988-55da-9bb0-5b172178c280.png",
+      "public_id": "cd1c75ff-5988-55da-9bb0-5b172178c280",
+      "sha256": "fcdf9cf44a4e8006249aace070bdabee071a5d67527fda0fe4b877028be716ba",
+      "size_bytes": 308108,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a27_1.png",
+      "target_storage_key": "available/e10741c9-444b-5b43-b6cb-36329d894bc5.png",
+      "public_id": "e10741c9-444b-5b43-b6cb-36329d894bc5",
+      "sha256": "77de224dce748daf6c2665f6920d40ca3b44f7754f93d3c6c161950dfa23f222",
+      "size_bytes": 258329,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a27_2.png",
+      "target_storage_key": "available/091a6301-0ab8-5855-bba3-c9edd5ad1443.png",
+      "public_id": "091a6301-0ab8-5855-bba3-c9edd5ad1443",
+      "sha256": "1408792916d46487ac333eee3c54eac3fa4697f95fa4dadbde412f0f17319837",
+      "size_bytes": 135648,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a27_3.png",
+      "target_storage_key": "available/9f674b74-295c-534a-aae6-7e21e5c7f324.png",
+      "public_id": "9f674b74-295c-534a-aae6-7e21e5c7f324",
+      "sha256": "77de224dce748daf6c2665f6920d40ca3b44f7754f93d3c6c161950dfa23f222",
+      "size_bytes": 258329,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a27_4.png",
+      "target_storage_key": "available/53708336-8962-5c1d-ba78-7c354e0a66f3.png",
+      "public_id": "53708336-8962-5c1d-ba78-7c354e0a66f3",
+      "sha256": "6398bf8bf5883a3f1d276b92112ee789bfdf72468adc17187e6eeae68421489d",
+      "size_bytes": 335658,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a28_1.png",
+      "target_storage_key": "available/f474111c-aa87-5ceb-949a-c526ecaf7af5.png",
+      "public_id": "f474111c-aa87-5ceb-949a-c526ecaf7af5",
+      "sha256": "35a9e0b1fed61d61a3870a6f804087b747c0c620793226302179222f4b7d59c5",
+      "size_bytes": 202815,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a28_2.png",
+      "target_storage_key": "available/d2b74b33-f623-5b89-9250-d1068ddff89d.png",
+      "public_id": "d2b74b33-f623-5b89-9250-d1068ddff89d",
+      "sha256": "35a9e0b1fed61d61a3870a6f804087b747c0c620793226302179222f4b7d59c5",
+      "size_bytes": 202815,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a28_3.png",
+      "target_storage_key": "available/309dc7fd-1a3d-58f9-833d-4ff5e28ead52.png",
+      "public_id": "309dc7fd-1a3d-58f9-833d-4ff5e28ead52",
+      "sha256": "54ed7ad758d783f1ef79c48521a265253f5c106dec52ea3dce1bfac2b2533e11",
+      "size_bytes": 349117,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_1.png",
+      "target_storage_key": "available/92c2482b-656f-5564-9149-b3161f3ab0c3.png",
+      "public_id": "92c2482b-656f-5564-9149-b3161f3ab0c3",
+      "sha256": "cbbdf56add840cc85073a2cfdc036993f0a977d151284edd933c94fa3def605e",
+      "size_bytes": 26276,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_2.png",
+      "target_storage_key": "available/1ee68e0a-3e68-563e-af36-9b0a39669042.png",
+      "public_id": "1ee68e0a-3e68-563e-af36-9b0a39669042",
+      "sha256": "cbbdf56add840cc85073a2cfdc036993f0a977d151284edd933c94fa3def605e",
+      "size_bytes": 26276,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_3.png",
+      "target_storage_key": "available/177d1419-19fe-5993-848d-b278c8f0854f.png",
+      "public_id": "177d1419-19fe-5993-848d-b278c8f0854f",
+      "sha256": "0a7539ac378dabaa50dbcafdb3d2d25ea82cee993500a75e9adba0e80aef9da6",
+      "size_bytes": 168664,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_4.png",
+      "target_storage_key": "available/f7e6e71e-6078-5b49-8ed7-766a5b5ad6f6.png",
+      "public_id": "f7e6e71e-6078-5b49-8ed7-766a5b5ad6f6",
+      "sha256": "50f07c33a3cfc9164a5ee528e79d9246202d55761a1580d96ead4552cd5260af",
+      "size_bytes": 74431,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_5.png",
+      "target_storage_key": "available/d48b30af-8adb-5f15-882c-5c1a33dbb69d.png",
+      "public_id": "d48b30af-8adb-5f15-882c-5c1a33dbb69d",
+      "sha256": "50f07c33a3cfc9164a5ee528e79d9246202d55761a1580d96ead4552cd5260af",
+      "size_bytes": 74431,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_6.png",
+      "target_storage_key": "available/cdfcc44a-0a6c-580c-a10f-cc4ee9f3bc88.png",
+      "public_id": "cdfcc44a-0a6c-580c-a10f-cc4ee9f3bc88",
+      "sha256": "9efc2d04a3a4acdea8dfc73ce80eed08b908220fe162867a11dfb5a3774f7554",
+      "size_bytes": 91890,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_7.png",
+      "target_storage_key": "available/7e7b0a6d-e842-5974-895b-1cd287c7aca3.png",
+      "public_id": "7e7b0a6d-e842-5974-895b-1cd287c7aca3",
+      "sha256": "486d8dcc94540b24a75ba7b0f9db8ab593a2e19fb68c60d7b55fffeabd0c4eb7",
+      "size_bytes": 156223,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_8.png",
+      "target_storage_key": "available/76b5cdc1-9a21-5682-99e8-699547e76120.png",
+      "public_id": "76b5cdc1-9a21-5682-99e8-699547e76120",
+      "sha256": "05201a736dd0e8f31c843d1e6d38b32b3a88aad56178675e5532494f7365f448",
+      "size_bytes": 54394,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a29_9.png",
+      "target_storage_key": "available/438f13c0-b234-571a-97f2-8c4ca5f387cc.png",
+      "public_id": "438f13c0-b234-571a-97f2-8c4ca5f387cc",
+      "sha256": "4ddd1f380b4951ce53dd5fe2d94f323cfe012cfbc00314f5901a1ca2ce9822aa",
+      "size_bytes": 20821,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a30_1.jpeg",
+      "target_storage_key": "available/f0f77480-14dd-54f7-aeb2-57c833933e95.jpeg",
+      "public_id": "f0f77480-14dd-54f7-aeb2-57c833933e95",
+      "sha256": "b54698a48f6a70ec651a0525e4093a391950ea7e0b93b2b46ba60696293b0dae",
+      "size_bytes": 92559,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a30_2.png",
+      "target_storage_key": "available/f54baf88-e366-598b-96cd-79108d11db45.png",
+      "public_id": "f54baf88-e366-598b-96cd-79108d11db45",
+      "sha256": "74451c9afbb951c4341f5bdc17c255bca80db2a60f94e530f54a4bcf60b8dba9",
+      "size_bytes": 534285,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a30_3.png",
+      "target_storage_key": "available/b3dcd378-b0a6-527b-bab2-714c2e42916f.png",
+      "public_id": "b3dcd378-b0a6-527b-bab2-714c2e42916f",
+      "sha256": "ee34c009fb2cd529e4e10bfedaebcdca8e9b7670caf7f84e12e1f97669ce07a0",
+      "size_bytes": 487041,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a31_1.jpeg",
+      "target_storage_key": "available/004b0510-74b4-5eae-ae32-f1b57b6f3347.jpeg",
+      "public_id": "004b0510-74b4-5eae-ae32-f1b57b6f3347",
+      "sha256": "252378dfb0de6704a4f4fc9ff3d48b4e30aba1fea4235412f22b52eab26fc802",
+      "size_bytes": 35186,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a31_2.png",
+      "target_storage_key": "available/3ed3d79d-fdf3-563c-a9dd-25f7be82e74e.png",
+      "public_id": "3ed3d79d-fdf3-563c-a9dd-25f7be82e74e",
+      "sha256": "2002e8a953c506c78970c25e5ba6b444818bad078e941cc44fd73c5eb39cfbae",
+      "size_bytes": 158666,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a31_3.jpeg",
+      "target_storage_key": "available/7c9cd4f1-c025-5e57-b1d6-3e63ce784e6d.jpeg",
+      "public_id": "7c9cd4f1-c025-5e57-b1d6-3e63ce784e6d",
+      "sha256": "dc3435b224e8a7459b76b2057de61e17f3441392ac5268b8638faf78e82cd36f",
+      "size_bytes": 138689,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a31_4.png",
+      "target_storage_key": "available/c78c5713-dd08-52ec-b4bd-f6bbc95573ed.png",
+      "public_id": "c78c5713-dd08-52ec-b4bd-f6bbc95573ed",
+      "sha256": "8bcee64b08be41cc04fa8d41573a6f3356980caaa62dae251bcd5558ed8409eb",
+      "size_bytes": 193625,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a32_1.png",
+      "target_storage_key": "available/27fb2ab8-5b31-5e7c-b764-4618b5290329.png",
+      "public_id": "27fb2ab8-5b31-5e7c-b764-4618b5290329",
+      "sha256": "2002e8a953c506c78970c25e5ba6b444818bad078e941cc44fd73c5eb39cfbae",
+      "size_bytes": 158666,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a32_2.png",
+      "target_storage_key": "available/8aebf56c-669a-5968-aab6-08bd0066627b.png",
+      "public_id": "8aebf56c-669a-5968-aab6-08bd0066627b",
+      "sha256": "e65bda9655b5e41a82f5d7be8c82543d54d46ccc6832a5f0d723e5e56078b9b1",
+      "size_bytes": 166137,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a32_3.png",
+      "target_storage_key": "available/0ff5e429-79e7-5012-ba69-3dbcea5a21ff.png",
+      "public_id": "0ff5e429-79e7-5012-ba69-3dbcea5a21ff",
+      "sha256": "7d621c4e25f1a3582f4fa5e3795dacbf58c1f3f552e0a84cd90ab824f9074a8b",
+      "size_bytes": 106535,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a32_4.png",
+      "target_storage_key": "available/c2750401-ee36-5749-8a45-1948bc15d095.png",
+      "public_id": "c2750401-ee36-5749-8a45-1948bc15d095",
+      "sha256": "248375851ad51c00afb07a1ba80ad441c38a364c75760ae3d253abb8f311c497",
+      "size_bytes": 35517,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a33_1.jpeg",
+      "target_storage_key": "available/6022f5ce-dd9d-5f72-90c8-d1d74d1bd1d2.jpeg",
+      "public_id": "6022f5ce-dd9d-5f72-90c8-d1d74d1bd1d2",
+      "sha256": "276d37928f282f9f2207520d162a084c7ba86a18bd4e1a8266bbecbb7e8554c0",
+      "size_bytes": 48796,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_1.GIF",
+      "target_storage_key": "available/92c86a16-f5c1-50a3-b134-9b7f4e17c7b8.gif",
+      "public_id": "92c86a16-f5c1-50a3-b134-9b7f4e17c7b8",
+      "sha256": "106025c01f650a8349e5dfe4208175a48438575eec4fb54a041bab64f484b64a",
+      "size_bytes": 16839,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_10.png",
+      "target_storage_key": "available/a37ea2bf-8d4e-5c14-9065-f07a019440e7.png",
+      "public_id": "a37ea2bf-8d4e-5c14-9065-f07a019440e7",
+      "sha256": "1559ef4a2f952ced2a383e9cd823a03c5d34af438940cd5cf4aa82ab6fcde617",
+      "size_bytes": 392340,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_2.png",
+      "target_storage_key": "available/51b21556-8480-5ed1-a625-97fe786588f9.png",
+      "public_id": "51b21556-8480-5ed1-a625-97fe786588f9",
+      "sha256": "e4b35d6a410525646c4b727947059e5650dbe0d799f1f77c60029fda43c77abb",
+      "size_bytes": 9492,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_3.GIF",
+      "target_storage_key": "available/1a37e493-a679-57b7-aa0d-3cd4f304750b.gif",
+      "public_id": "1a37e493-a679-57b7-aa0d-3cd4f304750b",
+      "sha256": "106025c01f650a8349e5dfe4208175a48438575eec4fb54a041bab64f484b64a",
+      "size_bytes": 16839,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_4.png",
+      "target_storage_key": "available/039e0829-b670-53b2-9ea5-00608d4596e3.png",
+      "public_id": "039e0829-b670-53b2-9ea5-00608d4596e3",
+      "sha256": "52235fcdda9d2b02c18df459d0d7ab357f351fbe0f695e892f921181242ea566",
+      "size_bytes": 261299,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_5.png",
+      "target_storage_key": "available/c945f444-ed4d-5200-86a9-815ade348c82.png",
+      "public_id": "c945f444-ed4d-5200-86a9-815ade348c82",
+      "sha256": "7a98dbdac0cc26ea9c29aa78326d0bd047adacc2713702bc620bd4578b980b88",
+      "size_bytes": 561408,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_6.png",
+      "target_storage_key": "available/f48cfbee-fc1a-54aa-bc01-233389d09b63.png",
+      "public_id": "f48cfbee-fc1a-54aa-bc01-233389d09b63",
+      "sha256": "b5d5cc78d72bb47f38d96e13da28194ed78f1989ce88c3dded9bb591c6787ca1",
+      "size_bytes": 706618,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_7.png",
+      "target_storage_key": "available/a770a534-6d60-5650-9cc2-762ac1f1e163.png",
+      "public_id": "a770a534-6d60-5650-9cc2-762ac1f1e163",
+      "sha256": "c0207850e2d7cc53f5aef69d35b2bc75b8f4dddc6a44ba2eabb910a1bb848a5b",
+      "size_bytes": 317705,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_8.png",
+      "target_storage_key": "available/f301183c-6385-5b9b-a82c-da619de1e111.png",
+      "public_id": "f301183c-6385-5b9b-a82c-da619de1e111",
+      "sha256": "0fcf9e0ca7f37926652f923204e76c3c5218ee27613c95d41372d75c746bffbb",
+      "size_bytes": 155096,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a34_9.png",
+      "target_storage_key": "available/5d6aafc0-2e06-5e59-9b21-58e08179f2d5.png",
+      "public_id": "5d6aafc0-2e06-5e59-9b21-58e08179f2d5",
+      "sha256": "da6a85ca390f189cee1bf83609f9cdce409ecb6c8b0cde4b2e5647f225deadf9",
+      "size_bytes": 297348,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_1.png",
+      "target_storage_key": "available/9c077c84-cb15-563a-916a-45b3514d3577.png",
+      "public_id": "9c077c84-cb15-563a-916a-45b3514d3577",
+      "sha256": "334672fda3cefdecb80131dd802540585401038876e7082fb8b877b553808816",
+      "size_bytes": 113559,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_10.png",
+      "target_storage_key": "available/7617941a-91ab-511f-bfad-94ceb3a5bbe3.png",
+      "public_id": "7617941a-91ab-511f-bfad-94ceb3a5bbe3",
+      "sha256": "1b1187c43090f2304de5d67bd92d4593d039593848ed0ca3d594d3e38ac68d61",
+      "size_bytes": 354945,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_11.jpeg",
+      "target_storage_key": "available/1d745d15-78e6-5b1b-a517-09828ee71755.jpeg",
+      "public_id": "1d745d15-78e6-5b1b-a517-09828ee71755",
+      "sha256": "4554e0815a06a1b8923005a2f470eef5da7e6b1d47d476a9b637737e2126d5e1",
+      "size_bytes": 86973,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_2.png",
+      "target_storage_key": "available/2474cbfe-5ac9-59eb-aa22-cf3f346301f6.png",
+      "public_id": "2474cbfe-5ac9-59eb-aa22-cf3f346301f6",
+      "sha256": "0e3b3f2e79e21ad7d2cb78a20d4a334b72253a1ba537eb62d6628740ce035e19",
+      "size_bytes": 222422,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_3.png",
+      "target_storage_key": "available/48e1ac03-6242-586d-b4a6-f175fbb0e650.png",
+      "public_id": "48e1ac03-6242-586d-b4a6-f175fbb0e650",
+      "sha256": "ab5a880acaa5312b8094149cd66be88e5eb96360e6baaaac5dbab32c1674e88d",
+      "size_bytes": 97040,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_4.png",
+      "target_storage_key": "available/2ee7db6c-921f-5f4f-a6fe-f1d9e091e8ab.png",
+      "public_id": "2ee7db6c-921f-5f4f-a6fe-f1d9e091e8ab",
+      "sha256": "864d5fc18eb3313f63168c0dcfcab4c7e359aea03a0f30e7b2274f6af25db3c3",
+      "size_bytes": 85046,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_5.png",
+      "target_storage_key": "available/7d3cf3c5-ea21-598c-aba6-d14c8545452b.png",
+      "public_id": "7d3cf3c5-ea21-598c-aba6-d14c8545452b",
+      "sha256": "25774f39da5b02a7e0f52a5d2cad7ac04afed10e99a057d297d6e3a7ac36ce21",
+      "size_bytes": 171667,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_6.png",
+      "target_storage_key": "available/057ef9dc-d5c0-5002-ac76-269ab11c4097.png",
+      "public_id": "057ef9dc-d5c0-5002-ac76-269ab11c4097",
+      "sha256": "93f5a99e8bc74481f4867abfd18559d567c3171a5148db689c1e074d11644fdb",
+      "size_bytes": 79859,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_7.png",
+      "target_storage_key": "available/999c3939-3f91-5f29-ae20-f4cee643839d.png",
+      "public_id": "999c3939-3f91-5f29-ae20-f4cee643839d",
+      "sha256": "097af9b1abf185897246c4921b36f46177c6e525e45bd0ca144bec92aaa51719",
+      "size_bytes": 1099594,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_8.jpeg",
+      "target_storage_key": "available/51c6a881-c37d-55f3-86fa-63c9102f7bd3.jpeg",
+      "public_id": "51c6a881-c37d-55f3-86fa-63c9102f7bd3",
+      "sha256": "d1d8c0fa716c98d3b65d09bcae2abb8cdb4e4df4b1ee4b6a7a7f5e0c3a7a8173",
+      "size_bytes": 85427,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a35_9.jpeg",
+      "target_storage_key": "available/2c61333b-57e9-56bb-917c-452d45fd5311.jpeg",
+      "public_id": "2c61333b-57e9-56bb-917c-452d45fd5311",
+      "sha256": "57c260c92b56fe2c6d029d5a5c41d246817ff7138cc31385eec29179476e69d0",
+      "size_bytes": 78383,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_1.png",
+      "target_storage_key": "available/7c091fdf-2568-586b-9457-bde077bb99bf.png",
+      "public_id": "7c091fdf-2568-586b-9457-bde077bb99bf",
+      "sha256": "3a3e291529b1146a24ba1c8ac0cefd125b1706125bef560077df3e20636c7376",
+      "size_bytes": 194347,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_2.png",
+      "target_storage_key": "available/aacc6c11-ee96-5691-8362-13d713e8ee04.png",
+      "public_id": "aacc6c11-ee96-5691-8362-13d713e8ee04",
+      "sha256": "6461147bf4e37fd9f3ce4d5dad9015056deb65af1cbd6c2cc3dc0447e2157019",
+      "size_bytes": 206433,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_3.jpeg",
+      "target_storage_key": "available/12605943-a4ec-52b5-b2f4-1cc09bd672ed.jpeg",
+      "public_id": "12605943-a4ec-52b5-b2f4-1cc09bd672ed",
+      "sha256": "f557e7ef21142f236f46d9562a51db9f84e54029813fbb12a0dfe9a81ff1dfcc",
+      "size_bytes": 107654,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_4.jpeg",
+      "target_storage_key": "available/61f59049-2e67-5302-8ff9-9677dcf73407.jpeg",
+      "public_id": "61f59049-2e67-5302-8ff9-9677dcf73407",
+      "sha256": "727b67ceed1d06a7a048107edbb800f34d65ee79255b3556cd2ab17486cc221a",
+      "size_bytes": 111416,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_5.jpeg",
+      "target_storage_key": "available/d00a4574-2c42-5e20-adf2-d194ecee1c96.jpeg",
+      "public_id": "d00a4574-2c42-5e20-adf2-d194ecee1c96",
+      "sha256": "a32de5eb5b1010b092ac489117cdb1fdbf4f7240e61d9133131bc3f9826a018d",
+      "size_bytes": 86278,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_6.jpeg",
+      "target_storage_key": "available/f6c0894a-1101-547a-bf98-02112e44ebbd.jpeg",
+      "public_id": "f6c0894a-1101-547a-bf98-02112e44ebbd",
+      "sha256": "0cb652b6de101e2430987e19e1398a4cb17173a496209b264e15ef200500f5bb",
+      "size_bytes": 106124,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a36_7.jpeg",
+      "target_storage_key": "available/51dec6da-35a1-55b1-aa27-6508a786d77d.jpeg",
+      "public_id": "51dec6da-35a1-55b1-aa27-6508a786d77d",
+      "sha256": "01e3c61c5dc8b27d7e79d1faec1704c45a15db5a68689754d228d8bcd2fa11e2",
+      "size_bytes": 127929,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a37_1.jpeg",
+      "target_storage_key": "available/8b2631da-86b5-5f40-bfe4-6d94c43954bb.jpeg",
+      "public_id": "8b2631da-86b5-5f40-bfe4-6d94c43954bb",
+      "sha256": "48ad00f0312bb844cda0f7129fde09150f004f68e01453b2d05014439c0671e1",
+      "size_bytes": 85981,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a37_2.GIF",
+      "target_storage_key": "available/2c1b9bba-765e-5aef-a584-e686c036c61f.gif",
+      "public_id": "2c1b9bba-765e-5aef-a584-e686c036c61f",
+      "sha256": "d735a67947d3d85b5304404f89ece5ee7515eb56a987ed6a0c270691539a0bbf",
+      "size_bytes": 2911829,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_1.png",
+      "target_storage_key": "available/10a83223-d3b2-5d86-839a-107b66fbf1c7.png",
+      "public_id": "10a83223-d3b2-5d86-839a-107b66fbf1c7",
+      "sha256": "0ddb986806e4062b77eca662dade235fe304cdd8e5d13686a6935a4e6a5a57e3",
+      "size_bytes": 279892,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_10.png",
+      "target_storage_key": "available/94bdbcf0-924c-54da-b8ff-8ba6db60d9c9.png",
+      "public_id": "94bdbcf0-924c-54da-b8ff-8ba6db60d9c9",
+      "sha256": "3fd5260f82f0c6c07e48a19ba32ea4c04a19f4acb80e6822527511a7b5f64d11",
+      "size_bytes": 246532,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_11.png",
+      "target_storage_key": "available/58a4d235-e93d-5132-9160-390dbe4c80d0.png",
+      "public_id": "58a4d235-e93d-5132-9160-390dbe4c80d0",
+      "sha256": "3fae55963ada1d7723c3b64cf363e1f4cab646ee86a3b099966500dfd83dfd0d",
+      "size_bytes": 608962,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_12.png",
+      "target_storage_key": "available/5a54ec11-c9da-5649-95e1-8f3725833d64.png",
+      "public_id": "5a54ec11-c9da-5649-95e1-8f3725833d64",
+      "sha256": "f1f981ab0c595ffd4c773d14b8da20a750debb848b01481260be84783de36197",
+      "size_bytes": 330519,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_13.png",
+      "target_storage_key": "available/6c963af3-c657-517d-916f-1b758a3c9d06.png",
+      "public_id": "6c963af3-c657-517d-916f-1b758a3c9d06",
+      "sha256": "98430b089deba1de8db185c5fcb345e29a18906de1df027fe28421c89fbb4dad",
+      "size_bytes": 51652,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_14.png",
+      "target_storage_key": "available/c720c577-5c0a-5196-8b6a-5ace81ffeacd.png",
+      "public_id": "c720c577-5c0a-5196-8b6a-5ace81ffeacd",
+      "sha256": "271d1614d3cf963e763e5939df6d15e1fa523d6e2b2c16c15980b5cbdcd76b5d",
+      "size_bytes": 346742,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_15.png",
+      "target_storage_key": "available/0c3719f4-3693-5039-be20-fb774e752ae0.png",
+      "public_id": "0c3719f4-3693-5039-be20-fb774e752ae0",
+      "sha256": "3b9fe4a44228879d7686348f76295ef25b87af5b5d9f4b6716e52d0fb3c7d2a6",
+      "size_bytes": 106101,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_16.png",
+      "target_storage_key": "available/3c77f40b-f382-5425-80e0-ed9e463e92cd.png",
+      "public_id": "3c77f40b-f382-5425-80e0-ed9e463e92cd",
+      "sha256": "57732b17f1ee70cb9c5af2374bbd686b62250002618bc70fea4b2d90397955f5",
+      "size_bytes": 483422,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_17.png",
+      "target_storage_key": "available/10bc40df-11a2-5794-a084-d71d0c147b19.png",
+      "public_id": "10bc40df-11a2-5794-a084-d71d0c147b19",
+      "sha256": "cf144b52cb0dc08585df5dc79052aa9bea655d75e5fbb90d9826b9d5407fde2c",
+      "size_bytes": 662771,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_18.png",
+      "target_storage_key": "available/61c3f17c-ec8c-54da-bbcd-893bf579cfdf.png",
+      "public_id": "61c3f17c-ec8c-54da-bbcd-893bf579cfdf",
+      "sha256": "4b0ec7ccfb3ee9d155b50339a0da12a44763a5aacda3d18f1584d3ee181b7e06",
+      "size_bytes": 354825,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_2.png",
+      "target_storage_key": "available/0c6f9906-5860-5bf6-bb2c-74d28f9e3bf4.png",
+      "public_id": "0c6f9906-5860-5bf6-bb2c-74d28f9e3bf4",
+      "sha256": "7935b316a681d660556b80c286c640e21a34146581fe1b9b29530485748b93be",
+      "size_bytes": 278764,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_3.png",
+      "target_storage_key": "available/9da85de1-d3c6-5166-9f79-515a2c412346.png",
+      "public_id": "9da85de1-d3c6-5166-9f79-515a2c412346",
+      "sha256": "f10f60f8dd16f6898fb4144bebc0b5e4017df21899d4ad99c8b2b10d92ef7c73",
+      "size_bytes": 226558,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_4.png",
+      "target_storage_key": "available/e341f151-bcb1-583a-98fb-bd95d5dffc28.png",
+      "public_id": "e341f151-bcb1-583a-98fb-bd95d5dffc28",
+      "sha256": "77719486462fd208f3502fe06f33683f089f8560fda73959c5e5a267cf3238df",
+      "size_bytes": 27144,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_5.png",
+      "target_storage_key": "available/ad525f6d-ebcd-58f6-987f-f6b814515762.png",
+      "public_id": "ad525f6d-ebcd-58f6-987f-f6b814515762",
+      "sha256": "86313692d7ac985d2ff845a169bdf187092a2269ba44c030658303999263d9db",
+      "size_bytes": 11228,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_6.png",
+      "target_storage_key": "available/6b9b7029-eedc-5c13-b17b-7ff474f2d28a.png",
+      "public_id": "6b9b7029-eedc-5c13-b17b-7ff474f2d28a",
+      "sha256": "78acdd51b5b8e627f5eea11433514ae84494a973b75527bf181be8a756437e67",
+      "size_bytes": 574877,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_7.png",
+      "target_storage_key": "available/4c0e33fb-0e23-56b9-bb21-1235bbf13539.png",
+      "public_id": "4c0e33fb-0e23-56b9-bb21-1235bbf13539",
+      "sha256": "ec3294b4893a10c9a7a3c3791098df185c71ba615ebbd81f34ae3ca4146c5be4",
+      "size_bytes": 678536,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_8.png",
+      "target_storage_key": "available/ecd6cc41-d04f-5560-bdaf-9c01955d58da.png",
+      "public_id": "ecd6cc41-d04f-5560-bdaf-9c01955d58da",
+      "sha256": "a4d74aac065ce278ca8a674e77ef713e1cce9a19fde4c2165bbaec243c54c0da",
+      "size_bytes": 741796,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a38_9.png",
+      "target_storage_key": "available/40c08a4f-aa0f-5fab-8568-cba528e0e929.png",
+      "public_id": "40c08a4f-aa0f-5fab-8568-cba528e0e929",
+      "sha256": "7ea02b9568b73a54a8098fd3107f51a09102a5470b3cbb075703b2f3d0a7a079",
+      "size_bytes": 505791,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a39_1.png",
+      "target_storage_key": "available/29bab398-2623-5cf4-babc-dfb7411578bb.png",
+      "public_id": "29bab398-2623-5cf4-babc-dfb7411578bb",
+      "sha256": "49da1fd98a992367b22a785896d91217d3eebc445cd1b110b67627a365e02da0",
+      "size_bytes": 235402,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a39_2.png",
+      "target_storage_key": "available/dadc17ff-ff03-5c24-9c0b-f0ac7d078fcf.png",
+      "public_id": "dadc17ff-ff03-5c24-9c0b-f0ac7d078fcf",
+      "sha256": "5c4cbbe356b13e50df119c7777f3676036495b285f822356864b1712d17dc1d1",
+      "size_bytes": 281831,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a39_3.png",
+      "target_storage_key": "available/24498fd3-560b-5cb8-bb97-80caf042d604.png",
+      "public_id": "24498fd3-560b-5cb8-bb97-80caf042d604",
+      "sha256": "a1ced297e6eafb7a9082fbdd08b910e1582b8540be3f3b1309cd44e9f493ea00",
+      "size_bytes": 151670,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a39_4.png",
+      "target_storage_key": "available/9dfc9ad9-5442-5920-b28f-73a3b8e062c9.png",
+      "public_id": "9dfc9ad9-5442-5920-b28f-73a3b8e062c9",
+      "sha256": "23b43f31974c83dd8f7574d76c90325cb8a05f224eaa157dbf93d18ae63123fe",
+      "size_bytes": 134071,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a39_5.GIF",
+      "target_storage_key": "available/a6e85432-651d-57a1-8ca6-7babf0862180.gif",
+      "public_id": "a6e85432-651d-57a1-8ca6-7babf0862180",
+      "sha256": "a4295bce843a5e04054f486cf94b7b2cd1ec32f3eac9285474da8b994ca0818c",
+      "size_bytes": 4792,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_1.png",
+      "target_storage_key": "available/6745aeac-f5f4-5deb-92cc-52955a701638.png",
+      "public_id": "6745aeac-f5f4-5deb-92cc-52955a701638",
+      "sha256": "67044066fc5ab5d61bebabe5f9a5cf7ff98c1a9995abd3a4bca46149352e1010",
+      "size_bytes": 340964,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_10.png",
+      "target_storage_key": "available/b9d2cd59-e4f1-5aef-9821-6fa1003ff99c.png",
+      "public_id": "b9d2cd59-e4f1-5aef-9821-6fa1003ff99c",
+      "sha256": "fc70d34abefeb77dd339577e0995cb626bf9badc3c718b66d05ed511b8f44419",
+      "size_bytes": 468637,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_11.png",
+      "target_storage_key": "available/fb52eb5a-318a-541b-8259-6a7438994794.png",
+      "public_id": "fb52eb5a-318a-541b-8259-6a7438994794",
+      "sha256": "af3cff5a92d75f1952c9b3f85a7c7cbdbb86f05090732434af0e7d6037191da1",
+      "size_bytes": 1073364,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_12.png",
+      "target_storage_key": "available/912071a8-dea1-5133-b472-949b3c6619a7.png",
+      "public_id": "912071a8-dea1-5133-b472-949b3c6619a7",
+      "sha256": "95b110ed2c3ddf4d4bf5d5170d93d0e8be826c2ba4ba4502ce4dc69d7d5e06b3",
+      "size_bytes": 230045,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_2.png",
+      "target_storage_key": "available/27c92384-130f-581f-83e8-a5a754060dee.png",
+      "public_id": "27c92384-130f-581f-83e8-a5a754060dee",
+      "sha256": "58275251d95da5e414750d76fc71290f72624d36b84aba0732b8a7f1ee0d1f63",
+      "size_bytes": 281520,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_3.png",
+      "target_storage_key": "available/7da5333f-2669-555b-bb4f-4c3abf682795.png",
+      "public_id": "7da5333f-2669-555b-bb4f-4c3abf682795",
+      "sha256": "4f32e293fd874bcbcb9e6a636c75df736c94004105f910599b274abfdffb6964",
+      "size_bytes": 43618,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_4.png",
+      "target_storage_key": "available/0ab54251-4013-55fd-9a9a-63244829c02e.png",
+      "public_id": "0ab54251-4013-55fd-9a9a-63244829c02e",
+      "sha256": "b05ca112742792b51fed0bfabef0cd048949f3a8eec844dd11a4c03e0a1aa715",
+      "size_bytes": 153244,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_5.png",
+      "target_storage_key": "available/b0c6670f-08a6-55fc-b086-f66196cad2c8.png",
+      "public_id": "b0c6670f-08a6-55fc-b086-f66196cad2c8",
+      "sha256": "85ae95202188709aa185329ca82bc5123bf30fac039ff83dfef90a2f478aa998",
+      "size_bytes": 767191,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_6.png",
+      "target_storage_key": "available/5a26f7a4-e38c-54e5-a684-c2f7b6936783.png",
+      "public_id": "5a26f7a4-e38c-54e5-a684-c2f7b6936783",
+      "sha256": "9daa11212a1b41f05f0860481b18bf013697e404dabe72b59745373c6e6ce87b",
+      "size_bytes": 724118,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_7.png",
+      "target_storage_key": "available/f75205da-571f-5c79-a2cf-38f89a2291be.png",
+      "public_id": "f75205da-571f-5c79-a2cf-38f89a2291be",
+      "sha256": "5bacf0ffde850a000a591e392d69b2f7910b5f4dfef89fa10b37254c33e67832",
+      "size_bytes": 1629397,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_8.png",
+      "target_storage_key": "available/b577addb-f8a7-5493-96fe-c0049666a974.png",
+      "public_id": "b577addb-f8a7-5493-96fe-c0049666a974",
+      "sha256": "b9846bd60376f657643b273325e69bf08b84d5846b16f83443926ade8c23c76a",
+      "size_bytes": 122345,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a40_9.png",
+      "target_storage_key": "available/e098a14f-18e8-50ee-b37b-7e156df9e068.png",
+      "public_id": "e098a14f-18e8-50ee-b37b-7e156df9e068",
+      "sha256": "0159ef1d24e11903f1620ffa95aaa350141e4dad85e5cf5cc4a7a078b93f4c93",
+      "size_bytes": 278662,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_1.png",
+      "target_storage_key": "available/a95308ac-04cd-5bc8-97cf-46fe7d013414.png",
+      "public_id": "a95308ac-04cd-5bc8-97cf-46fe7d013414",
+      "sha256": "12d7dc381eba3e41d8e031fe6e2292ed5b8d8465be9e93f0e7c11d3c1eabd01e",
+      "size_bytes": 173188,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_10.png",
+      "target_storage_key": "available/83819a3c-1371-59e5-8125-562c6acbe4f6.png",
+      "public_id": "83819a3c-1371-59e5-8125-562c6acbe4f6",
+      "sha256": "3cffd84bd620666637dd1591bdd2f2dbbfd7ffb1a4e46bb59bd199b125f5cc60",
+      "size_bytes": 363964,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_11.png",
+      "target_storage_key": "available/cc04ba08-9b75-558f-af20-5976442625d2.png",
+      "public_id": "cc04ba08-9b75-558f-af20-5976442625d2",
+      "sha256": "7ee14723d8d5a242333b71fffcc09039ad0552588310010f16e1d5afcf0b05eb",
+      "size_bytes": 230569,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_12.png",
+      "target_storage_key": "available/e68e9283-5507-56ca-b4ce-3e2a92747ff4.png",
+      "public_id": "e68e9283-5507-56ca-b4ce-3e2a92747ff4",
+      "sha256": "bbebc3dad0632f6a81e5dcdda83abbd60ce9eff27f536e371f09ccac6f5eaffa",
+      "size_bytes": 503345,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_13.png",
+      "target_storage_key": "available/afb5b0da-1389-5e19-945d-5a5b0ccdd4c9.png",
+      "public_id": "afb5b0da-1389-5e19-945d-5a5b0ccdd4c9",
+      "sha256": "8cd36acb87557b127a080b4836c4344e610644643889275e133902c733ce0441",
+      "size_bytes": 98395,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_14.jpeg",
+      "target_storage_key": "available/039bfc2a-242c-5bb4-bfdb-d15be5a4d229.jpeg",
+      "public_id": "039bfc2a-242c-5bb4-bfdb-d15be5a4d229",
+      "sha256": "396cb2c97dec3d0fa8fd78793a974bb0965a7520415504e203b75ba4e411f81a",
+      "size_bytes": 26862,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_15.png",
+      "target_storage_key": "available/03781248-6e68-5fe6-8d3a-66c2a454060a.png",
+      "public_id": "03781248-6e68-5fe6-8d3a-66c2a454060a",
+      "sha256": "e940aeb7db1bbfd126160e3eade182b1813a0b0b3fd398587effa74217db94b1",
+      "size_bytes": 115391,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_2.png",
+      "target_storage_key": "available/5d821823-ccc9-571c-9ad5-5b2c9ea458f0.png",
+      "public_id": "5d821823-ccc9-571c-9ad5-5b2c9ea458f0",
+      "sha256": "7de737f8971392a1bb072cd9d4032e3303ae3c9b56327d6cfc53ea893e939448",
+      "size_bytes": 157078,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_3.png",
+      "target_storage_key": "available/f6f79df3-8115-5bf1-88a3-3771239dd81f.png",
+      "public_id": "f6f79df3-8115-5bf1-88a3-3771239dd81f",
+      "sha256": "e6eedbfbdd11184f8dc149400793270129290bd9e961d75d90156220484b78fe",
+      "size_bytes": 189954,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_4.png",
+      "target_storage_key": "available/5d17467e-4c8c-586c-8775-eaea8600ac96.png",
+      "public_id": "5d17467e-4c8c-586c-8775-eaea8600ac96",
+      "sha256": "09cbd2a4c7b648f0ad4eec9d90348847daa9ce52c94ab88b8a3e5e1c66c87714",
+      "size_bytes": 124824,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_5.png",
+      "target_storage_key": "available/e278b9a9-ac8b-5f12-9827-0f50bd4cd6b9.png",
+      "public_id": "e278b9a9-ac8b-5f12-9827-0f50bd4cd6b9",
+      "sha256": "6e152f286558faf3490762355e0524121724dba6118978e9d8b1e5c6b4c29946",
+      "size_bytes": 20007,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_6.png",
+      "target_storage_key": "available/eb200e35-b8e8-59d3-8340-85b2bf45385a.png",
+      "public_id": "eb200e35-b8e8-59d3-8340-85b2bf45385a",
+      "sha256": "af2da2e3573018032e1813ef266f60bc8858aa7e819f7377b5d8a68186fbea1e",
+      "size_bytes": 51694,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_7.png",
+      "target_storage_key": "available/8ef61e76-edaa-5408-9eb9-b77bf2721eb5.png",
+      "public_id": "8ef61e76-edaa-5408-9eb9-b77bf2721eb5",
+      "sha256": "7d3c2a25ef5c70583b87bf46ddae642480e84c6580aa374df7d0c6b7328ac31b",
+      "size_bytes": 51250,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_8.png",
+      "target_storage_key": "available/4a9ad5c4-384e-5746-acad-45c81f51ff2e.png",
+      "public_id": "4a9ad5c4-384e-5746-acad-45c81f51ff2e",
+      "sha256": "8a24f88829836aed3d9c635623ccc2c011cafc73f9656fd8f9fe4df47cc627fb",
+      "size_bytes": 73513,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a41_9.png",
+      "target_storage_key": "available/fa50d49c-bd71-531d-a82d-bdd1cd42f7e9.png",
+      "public_id": "fa50d49c-bd71-531d-a82d-bdd1cd42f7e9",
+      "sha256": "abcb31cce9ec59999f050e41fd4fe7ec0a88873bab4170759b1f210acc989a4a",
+      "size_bytes": 66042,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_1.png",
+      "target_storage_key": "available/6ea0b20d-46f0-585b-a507-65006da3225b.png",
+      "public_id": "6ea0b20d-46f0-585b-a507-65006da3225b",
+      "sha256": "a9de8c472811b6251a34502aae3ced9c24ba5763746cad7c34d12ba172ab401d",
+      "size_bytes": 132364,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_2.png",
+      "target_storage_key": "available/68a0b617-4906-5783-9a24-e86180c24dbc.png",
+      "public_id": "68a0b617-4906-5783-9a24-e86180c24dbc",
+      "sha256": "c7ba806226ae2f97fff9a937ed33726658da92ccbc1979b589d8bb6cd76ee546",
+      "size_bytes": 566487,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_3.jpeg",
+      "target_storage_key": "available/891cdc5f-06dc-5deb-9760-74b83d7c6551.jpeg",
+      "public_id": "891cdc5f-06dc-5deb-9760-74b83d7c6551",
+      "sha256": "b2839bb97f2f6438d54a028172396b5a886383e00b4831ba87ceae872eec601c",
+      "size_bytes": 161689,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_4.png",
+      "target_storage_key": "available/57ea3e87-5549-58fe-90ca-6f50df2abd22.png",
+      "public_id": "57ea3e87-5549-58fe-90ca-6f50df2abd22",
+      "sha256": "8b5dc7e96444f02c8858cac15f6723c9e1611a9731b59916c9bfcd0561a4c2ba",
+      "size_bytes": 50606,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_5.png",
+      "target_storage_key": "available/13a03b7e-52fe-5d4d-9484-731f07c7a6af.png",
+      "public_id": "13a03b7e-52fe-5d4d-9484-731f07c7a6af",
+      "sha256": "5041dc5f76922ab353ddeea7942e7d4de2e4c30b0ebe938488afe45be29b60c3",
+      "size_bytes": 53288,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_6.png",
+      "target_storage_key": "available/a582153f-3d30-510a-93e7-63bf300f3edf.png",
+      "public_id": "a582153f-3d30-510a-93e7-63bf300f3edf",
+      "sha256": "ed52aab45c87efee46f2bbb8e201105d6e874107364cbfd4c5ceab484c06b186",
+      "size_bytes": 18564,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a42_7.GIF",
+      "target_storage_key": "available/70608d13-e2bb-5249-8cb6-df8a51a42dbe.gif",
+      "public_id": "70608d13-e2bb-5249-8cb6-df8a51a42dbe",
+      "sha256": "a5f363c7b436119d4d7c228d905bab947f030e60bf2955d84b8b1f4e17de2992",
+      "size_bytes": 6465,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a43_1.png",
+      "target_storage_key": "available/4b222dfe-462f-52b5-97df-8031b51060f5.png",
+      "public_id": "4b222dfe-462f-52b5-97df-8031b51060f5",
+      "sha256": "cfb937c242df325ee62a21834f18bea04b6ed583802fb7c0bbdbbcab8940ddc2",
+      "size_bytes": 494847,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a43_2.png",
+      "target_storage_key": "available/6e99de5c-60ae-578d-bd24-ccc3a7526d5b.png",
+      "public_id": "6e99de5c-60ae-578d-bd24-ccc3a7526d5b",
+      "sha256": "80dafe7939a66d8637955eb6195d43dbbc841b0488ddace18ab4dc5026d5ae54",
+      "size_bytes": 104455,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a43_3.png",
+      "target_storage_key": "available/b6f7dfc0-d16d-5b25-be07-dbff6802eaf1.png",
+      "public_id": "b6f7dfc0-d16d-5b25-be07-dbff6802eaf1",
+      "sha256": "831ff15f96253bb4108ebf3ce356f8c43df513e7aa72051833efaaa10cdd5ae4",
+      "size_bytes": 126631,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a43_4.png",
+      "target_storage_key": "available/b3e12a37-3f0e-5de7-a9f8-3480c9990075.png",
+      "public_id": "b3e12a37-3f0e-5de7-a9f8-3480c9990075",
+      "sha256": "f8abacfc5166cd7042b826eb9d42fec014e5fa82787390d42f82021916d589fe",
+      "size_bytes": 273398,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a44_1.png",
+      "target_storage_key": "available/a0cf9259-db94-5287-b929-4bd4046d7f7c.png",
+      "public_id": "a0cf9259-db94-5287-b929-4bd4046d7f7c",
+      "sha256": "16f7d33c6b22a7356713da66d4e1f405979e4c58dfa2604427b66c3a13fc6d98",
+      "size_bytes": 336674,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a44_2.png",
+      "target_storage_key": "available/d75f4ec4-0751-5843-8e18-6b63e28101c6.png",
+      "public_id": "d75f4ec4-0751-5843-8e18-6b63e28101c6",
+      "sha256": "35e610390069eddae7dd0f9d295a5a8c699fc644d7b5c3a49451c6be81ae80b8",
+      "size_bytes": 196116,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a44_3.png",
+      "target_storage_key": "available/9c4bfc1a-16ff-53a9-a620-8ed5073cd493.png",
+      "public_id": "9c4bfc1a-16ff-53a9-a620-8ed5073cd493",
+      "sha256": "16f7d33c6b22a7356713da66d4e1f405979e4c58dfa2604427b66c3a13fc6d98",
+      "size_bytes": 336674,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a44_4.png",
+      "target_storage_key": "available/491b3a5e-f862-512c-acf1-7488f1a618f1.png",
+      "public_id": "491b3a5e-f862-512c-acf1-7488f1a618f1",
+      "sha256": "d84a15099f604ee5321139e51833f1e9cdd6c3362d717bac454395638864137f",
+      "size_bytes": 289997,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a44_5.png",
+      "target_storage_key": "available/8fb63756-370e-5ec0-b328-83a35fcdf565.png",
+      "public_id": "8fb63756-370e-5ec0-b328-83a35fcdf565",
+      "sha256": "1d4b8d8048c81a66f6c7bd43b02c523c06f2b2e711d7fb574af8cc5234647ae1",
+      "size_bytes": 351538,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a44_6.png",
+      "target_storage_key": "available/dfb10253-9c8a-5723-859f-84cadb52b709.png",
+      "public_id": "dfb10253-9c8a-5723-859f-84cadb52b709",
+      "sha256": "313616a10459a6ee8730cdf6b411accc309e4a92c659f306c55a914891de738f",
+      "size_bytes": 224882,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a45_1.jpeg",
+      "target_storage_key": "available/0e279dd8-f7ee-5082-94b1-835114e77dae.jpeg",
+      "public_id": "0e279dd8-f7ee-5082-94b1-835114e77dae",
+      "sha256": "53621c07562c4527b1db25b3de04f12ba6b81fa97cec2061ecc4d6bc7e828a96",
+      "size_bytes": 49022,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a45_2.jpeg",
+      "target_storage_key": "available/77e5d8cc-3c1a-5c1f-ba8e-196edd3206e4.jpeg",
+      "public_id": "77e5d8cc-3c1a-5c1f-ba8e-196edd3206e4",
+      "sha256": "a133cd46282546bb323f4456a3c6bd3876d3ab43378601cd40c226e17cddaf0d",
+      "size_bytes": 22586,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a46_1.png",
+      "target_storage_key": "available/0b8f7d35-0e87-595c-a49a-11b9516e620d.png",
+      "public_id": "0b8f7d35-0e87-595c-a49a-11b9516e620d",
+      "sha256": "9f5f8867e89938760f2dbd8056704105e1ddb76794a8a8fe5e6ab948e5b662bd",
+      "size_bytes": 103128,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a46_2.png",
+      "target_storage_key": "available/f396380c-72fb-5129-8aab-cc03a3c7c5d6.png",
+      "public_id": "f396380c-72fb-5129-8aab-cc03a3c7c5d6",
+      "sha256": "0fb5f552e1576f825688328beb5efc34c89f1734c53131c54e8ac4eaf9e3d093",
+      "size_bytes": 22418,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a46_3.png",
+      "target_storage_key": "available/98a322ed-4782-5bc9-b6c5-441efd161a5b.png",
+      "public_id": "98a322ed-4782-5bc9-b6c5-441efd161a5b",
+      "sha256": "5bb7a04735e7d3f8ccc7fbdc67aef68c2bb995daf922faeb193c9f6e70e370e0",
+      "size_bytes": 273069,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a46_4.png",
+      "target_storage_key": "available/eb550365-9783-5eb8-a1cf-45384f14a770.png",
+      "public_id": "eb550365-9783-5eb8-a1cf-45384f14a770",
+      "sha256": "a791ad788f8c4c9f722676a28a849d12cd7c91a3fd23ae724f8233a016d9844f",
+      "size_bytes": 337128,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_1.png",
+      "target_storage_key": "available/c223981c-d2d9-5f2f-9cdb-158790886474.png",
+      "public_id": "c223981c-d2d9-5f2f-9cdb-158790886474",
+      "sha256": "20064f7059a0eea1dbc920c38d0fce90e7cc5ab5daf4a27e27a6ce813b8825a8",
+      "size_bytes": 580274,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_2.jpeg",
+      "target_storage_key": "available/7c3c55ce-3af1-5a54-b264-73e327d3eaff.jpeg",
+      "public_id": "7c3c55ce-3af1-5a54-b264-73e327d3eaff",
+      "sha256": "0e26949b4304b4ec180e8536db5dffc75b07956f70d6c9a007876256bb23944a",
+      "size_bytes": 182753,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_3.GIF",
+      "target_storage_key": "available/c59fb3eb-b10e-5769-bc29-bf50f24dccce.gif",
+      "public_id": "c59fb3eb-b10e-5769-bc29-bf50f24dccce",
+      "sha256": "5105defe3f3f73eae7b965ba68bbb394113d3aab3b0b35f82f667a15499580ec",
+      "size_bytes": 1344243,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_4.GIF",
+      "target_storage_key": "available/0ecd09d1-1c7e-5fca-8e46-e6512523271c.gif",
+      "public_id": "0ecd09d1-1c7e-5fca-8e46-e6512523271c",
+      "sha256": "ee50d0448916c7c5609802aa4e30556f710f7eb9f3097fc5ca92ed11329e9034",
+      "size_bytes": 2904622,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_5.GIF",
+      "target_storage_key": "available/2f2f3f44-a48d-571f-a20a-d67262f3d4d2.gif",
+      "public_id": "2f2f3f44-a48d-571f-a20a-d67262f3d4d2",
+      "sha256": "9aafdd36da25a8ca6dbfa5ac26ca1f57f2bc0f81391afce322c70262820222a8",
+      "size_bytes": 658403,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_6.GIF",
+      "target_storage_key": "available/aa2cbf73-cd71-5445-8458-022d7d3d6ca7.gif",
+      "public_id": "aa2cbf73-cd71-5445-8458-022d7d3d6ca7",
+      "sha256": "7a5999e9520a8c2644cc604f97acf01d883335cf21499bec2bf8eb154e3ebb2f",
+      "size_bytes": 793596,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a47_7.GIF",
+      "target_storage_key": "available/815f6936-e5ee-5fb2-bb5b-ea9a7d678f3c.gif",
+      "public_id": "815f6936-e5ee-5fb2-bb5b-ea9a7d678f3c",
+      "sha256": "c212f1f6ea9aa023757fc3dbe469cae8756d694b06e9dcddd4de156f32ec25db",
+      "size_bytes": 10052810,
+      "mime_type": "image/gif"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a48_1.jpeg",
+      "target_storage_key": "available/2e02c6cf-c05f-52b0-922d-369040630b71.jpeg",
+      "public_id": "2e02c6cf-c05f-52b0-922d-369040630b71",
+      "sha256": "7f95a58991d4abb4e5e0e0dbceb68c129893cb75e02c94ee6c9f765cf5f90641",
+      "size_bytes": 57558,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a48_2.jpeg",
+      "target_storage_key": "available/da423f96-b689-58e3-a49f-bb01976cddad.jpeg",
+      "public_id": "da423f96-b689-58e3-a49f-bb01976cddad",
+      "sha256": "6d783d4e07d49b617debb305851a3a9a5921587015c4d29bc24495b655857098",
+      "size_bytes": 53333,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a48_3.png",
+      "target_storage_key": "available/30717bd7-4431-5cb5-9d59-dff6979d0a76.png",
+      "public_id": "30717bd7-4431-5cb5-9d59-dff6979d0a76",
+      "sha256": "4da49ff43284b0fb9b0331026fd74699b20de47cbd2508a6f7412e8e57306d47",
+      "size_bytes": 217415,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a49_1.png",
+      "target_storage_key": "available/6eef9b48-d23f-57a7-943e-374fee770d2e.png",
+      "public_id": "6eef9b48-d23f-57a7-943e-374fee770d2e",
+      "sha256": "89314a6abeb2eeab250439c14921c5a95e69f3f5586fa0b62fce72582bc1f6a8",
+      "size_bytes": 458056,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a50_1.jpeg",
+      "target_storage_key": "available/80a7b64a-e34e-5249-93de-2c49a1a4bdda.jpeg",
+      "public_id": "80a7b64a-e34e-5249-93de-2c49a1a4bdda",
+      "sha256": "91a7275fbecccc786154cecaf7871af7acbdeef889ba3ec19255745d176fc4d5",
+      "size_bytes": 42347,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a50_2.jpeg",
+      "target_storage_key": "available/e2356cbd-03f2-5e91-8904-87eee0a89534.jpeg",
+      "public_id": "e2356cbd-03f2-5e91-8904-87eee0a89534",
+      "sha256": "d2845caed61357a328c772fbc4660c7b55665f70cb20a84a86d9473f9c39ab45",
+      "size_bytes": 112383,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a50_3.png",
+      "target_storage_key": "available/eb18c8ad-2762-574d-812b-8a8d702c65b6.png",
+      "public_id": "eb18c8ad-2762-574d-812b-8a8d702c65b6",
+      "sha256": "a7881291cb9e4d28fcb3b3c452fc9ffa2878fbd24568e98e7b46f0afd5eaf473",
+      "size_bytes": 842977,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a51_1.png",
+      "target_storage_key": "available/b1f3264d-b5e3-54ec-ae17-9c610471d02f.png",
+      "public_id": "b1f3264d-b5e3-54ec-ae17-9c610471d02f",
+      "sha256": "530e0beadc1ed1974ab86e6922dc252864e39d756f53807fda38b39b4f0bf3d7",
+      "size_bytes": 401328,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a51_2.png",
+      "target_storage_key": "available/399c5221-95e0-551f-b8cd-24acd7484201.png",
+      "public_id": "399c5221-95e0-551f-b8cd-24acd7484201",
+      "sha256": "47c3e27560926f113c4d2fd2050a0f2e94bb99d8af21d72680bbab23fe264bc7",
+      "size_bytes": 82730,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a51_3.png",
+      "target_storage_key": "available/439fc111-f785-5f69-888a-5a31dc4b971f.png",
+      "public_id": "439fc111-f785-5f69-888a-5a31dc4b971f",
+      "sha256": "bbe3fda90911242060d14c99c6d37b69d324e65ecd27581cd4888ce5a42da7c3",
+      "size_bytes": 348393,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a51_4.png",
+      "target_storage_key": "available/03c3926f-a12a-5a0c-903a-0d114f02a117.png",
+      "public_id": "03c3926f-a12a-5a0c-903a-0d114f02a117",
+      "sha256": "d2190fe3f89bae8fb02f36e87eea0d410b5482f408b07a3ef993725d78f168fa",
+      "size_bytes": 82232,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a51_5.jpeg",
+      "target_storage_key": "available/1a105f0c-28f8-5e74-aff9-b40bd0ac09aa.jpeg",
+      "public_id": "1a105f0c-28f8-5e74-aff9-b40bd0ac09aa",
+      "sha256": "7455cdb0eb13666aa62599608c75eb637b9e144f57cf058073e02246013db8e7",
+      "size_bytes": 90938,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a52_1.jpeg",
+      "target_storage_key": "available/ba03c9d9-5fe4-5a80-87d4-37558fd71651.jpeg",
+      "public_id": "ba03c9d9-5fe4-5a80-87d4-37558fd71651",
+      "sha256": "a147b65aad2468b4bb266efe7d7d230965abe20505ffab0bb24f21ee51a44ae8",
+      "size_bytes": 90279,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a53_1.png",
+      "target_storage_key": "available/1721236b-2713-5248-89ea-b44007f6687c.png",
+      "public_id": "1721236b-2713-5248-89ea-b44007f6687c",
+      "sha256": "606dfb692b61e0e50476fb43971aec20e07f374b136473f66f5d2a13be5ad283",
+      "size_bytes": 230404,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a53_2.png",
+      "target_storage_key": "available/7e361883-5764-5791-8f54-a22b6d37a869.png",
+      "public_id": "7e361883-5764-5791-8f54-a22b6d37a869",
+      "sha256": "606dfb692b61e0e50476fb43971aec20e07f374b136473f66f5d2a13be5ad283",
+      "size_bytes": 230404,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a53_3.png",
+      "target_storage_key": "available/82a85e0c-d4b7-5d83-8283-e5de1383f3ad.png",
+      "public_id": "82a85e0c-d4b7-5d83-8283-e5de1383f3ad",
+      "sha256": "bbca2302daecebd21626ab9482798126cea8e0b1c6f6f91a7aaefdbb5c224d55",
+      "size_bytes": 109072,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a53_4.png",
+      "target_storage_key": "available/2301a7e6-5bf8-59b6-ae1b-926c16154b25.png",
+      "public_id": "2301a7e6-5bf8-59b6-ae1b-926c16154b25",
+      "sha256": "ee9740f6f255a96d42ad9bed5473b79d4f36f7b13ad8c0f69cba97b37d40b00a",
+      "size_bytes": 79553,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a53_5.png",
+      "target_storage_key": "available/e8c0cb94-b034-56e3-9282-a533a4406882.png",
+      "public_id": "e8c0cb94-b034-56e3-9282-a533a4406882",
+      "sha256": "c2ebbea7b84d2e3c09c843d412c6fc70888472b0657e2173228536af46fd8e72",
+      "size_bytes": 542862,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "news-articles/assets/a53_6.png",
+      "target_storage_key": "available/f4413cdb-159f-5c29-90c2-fc99f783885f.png",
+      "public_id": "f4413cdb-159f-5c29-90c2-fc99f783885f",
+      "sha256": "bd93e898e18711da2ee7cd6d7c0ef9b2295481b1cddf1bd2fd036a26dbd66af9",
+      "size_bytes": 187355,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "px-award-1.jpg",
+      "target_storage_key": "available/97a3a6af-1c3d-51c8-b104-c93eaeb5b5c0.jpg",
+      "public_id": "97a3a6af-1c3d-51c8-b104-c93eaeb5b5c0",
+      "sha256": "0796512ab81a24ff8a3eb9d8d45bd03f5338f8a946cba0618742bc2c09043e43",
+      "size_bytes": 928026,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "px-award-2.png",
+      "target_storage_key": "available/9c8080cb-c206-51d0-a6cb-f36815315357.png",
+      "public_id": "9c8080cb-c206-51d0-a6cb-f36815315357",
+      "sha256": "72402d6f8c3c5aa9bb7ff18480f99ef04592e942b6c0bed6407e267c912daa65",
+      "size_bytes": 605189,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "px-award-3.jpg",
+      "target_storage_key": "available/af4c566f-3a28-5b64-88f7-155baa2f26e5.jpg",
+      "public_id": "af4c566f-3a28-5b64-88f7-155baa2f26e5",
+      "sha256": "9766f05e694f91202ff16d2b9d2e8bf864caa8a651d88aad803110ccd0bf687e",
+      "size_bytes": 284351,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "px-award-4.jpg",
+      "target_storage_key": "available/b5064429-d5ff-5df1-a269-ebb7295c857f.jpg",
+      "public_id": "b5064429-d5ff-5df1-a269-ebb7295c857f",
+      "sha256": "e9f9539a1a3b5393fcb349a706376e94034eb1bdd70e4b5b8607509f1c1759d5",
+      "size_bytes": 290985,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "px-banner.jpg",
+      "target_storage_key": "available/921172b7-4124-5ba8-8ee7-9ee12b1a522f.jpg",
+      "public_id": "921172b7-4124-5ba8-8ee7-9ee12b1a522f",
+      "sha256": "b7f68aaeefb1a90bb09da742359618899f9a6667a83ca8bee4577d875ee18d1a",
+      "size_bytes": 2128659,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "px-logo.png",
+      "target_storage_key": "available/867920ed-1b13-5f6e-ba10-3272b321d0b5.png",
+      "public_id": "867920ed-1b13-5f6e-ba10-3272b321d0b5",
+      "sha256": "d6f87ea89e4bc5e8019d2b5a86909c1026458dd350b4e4571eaba85768a4e9a3",
+      "size_bytes": 36121,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "px-wechat-qr.jpg",
+      "target_storage_key": "available/7fa6a454-8935-5c64-8aec-c6c63cb36918.jpg",
+      "public_id": "7fa6a454-8935-5c64-8aec-c6c63cb36918",
+      "sha256": "9830aa336cfe7b6eda9822b8dbefae98e5c7194c4e3c0284907e737edb9fd31f",
+      "size_bytes": 28233,
+      "mime_type": "image/jpeg"
+    },
+    {
+      "source_relative_path": "px-wechat-video-qr.png",
+      "target_storage_key": "available/55340f2e-1f13-550b-b8ac-bde3ceb14a26.png",
+      "public_id": "55340f2e-1f13-550b-b8ac-bde3ceb14a26",
+      "sha256": "43a80e64a27277e716434cf93ceb758cf8625519abb060ea5e3b479279964b14",
+      "size_bytes": 18058,
+      "mime_type": "image/png"
+    },
+    {
+      "source_relative_path": "专利/202121798292X一种超声波水表.pdf",
+      "target_storage_key": "available/3ff3af12-d9ab-5a63-a8b0-9110e27e51f9.pdf",
+      "public_id": "3ff3af12-d9ab-5a63-a8b0-9110e27e51f9",
+      "sha256": "c92a7cff34aceaf61e228725bdabcaf27bebcf1744f5d42de4a06db0cb711dba",
+      "size_bytes": 1356015,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "专利/2021220182008一种带防回流装置的水表实用新型专利证书(签章).pdf",
+      "target_storage_key": "available/b5cf950f-9c86-5fb4-bece-6cdbad5dada0.pdf",
+      "public_id": "b5cf950f-9c86-5fb4-bece-6cdbad5dada0",
+      "sha256": "53c7e451e6ab5196fb1d3dba7b43e52c1d4484242fb10c11e34dc3486307f261",
+      "size_bytes": 1330858,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "专利/202122020324X一种防渗漏的智能水表实用新型专利证书(签章).pdf",
+      "target_storage_key": "available/436513a1-b3fb-5929-b1a2-74ba3108d611.pdf",
+      "public_id": "436513a1-b3fb-5929-b1a2-74ba3108d611",
+      "sha256": "2692d62ce3e24549f851603b02700e9d1142c0dfb96fa9ad86b218557d7dcd1b",
+      "size_bytes": 1330910,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "专利/24CN1018-一种充电式NB-IoT水表-实用新型专利证书.pdf",
+      "target_storage_key": "available/d36991d1-f3b8-54b2-84cb-46054736bac9.pdf",
+      "public_id": "d36991d1-f3b8-54b2-84cb-46054736bac9",
+      "sha256": "6c68c5d54c109b44027b97bd96206ac2fdb24e03dd24b95d4b75d7ff97986518",
+      "size_bytes": 1038321,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "专利/平行数字科技（江苏）有限公司-2024104858392-一种污水处理运行控制系统-发明专利证书-2024-12-27.pdf",
+      "target_storage_key": "available/76953a63-f536-53b2-912d-743a52530cbe.pdf",
+      "public_id": "76953a63-f536-53b2-912d-743a52530cbe",
+      "sha256": "e77569a1e11999987533c0de3dc83df6d29a5acc401fdb9ec3272f502d3ba80c",
+      "size_bytes": 1171337,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "专利/平行数字科技（江苏）有限公司-2024208408501-一种防盗式消火栓-实用新型专利证书-2024-12-31.pdf",
+      "target_storage_key": "available/aa5d37d3-e728-5818-a6c4-d778c0a02e7e.pdf",
+      "public_id": "aa5d37d3-e728-5818-a6c4-d778c0a02e7e",
+      "sha256": "5ca888397cc783789c938b2d6fa9eb24a1d32c6f46f3af97d9160ae2c7dc9da5",
+      "size_bytes": 1037298,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字AI智能体V1.0.pdf",
+      "target_storage_key": "available/7e3d82b2-dc9e-5e46-af16-534fe9230af5.pdf",
+      "public_id": "7e3d82b2-dc9e-5e46-af16-534fe9230af5",
+      "sha256": "3eec2563e43223632f468a3b3e9ec9250d6510f9633df3815f0705c73630758d",
+      "size_bytes": 1088909,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字BPM统一审批平台软件V1.0.pdf",
+      "target_storage_key": "available/1bb24c47-80a0-59ab-88f7-7e29f9c847ea.pdf",
+      "public_id": "1bb24c47-80a0-59ab-88f7-7e29f9c847ea",
+      "sha256": "184543819481d6d1ceb9731afaa3d399f49e37f48265e20b60f09a4747668b69",
+      "size_bytes": 1800334,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字DMA分区计量管理软件V1.0.pdf",
+      "target_storage_key": "available/d0ac1e0a-9ecd-52dd-8ff9-0a6f87ff3fbe.pdf",
+      "public_id": "d0ac1e0a-9ecd-52dd-8ff9-0a6f87ff3fbe",
+      "sha256": "cf501b8603076f3b998262740a2d544bca058f5c793d9d746a56aa6df042781b",
+      "size_bytes": 1790238,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字二次供水泵房智能化管理平台软件V1.0.pdf",
+      "target_storage_key": "available/96f83c53-98f0-516f-8baa-5b2d170855f1.pdf",
+      "public_id": "96f83c53-98f0-516f-8baa-5b2d170855f1",
+      "sha256": "2b776a268994e6e75ff4ed3da0f2f5cab939b1641e2820835d5ed60df8988927",
+      "size_bytes": 1810126,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字任务管理移动版软件V1.0.pdf",
+      "target_storage_key": "available/209a5f6b-d89e-521a-a024-cb0ec0818c02.pdf",
+      "public_id": "209a5f6b-d89e-521a-a024-cb0ec0818c02",
+      "sha256": "7b44c6c13895f4b6eafa98bd4601c2a0e67bb0f3c5c8a89443ad700d1cc1c4f8",
+      "size_bytes": 1810524,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字任务管理软件V1.0.pdf",
+      "target_storage_key": "available/2eb31659-22df-52a3-84d9-80de12fbe659.pdf",
+      "public_id": "2eb31659-22df-52a3-84d9-80de12fbe659",
+      "sha256": "65620faab2952b0ee63b42dc2fd24c416e1373a220acada1f433af12f3e94daa",
+      "size_bytes": 1790991,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字企业信息化管理平台软件V1.0.pdf",
+      "target_storage_key": "available/eb5ec152-8244-5443-8af3-b46986564ca2.pdf",
+      "public_id": "eb5ec152-8244-5443-8af3-b46986564ca2",
+      "sha256": "e3652ffc3ceb531cecaa201025a4a61c401ff311a6c3a7bbc4417ca9b1b72ba1",
+      "size_bytes": 1770869,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字企业办公平台软件V1.0.pdf",
+      "target_storage_key": "available/1bd8d0b9-5b35-59ea-a25f-cf1683b723c3.pdf",
+      "public_id": "1bd8d0b9-5b35-59ea-a25f-cf1683b723c3",
+      "sha256": "b4ca45d34baf5a263b0c236448f00e939dbf293c5df223fe32d5b9c562e52116",
+      "size_bytes": 1799903,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字企业安全管控平台软件V1.0.pdf",
+      "target_storage_key": "available/4eaef086-4385-531a-a0a6-34f0c7b53677.pdf",
+      "public_id": "4eaef086-4385-531a-a0a6-34f0c7b53677",
+      "sha256": "ea59df6b39e91256e288274e3f3a1e86fc2ce02cc30b842889baa022ad209ce7",
+      "size_bytes": 1600251,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字会议室预定管理软件V1.0.pdf",
+      "target_storage_key": "available/f1606a56-74b8-503e-9304-e76210929ebd.pdf",
+      "public_id": "f1606a56-74b8-503e-9304-e76210929ebd",
+      "sha256": "0a2f1194851db1d2f309d738765a36975f0d42e0f4766d6b03e1e8d89638e693",
+      "size_bytes": 1807989,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字供水管网GIS编辑软件V1.0.pdf",
+      "target_storage_key": "available/6d06a9e5-8c1c-5ff7-ba5e-17af0e177180.pdf",
+      "public_id": "6d06a9e5-8c1c-5ff7-ba5e-17af0e177180",
+      "sha256": "33c5aade19143c80184a0144476eb5c897d40d1b6e59f45ccb99a17598517850",
+      "size_bytes": 1799856,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字供水管网外业管理软件V1.0.pdf",
+      "target_storage_key": "available/bd89efc9-9ad0-5677-b29d-b760e3aa32d4.pdf",
+      "public_id": "bd89efc9-9ad0-5677-b29d-b760e3aa32d4",
+      "sha256": "0bab9b60d32912a44dca09bbc8fb233e326659c1b170fc006bf73c3535f70ae4",
+      "size_bytes": 1811036,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字供水管网巡检管理软件V1.0.pdf",
+      "target_storage_key": "available/b22be341-b863-561a-a95c-eab4e0bb7b07.pdf",
+      "public_id": "b22be341-b863-561a-a95c-eab4e0bb7b07",
+      "sha256": "b7b14e06b161d989f38a71210431e30de72d7397962e95f7e6af5d135531bc9c",
+      "size_bytes": 1797204,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字供水管网空间地理信息GIS软件V1.0.pdf",
+      "target_storage_key": "available/410fba5f-eb49-570e-a746-4aaabbe2671a.pdf",
+      "public_id": "410fba5f-eb49-570e-a746-4aaabbe2671a",
+      "sha256": "64ad43a99dc815c5b50435e70f8929ab32e71aa485ec1fcf8a83d8c1309be621",
+      "size_bytes": 1826138,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字全生命周期资产移动管理平台V1.0.pdf",
+      "target_storage_key": "available/ba448a66-f55c-5228-8502-7c40845dc024.pdf",
+      "public_id": "ba448a66-f55c-5228-8502-7c40845dc024",
+      "sha256": "bd42e8caa2840f665d000c7ab4c043ae1a8b76027e29adf7741bc22485f5f056",
+      "size_bytes": 1090192,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字全生命周期资产管理系统V1.0.pdf",
+      "target_storage_key": "available/228413e0-5e33-50bf-a281-331bc8808e79.pdf",
+      "public_id": "228413e0-5e33-50bf-a281-331bc8808e79",
+      "sha256": "6c858b1fb0926b79bb03eb01eb2e5630017f4e7ec8ac37964b69edb5664b5f88",
+      "size_bytes": 1090488,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字全要素工程管理系统V1.0.pdf",
+      "target_storage_key": "available/a7753d94-23c4-56dd-ba75-d34d836e821e.pdf",
+      "public_id": "a7753d94-23c4-56dd-ba75-d34d836e821e",
+      "sha256": "b60b82da1218bf43f3c918f11493d6b1ae9f0e12d7672bff6e95e83e6d607d39",
+      "size_bytes": 1089723,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字城市日供水量预测模型软件V1.0.pdf",
+      "target_storage_key": "available/d8c8a3a0-728d-5283-a2e1-502a886049d9.pdf",
+      "public_id": "d8c8a3a0-728d-5283-a2e1-502a886049d9",
+      "sha256": "55c0d40534f368978ee3e52c872f9bce48395ce4676d59eeb171a6c4ab81d0f8",
+      "size_bytes": 1799144,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字基于大数据的营业收费系统V1.0.pdf",
+      "target_storage_key": "available/993ed52d-6dcc-5040-bdff-13eec7fe84b0.pdf",
+      "public_id": "993ed52d-6dcc-5040-bdff-13eec7fe84b0",
+      "sha256": "31deec63f4446e851e6ad5f7d521d0ae1cc08ed2c8ae006797c1f15acae75306",
+      "size_bytes": 1089765,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字官方网站移动版软件V1.0.pdf",
+      "target_storage_key": "available/8ea87e22-9587-5096-8a91-7ae16f0eabe8.pdf",
+      "public_id": "8ea87e22-9587-5096-8a91-7ae16f0eabe8",
+      "sha256": "824e4e6ca5cbd585b74d9cfcb7a40e9861d9b16cddf71ba8526dae263d56cb4b",
+      "size_bytes": 1791601,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字官方网站软件V1.0.pdf",
+      "target_storage_key": "available/4d06ca77-5087-50a2-a618-7073bceace14.pdf",
+      "public_id": "4d06ca77-5087-50a2-a618-7073bceace14",
+      "sha256": "8b333d71f05ce8d1f09710b2d345111e41a44a5e0993d4206325e194306a13c6",
+      "size_bytes": 1795739,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字实验室信息管理系统软件V1.0.pdf",
+      "target_storage_key": "available/db99d911-2ff4-555a-8209-4fdc466f1d16.pdf",
+      "public_id": "db99d911-2ff4-555a-8209-4fdc466f1d16",
+      "sha256": "51916fc0f7402c1e63183527fc3e13e29ed3dd6c65941c39e3a689253eb06583",
+      "size_bytes": 22686765,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字客户管理软件V1.0.pdf",
+      "target_storage_key": "available/6bbd5836-571c-50c0-ad07-d4e7d05f37a2.pdf",
+      "public_id": "6bbd5836-571c-50c0-ad07-d4e7d05f37a2",
+      "sha256": "a957a8aebf7454f6e7a85c8053840adec87ca14a9030e235cef91cae0dc5693c",
+      "size_bytes": 1795472,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字工单管理平台软件V1.0.pdf",
+      "target_storage_key": "available/bd94e71e-db1d-5f24-8ce2-6252555f2565.pdf",
+      "public_id": "bd94e71e-db1d-5f24-8ce2-6252555f2565",
+      "sha256": "24ab682cd04f8e19487fb31285e0cfc5b6531a8daeb5ede3d18cedbcb40e2747",
+      "size_bytes": 615587,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字工程移动软件V1.0.pdf",
+      "target_storage_key": "available/97ffe3b3-e2ad-5544-8e04-ab28f6d9e720.pdf",
+      "public_id": "97ffe3b3-e2ad-5544-8e04-ab28f6d9e720",
+      "sha256": "188b44937a287108b04d08eb670253d0601d8ab6c97ce1569ab4e5d915ba78f8",
+      "size_bytes": 1088531,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字工程项目管理系统软件V1.0.pdf",
+      "target_storage_key": "available/77d66f1f-a145-59a4-90cb-47373c688ceb.pdf",
+      "public_id": "77d66f1f-a145-59a4-90cb-47373c688ceb",
+      "sha256": "9322f0c87b31753f389b2e5ff8c9404a17ad6af439e9df851b61b951b7014015",
+      "size_bytes": 1783019,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字应急指挥管理平台软件V1.0.pdf",
+      "target_storage_key": "available/dd85e41e-1286-5baf-a301-5e670b5e84a2.pdf",
+      "public_id": "dd85e41e-1286-5baf-a301-5e670b5e84a2",
+      "sha256": "e0a3a1617a3c8db6c932856cc4fb226443db58cbcc864119b6fa9a3603776ca3",
+      "size_bytes": 1089691,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字微信公众号PC版管理软件V1.0.pdf",
+      "target_storage_key": "available/b537bad9-7a10-5d74-a479-48589cbbc33f.pdf",
+      "public_id": "b537bad9-7a10-5d74-a479-48589cbbc33f",
+      "sha256": "d033b318cafcabcb8ae9e5d33764d74f7041b9e20fc5619a363d6288eaea7c90",
+      "size_bytes": 1795951,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字微信报装管理平台软件V1.0.pdf",
+      "target_storage_key": "available/db02406f-de25-55fb-a1c3-5b92d3575047.pdf",
+      "public_id": "db02406f-de25-55fb-a1c3-5b92d3575047",
+      "sha256": "bb2c93d73b5ac05782abe4b63b7cd4f52830e6195aae765325f76a5306172c45",
+      "size_bytes": 1797400,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字数字化仓储管理平台V1.0.pdf",
+      "target_storage_key": "available/5ff2cff2-1802-536d-b84b-463c2b17acbf.pdf",
+      "public_id": "5ff2cff2-1802-536d-b84b-463c2b17acbf",
+      "sha256": "2eafcae538e1d4998bd8f9f5d96a4b631f4abefe39f370216a58a4edb1021d6a",
+      "size_bytes": 1089207,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧工程平台APP软件V1.0.pdf",
+      "target_storage_key": "available/114c0231-fe6d-59a9-ba05-ea9b3061d6b6.pdf",
+      "public_id": "114c0231-fe6d-59a9-ba05-ea9b3061d6b6",
+      "sha256": "587d4d08244b12f448b567ed8db3c60adeeacaf33bab0edc1febef00907355b3",
+      "size_bytes": 1792940,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧工程平台PC版软件V1.0.pdf",
+      "target_storage_key": "available/683dbd69-1a06-5774-94cd-94db88c8981a.pdf",
+      "public_id": "683dbd69-1a06-5774-94cd-94db88c8981a",
+      "sha256": "5246140c0ae09e3d922099f97cd7b79780cae78f6c0d62e9ade4c277352038ec",
+      "size_bytes": 1800999,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧抄表平台V1.0.pdf",
+      "target_storage_key": "available/4bc6bacd-44ec-5a62-8137-3be12cf2f46d.pdf",
+      "public_id": "4bc6bacd-44ec-5a62-8137-3be12cf2f46d",
+      "sha256": "b54b2ff1c30187680d6a4b87340dcd1f5d63be2375516a06b90f01686e22b7e3",
+      "size_bytes": 1089195,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧水务平台软件V1.0.pdf",
+      "target_storage_key": "available/d407147a-9c71-59b1-a317-0f6cba4326f2.pdf",
+      "public_id": "d407147a-9c71-59b1-a317-0f6cba4326f2",
+      "sha256": "93cb90ae0dd3a4ff9bf067717d242d94a286e82e42deaf42504a5c90df48afa6",
+      "size_bytes": 1802359,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧污水厂管理平台软件V1.0.pdf",
+      "target_storage_key": "available/aa3f5b7e-604a-52ab-9b46-260099140c69.pdf",
+      "public_id": "aa3f5b7e-604a-52ab-9b46-260099140c69",
+      "sha256": "859692a779a62757dc00a0d3edd6827b6f5a82b0d5fec718568c8809d97c323c",
+      "size_bytes": 1767904,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧生产平台移动版软件V1.0.pdf",
+      "target_storage_key": "available/b08917ea-f1be-51d7-9f51-102a9c50c3fc.pdf",
+      "public_id": "b08917ea-f1be-51d7-9f51-102a9c50c3fc",
+      "sha256": "6df21ea6f90b52ac2016fcb9e331a26bd29d4d64ad441a0485b281907e84bd55",
+      "size_bytes": 1810530,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧生产平台软件V1.0.pdf",
+      "target_storage_key": "available/a51b0dd2-37c9-5de7-bd0b-b70341fa5128.pdf",
+      "public_id": "a51b0dd2-37c9-5de7-bd0b-b70341fa5128",
+      "sha256": "c0b6e56320d83a8eefe0a106e9e2db4ffc10f62c364be8ca6d29702d7f7675fe",
+      "size_bytes": 1802690,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智慧管网综合管理平台软件V1.0.pdf",
+      "target_storage_key": "available/5efcfae1-0c7e-5258-8082-5e44001fcdb7.pdf",
+      "public_id": "5efcfae1-0c7e-5258-8082-5e44001fcdb7",
+      "sha256": "670385a7439ae39ec0a3cef5536a6407103b155fadb56edcf86f5c1750c257b3",
+      "size_bytes": 1809540,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字智能精确曝气模型软件V1.0.pdf",
+      "target_storage_key": "available/5921d294-e154-5460-b034-99ef01501cba.pdf",
+      "public_id": "5921d294-e154-5460-b034-99ef01501cba",
+      "sha256": "bf0620a9b4ec281d9184b8c50f2667bd866becd2bbffb217a501908c92145169",
+      "size_bytes": 1866373,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字水厂工艺水力停留时间模型软件V1.0.pdf",
+      "target_storage_key": "available/c6a40a11-0240-52da-8db8-6ca3e78572ae.pdf",
+      "public_id": "c6a40a11-0240-52da-8db8-6ca3e78572ae",
+      "sha256": "2a25c736318d861542d5533bffedbc940ba7212f260a656b4889a045c15b99f5",
+      "size_bytes": 1798665,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字水厂数字孪生系统软件V1.0.pdf",
+      "target_storage_key": "available/d11a85bb-96de-52cb-b8f3-557935fba115.pdf",
+      "public_id": "d11a85bb-96de-52cb-b8f3-557935fba115",
+      "sha256": "9b71eb1011846f86cb88d9b8aa457f3eb105cc1da3ab60f89ad0dcb0b003d502",
+      "size_bytes": 1806243,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字水厂运营管理云平台软件V1.0.pdf",
+      "target_storage_key": "available/771fea49-0878-51ef-ad27-020e9d5a3b61.pdf",
+      "public_id": "771fea49-0878-51ef-ad27-020e9d5a3b61",
+      "sha256": "87bef92d6c707d1d3d3662e6137734990132fe99447dfafff8a4230548e54fd5",
+      "size_bytes": 1805609,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字热线数据分析软件V1.0.pdf",
+      "target_storage_key": "available/abf43d22-c325-5b6a-b238-5544cc2b4c73.pdf",
+      "public_id": "abf43d22-c325-5b6a-b238-5544cc2b4c73",
+      "sha256": "13f95e22dad838b632e6ba0e4d6fd36f4113c3870cd380a4e1cdc46014bc75c0",
+      "size_bytes": 1789642,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字物联网大数据智能管控平台软件V1.0.pdf",
+      "target_storage_key": "available/70361671-9bf5-5542-bbf9-3df6112a1c24.pdf",
+      "public_id": "70361671-9bf5-5542-bbf9-3df6112a1c24",
+      "sha256": "bd3bc8b893247c993a5a5fe28e5961d918c9c581f30dd416e9aa1603ed5c7c8d",
+      "size_bytes": 1808895,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字直送材管理软件V1.0.pdf",
+      "target_storage_key": "available/79ae5ba3-f541-5fcc-8a93-8659c27ea9dc.pdf",
+      "public_id": "79ae5ba3-f541-5fcc-8a93-8659c27ea9dc",
+      "sha256": "e3277180e52b234e92a0377d40949401718c49fb3d0f2bde2d59494ff1676788",
+      "size_bytes": 1089451,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字知识库平台软件V1.0.pdf",
+      "target_storage_key": "available/f2d893b4-913c-5f83-8f62-8c4b4cbaaa05.pdf",
+      "public_id": "f2d893b4-913c-5f83-8f62-8c4b4cbaaa05",
+      "sha256": "201019de9c5722628f2e251174b286fa4a3bbea51c744af3b9ff1ea5c81ec40b",
+      "size_bytes": 1785016,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字移动抄表管理软件V1.0.pdf",
+      "target_storage_key": "available/5d7d70d7-5470-5237-804a-855988a8297d.pdf",
+      "public_id": "5d7d70d7-5470-5237-804a-855988a8297d",
+      "sha256": "cbd4b57217d04d6b9dd21594b1a0d1406748ee4fd76974aa36d75d6555c70364",
+      "size_bytes": 1792249,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字管网动态水力模型管理软件V1.0.pdf",
+      "target_storage_key": "available/49526fcd-7790-5677-891e-ae8d4ecc0c46.pdf",
+      "public_id": "49526fcd-7790-5677-891e-ae8d4ecc0c46",
+      "sha256": "ef3737cfd504a14a83b697a877919f5c71a9f5acc2257977991182b05ffdaca4",
+      "size_bytes": 1829157,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字统一文档管理软件V1.0.pdf",
+      "target_storage_key": "available/28f505d8-5402-5751-992a-90ab374fe950.pdf",
+      "public_id": "28f505d8-5402-5751-992a-90ab374fe950",
+      "sha256": "c3179ebe0292aeccc244b91288c23d67d5a88f0c400c993b98939458db2ad420",
+      "size_bytes": 1790912,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字统一短信管理软件V1.0.pdf",
+      "target_storage_key": "available/2716cbac-f1fc-5ba5-867c-289655da45e4.pdf",
+      "public_id": "2716cbac-f1fc-5ba5-867c-289655da45e4",
+      "sha256": "be52860fdd5f29ecdbbbea247fcbcf70e9fb3c79497da826cf3e346acf4fd28f",
+      "size_bytes": 1806538,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字统一移动办公Android版软件V1.0.pdf",
+      "target_storage_key": "available/a53e0d0c-51fa-5a06-b574-5b2603a0a084.pdf",
+      "public_id": "a53e0d0c-51fa-5a06-b574-5b2603a0a084",
+      "sha256": "7f19cc7cabdeaa61d5d0b643fea7234561e36f8e735c9a013c5786b2b63b2d33",
+      "size_bytes": 1793957,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字统一移动办公iphone版软件V1.0.pdf",
+      "target_storage_key": "available/a779603b-48d6-5dd2-a6a2-a7824b5417f6.pdf",
+      "public_id": "a779603b-48d6-5dd2-a6a2-a7824b5417f6",
+      "sha256": "9acf9a83eca43afe71d0ff452e9a05d0ddfb430dc8e771080a6b5ceeca4138bf",
+      "size_bytes": 1782783,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字统一移动办公管理系统软件V1.0.pdf",
+      "target_storage_key": "available/84604b48-e28e-5b23-bead-74ff080c17ea.pdf",
+      "public_id": "84604b48-e28e-5b23-bead-74ff080c17ea",
+      "sha256": "99636a12e36c0c864d5739f770c39edc132729b89f2eb86155b9412df3744d5b",
+      "size_bytes": 1785170,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字综合调度平台软件V1.0.pdf",
+      "target_storage_key": "available/7568ca46-b4ba-5b17-b78f-5fa7541d408e.pdf",
+      "public_id": "7568ca46-b4ba-5b17-b78f-5fa7541d408e",
+      "sha256": "8a75eb032434f557278fa797c449ff955ca6eeb367bf2270bf57be48572ee5b3",
+      "size_bytes": 1817253,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字网站报装管理平台软件V1.0.pdf",
+      "target_storage_key": "available/86601c67-ce1f-54bf-90e6-304333b1d729.pdf",
+      "public_id": "86601c67-ce1f-54bf-90e6-304333b1d729",
+      "sha256": "7183157aadb373c0ddfa8c92da177e55ad1fc2027e62f082995887a731214596",
+      "size_bytes": 1798171,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字自主缴费终端软件V1.0.pdf",
+      "target_storage_key": "available/5c547c68-7342-5e94-86b9-660932998d8b.pdf",
+      "public_id": "5c547c68-7342-5e94-86b9-660932998d8b",
+      "sha256": "976f70802ac224e859a2af6dd722c7bd3f6ae56fbfff35cd0f3fceaeecc98eaa",
+      "size_bytes": 1792848,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字营业收费管理软件V1.0.pdf",
+      "target_storage_key": "available/79ebc807-b5f5-5c09-b1b8-7cbd9ce93352.pdf",
+      "public_id": "79ebc807-b5f5-5c09-b1b8-7cbd9ce93352",
+      "sha256": "338f04f171d9163dec11a51aebbe4bda76f27433f3211fbae30d6447d0a82094",
+      "size_bytes": 1797030,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字设备资产管理系统软件V1.0.pdf",
+      "target_storage_key": "available/c21c62c1-b8e5-5540-ab64-46dae1ec9443.pdf",
+      "public_id": "c21c62c1-b8e5-5540-ab64-46dae1ec9443",
+      "sha256": "a425d5eefb6b8de83e5b31ae86406eab5ab837bbf2f05e9cf1fc1b400a969699",
+      "size_bytes": 1731227,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字资产管理AI智能体软件V1.0.pdf",
+      "target_storage_key": "available/ff04ceb5-ad17-5e18-9a3c-66bd6f21870a.pdf",
+      "public_id": "ff04ceb5-ad17-5e18-9a3c-66bd6f21870a",
+      "sha256": "61fa94fc7181b3eba41bd90ed6951dadaad2570f3c9b2a95515825b57f60547e",
+      "size_bytes": 1089656,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字资产管理平台软件V1.0.pdf",
+      "target_storage_key": "available/67c1a0c6-de3e-5aa3-989e-be9b4c983702.pdf",
+      "public_id": "67c1a0c6-de3e-5aa3-989e-be9b4c983702",
+      "sha256": "a192621673ad395e48f1a57a5e7c41f1b495ab1b85c896a318c160df90e12b59",
+      "size_bytes": 1801865,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字资产管理移动版软件V1.0.pdf",
+      "target_storage_key": "available/1cba7466-c519-535a-9125-99a37d5a28d4.pdf",
+      "public_id": "1cba7466-c519-535a-9125-99a37d5a28d4",
+      "sha256": "af061366bb64415a7a16b3bdbef2ccbbcfba24b18f791f5033194af9dc677b13",
+      "size_bytes": 1802620,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字车载物联网监管系统软件V1.0.pdf",
+      "target_storage_key": "available/4c99cae9-6e77-5f26-bdf4-7b6814500187.pdf",
+      "public_id": "4c99cae9-6e77-5f26-bdf4-7b6814500187",
+      "sha256": "0cea8aedf0ff5f6a21374476d81c8b3dbfcecab3431b4b8cf94e991f3125fa90",
+      "size_bytes": 21912544,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字远传数据统一采集平台软件V1.0.pdf",
+      "target_storage_key": "available/f92bb3b1-b619-528b-bcf1-33ddc4c62261.pdf",
+      "public_id": "f92bb3b1-b619-528b-bcf1-33ddc4c62261",
+      "sha256": "4971d52808321148b26c39461be1cf1fd2ce34f022d2f435244148af33472c8a",
+      "size_bytes": 1804045,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字远传表连接及解析软件V1.0.pdf",
+      "target_storage_key": "available/dee8492e-5f41-586f-9af5-3fbbc0e0863c.pdf",
+      "public_id": "dee8492e-5f41-586f-9af5-3fbbc0e0863c",
+      "sha256": "5598ec343d9611c8c7128c93a79e71f38b3279945151a4c535d9efdce04a91ca",
+      "size_bytes": 1787404,
+      "mime_type": "application/pdf"
+    },
+    {
+      "source_relative_path": "软件著作权证书/平行数字防汛泵站一体化平台V1.0.pdf",
+      "target_storage_key": "available/3b845e46-c94f-57db-815b-08356c467883.pdf",
+      "public_id": "3b845e46-c94f-57db-815b-08356c467883",
+      "sha256": "e0201e63831307551cc89f33a5a1bd692c899d96b7d70004e9da1bfaf510b96f",
+      "size_bytes": 1089789,
+      "mime_type": "application/pdf"
+    }
+  ]
+}

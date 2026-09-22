@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.site.mapper.SitePageMapper">
+
+    <resultMap id="SitePageResult" type="SitePage">
+        <id property="pageId" column="page_id" />
+        <result property="pageCode" column="page_code" />
+        <result property="routePath" column="route_path" />
+        <result property="templateCode" column="template_code" />
+        <result property="draftRevisionId" column="draft_revision_id" />
+        <result property="publishedRevisionId" column="published_revision_id" />
+        <result property="previousPublishedRevisionId" column="previous_published_revision_id" />
+        <result property="delFlag" column="del_flag" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+    </resultMap>
+
+    <resultMap id="SitePageRevisionResult" type="SitePageRevision">
+        <id property="revisionId" column="revision_id" />
+        <result property="pageId" column="page_id" />
+        <result property="revisionNo" column="revision_no" />
+        <result property="revisionState" column="revision_state" />
+        <result property="title" column="title" />
+        <result property="subtitle" column="subtitle" />
+        <result property="bodyHtml" column="body_html" />
+        <result property="seoJson" column="seo_json" />
+        <result property="pageDataJson" column="page_data_json" />
+        <result property="pageDataJson" column="page_data_json" />
+        <result property="contentHash" column="content_hash" />
+        <result property="publishedAt" column="published_at" />
+        <result property="publishedBy" column="published_by" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+    </resultMap>
+
+    <resultMap id="SitePublicPageResult" type="SitePublicPage">
+        <result property="pageCode" column="page_code" />
+        <result property="routePath" column="route_path" />
+        <result property="templateCode" column="template_code" />
+        <result property="title" column="title" />
+        <result property="subtitle" column="subtitle" />
+        <result property="bodyHtml" column="body_html" />
+        <result property="seoJson" column="seo_json" />
+        <result property="contentHash" column="content_hash" />
+        <result property="publishedAt" column="published_at" />
+    </resultMap>
+
+    <sql id="selectSitePageVo">
+        select page_id, page_code, route_path, template_code, draft_revision_id,
+               published_revision_id, previous_published_revision_id, del_flag,
+               create_by, create_time, update_by, update_time, remark
+        from site_page
+    </sql>
+
+    <sql id="selectSitePageRevisionVo">
+        select revision_id, page_id, revision_no, revision_state, title, subtitle, body_html, seo_json,
+               page_data_json, content_hash, published_at, published_by, create_by, create_time,
+               update_by, update_time, remark
+        from site_page_revision
+    </sql>
+
+    <select id="selectSitePageList" parameterType="SitePage" resultMap="SitePageResult">
+        <include refid="selectSitePageVo" />
+        <where>
+            del_flag = '0'
+            <if test="pageCode != null and pageCode != ''">and page_code like concat('%', #{pageCode}, '%')</if>
+            <if test="routePath != null and routePath != ''">and route_path like concat('%', #{routePath}, '%')</if>
+        </where>
+        order by page_id
+    </select>
+
+    <select id="selectSitePageById" parameterType="Long" resultMap="SitePageResult">
+        <include refid="selectSitePageVo" />
+        where page_id = #{pageId} and del_flag = '0'
+    </select>
+
+    <select id="selectSitePageForUpdate" parameterType="Long" resultMap="SitePageResult">
+        <include refid="selectSitePageVo" />
+        where page_id = #{pageId} and del_flag = '0'
+        for update
+    </select>
+
+    <update id="updateRevisionPointers" parameterType="SitePage">
+        update site_page
+        set draft_revision_id = #{draftRevisionId},
+            published_revision_id = #{publishedRevisionId},
+            previous_published_revision_id = #{previousPublishedRevisionId},
+            update_by = #{updateBy},
+            update_time = sysdate()
+        where page_id = #{pageId} and del_flag = '0'
+    </update>
+
+    <insert id="insertSitePage" parameterType="SitePage" useGeneratedKeys="true" keyProperty="pageId">
+        insert into site_page (page_code, route_path, template_code, create_by, create_time, remark)
+        values (#{pageCode}, #{routePath}, #{templateCode}, #{createBy}, sysdate(), #{remark})
+    </insert>
+
+    <update id="updateSitePage" parameterType="SitePage">
+        update site_page
+        set page_code = #{pageCode}, route_path = #{routePath}, template_code = #{templateCode},
+            update_by = #{updateBy}, update_time = sysdate(), remark = #{remark}
+        where page_id = #{pageId} and del_flag = '0'
+    </update>
+
+    <select id="selectRevisionById" parameterType="Long" resultMap="SitePageRevisionResult">
+        <include refid="selectSitePageRevisionVo" />
+        where revision_id = #{revisionId}
+    </select>
+
+    <select id="selectCurrentDraftByPageId" parameterType="Long" resultMap="SitePageRevisionResult">
+        <include refid="selectSitePageRevisionVo" />
+        where page_id = #{pageId} and revision_state = 'DRAFT'
+        order by revision_no desc limit 1
+    </select>
+
+    <select id="selectNextRevisionNo" parameterType="Long" resultType="int">
+        select coalesce(max(revision_no), 0) + 1 from site_page_revision where page_id = #{pageId}
+    </select>
+
+    <insert id="insertPageRevision" parameterType="SitePageRevision" useGeneratedKeys="true" keyProperty="revisionId">
+        insert into site_page_revision
+        (page_id, revision_no, revision_state, title, subtitle, body_html, seo_json, page_data_json,
+         content_hash, create_by, create_time, remark)
+        values
+        (#{pageId}, #{revisionNo}, #{revisionState}, #{title}, #{subtitle}, #{bodyHtml}, #{seoJson}, #{pageDataJson},
+         #{contentHash}, #{createBy}, sysdate(), #{remark})
+    </insert>
+
+    <update id="updateDraftPageRevision" parameterType="SitePageRevision">
+        update site_page_revision
+        set title = #{title}, subtitle = #{subtitle}, body_html = #{bodyHtml}, seo_json = #{seoJson},
+            page_data_json = #{pageDataJson}, content_hash = #{contentHash}, update_by = #{updateBy},
+            update_time = sysdate(), remark = #{remark}
+        where revision_id = #{revisionId} and revision_state = 'DRAFT'
+    </update>
+
+    <update id="updateRevisionState">
+        update site_page_revision
+        set revision_state = #{revisionState},
+            published_at = case when #{revisionState} = 'PUBLISHED' then sysdate() else published_at end,
+            published_by = case when #{revisionState} = 'PUBLISHED' then #{publishedBy} else published_by end
+        where revision_id = #{revisionId}
+    </update>
+
+    <insert id="insertPublishAudit">
+        insert into site_publish_audit
+        (aggregate_type, aggregate_id, action_type, from_revision_id, to_revision_id, operator, reason)
+        values ('PAGE', #{aggregateId}, #{actionType}, #{fromRevisionId}, #{toRevisionId}, #{operator}, #{reason})
+    </insert>
+
+    <select id="selectPublishedPageByRoute" resultMap="SitePublicPageResult">
+        select *
+        from (
+            select p.page_code, p.route_path, p.template_code, r.title, r.subtitle, r.body_html, r.seo_json,
+                   r.page_data_json, r.content_hash, r.published_at
+            from site_page p
+            inner join site_page_revision r on r.revision_id = p.published_revision_id
+            where p.route_path = #{routePath} and p.del_flag = '0' and r.revision_state = 'PUBLISHED'
+            union all
+            select a.article_code as page_code, a.legacy_path as route_path, 'LEGACY_ARTICLE' as template_code,
+                   r.title, r.summary as subtitle, r.body_html, r.seo_json, null as page_data_json,
+                   r.content_hash, r.published_at
+            from site_article a
+            inner join site_article_revision r on r.revision_id = a.published_revision_id
+            where a.legacy_path = #{routePath} and a.del_flag = '0' and r.revision_state = 'PUBLISHED'
+        ) published_content
+        limit 1
+    </select>
+</mapper>

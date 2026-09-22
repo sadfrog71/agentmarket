@@ -13,6 +13,7 @@ services:
       - mysql-data:/var/lib/mysql
       - ./agent-marketplace-backend/sql/ry_20260417.sql:/docker-entrypoint-initdb.d/01-ruoyi.sql:ro
       - ./agent-marketplace-backend/sql/marketplace.sql:/docker-entrypoint-initdb.d/02-marketplace.sql:ro
+      - ./agent-marketplace-backend/sql/corporate-site.sql:/docker-entrypoint-initdb.d/03-corporate-site.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD}"]
       interval: 5s
@@ -39,10 +40,15 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       RUOYI_PROFILE: /opt/ruoyi/upload
+      RUOYI_SITE_MEDIA_PATH: /opt/ruoyi/site-media
+      # Bound the JVM in shared Docker Desktop environments instead of letting
+      # its default percentage compete with other local project containers.
+      RUOYI_JAVA_OPTS: ${RUOYI_JAVA_OPTS:--Xms128m -Xmx384m -XX:MaxMetaspaceSize=192m -XX:MaxDirectMemorySize=64m}
     ports:
       - "${BACKEND_PORT:-8080}:8080"
     volumes:
       - upload-data:/opt/ruoyi/upload
+      - site-media-data:/opt/ruoyi/site-media
     depends_on:
       mysql:
         condition: service_healthy
@@ -56,6 +62,13 @@ services:
     depends_on:
       - backend
 
+  corporate-site:
+    build: ./corporate-site-web
+    ports:
+      - "${CORPORATE_WEB_PORT:-8083}:80"
+    depends_on:
+      - backend
+
   admin:
     build: ./agent-marketplace-admin
     ports:
@@ -66,3 +79,4 @@ services:
 volumes:
   mysql-data:
   upload-data:
+  site-media-data:

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.site.mapper.SiteMediaMapper">
+    <resultMap id="SitePublicMediaResult" type="SitePublicMedia">
+        <result property="mimeType" column="mime_type" />
+        <result property="fileSize" column="file_size" />
+        <result property="storageKey" column="storage_key" />
+    </resultMap>
+    <resultMap id="SiteMediaResult" type="SiteMedia">
+        <id property="mediaId" column="media_id" />
+        <result property="publicId" column="public_id" />
+        <result property="mediaKind" column="media_kind" />
+        <result property="originalFilename" column="original_filename" />
+        <result property="contentSha256" column="content_sha256" />
+        <result property="mimeType" column="mime_type" />
+        <result property="fileSize" column="file_size" />
+        <result property="mediaState" column="media_state" />
+        <result property="publicPath" column="public_path" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+    </resultMap>
+
+    <select id="selectPublishedMediaByPublicId" resultMap="SitePublicMediaResult">
+        select m.mime_type, m.file_size, m.storage_key
+        from site_media m
+        where m.public_id = #{publicId}
+          and m.media_state = 'AVAILABLE'
+          and m.del_flag = '0'
+          and (
+              exists (
+                  select 1
+                  from site_media_reference reference_item
+                  inner join site_page page_item
+                    on reference_item.owner_type = 'PAGE_REVISION'
+                   and page_item.published_revision_id = reference_item.owner_id
+                   and page_item.del_flag = '0'
+                  where reference_item.media_id = m.media_id
+              )
+              or exists (
+                  select 1
+                  from site_media_reference reference_item
+                  inner join site_article article_item
+                    on reference_item.owner_type = 'ARTICLE_REVISION'
+                   and article_item.published_revision_id = reference_item.owner_id
+                   and article_item.del_flag = '0'
+                  where reference_item.media_id = m.media_id
+              )
+              or exists (
+                  select 1
+                  from site_media_reference reference_item
+                  inner join site_credential credential_item
+                    on reference_item.owner_type = 'CREDENTIAL_REVISION'
+                   and credential_item.published_revision_id = reference_item.owner_id
+                   and credential_item.del_flag = '0'
+                  where reference_item.media_id = m.media_id
+              )
+          )
+        limit 1
+    </select>
+
+    <select id="selectSiteMediaList" parameterType="SiteMedia" resultMap="SiteMediaResult">
+        select media_id, public_id, media_kind, original_filename, content_sha256, mime_type, file_size,
+               media_state, public_path, create_by, create_time
+        from site_media
+        <where>
+            del_flag = '0'
+            <if test="originalFilename != null and originalFilename != ''">and original_filename like concat('%', #{originalFilename}, '%')</if>
+            <if test="mediaKind != null and mediaKind != ''">and media_kind = #{mediaKind}</if>
+        </where>
+        order by media_id desc
+    </select>
+
+    <insert id="insertSiteMedia" parameterType="SiteMedia" useGeneratedKeys="true" keyProperty="mediaId">
+        insert into site_media (public_id, media_kind, original_filename, content_sha256, mime_type, file_size,
+            media_state, storage_key, public_path, adopted_at, create_by, create_time, remark)
+        values (#{publicId}, #{mediaKind}, #{originalFilename}, #{contentSha256}, #{mimeType}, #{fileSize},
+            #{mediaState}, #{storageKey}, #{publicPath}, sysdate(), #{createBy}, sysdate(), #{remark})
+    </insert>
+
+    <select id="selectAvailableMediaIdByPublicId" resultType="long">
+        select media_id from site_media
+        where public_id = #{publicId} and media_state = 'AVAILABLE' and del_flag = '0'
+    </select>
+
+    <delete id="deleteMediaReferences">
+        delete from site_media_reference where owner_type = #{ownerType} and owner_id = #{ownerId}
+    </delete>
+
+    <insert id="insertMediaReference">
+        insert into site_media_reference (media_id, owner_type, owner_id, reference_role, field_key, sort_no)
+        values (#{mediaId}, #{ownerType}, #{ownerId}, #{referenceRole}, #{fieldKey}, #{sortNo})
+    </insert>
+</mapper>

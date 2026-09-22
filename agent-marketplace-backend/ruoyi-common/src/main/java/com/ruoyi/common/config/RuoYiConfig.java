@@ -24,6 +24,9 @@ public class RuoYiConfig
     /** 上传路径 */
     private static String profile;
 
+    /** 企业官网受控媒体路径（不映射到 /profile/**） */
+    private static String siteMediaPath;
+
     /** 获取地址开关 */
     private static boolean addressEnabled;
 
@@ -68,6 +71,16 @@ public class RuoYiConfig
     public void setProfile(String profile)
     {
         RuoYiConfig.profile = profile;
+    }
+
+    public static String getSiteMediaPath()
+    {
+        return siteMediaPath;
+    }
+
+    public void setSiteMediaPath(String siteMediaPath)
+    {
+        RuoYiConfig.siteMediaPath = siteMediaPath;
     }
 
     public static boolean isAddressEnabled()

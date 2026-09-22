@@ -1,0 +1,16 @@
+# 仅用于本机隔离验收。与正式 compose 合用，覆盖数据库卷和官网媒体卷，避免读取或写入既有开发数据。
+name: corporate-site-validation
+
+services:
+  backend:
+    volumes:
+      - type: bind
+        source: ${VALIDATION_UPLOAD_PATH}
+        target: /opt/ruoyi/upload
+      - type: bind
+        source: ${VALIDATION_SITE_MEDIA_PATH}
+        target: /opt/ruoyi/site-media
+
+volumes:
+  mysql-data:
+    name: ${VALIDATION_MYSQL_VOLUME}

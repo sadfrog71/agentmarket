@@ -16,6 +16,7 @@
 | 模块 | 技术 | 目录 |
 | --- | --- | --- |
 | 展示前台 | Vue 3、Vite、Nginx | `agent-marketplace-web` |
+| 企业官网前台 | Vue 3、Vite、Nginx | `corporate-site-web` |
 | 管理后台 | RuoYi Vue 3、Element Plus | `agent-marketplace-admin` |
 | 后端服务 | Java 17、Spring Boot、RuoYi | `agent-marketplace-backend` |
 | 基础服务 | MySQL 8.4、Redis 7.4 | `docker-compose.yml` |
@@ -32,6 +33,7 @@ docker compose up -d --build
 默认访问地址：
 
 - 展示前台：`http://localhost:8081`
+- 企业官网：`http://localhost:8083`
 - 管理后台：`http://localhost:8082`
 - 后端 API：`http://localhost:8080`
 
@@ -46,6 +48,9 @@ RuoYi 初始管理员账号为 `admin`，初始密码为 `admin123`。正式上�
 - `agent-marketplace-backend/sql/marketplace-upgrade-001-business.sql`：已有环境增加商务登记菜单与字典。
 - `agent-marketplace-backend/sql/marketplace-upgrade-002-charset.sql`：修复早期初始化产生的系统中文乱码。
 - `agent-marketplace-backend/sql/marketplace-upgrade-003-site-content.sql`：增加算力中心、联系我们等页面内容管理。
+- `agent-marketplace-backend/sql/marketplace-upgrade-006-site-core.sql`：增加企业官网内容、发布修订、媒体引用、权限与菜单；仅用于已有环境的增量升级。
+
+企业官网的内容快照、可校验导入包、媒体落盘说明和执行顺序位于 [`docs/corporate-site-migration-runbook.md`](docs/corporate-site-migration-runbook.md)。导入后，管理员在“企业官网”菜单中维护固定页面、新闻、资质证书和媒体库；保存草稿不会影响访客，直接发布或下架才会原子切换官网可见版本。官网与智能体市场前台为独立服务和入口，互不复用 SPA 路由。
 
 升级脚本按编号顺序执行。全新环境只需使用 Docker Compose 自动初始化，无需重复执行升级脚本。
 
@@ -56,8 +61,8 @@ RuoYi 初始管理员账号为 `admin`，初始密码为 `admin123`。正式上�
 3. 配置正式域名、HTTPS 证书和服务器防火墙，仅开放前台与后台入口。
 4. 在后台核对智能体名称、价格说明、实施周期、发布状态和详情结构块。
 5. 替换「联系我们」弹窗中的正式业务联系方式。
-6. 备份 MySQL 数据卷和上传文件卷，并验证恢复流程。
-7. 验证前台公开接口、后台登录、智能体新增修改和商务登记修改。
+6. 备份 MySQL 数据卷、上传文件卷和官网媒体卷，并验证恢复流程。
+7. 验证市场前台、企业官网公开接口、后台登录及对应内容发布流程。
 
 ## 当前验收结果
 

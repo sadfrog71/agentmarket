@@ -9,6 +9,7 @@
 | 内容 | 目录或文件 |
 | --- | --- |
 | 展示前台源码 | `agent-marketplace-web/` |
+| 企业官网前台源码 | `corporate-site-web/` |
 | 管理后台源码 | `agent-marketplace-admin/` |
 | Java 后端源码 | `agent-marketplace-backend/` |
 | 数据库脚本 | `agent-marketplace-backend/sql/` |
@@ -23,7 +24,7 @@
 - Docker Engine 24 或更高版本
 - Docker Compose v2
 - 建议 4 核 CPU、8 GB 内存、20 GB 可用磁盘
-- 默认需要使用 `8080`、`8081` 和 `8082` 端口
+- 默认需要使用 `8080`、`8081`、`8082` 和 `8083` 端口
 
 确认运行环境：
 
@@ -51,8 +52,10 @@ cp .env.example .env
 
 ```dotenv
 MYSQL_ROOT_PASSWORD=替换为高强度数据库密码
+RUOYI_JAVA_OPTS=-Xms128m -Xmx384m -XX:MaxMetaspaceSize=192m -XX:MaxDirectMemorySize=64m
 BACKEND_PORT=8080
 WEB_PORT=8081
+CORPORATE_WEB_PORT=8083
 ADMIN_PORT=8082
 ```
 
@@ -70,6 +73,7 @@ docker compose ps
 | 服务 | 默认地址 |
 | --- | --- |
 | 展示前台 | `http://服务器IP:8081` |
+| 企业官网 | `http://服务器IP:8083` |
 | 管理后台 | `http://服务器IP:8082` |
 | 后端 API | `http://服务器IP:8080` |
 | Swagger | `http://服务器IP:8080/swagger-ui/index.html` |
@@ -97,6 +101,8 @@ docker compose logs --tail=200 backend
 ```bash
 curl http://localhost:8080/open/agents?pageNum=1&pageSize=10
 curl http://localhost:8080/open/content/CONTACT
+curl 'http://localhost:8080/open/site/v1/pages?path=/index.html'
+curl 'http://localhost:8080/open/site/v1/articles?limit=10'
 ```
 
 ## 6. 已有环境升级
@@ -107,6 +113,8 @@ curl http://localhost:8080/open/content/CONTACT
 docker compose exec -T mysql sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ry-vue' < agent-marketplace-backend/sql/marketplace-upgrade-001-business.sql
 docker compose exec -T mysql sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ry-vue' < agent-marketplace-backend/sql/marketplace-upgrade-002-charset.sql
 docker compose exec -T mysql sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ry-vue' < agent-marketplace-backend/sql/marketplace-upgrade-003-site-content.sql
+python3 agent-marketplace-backend/tools/corporate-site-import/upgrade_preflight.py --sql-dir agent-marketplace-backend/sql --target-sql agent-marketplace-backend/sql/marketplace-upgrade-006-site-core.sql
+docker compose exec -T mysql sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ry-vue' < agent-marketplace-backend/sql/marketplace-upgrade-006-site-core.sql
 ```
 
 重新构建并启动：
@@ -117,6 +125,10 @@ docker compose ps
 ```
 
 全新数据库由 `docker-compose.yml` 自动执行初始化脚本，不需要再次执行升级脚本。
+
+### 企业官网内容迁入
+
+先按 [`docs/corporate-site-migration-runbook.md`](docs/corporate-site-migration-runbook.md) 对冻结源包运行清单校验与媒体落盘，再执行 `docs/corporate-site-import.sql`。该导入包会写入固定页面、新闻、资质和媒体引用；运行前请在备份恢复出的隔离库演练，并保留 manifest 与导入运行记录。不要把源静态 HTML 与官网后台同时作为可编辑源。
 
 ## 7. 数据备份与恢复
 
@@ -137,6 +149,7 @@ docker compose exec -T mysql sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ry-vue
 
 - `huayan-agent-marketplace_mysql-data`：MySQL 数据
 - `huayan-agent-marketplace_upload-data`：后台上传文件
+- `huayan-agent-marketplace_site-media-data`：企业官网受控媒体
 
 不要在未完成备份的情况下删除数据卷或执行 `docker compose down -v`。
 
@@ -169,6 +182,8 @@ docker compose down
 6. 定期备份 MySQL 数据和上传文件，并执行恢复验证。
 7. 上线前替换「联系我们」中的正式联系方式。
 8. 检查算力中心的发布状态；没有真实数据时保持草稿或空内容。
+9. 企业官网使用独立域名或入口路由指向 `corporate-site` 服务；不要把它的 `.html` 路径落入智能体市场 SPA fallback。
+10. 仅将企业官网已发布内容的 `/open/site/v1/**` 通过前台反向代理暴露；后台裸 API、数据库、Redis 和媒体物理目录不得直接暴露。
 
 ## 10. 常见问题
 

@@ -48,6 +48,12 @@
             <artifactId>ruoyi-market</artifactId>
         </dependency>
 
+        <!-- 企业官网业务模块 -->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>ruoyi-site</artifactId>
+        </dependency>
+
         <!-- 定时任务-->
         <dependency>
             <groupId>com.ruoyi</groupId>
