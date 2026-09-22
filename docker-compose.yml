@@ -8,7 +8,7 @@ services:
       MYSQL_DATABASE: ry-vue
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
     ports:
-      - "${MYSQL_HOST_PORT:-3306}:3306"
+      - "${MYSQL_BIND_HOST:-127.0.0.1}:${MYSQL_HOST_PORT:-3306}:3306"
     volumes:
       - mysql-data:/var/lib/mysql
       - ./agent-marketplace-backend/sql/ry_20260417.sql:/docker-entrypoint-initdb.d/01-ruoyi.sql:ro
@@ -23,7 +23,7 @@ services:
   redis:
     image: redis:7.4-alpine
     ports:
-      - "${REDIS_HOST_PORT:-6379}:6379"
+      - "${REDIS_BIND_HOST:-127.0.0.1}:${REDIS_HOST_PORT:-6379}:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -45,7 +45,7 @@ services:
       # its default percentage compete with other local project containers.
       RUOYI_JAVA_OPTS: ${RUOYI_JAVA_OPTS:--Xms128m -Xmx384m -XX:MaxMetaspaceSize=192m -XX:MaxDirectMemorySize=64m}
     ports:
-      - "${BACKEND_PORT:-8080}:8080"
+      - "${BACKEND_BIND_HOST:-127.0.0.1}:${BACKEND_PORT:-8080}:8080"
     volumes:
       - upload-data:/opt/ruoyi/upload
       - site-media-data:/opt/ruoyi/site-media
@@ -58,7 +58,7 @@ services:
   web:
     build: ./agent-marketplace-web
     ports:
-      - "${WEB_PORT:-8081}:80"
+      - "${WEB_BIND_HOST:-127.0.0.1}:${WEB_PORT:-8081}:80"
     depends_on:
       - backend
 
@@ -72,7 +72,6 @@ services:
       - ${CORPORATE_TLS_KEY_PATH:-./corporate-site-web/tls/avatar-tech.com.key}:/etc/nginx/tls/avatar-tech.com.key:ro
     depends_on:
       - backend
-      - admin
 
   admin:
     build: ./agent-marketplace-admin

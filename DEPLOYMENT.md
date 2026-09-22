@@ -52,8 +52,12 @@ cp .env.example .env
 
 ```dotenv
 MYSQL_ROOT_PASSWORD=替换为高强度数据库密码
+MYSQL_BIND_HOST=127.0.0.1
+REDIS_BIND_HOST=127.0.0.1
 RUOYI_JAVA_OPTS=-Xms128m -Xmx384m -XX:MaxMetaspaceSize=192m -XX:MaxDirectMemorySize=64m
+BACKEND_BIND_HOST=127.0.0.1
 BACKEND_PORT=8080
+WEB_BIND_HOST=127.0.0.1
 WEB_PORT=8081
 CORPORATE_WEB_PORT=8083
 CORPORATE_WEB_HTTPS_PORT=8443
@@ -74,11 +78,11 @@ docker compose ps
 
 | 服务 | 默认地址 |
 | --- | --- |
-| 展示前台 | `http://服务器IP:8081` |
-| 企业官网 | `http://服务器IP:8083` |
+| 展示前台（本地诊断） | `http://127.0.0.1:8081` |
+| 企业官网（本地诊断） | `http://127.0.0.1:8083` |
 | 管理后台（本地诊断） | `http://127.0.0.1:8082` |
-| 后端 API | `http://服务器IP:8080` |
-| Swagger | `http://服务器IP:8080/swagger-ui/index.html` |
+| 后端 API（本地诊断） | `http://127.0.0.1:8080` |
+| Swagger（本地诊断） | `http://127.0.0.1:8080/swagger-ui/index.html` |
 
 生产域名部署时，建议由 HTTPS 网关提供 `https://www.example.com`（官网）、`https://admin.example.com`（管理后台）和 `https://api.example.com`（接口）；不要将管理端或后端容器端口直接暴露到公网。
 

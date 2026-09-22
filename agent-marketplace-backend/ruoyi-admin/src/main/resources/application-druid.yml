@@ -42,13 +42,13 @@ spring:
             webStatFilter: 
                 enabled: true
             statViewServlet:
-                enabled: true
-                # 设置白名单，不填则允许所有访问
-                allow:
+                enabled: ${DRUID_STAT_VIEW_ENABLED:false}
+                # 默认关闭；确需启用时须同时配置受信任来源和独立凭据
+                allow: ${DRUID_STAT_VIEW_ALLOW:127.0.0.1}
                 url-pattern: /druid/*
                 # 控制台管理用户名和密码
-                login-username: ruoyi
-                login-password: 123456
+                login-username: ${DRUID_LOGIN_USERNAME:}
+                login-password: ${DRUID_LOGIN_PASSWORD:}
             filter:
                 stat:
                     enabled: true
