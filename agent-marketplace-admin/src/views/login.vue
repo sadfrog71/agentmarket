@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="off">
-      <div class="login-brand"><span>HUAYAN WATER · AI AGENT MARKET</span><h3 class="title">{{ title }}</h3><p>内容发布 · 商务登记 · 运营维护</p></div>
+      <div class="login-brand"><span>PARALLEL DIGITAL · OFFICIAL SITE</span><h3 class="title">{{ title }}</h3><p>内容发布 · 商务登记 · 运营维护</p></div>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"

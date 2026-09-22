@@ -62,6 +62,6 @@ export default {
   /**
    * 底部版权文本内容
    */
-  footerContent: '华衍水务环境智能体市场 · 管理后台'
+  footerContent: '平行数字官网管理后台'
 }
 
