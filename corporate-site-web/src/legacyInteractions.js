@@ -63,8 +63,9 @@ export function initialiseLegacyInteractions({ articles = [], certificates = [],
     if (next.origin !== window.location.origin || !next.pathname.endsWith('.html')) return
     if (next.pathname === window.location.pathname && next.hash) return
     event.preventDefault()
+    if (document.documentElement.classList.contains('site-route-leaving')) return
     document.documentElement.classList.add('site-route-leaving')
-    window.setTimeout(() => window.location.assign(next.href), 170)
+    window.setTimeout(() => window.location.assign(next.href), 340)
   })
 
   document.querySelectorAll('[role=tablist]').forEach(list => {

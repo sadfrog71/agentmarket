@@ -1,7 +1,15 @@
 <template>
-  <main v-if="loading" class="site-loading" aria-live="polite"><span></span><p>正在加载官网内容…</p></main>
-  <main v-else-if="error" class="site-error"><p class="eyebrow">PARALLEL DIGITAL</p><h1>{{ error }}</h1><a class="button" href="/index.html">返回首页 <span>↗</span></a></main>
-  <div v-else id="top" class="site-render-root" v-html="page.bodyHtml"></div>
+  <Transition name="site-turn">
+    <main v-if="loading" class="site-loading" aria-live="polite">
+      <span class="sr-only">Loading</span>
+      <div class="site-loading-mark" aria-hidden="true">
+        <i></i><i></i><b>平行数字</b>
+      </div>
+      <p aria-hidden="true">avatar-tech</p>
+    </main>
+  </Transition>
+  <main v-if="!loading && error" class="site-error"><p class="eyebrow">PARALLEL DIGITAL</p><h1>{{ error }}</h1><a class="button" href="/index.html">返回首页 <span>↗</span></a></main>
+  <div v-else-if="!loading && page" id="top" class="site-render-root" v-html="page.bodyHtml"></div>
 </template>
 
 <script setup>
@@ -14,6 +22,11 @@ const page = ref(null)
 
 function currentLegacyPath() {
   return window.location.pathname === '/' ? '/index.html' : window.location.pathname
+}
+
+async function revealLoadedPage() {
+  loading.value = false
+  await nextTick()
 }
 
 async function loadPage() {
@@ -35,8 +48,7 @@ async function loadPage() {
     const pageData = parsePageData(page.value.pageDataJson)
     // Render the immutable template before binding its dynamic content slots.
     // Otherwise nextTick still sees the loading state and homepage/news blocks remain empty.
-    loading.value = false
-    await nextTick()
+    await revealLoadedPage()
     initialiseLegacyInteractions({
       articles: Array.isArray(articlePayload.data) ? articlePayload.data.map(toLegacyArticle) : [],
       certificates: Array.isArray(credentialPayload.data) && credentialPayload.data.length
@@ -46,8 +58,9 @@ async function loadPage() {
     })
   } catch (reason) {
     error.value = reason.message || '官网页面暂时无法访问'
+    await revealLoadedPage()
   } finally {
-    loading.value = false
+    if (loading.value) await revealLoadedPage()
   }
 }
 
@@ -81,5 +94,5 @@ onBeforeUnmount(disposeLegacyInteractions)
 </script>
 
 <style>
-.site-loading,.site-error{min-height:100vh;display:grid;place-content:center;gap:16px;padding:32px;text-align:center;background:#f6fbfc;color:#172b3a}.site-loading span{width:32px;height:32px;margin:auto;border:3px solid #c9e6ec;border-top-color:#057f9a;border-radius:50%;animation:site-spin .8s linear infinite}.site-error h1{max-width:650px;margin:0;font-size:clamp(28px,4vw,48px);line-height:1.25}.site-error .button{justify-self:center}@keyframes site-spin{to{transform:rotate(360deg)}}
+.site-loading{position:fixed;inset:0;z-index:10000;display:grid;place-content:center;justify-items:center;gap:24px;overflow:hidden;contain:paint;padding:32px;text-align:center;background:radial-gradient(circle at 82% 82%,#3d78ff 0,transparent 32%),repeating-linear-gradient(90deg,transparent 0 95px,rgba(255,255,255,.045) 96px 97px),linear-gradient(145deg,#10244a 0%,#173e9f 54%,#2456e8 100%);color:#fff;transform:translateZ(0)}.site-loading:after{content:"";position:absolute;right:-22vmax;bottom:-25vmax;width:58vmax;height:58vmax;border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,0) 48%);transform:rotate(45deg);box-shadow:-24px -24px 70px rgba(5,19,56,.24)}.site-loading-mark{position:relative;z-index:1;width:78px;height:78px;border:1px solid rgba(255,255,255,.38);transform:rotate(45deg);animation:site-mark-breathe 1.8s cubic-bezier(.4,0,.2,1) infinite}.site-loading-mark i{position:absolute;display:block;background:#fff}.site-loading-mark i:first-child{left:17px;right:17px;top:25px;height:1px;animation:site-mark-line 1.8s ease-in-out infinite}.site-loading-mark i:nth-child(2){top:17px;bottom:17px;left:25px;width:1px;animation:site-mark-line 1.8s .18s ease-in-out infinite}.site-loading-mark b{position:absolute;left:50%;top:50%;width:88px;text-align:center;font:500 11px/1 "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:1.5px;transform:translate(-50%,-50%) rotate(-45deg)}.site-loading p{position:relative;z-index:1;margin:0;font:500 10px/1.2 "Helvetica Neue",sans-serif;letter-spacing:4px;color:rgba(255,255,255,.78)}.site-turn-leave-active{transition:clip-path .46s cubic-bezier(.72,0,.2,1)}.site-turn-leave-from{clip-path:polygon(-15% -15%,115% -15%,115% 115%,-15% 115%)}.site-turn-leave-to{clip-path:polygon(100% 100%,100% 100%,100% 100%,100% 100%)}.site-error{min-height:100vh;display:grid;place-content:center;gap:16px;padding:32px;text-align:center;background:#f6fbfc;color:#172b3a}.site-error h1{max-width:650px;margin:0;font-size:clamp(28px,4vw,48px);line-height:1.25}.site-error .button{justify-self:center}@keyframes site-mark-breathe{0%,100%{transform:rotate(45deg) scale(.94);opacity:.78}50%{transform:rotate(45deg) scale(1.025);opacity:1}}@keyframes site-mark-line{0%,100%{transform:scaleX(.55);opacity:.55}50%{transform:scaleX(1);opacity:1}}@media(prefers-reduced-motion:reduce){.site-loading-mark,.site-loading-mark i{animation:none}.site-turn-leave-active{transition:none}}
 </style>

@@ -1,6 +1,6 @@
 {
   "schema_version": "corporate-site-source-manifest/v1",
-  "snapshot_sha256": "aeaccb57658bbcdb1d4508706c703e733b93b31d7391387b7dfdeed25cee0fab",
+  "snapshot_sha256": "4e9f401c98b54984bc474686bd62480260e3f8371cf8791c8a633a143d3b6be8",
   "classification_policy": {
     "IMPORT": "legacy website pages, certificate PDFs, media, and required static support files",
     "ARCHIVE": "local QA evidence, authoring references, and unmapped support files retained for review",
@@ -50,8 +50,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 21834,
-      "sha256": "ef38bda6a2a3ab943ba1daf9640f54bf5d7c81f2a2218ae66abf07fef7961af1",
+      "size_bytes": 21831,
+      "sha256": "556f21033dee9339cec2bb3ae2af84d818028bdb6e6ab90ddb080a71619e824d",
       "reference_count": 35
     },
     {
@@ -60,8 +60,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9931,
-      "sha256": "7e530cc6ff191efb58f48eec938c401ad6e942d50269825070910b8de9801095",
+      "size_bytes": 9928,
+      "sha256": "9a16eb33bef2ff4bc8be56a2d8b8cfbb86581287be4b9843e31a69b7e64d06ac",
       "reference_count": 32
     },
     {
@@ -70,8 +70,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9911,
-      "sha256": "fccc18bb45512117d6cd963a91e045d2ca9ad9a2a858c293ec5759006d5b7f67",
+      "size_bytes": 9908,
+      "sha256": "925620e800570092a9f9956a6067e5436145ad637bf24975254a8f23e11c78c0",
       "reference_count": 37
     },
     {
@@ -80,8 +80,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 15757,
-      "sha256": "74ee97b1b8eadbeafdb1f1668d29c47576882306d84d8446f7c4fd78ce0d208a",
+      "size_bytes": 15754,
+      "sha256": "e4de967082d5fb4f20391627d8ad564b5015a093de7e9de8f58bd894cbc82d7a",
       "reference_count": 68
     },
     {
@@ -90,8 +90,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10023,
-      "sha256": "394c1c153f38583a0c49d57701479d2900c71259c19fe276e0e074d9e0cc0cec",
+      "size_bytes": 10020,
+      "sha256": "659ac74935bd028c2841a0dde46363db5dc4a049ef82c283faba8e1c724153bb",
       "reference_count": 32
     },
     {
@@ -100,8 +100,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10941,
-      "sha256": "c826a379199011f4b77440b23601bfcd3318fa8d6cdbdde1d06d2819a2d171de",
+      "size_bytes": 10938,
+      "sha256": "8091e1acda1336c2d86654045e61bf6b252be087373c30f12b5d30770beff815",
       "reference_count": 32
     },
     {
@@ -440,8 +440,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "static resource required by legacy pages",
       "content_type": "text/css; charset=utf-8",
-      "size_bytes": 39263,
-      "sha256": "9199c4c294a1cd4b989fa033a01194fb97c84cbc46fad5cb03d2c2f95310137d",
+      "size_bytes": 45287,
+      "sha256": "c48e218ede4f8b298e40257e5d2110399c65e221ae5ec1c1cdd8879cd2eee7e9",
       "reference_count": 30
     },
     {
@@ -450,8 +450,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "static resource required by legacy pages",
       "content_type": "text/javascript; charset=utf-8",
-      "size_bytes": 7742,
-      "sha256": "ab1d5741e5fc87ba4d3836f1d98b94e373dfd2e7a819c312e1ddb380fff1ad15",
+      "size_bytes": 8438,
+      "sha256": "bc5cc9a53295098cca7d66a026dd639dcc80c578e2f04382af599d5a6f4afb29",
       "reference_count": 30
     },
     {
@@ -470,8 +470,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8609,
-      "sha256": "5dbd240869bfbc2721dd9df6c52a531677fa563a982e59e2445872d07bb8f582",
+      "size_bytes": 8606,
+      "sha256": "7995ffe9673bffd8b157b136996bb39237bd26474e03fea0bd20175ec3cf5544",
       "reference_count": 35
     },
     {
@@ -480,8 +480,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8665,
-      "sha256": "94a6af4b54496367e6835e3153627308e9daae9015592fb2463ac9f7340fd715",
+      "size_bytes": 8662,
+      "sha256": "6c5fa36553b784f81ffc651f7e5d21024f4e6c14336c831d674468b3b9ed3632",
       "reference_count": 33
     },
     {
@@ -490,8 +490,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8638,
-      "sha256": "1827be932e29fb0ce787f67d601bb50e1b367f0144bfb1bda27765971b49a22a",
+      "size_bytes": 8635,
+      "sha256": "752402f049be6ac12ba53fda97fd28bfaad908770cd9ca530f36424e5aba8aaa",
       "reference_count": 32
     },
     {
@@ -500,8 +500,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8893,
-      "sha256": "74de10f360921c99cb61c3d90ad6b93f11b9b51f596be646fb08c2620258f93a",
+      "size_bytes": 8890,
+      "sha256": "9bd368e5f5c1937dd87fefec750d35ef4e28d8cce0285971e10712d6521c2959",
       "reference_count": 42
     },
     {
@@ -510,8 +510,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8418,
-      "sha256": "4d6ddb5afa94449872656ab50624d6d5176e67dcd6a70c8156d98937b4283dcc",
+      "size_bytes": 8415,
+      "sha256": "a55e5dce85fda8133455efd5f3cee7012a393865004c7b0d1d6a63a035a51e21",
       "reference_count": 31
     },
     {
@@ -520,8 +520,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 14294,
-      "sha256": "96570c618b7f4e771461a0a294844e674b5ca5f0ee5380f23dd1dba7a0f3d166",
+      "size_bytes": 14291,
+      "sha256": "9645463f7a9fc3c81454a86eb043ef025f19f4bcea5f3b71bb7763bee08cc0bb",
       "reference_count": 33
     },
     {
@@ -530,8 +530,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10767,
-      "sha256": "3b5c40473e01af6502d66ebd9fe5349777fb8d63bd3b84f2f1faf97a8dc41a6d",
+      "size_bytes": 10764,
+      "sha256": "0bbfe9dcf7265e548de35ff54e1e95ae8bdb6cef83c2f295797199ad41d93acc",
       "reference_count": 77
     },
     {
@@ -540,8 +540,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 7957,
-      "sha256": "965bfef72bd38cb215fb4f5ee41ab46ae91f5e160b6e64138dbfcfada1e22992",
+      "size_bytes": 7954,
+      "sha256": "bc53066b65b9357d70d0b668594b667511e7fec88b162f583035763d4616ed27",
       "reference_count": 31
     },
     {
@@ -550,8 +550,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8669,
-      "sha256": "26312c4b4a9a7a823c824bcd6e77a6f67a28213964d968ddb26630f463bf6824",
+      "size_bytes": 8666,
+      "sha256": "4e6dfd2a7d6e1274c8e55e7a267b667fa69f0072eee9d92b26cd18c49c5c09c8",
       "reference_count": 63
     },
     {
@@ -560,8 +560,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 13202,
-      "sha256": "2b6fb8c50eae112d5f1fb88cbcdd6af539c0f7b7cbc74594fabc2024b0713106",
+      "size_bytes": 13199,
+      "sha256": "bb25c5caf422e4cf542b3203f2d9ab387d756e069cf4f5a659914552ef9b5ac5",
       "reference_count": 82
     },
     {
@@ -570,8 +570,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8432,
-      "sha256": "f2ee1635d645a03a4322b263deb89e71da37eceff2f6804f1aabb2d61f5cef5f",
+      "size_bytes": 8429,
+      "sha256": "e74e9d8cff97a9d7cd985648e7e491184a5ff2655bbb1ff0f757e4d21ff794a1",
       "reference_count": 33
     },
     {
@@ -3780,8 +3780,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9967,
-      "sha256": "dc37c36502a950237a035ee75d54fd0b3f1f6dc1c7c755b2958626b639e98696",
+      "size_bytes": 9964,
+      "sha256": "4a00a425c9411b74e04f58ed537f5bc3ebea598c2a315fc851870a36f2c80d27",
       "reference_count": 32
     },
     {
@@ -3790,8 +3790,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8729,
-      "sha256": "3dc52fef09c7caa11d8adb09474f69405a1b3c69ad10b18812860d6f3cc23eab",
+      "size_bytes": 8726,
+      "sha256": "336adb4d49e482f68df435db536458bec6e7f2ce2ad76f76ec68377105cdca96",
       "reference_count": 31
     },
     {
@@ -3800,8 +3800,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8713,
-      "sha256": "dac56817196c9ebf88fb1c703b8ae7a3c9fcc90d65f90b7cd783e581db1f9b38",
+      "size_bytes": 8710,
+      "sha256": "d26dc6f43482d17d17b8dc41d2ad3c76d8ffa4b6d3c9f92c3fe4032f892be54c",
       "reference_count": 31
     },
     {
@@ -3810,8 +3810,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8670,
-      "sha256": "db56b3ca885a49d8bcb1d9ae3aefd0fa9bfac9a6ef83b2083da2019edfb076b1",
+      "size_bytes": 8667,
+      "sha256": "202ccbef49fcbb8773310d2ff656241ba0f82ea7373f2e6bf29cfb8377b2715f",
       "reference_count": 31
     },
     {
@@ -3820,8 +3820,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8675,
-      "sha256": "26e9ffa48845a78680377a9201671d40084aa2d79babe0665ad49d8e195028e8",
+      "size_bytes": 8672,
+      "sha256": "22a5f069ceddd8dffca61aec0fc81565970f0b53346f054acc2d7590367c5a62",
       "reference_count": 63
     },
     {
@@ -3830,8 +3830,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 9526,
-      "sha256": "0c65e424ddfce08e0ce427d92f4291cff331634b75d2ef5999d1a5ebea0aaa17",
+      "size_bytes": 9523,
+      "sha256": "43bdd3673b33e7ee331ca0b9c830c9a763c3d44d11ef474237801a2c056424fe",
       "reference_count": 63
     },
     {
@@ -3840,8 +3840,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 14971,
-      "sha256": "1b1408c8f8fc5d0f3f4ebf07c6e0d98096af2ea045afe65458ce5f1046faaa37",
+      "size_bytes": 14968,
+      "sha256": "ff0c24f6cddddb9dc3184da5ece02ba4a3341b788a67084d8fb67be8b634ecfa",
       "reference_count": 68
     },
     {
@@ -3850,8 +3850,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 8945,
-      "sha256": "83b6db926c57e933009382dd77ed0bc94fc7f0e256a054dd2f48c121119e59d7",
+      "size_bytes": 8942,
+      "sha256": "6eb0488bdf3585433ca261b75f0f47bcf4bb51c824163314d05e6664bc4096a5",
       "reference_count": 35
     },
     {
@@ -3860,8 +3860,8 @@
       "disposition": "IMPORT",
       "disposition_reason": "legacy fixed page content",
       "content_type": "text/html; charset=utf-8",
-      "size_bytes": 10248,
-      "sha256": "aec60f8c1ffc72f198975218a33fc00cb526d1eb57fd7c4ae7170cfbac930e82",
+      "size_bytes": 10245,
+      "sha256": "3ae8a1ec59528e2cdde94c7876eefe35a9cfc31041e63e61c50f52059401d151",
       "reference_count": 34
     },
     {
