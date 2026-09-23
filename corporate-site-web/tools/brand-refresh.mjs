@@ -74,11 +74,11 @@ function aiMain(assetRoot) {
   </section>
   <section class="refresh-bus wrap" id="capabilities">
     <div class="refresh-bus-copy"><small>01 / 平台结构概要</small><h2>企业<br>总线<span class="blue">。</span></h2><p>把企业系统、知识与现场数据，组织为可治理、可编排、可复用的智能运行层。</p></div>
-    <div class="refresh-bus-graphic">
+    <div class="refresh-bus-graphic refresh-bus-graphic--connected">
       <div class="refresh-bus-rail"><span>内置安全与治理</span><span>组织权限</span><span>数据边界</span><span>调用审计</span><span>人工确认</span></div>
-      <article class="refresh-bus-node"><small>来自业务与现场</small><h3>业务与现场</h3><p>生产　管网　客服　GIS　IoT<br>规程　文档　事件记录</p></article>
-      <article class="refresh-bus-core"><small>企业总线</small><h3>把连接，变成可复用的工作能力。</h3><p>统一连接、编排和治理，让业务上下文在不同场景间持续发挥作用。</p></article>
-      <article class="refresh-bus-node"><small>服务智能工作</small><h3>智能工作</h3><p>智能体　专业算法　工作流<br>查询　分析　协同　任务执行</p></article>
+      <article class="refresh-bus-node refresh-bus-node--source"><small>来自业务与现场</small><h3>业务与现场</h3><p>生产　管网　客服　GIS　IoT<br>规程　文档　事件记录</p></article>
+      <article class="refresh-bus-core"><small>企业总线 / ENTERPRISE BUS</small><h3><span>把连接，变成</span><span>可复用的工作能力。</span></h3><p>统一连接、编排和治理，<br>让业务上下文持续发挥作用。</p><div class="refresh-bus-core-tags"><span>连接</span><span>编排</span><span>治理</span></div></article>
+      <article class="refresh-bus-node refresh-bus-node--target"><small>服务智能工作</small><h3>智能工作</h3><p>智能体　专业算法　工作流<br>查询　分析　协同　任务执行</p></article>
       <p class="refresh-bus-note">企业总线为平台结构概要；具体系统接入、数据权限与可执行动作，按项目方案及验证结果确定。</p>
     </div>
   </section>

@@ -85,26 +85,179 @@
   color: #fff;
 }
 
-/* Enterprise bus: generated connection artwork stays behind live HTML labels. */
-.refresh-bus-graphic {
+/* Enterprise bus: live HTML copy sits above an isometric connection map. */
+.refresh-bus-graphic--connected {
+  isolation: isolate;
   background:
-    linear-gradient(180deg, rgba(238, 245, 255, 0.32), rgba(231, 240, 255, 0.57)),
-    url('/visuals/enterprise-bus-network.png') center / cover no-repeat;
+    linear-gradient(135deg, rgba(248, 251, 255, 0.86), rgba(231, 241, 255, 0.66) 52%, rgba(248, 251, 255, 0.84)),
+    url('/visuals/enterprise-bus-network-v2.png') center 56% / 74% auto no-repeat;
 }
 
-.refresh-bus-graphic::before {
-  opacity: 0.45;
+.refresh-bus-graphic--connected::before {
+  z-index: 0;
+  opacity: 0.28;
 }
 
-.refresh-bus-rail,
-.refresh-bus-node {
-  backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.78);
+.refresh-bus-links {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
 }
 
-.refresh-bus-core {
-  background: linear-gradient(145deg, rgba(42, 88, 234, 0.96), rgba(24, 65, 190, 0.95));
-  box-shadow: 12px 12px 0 rgba(36, 86, 232, 0.13), 0 20px 44px rgba(34, 89, 220, 0.25);
+.refresh-bus-link-halo {
+  fill: none;
+  stroke: rgba(42, 96, 235, 0.1);
+  stroke-width: 14;
+}
+
+.refresh-bus-link-soft {
+  fill: none;
+  stroke: rgba(69, 118, 229, 0.28);
+  stroke-width: 1.2;
+}
+
+.refresh-bus-link-route {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 7 8;
+  animation: refresh-bus-flow 2.8s linear infinite;
+}
+
+@keyframes refresh-bus-flow {
+  to { stroke-dashoffset: -30; }
+}
+
+.refresh-bus-graphic--connected .refresh-bus-rail,
+.refresh-bus-graphic--connected .refresh-bus-node,
+.refresh-bus-graphic--connected .refresh-bus-core,
+.refresh-bus-graphic--connected .refresh-bus-note {
+  position: relative;
+  z-index: 1;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-rail,
+.refresh-bus-graphic--connected .refresh-bus-node {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 255, 0.76));
+  box-shadow: 0 16px 32px rgba(46, 87, 145, 0.08);
+}
+
+.refresh-bus-graphic--connected .refresh-bus-node h3 {
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-node p {
+  letter-spacing: 0;
+  line-height: 2.05;
+  white-space: nowrap;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core {
+  min-height: 216px;
+  padding: 24px 22px 22px;
+  overflow: hidden;
+  border-color: rgba(165, 192, 255, 0.8);
+  background: linear-gradient(140deg, rgba(33, 83, 226, 0.97), rgba(27, 63, 180, 0.97));
+  box-shadow: 13px 13px 0 rgba(37, 86, 232, 0.13), 0 22px 42px rgba(34, 83, 200, 0.26);
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core::before {
+  content: '';
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  right: -112px;
+  top: -150px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core > * {
+  position: relative;
+  z-index: 1;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core small {
+  color: #cbd9ff;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core h3 {
+  margin: 11px 0 10px;
+  font-size: clamp(22px, 1.8vw, 25px);
+  line-height: 1.32;
+  letter-spacing: -0.055em;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core h3 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.refresh-bus-graphic--connected .refresh-bus-core p {
+  color: #e5edff;
+  font-size: 12px;
+  line-height: 1.82;
+  letter-spacing: 0;
+}
+
+.refresh-bus-core-tags {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 11px;
+  border-top: 1px solid rgba(213, 226, 255, 0.38);
+  color: #cbd9ff;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.refresh-bus-core-tags span + span::before {
+  content: '/';
+  margin-right: 14px;
+  color: #9db7ff;
+}
+
+/* The homepage header sits on a cinematic night scene.  Its dropdowns need
+ * the same dark, translucent language; otherwise the inherited white nav
+ * copy becomes white-on-white inside the old menu panel. */
+.refresh-home-header #main-nav .submenu {
+  background: linear-gradient(145deg, rgba(5, 20, 53, 0.96), rgba(19, 57, 121, 0.94));
+  border-color: rgba(168, 195, 255, 0.3);
+  box-shadow: 0 24px 56px rgba(1, 12, 40, 0.38);
+  backdrop-filter: blur(18px);
+}
+
+.refresh-home-header #main-nav .submenu a {
+  color: #edf4ff;
+  border-color: rgba(175, 202, 255, 0.16);
+}
+
+.refresh-home-header #main-nav .submenu a > span {
+  color: #d7e4ff;
+  border-color: rgba(177, 203, 255, 0.38);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.refresh-home-header #main-nav .submenu a:hover,
+.refresh-home-header #main-nav .submenu a:focus-visible {
+  color: #fff;
+  background: rgba(67, 123, 247, 0.27);
+}
+
+.refresh-home-header #main-nav .submenu a:hover > span,
+.refresh-home-header #main-nav .submenu a:focus-visible > span {
+  color: #fff;
+  background: #3a72f3;
+  border-color: #3a72f3;
 }
 
 @media (max-width: 640px) {
@@ -114,5 +267,18 @@
 
   .refresh-home-gas-card__visual {
     object-position: 63% center;
+  }
+
+  .refresh-bus-links {
+    display: none;
+  }
+
+  .refresh-bus-graphic--connected {
+    background-size: 165% auto;
+  }
+
+  .refresh-bus-graphic--connected .refresh-bus-node p,
+  .refresh-bus-graphic--connected .refresh-bus-core h3 span {
+    white-space: normal;
   }
 }

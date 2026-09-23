@@ -58,6 +58,83 @@ function hydrateHomeGasCard() {
   if (footer) footer.innerHTML = '<span>厂站 · 调压计量 · 城市配气</span><span>了解智慧燃气 ↗</span>'
 }
 
+function hydrateEnterpriseBusConnections(controller) {
+  document.querySelectorAll('.refresh-bus-graphic').forEach((graphic, index) => {
+    const nodes = graphic.querySelectorAll(':scope > .refresh-bus-node')
+    const core = graphic.querySelector(':scope > .refresh-bus-core')
+    if (nodes.length !== 2 || !core) return
+
+    graphic.classList.add('refresh-bus-graphic--connected')
+    nodes[0].classList.add('refresh-bus-node--source')
+    nodes[1].classList.add('refresh-bus-node--target')
+
+    const coreLabel = core.querySelector('small')
+    const coreTitle = core.querySelector('h3')
+    const coreDescription = core.querySelector('p')
+    if (coreLabel) coreLabel.textContent = '企业总线 / ENTERPRISE BUS'
+    if (coreTitle) coreTitle.innerHTML = '<span>把连接，变成</span><span>可复用的工作能力。</span>'
+    if (coreDescription) coreDescription.innerHTML = '统一连接、编排和治理，<br>让业务上下文持续发挥作用。'
+    if (!core.querySelector('.refresh-bus-core-tags')) {
+      core.insertAdjacentHTML('beforeend', '<div class="refresh-bus-core-tags"><span>连接</span><span>编排</span><span>治理</span></div>')
+    }
+
+    let links = graphic.querySelector(':scope > .refresh-bus-links')
+    if (!links) {
+      links = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+      links.classList.add('refresh-bus-links')
+      links.setAttribute('aria-hidden', 'true')
+      graphic.insertBefore(links, graphic.firstChild)
+    }
+
+    const curve = (fromX, fromY, toX, toY) => {
+      const distance = Math.abs(toX - fromX)
+      const handle = Math.max(30, distance * 0.42)
+      const direction = toX > fromX ? 1 : -1
+      return `M ${fromX} ${fromY} C ${fromX + handle * direction} ${fromY}, ${toX - handle * direction} ${toY}, ${toX} ${toY}`
+    }
+
+    const render = () => {
+      const canvas = links.getBoundingClientRect()
+      const source = nodes[0].getBoundingClientRect()
+      const coreBox = core.getBoundingClientRect()
+      const target = nodes[1].getBoundingClientRect()
+      if (!canvas.width || !canvas.height || !coreBox.width) return
+
+      const relative = box => ({
+        left: box.left - canvas.left,
+        right: box.right - canvas.left,
+        top: box.top - canvas.top,
+        height: box.height
+      })
+      const from = relative(source)
+      const middle = relative(coreBox)
+      const to = relative(target)
+      const sourceCenter = from.top + from.height / 2
+      const targetCenter = to.top + to.height / 2
+      const upper = middle.top + middle.height * 0.32
+      const lower = middle.top + middle.height * 0.68
+      const paths = [
+        curve(from.right, sourceCenter, middle.left, upper),
+        curve(from.right, sourceCenter, middle.left, lower),
+        curve(middle.right, upper, to.left, targetCenter),
+        curve(middle.right, lower, to.left, targetCenter)
+      ]
+      const gradientId = `refresh-bus-flow-${index}`
+      links.setAttribute('viewBox', `0 0 ${canvas.width} ${canvas.height}`)
+      links.innerHTML = `<defs><linearGradient id="${gradientId}" x1="0" x2="1"><stop stop-color="#3d82ff"/><stop offset=".5" stop-color="#2456e8"/><stop offset="1" stop-color="#42a0ff"/></linearGradient></defs>${paths.map(path => `<path class="refresh-bus-link-halo" d="${path}"/><path class="refresh-bus-link-soft" d="${path}"/><path class="refresh-bus-link-route" d="${path}" stroke="url(#${gradientId})"/>`).join('')}`
+    }
+
+    const queueRender = () => window.requestAnimationFrame(render)
+    register(controller, window, 'resize', queueRender)
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(queueRender)
+      observer.observe(graphic)
+      controller.signal.addEventListener('abort', () => observer.disconnect(), { once: true })
+    }
+    queueRender()
+  })
+}
+
 export function initialiseLegacyInteractions({ articles = [], certificates = [], newsCategory = '' } = {}) {
   cleanup()
   const controller = new AbortController()
@@ -66,6 +143,7 @@ export function initialiseLegacyInteractions({ articles = [], certificates = [],
   removeBrandEnglishMarkers()
   hydrateRefreshHeader()
   hydrateHomeGasCard()
+  hydrateEnterpriseBusConnections(controller)
 
   const menuButton = document.querySelector('.menu-toggle')
   const mainNav = document.querySelector('#main-nav')
